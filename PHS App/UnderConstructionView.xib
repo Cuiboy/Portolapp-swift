@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnderConstructionView" customModule="PHS_App" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomLabel" destination="r1c-Ip-E5t" id="bw8-T5-vJ6"/>
+                <outlet property="contentView" destination="xzw-F0-sBM" id="94q-Yz-3Z2"/>
+                <outlet property="underConstructionLabel" destination="nD7-2D-ux9" id="ZM8-Kn-lx2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xzw-F0-sBM">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are still working on this page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYX-fO-0zc">
+                    <rect key="frame" x="0.0" y="307" width="375" height="21"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                    <color key="textColor" red="0.41960784309999999" green="0.25098039220000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you like Designing?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEA-hq-SPd">
+                    <rect key="frame" x="0.0" y="507" width="375" height="22"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
+                    <color key="textColor" red="0.41960784309999999" green="0.25098039220000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you like Programming?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-vs-pI9">
+                    <rect key="frame" x="0.0" y="534" width="375" height="22"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
+                    <color key="textColor" red="0.41960784309999999" green="0.25098039220000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you willing to learn?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1c-Ip-E5t">
+                    <rect key="frame" x="0.0" y="561" width="375" height="22"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
+                    <color key="textColor" red="0.41960784309999999" green="0.25098039220000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAGE UNDER CONSTRUCTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD7-2D-ux9">
+                    <rect key="frame" x="0.0" y="270" width="375" height="29"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="24"/>
+                    <color key="textColor" red="0.41960784309999999" green="0.25098039220000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="r1c-Ip-E5t" firstAttribute="top" secondItem="5iI-vs-pI9" secondAttribute="bottom" constant="5" id="BYT-pa-5KF"/>
+                <constraint firstItem="yEA-hq-SPd" firstAttribute="top" secondItem="aYX-fO-0zc" secondAttribute="bottom" constant="179" id="CKZ-cG-vj9"/>
+                <constraint firstItem="aYX-fO-0zc" firstAttribute="top" secondItem="nD7-2D-ux9" secondAttribute="bottom" constant="8" id="IIO-hN-sCf"/>
+                <constraint firstItem="5iI-vs-pI9" firstAttribute="trailing" secondItem="qC4-x7-e5B" secondAttribute="trailing" id="LU8-6r-hJs"/>
+                <constraint firstItem="aYX-fO-0zc" firstAttribute="trailing" secondItem="qC4-x7-e5B" secondAttribute="trailing" id="MNk-av-aXy"/>
+                <constraint firstItem="r1c-Ip-E5t" firstAttribute="leading" secondItem="qC4-x7-e5B" secondAttribute="leading" id="P3n-x0-PID"/>
+                <constraint firstItem="nD7-2D-ux9" firstAttribute="trailing" secondItem="qC4-x7-e5B" secondAttribute="trailing" id="T5S-5E-1LY"/>
+                <constraint firstItem="qC4-x7-e5B" firstAttribute="bottom" secondItem="r1c-Ip-E5t" secondAttribute="bottom" constant="84" id="TnQ-Pw-bVM"/>
+                <constraint firstItem="r1c-Ip-E5t" firstAttribute="trailing" secondItem="qC4-x7-e5B" secondAttribute="trailing" id="WsI-oc-c7M"/>
+                <constraint firstItem="5iI-vs-pI9" firstAttribute="top" secondItem="yEA-hq-SPd" secondAttribute="bottom" constant="5" id="f9c-Kf-Dby"/>
+                <constraint firstItem="aYX-fO-0zc" firstAttribute="leading" secondItem="qC4-x7-e5B" secondAttribute="leading" id="g2B-wp-JWv"/>
+                <constraint firstItem="5iI-vs-pI9" firstAttribute="leading" secondItem="qC4-x7-e5B" secondAttribute="leading" id="hAP-Yl-DwV"/>
+                <constraint firstItem="yEA-hq-SPd" firstAttribute="leading" secondItem="qC4-x7-e5B" secondAttribute="leading" id="mMX-st-hcc"/>
+                <constraint firstItem="nD7-2D-ux9" firstAttribute="leading" secondItem="qC4-x7-e5B" secondAttribute="leading" id="pgY-Hl-j89"/>
+                <constraint firstItem="yEA-hq-SPd" firstAttribute="trailing" secondItem="qC4-x7-e5B" secondAttribute="trailing" id="r5t-Yd-wn7"/>
+                <constraint firstItem="nD7-2D-ux9" firstAttribute="centerX" secondItem="qC4-x7-e5B" secondAttribute="centerX" id="yik-Um-Lvu"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="qC4-x7-e5B"/>
+            <point key="canvasLocation" x="116" y="339"/>
+        </view>
+    </objects>
+</document>

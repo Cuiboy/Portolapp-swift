@@ -7,6 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E71CF3D408F8FE99865FA0D /* Pods_PHS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC07CC5839CA980C1F2478F3 /* Pods_PHS_AppUITests.framework */; };
+		3B78114EB8BF6A7CC5FB4FF9 /* Pods_PHS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233A212F644D67C9BBAA7DB7 /* Pods_PHS_App.framework */; };
+		AD5400F6DA67199C4345329A /* Pods_PHS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA1E85C1FB0C6EFC8F8C842 /* Pods_PHS_AppTests.framework */; };
+		F016C1602126B27500890DE3 /* SubjectsExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C15E2126B27500890DE3 /* SubjectsExpandableTableViewCell.swift */; };
+		F016C1612126B27500890DE3 /* SubjectsExpandableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F016C15F2126B27500890DE3 /* SubjectsExpandableTableViewCell.xib */; };
+		F016C16A2126B2A700890DE3 /* SubjectsExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1682126B2A700890DE3 /* SubjectsExpandedTableViewCell.swift */; };
+		F016C16B2126B2A700890DE3 /* SubjectsExpandedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F016C1692126B2A700890DE3 /* SubjectsExpandedTableViewCell.xib */; };
+		F016C1B32127643600890DE3 /* AthleticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1B22127643600890DE3 /* AthleticsViewController.swift */; };
+		F016C1B62128B55E00890DE3 /* Coaches+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1B42128B55E00890DE3 /* Coaches+CoreDataClass.swift */; };
+		F016C1B72128B55E00890DE3 /* Coaches+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1B52128B55E00890DE3 /* Coaches+CoreDataProperties.swift */; };
+		F016C1BD2128ECEC00890DE3 /* UnderConstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F016C1BC2128ECEC00890DE3 /* UnderConstructionView.xib */; };
+		F016C1BF2128EDC300890DE3 /* UnderConstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1BE2128EDC300890DE3 /* UnderConstructionView.swift */; };
+		F016C1C42129100100890DE3 /* MyClasses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1C02129100100890DE3 /* MyClasses+CoreDataClass.swift */; };
+		F016C1C52129100100890DE3 /* MyClasses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1C12129100100890DE3 /* MyClasses+CoreDataProperties.swift */; };
+		F016C1C62129100100890DE3 /* MyTeachers+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1C22129100100890DE3 /* MyTeachers+CoreDataClass.swift */; };
+		F016C1C72129100100890DE3 /* MyTeachers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1C32129100100890DE3 /* MyTeachers+CoreDataProperties.swift */; };
+		F016C1CA212910E000890DE3 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1C8212910E000890DE3 /* User+CoreDataClass.swift */; };
+		F016C1CB212910E000890DE3 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1C9212910E000890DE3 /* User+CoreDataProperties.swift */; };
+		F016C21521291B6600890DE3 /* NameInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C21421291B6600890DE3 /* NameInputViewController.swift */; };
+		F016C217212928C900890DE3 /* GradeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C216212928C900890DE3 /* GradeCollectionViewCell.swift */; };
+		F016C219212928E300890DE3 /* HouseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C218212928E300890DE3 /* HouseCollectionViewCell.swift */; };
+		F016C21B21294E0B00890DE3 /* IDInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C21A21294E0B00890DE3 /* IDInputViewController.swift */; };
+		F016C21D2129696800890DE3 /* FirstScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C21C2129696800890DE3 /* FirstScanViewController.swift */; };
+		F016C21F212A0B0000890DE3 /* PickClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C21E212A0B0000890DE3 /* PickClassesViewController.swift */; };
+		F016C223212A1B6100890DE3 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C222212A1B6000890DE3 /* PickerView.swift */; };
+		F016C225212A1B9200890DE3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C224212A1B8B00890DE3 /* SwiftyJSON.swift */; };
+		F016C229212A1FC300890DE3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C228212A1FC300890DE3 /* PickerViewController.swift */; };
+		F016C22B212A3FC000890DE3 /* DetailPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C22A212A3FC000890DE3 /* DetailPickerViewController.swift */; };
+		F016C22D212A58BB00890DE3 /* PickTeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C22C212A58BB00890DE3 /* PickTeachersViewController.swift */; };
+		F016C22F212A624A00890DE3 /* TeacherPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C22E212A624A00890DE3 /* TeacherPickerViewController.swift */; };
+		F016C231212A7E9900890DE3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C230212A7E9900890DE3 /* WelcomeViewController.swift */; };
+		F016C234212AB75600890DE3 /* MyTeachersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C232212AB75600890DE3 /* MyTeachersTableViewCell.swift */; };
+		F016C235212AB75600890DE3 /* MyTeachersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F016C233212AB75600890DE3 /* MyTeachersTableViewCell.xib */; };
+		F016C237212B3C2800890DE3 /* AthleticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C236212B3C2800890DE3 /* AthleticsCollectionViewCell.swift */; };
+		F016C239212B410B00890DE3 /* AthleticsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C238212B410B00890DE3 /* AthleticsDetailViewController.swift */; };
+		F016C23C212B44E900890DE3 /* GameScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C23A212B44E900890DE3 /* GameScheduleTableViewCell.swift */; };
+		F016C23D212B44E900890DE3 /* GameScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F016C23B212B44E900890DE3 /* GameScheduleTableViewCell.xib */; };
+		F016C23F212BAF7300890DE3 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C23E212BAF7300890DE3 /* Games.swift */; };
+		F016C241212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */; };
+		F0378900212D4C7B006DEBCE /* my_glowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */; };
+		F038F662212F6C0B0070ED1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F038F661212F6C0B0070ED1D /* GoogleService-Info.plist */; };
+		F03A208E211F7CCF00BD086F /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A208D211F7CCF00BD086F /* CheckInternet.swift */; };
+		F04F237921142F8900513EC8 /* my_configureTopLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237821142F8900513EC8 /* my_configureTopLabel.swift */; };
+		F04F237B2114EF9C00513EC8 /* my_fadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */; };
+		F04F237D2115565000513EC8 /* my_UTCTimeDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */; };
+		F04F237F211591FE00513EC8 /* my_numOfMinDuringSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237E211591FE00513EC8 /* my_numOfMinDuringSchool.swift */; };
+		F04F2384211597DE00513EC8 /* my_minutesFromSchoolStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F2383211597DE00513EC8 /* my_minutesFromSchoolStart.swift */; };
+		F04F2386211598CF00513EC8 /* my_isSchoolDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F2385211598CF00513EC8 /* my_isSchoolDay.swift */; };
+		F04F2388211599BA00513EC8 /* my_isDuringSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F2387211599BA00513EC8 /* my_isDuringSchool.swift */; };
+		F04F23AD2116D22600513EC8 /* my_UIViewFadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F23AC2116D22600513EC8 /* my_UIViewFadeIn.swift */; };
+		F04F23AF2118BDFE00513EC8 /* my_UTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F23AE2118BDFE00513EC8 /* my_UTC.swift */; };
+		F04F23B12118C35100513EC8 /* my_localTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F23B02118C35100513EC8 /* my_localTime.swift */; };
+		F05BE2E4210C678E00E429F2 /* my_customDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2E3210C678E00E429F2 /* my_customDateFormatter.swift */; };
+		F05BE2E6210E739F00E429F2 /* my_daysAwayFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2E5210E739F00E429F2 /* my_daysAwayFromToday.swift */; };
+		F05BE2E8210E78B700E429F2 /* my_getWeekdayString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2E7210E78B700E429F2 /* my_getWeekdayString.swift */; };
+		F05BE2EC21105B4100E429F2 /* my_getPeriodsFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2EB21105B4100E429F2 /* my_getPeriodsFromToday.swift */; };
+		F05BE2EE211061E900E429F2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2ED211061E900E429F2 /* Date.swift */; };
+		F05BE2F02110621C00E429F2 /* my_getStartEndTimeFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2EF2110621C00E429F2 /* my_getStartEndTimeFromToday.swift */; };
+		F05BE2F2211067AF00E429F2 /* my_stringToDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2F1211067AF00E429F2 /* my_stringToDateFormatter.swift */; };
+		F05BE2F621113D4300E429F2 /* my_getTomorrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2F521113D4300E429F2 /* my_getTomorrow.swift */; };
+		F05BE2F821117F8C00E429F2 /* my_getScheduleFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2F721117F8C00E429F2 /* my_getScheduleFromToday.swift */; };
+		F05BE2FB211185AC00E429F2 /* date cases in Resources */ = {isa = PBXBuildFile; fileRef = F05BE2FA211185AC00E429F2 /* date cases */; };
+		F05BE2FD2111A33300E429F2 /* my_getStartEndLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE2FC2111A33300E429F2 /* my_getStartEndLabel.swift */; };
+		F05BE2FF2111AE8700E429F2 /* period cases in Resources */ = {isa = PBXBuildFile; fileRef = F05BE2FE2111AE8700E429F2 /* period cases */; };
+		F05BE3012111B04800E429F2 /* my_getStartEndPeriodLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE3002111B04800E429F2 /* my_getStartEndPeriodLabel.swift */; };
+		F05BE3052114028E00E429F2 /* my_numberToLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE3042114028E00E429F2 /* my_numberToLabel.swift */; };
+		F05BE3072114051600E429F2 /* my_boolToLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE3062114051600E429F2 /* my_boolToLabel.swift */; };
+		F05BE309211411C400E429F2 /* my_isWeekend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE308211411C400E429F2 /* my_isWeekend.swift */; };
+		F05BE30B2114245300E429F2 /* my_nextMonday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05BE30A2114245300E429F2 /* my_nextMonday.swift */; };
 		F06EDD3321054AF100297B8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDD3221054AF100297B8B /* AppDelegate.swift */; };
 		F06EDD3521054AF100297B8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDD3421054AF100297B8B /* ViewController.swift */; };
 		F06EDD3821054AF100297B8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD3621054AF100297B8B /* Main.storyboard */; };
@@ -15,6 +84,54 @@
 		F06EDD4021054AF200297B8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD3E21054AF200297B8B /* LaunchScreen.storyboard */; };
 		F06EDD4B21054AF200297B8B /* PHS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDD4A21054AF200297B8B /* PHS_AppTests.swift */; };
 		F06EDD5621054AF200297B8B /* PHS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDD5521054AF200297B8B /* PHS_AppUITests.swift */; };
+		F06EDD9421054C0300297B8B /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8121054C0300297B8B /* Lato-Italic.ttf */; };
+		F06EDD9521054C0300297B8B /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8221054C0300297B8B /* Lato-LightItalic.ttf */; };
+		F06EDD9621054C0300297B8B /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8321054C0300297B8B /* Lato-Bold.ttf */; };
+		F06EDD9721054C0300297B8B /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8421054C0300297B8B /* Lato-Black.ttf */; };
+		F06EDD9821054C0300297B8B /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8521054C0300297B8B /* Lato-HairlineItalic.ttf */; };
+		F06EDD9921054C0300297B8B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8621054C0300297B8B /* Lato-Regular.ttf */; };
+		F06EDD9A21054C0300297B8B /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8721054C0300297B8B /* Lato-Hairline.ttf */; };
+		F06EDD9B21054C0300297B8B /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8821054C0300297B8B /* Lato-BlackItalic.ttf */; };
+		F06EDD9C21054C0300297B8B /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8921054C0300297B8B /* Lato-BoldItalic.ttf */; };
+		F06EDD9D21054C0300297B8B /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8A21054C0300297B8B /* Lato-Light.ttf */; };
+		F06EDD9E21054C0300297B8B /* Heebo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8C21054C0300297B8B /* Heebo-Thin.ttf */; };
+		F06EDD9F21054C0300297B8B /* Heebo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8D21054C0300297B8B /* Heebo-Medium.ttf */; };
+		F06EDDA021054C0300297B8B /* Heebo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8E21054C0300297B8B /* Heebo-Black.ttf */; };
+		F06EDDA121054C0300297B8B /* Heebo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD8F21054C0300297B8B /* Heebo-Bold.ttf */; };
+		F06EDDA221054C0300297B8B /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD9021054C0300297B8B /* Heebo-Regular.ttf */; };
+		F06EDDA321054C0300297B8B /* Heebo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD9121054C0300297B8B /* Heebo-ExtraBold.ttf */; };
+		F06EDDA421054C0300297B8B /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD9221054C0300297B8B /* OFL.txt */; };
+		F06EDDA521054C0300297B8B /* Heebo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F06EDD9321054C0300297B8B /* Heebo-Light.ttf */; };
+		F06EDDA7210552B400297B8B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDDA6210552B400297B8B /* HomeViewController.swift */; };
+		F06EDDAA21055ABF00297B8B /* my_dropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDDA921055ABF00297B8B /* my_dropShadow.swift */; };
+		F06EDDAC2105A41C00297B8B /* my_setGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDDAB2105A41C00297B8B /* my_setGradientBackground.swift */; };
+		F06EDDB42108F84300297B8B /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDDB32108F84300297B8B /* MeViewController.swift */; };
+		F06EDDB62108F8A500297B8B /* my_setNavigatinoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDDB52108F8A500297B8B /* my_setNavigatinoBar.swift */; };
+		F06EDDBA210C54A400297B8B /* my_unquotedJSONFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDDB9210C54A400297B8B /* my_unquotedJSONFormatter.swift */; };
+		F080C57A2123525800F32C6B /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080C5792123525800F32C6B /* ScanViewController.swift */; };
+		F080C5F2212541F300F32C6B /* Teachers+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080C5F0212541F300F32C6B /* Teachers+CoreDataClass.swift */; };
+		F080C5F3212541F300F32C6B /* Teachers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080C5F1212541F300F32C6B /* Teachers+CoreDataProperties.swift */; };
+		F080C5F7212558A500F32C6B /* AllTableViewControllerCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080C5F5212558A500F32C6B /* AllTableViewControllerCellTableViewCell.swift */; };
+		F080C5F8212558A500F32C6B /* AllTableViewControllerCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F080C5F6212558A500F32C6B /* AllTableViewControllerCellTableViewCell.xib */; };
+		F080C5FA2126851A00F32C6B /* my_parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080C5F92126851A00F32C6B /* my_parentViewController.swift */; };
+		F0820155212C939E007DEC1D /* SchoolEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0820154212C939E007DEC1D /* SchoolEvents.swift */; };
+		F082015B212C9B5F007DEC1D /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F082015A212C9B5F007DEC1D /* MeTableViewController.swift */; };
+		F0820179212CD302007DEC1D /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0820178212CD302007DEC1D /* CalendarCollectionViewCell.swift */; };
+		F08201A1212D24AB007DEC1D /* specialDays.txt in Resources */ = {isa = PBXBuildFile; fileRef = F08201A0212D24AB007DEC1D /* specialDays.txt */; };
+		F0B1DD29211BF8AC00901E31 /* Today+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD27211BF8AC00901E31 /* Today+CoreDataClass.swift */; };
+		F0B1DD2A211BF8AC00901E31 /* Today+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD28211BF8AC00901E31 /* Today+CoreDataProperties.swift */; };
+		F0B1DD2E211CB0EB00901E31 /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD2D211CB0EB00901E31 /* PersistentService.swift */; };
+		F0B1DD35211CEDE600901E31 /* SavedEvents+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD33211CEDE600901E31 /* SavedEvents+CoreDataClass.swift */; };
+		F0B1DD36211CEDE600901E31 /* SavedEvents+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD34211CEDE600901E31 /* SavedEvents+CoreDataProperties.swift */; };
+		F0B1DD38211D0FD300901E31 /* my_adjustFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD37211D0FD300901E31 /* my_adjustFontSize.swift */; };
+		F0B1DD3B211E413400901E31 /* DayType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD39211E413300901E31 /* DayType+CoreDataClass.swift */; };
+		F0B1DD3C211E413400901E31 /* DayType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD3A211E413300901E31 /* DayType+CoreDataProperties.swift */; };
+		F0DB35852120DF33000FFEE5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */; };
+		F0F583D121215F710046A837 /* IDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D021215F710046A837 /* IDCardViewController.swift */; };
+		F0F583D3212164EA0046A837 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D2212164EA0046A837 /* TeachersViewController.swift */; };
+		F0F583D72121650E0046A837 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D62121650E0046A837 /* CalendarViewController.swift */; };
+		F0F583D92121651A0046A837 /* PortolaPilotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D82121651A0046A837 /* PortolaPilotViewController.swift */; };
+		F0F583DB212165250046A837 /* PnnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583DA212165250046A837 /* PnnViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +151,94 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F0F583B321210F8A0046A837 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		233A212F644D67C9BBAA7DB7 /* Pods_PHS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PHS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29937BBAC61A4E70A847ECF8 /* Pods-PHS AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PHS AppTests/Pods-PHS AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5AA1E85C1FB0C6EFC8F8C842 /* Pods_PHS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PHS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6293CF10D69EB1973D32F21E /* Pods-PHS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-PHS App/Pods-PHS App.release.xcconfig"; sourceTree = "<group>"; };
+		AC07CC5839CA980C1F2478F3 /* Pods_PHS_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PHS_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA385D90DF3662EFFC539CDB /* Pods-PHS AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PHS AppUITests/Pods-PHS AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE0A3DC9D51E7EA71F93D7AE /* Pods-PHS AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PHS AppUITests/Pods-PHS AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C1BA66B17B2A0A829B81EF22 /* Pods-PHS AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PHS AppTests/Pods-PHS AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F016C15E2126B27500890DE3 /* SubjectsExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsExpandableTableViewCell.swift; sourceTree = "<group>"; };
+		F016C15F2126B27500890DE3 /* SubjectsExpandableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectsExpandableTableViewCell.xib; sourceTree = "<group>"; };
+		F016C1682126B2A700890DE3 /* SubjectsExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsExpandedTableViewCell.swift; sourceTree = "<group>"; };
+		F016C1692126B2A700890DE3 /* SubjectsExpandedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectsExpandedTableViewCell.xib; sourceTree = "<group>"; };
+		F016C1B22127643600890DE3 /* AthleticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleticsViewController.swift; sourceTree = "<group>"; };
+		F016C1B42128B55E00890DE3 /* Coaches+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coaches+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F016C1B52128B55E00890DE3 /* Coaches+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coaches+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F016C1BC2128ECEC00890DE3 /* UnderConstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderConstructionView.xib; sourceTree = "<group>"; };
+		F016C1BE2128EDC300890DE3 /* UnderConstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderConstructionView.swift; sourceTree = "<group>"; };
+		F016C1C02129100100890DE3 /* MyClasses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyClasses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F016C1C12129100100890DE3 /* MyClasses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyClasses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F016C1C22129100100890DE3 /* MyTeachers+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyTeachers+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F016C1C32129100100890DE3 /* MyTeachers+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyTeachers+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F016C1C8212910E000890DE3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F016C1C9212910E000890DE3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F016C21421291B6600890DE3 /* NameInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputViewController.swift; sourceTree = "<group>"; };
+		F016C216212928C900890DE3 /* GradeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCollectionViewCell.swift; sourceTree = "<group>"; };
+		F016C218212928E300890DE3 /* HouseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCollectionViewCell.swift; sourceTree = "<group>"; };
+		F016C21A21294E0B00890DE3 /* IDInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDInputViewController.swift; sourceTree = "<group>"; };
+		F016C21C2129696800890DE3 /* FirstScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScanViewController.swift; sourceTree = "<group>"; };
+		F016C21E212A0B0000890DE3 /* PickClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickClassesViewController.swift; sourceTree = "<group>"; };
+		F016C222212A1B6000890DE3 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerView.swift; path = "../../../../../../../Downloads/PickerView-master/Pod/Classes/PickerView.swift"; sourceTree = "<group>"; };
+		F016C224212A1B8B00890DE3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		F016C228212A1FC300890DE3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		F016C22A212A3FC000890DE3 /* DetailPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPickerViewController.swift; sourceTree = "<group>"; };
+		F016C22C212A58BB00890DE3 /* PickTeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickTeachersViewController.swift; sourceTree = "<group>"; };
+		F016C22E212A624A00890DE3 /* TeacherPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPickerViewController.swift; sourceTree = "<group>"; };
+		F016C230212A7E9900890DE3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F016C232212AB75600890DE3 /* MyTeachersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeachersTableViewCell.swift; sourceTree = "<group>"; };
+		F016C233212AB75600890DE3 /* MyTeachersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTeachersTableViewCell.xib; sourceTree = "<group>"; };
+		F016C236212B3C2800890DE3 /* AthleticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleticsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F016C238212B410B00890DE3 /* AthleticsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleticsDetailViewController.swift; sourceTree = "<group>"; };
+		F016C23A212B44E900890DE3 /* GameScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		F016C23B212B44E900890DE3 /* GameScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		F016C23E212BAF7300890DE3 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingGamesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_glowAnimation.swift; sourceTree = "<group>"; };
+		F038F661212F6C0B0070ED1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F03A208D211F7CCF00BD086F /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		F04F237821142F8900513EC8 /* my_configureTopLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_configureTopLabel.swift; sourceTree = "<group>"; };
+		F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_fadeIn.swift; sourceTree = "<group>"; };
+		F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_UTCTimeDifference.swift; sourceTree = "<group>"; };
+		F04F237E211591FE00513EC8 /* my_numOfMinDuringSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_numOfMinDuringSchool.swift; sourceTree = "<group>"; };
+		F04F2383211597DE00513EC8 /* my_minutesFromSchoolStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_minutesFromSchoolStart.swift; sourceTree = "<group>"; };
+		F04F2385211598CF00513EC8 /* my_isSchoolDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_isSchoolDay.swift; sourceTree = "<group>"; };
+		F04F2387211599BA00513EC8 /* my_isDuringSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_isDuringSchool.swift; sourceTree = "<group>"; };
+		F04F23AC2116D22600513EC8 /* my_UIViewFadeIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_UIViewFadeIn.swift; sourceTree = "<group>"; };
+		F04F23AE2118BDFE00513EC8 /* my_UTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_UTC.swift; sourceTree = "<group>"; };
+		F04F23B02118C35100513EC8 /* my_localTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_localTime.swift; sourceTree = "<group>"; };
+		F05BE2E3210C678E00E429F2 /* my_customDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_customDateFormatter.swift; sourceTree = "<group>"; };
+		F05BE2E5210E739F00E429F2 /* my_daysAwayFromToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_daysAwayFromToday.swift; sourceTree = "<group>"; };
+		F05BE2E7210E78B700E429F2 /* my_getWeekdayString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_getWeekdayString.swift; sourceTree = "<group>"; };
+		F05BE2EB21105B4100E429F2 /* my_getPeriodsFromToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_getPeriodsFromToday.swift; sourceTree = "<group>"; };
+		F05BE2ED211061E900E429F2 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F05BE2EF2110621C00E429F2 /* my_getStartEndTimeFromToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_getStartEndTimeFromToday.swift; sourceTree = "<group>"; };
+		F05BE2F1211067AF00E429F2 /* my_stringToDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_stringToDateFormatter.swift; sourceTree = "<group>"; };
+		F05BE2F521113D4300E429F2 /* my_getTomorrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_getTomorrow.swift; sourceTree = "<group>"; };
+		F05BE2F721117F8C00E429F2 /* my_getScheduleFromToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_getScheduleFromToday.swift; sourceTree = "<group>"; };
+		F05BE2FA211185AC00E429F2 /* date cases */ = {isa = PBXFileReference; lastKnownFileType = text; path = "date cases"; sourceTree = "<group>"; };
+		F05BE2FC2111A33300E429F2 /* my_getStartEndLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_getStartEndLabel.swift; sourceTree = "<group>"; };
+		F05BE2FE2111AE8700E429F2 /* period cases */ = {isa = PBXFileReference; lastKnownFileType = text; path = "period cases"; sourceTree = "<group>"; };
+		F05BE3002111B04800E429F2 /* my_getStartEndPeriodLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_getStartEndPeriodLabel.swift; sourceTree = "<group>"; };
+		F05BE3042114028E00E429F2 /* my_numberToLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_numberToLabel.swift; sourceTree = "<group>"; };
+		F05BE3062114051600E429F2 /* my_boolToLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_boolToLabel.swift; sourceTree = "<group>"; };
+		F05BE308211411C400E429F2 /* my_isWeekend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_isWeekend.swift; sourceTree = "<group>"; };
+		F05BE30A2114245300E429F2 /* my_nextMonday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_nextMonday.swift; sourceTree = "<group>"; };
 		F06EDD2F21054AF100297B8B /* PHS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PHS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06EDD3221054AF100297B8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F06EDD3421054AF100297B8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +253,56 @@
 		F06EDD5121054AF200297B8B /* PHS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PHS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06EDD5521054AF200297B8B /* PHS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHS_AppUITests.swift; sourceTree = "<group>"; };
 		F06EDD5721054AF200297B8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F06EDD8121054C0300297B8B /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		F06EDD8221054C0300297B8B /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		F06EDD8321054C0300297B8B /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		F06EDD8421054C0300297B8B /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		F06EDD8521054C0300297B8B /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		F06EDD8621054C0300297B8B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		F06EDD8721054C0300297B8B /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		F06EDD8821054C0300297B8B /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F06EDD8921054C0300297B8B /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F06EDD8A21054C0300297B8B /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		F06EDD8C21054C0300297B8B /* Heebo-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Thin.ttf"; sourceTree = "<group>"; };
+		F06EDD8D21054C0300297B8B /* Heebo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Medium.ttf"; sourceTree = "<group>"; };
+		F06EDD8E21054C0300297B8B /* Heebo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Black.ttf"; sourceTree = "<group>"; };
+		F06EDD8F21054C0300297B8B /* Heebo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Bold.ttf"; sourceTree = "<group>"; };
+		F06EDD9021054C0300297B8B /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
+		F06EDD9121054C0300297B8B /* Heebo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F06EDD9221054C0300297B8B /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		F06EDD9321054C0300297B8B /* Heebo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Light.ttf"; sourceTree = "<group>"; };
+		F06EDDA6210552B400297B8B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F06EDDA921055ABF00297B8B /* my_dropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_dropShadow.swift; sourceTree = "<group>"; };
+		F06EDDAB2105A41C00297B8B /* my_setGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_setGradientBackground.swift; sourceTree = "<group>"; };
+		F06EDDB32108F84300297B8B /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		F06EDDB52108F8A500297B8B /* my_setNavigatinoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_setNavigatinoBar.swift; sourceTree = "<group>"; };
+		F06EDDB9210C54A400297B8B /* my_unquotedJSONFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_unquotedJSONFormatter.swift; sourceTree = "<group>"; };
+		F080C5792123525800F32C6B /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		F080C5F0212541F300F32C6B /* Teachers+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teachers+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F080C5F1212541F300F32C6B /* Teachers+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teachers+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F080C5F5212558A500F32C6B /* AllTableViewControllerCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewControllerCellTableViewCell.swift; sourceTree = "<group>"; };
+		F080C5F6212558A500F32C6B /* AllTableViewControllerCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTableViewControllerCellTableViewCell.xib; sourceTree = "<group>"; };
+		F080C5F92126851A00F32C6B /* my_parentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_parentViewController.swift; sourceTree = "<group>"; };
+		F0820154212C939E007DEC1D /* SchoolEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolEvents.swift; sourceTree = "<group>"; };
+		F082015A212C9B5F007DEC1D /* MeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
+		F0820178212CD302007DEC1D /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		F08201A0212D24AB007DEC1D /* specialDays.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = specialDays.txt; sourceTree = "<group>"; };
+		F0B1DD27211BF8AC00901E31 /* Today+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Today+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F0B1DD28211BF8AC00901E31 /* Today+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Today+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F0B1DD2D211CB0EB00901E31 /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
+		F0B1DD33211CEDE600901E31 /* SavedEvents+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedEvents+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F0B1DD34211CEDE600901E31 /* SavedEvents+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedEvents+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F0B1DD37211D0FD300901E31 /* my_adjustFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_adjustFontSize.swift; sourceTree = "<group>"; };
+		F0B1DD39211E413300901E31 /* DayType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayType+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F0B1DD3A211E413300901E31 /* DayType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F0C704C8212E7DD400C6F49C /* PHS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PHS App.entitlements"; sourceTree = "<group>"; };
+		F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		F0F583D021215F710046A837 /* IDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardViewController.swift; sourceTree = "<group>"; };
+		F0F583D2212164EA0046A837 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
+		F0F583D62121650E0046A837 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		F0F583D82121651A0046A837 /* PortolaPilotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortolaPilotViewController.swift; sourceTree = "<group>"; };
+		F0F583DA212165250046A837 /* PnnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PnnViewController.swift; sourceTree = "<group>"; };
+		FDAA27E44849C266F13D7B61 /* Pods-PHS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PHS App/Pods-PHS App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B78114EB8BF6A7CC5FB4FF9 /* Pods_PHS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5400F6DA67199C4345329A /* Pods_PHS_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +326,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E71CF3D408F8FE99865FA0D /* Pods_PHS_AppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A291F14DEE4BF590D7A7A27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDAA27E44849C266F13D7B61 /* Pods-PHS App.debug.xcconfig */,
+				6293CF10D69EB1973D32F21E /* Pods-PHS App.release.xcconfig */,
+				29937BBAC61A4E70A847ECF8 /* Pods-PHS AppTests.debug.xcconfig */,
+				C1BA66B17B2A0A829B81EF22 /* Pods-PHS AppTests.release.xcconfig */,
+				BA385D90DF3662EFFC539CDB /* Pods-PHS AppUITests.debug.xcconfig */,
+				BE0A3DC9D51E7EA71F93D7AE /* Pods-PHS AppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8651979BF2EE44A756C55DD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				233A212F644D67C9BBAA7DB7 /* Pods_PHS_App.framework */,
+				5AA1E85C1FB0C6EFC8F8C842 /* Pods_PHS_AppTests.framework */,
+				AC07CC5839CA980C1F2478F3 /* Pods_PHS_AppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F05BE2E0210C629F00E429F2 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				F0820178212CD302007DEC1D /* CalendarCollectionViewCell.swift */,
+				F05BE2ED211061E900E429F2 /* Date.swift */,
+				F0820154212C939E007DEC1D /* SchoolEvents.swift */,
+				F016C23E212BAF7300890DE3 /* Games.swift */,
+				F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */,
+				F016C216212928C900890DE3 /* GradeCollectionViewCell.swift */,
+				F016C218212928E300890DE3 /* HouseCollectionViewCell.swift */,
+				F080C5F5212558A500F32C6B /* AllTableViewControllerCellTableViewCell.swift */,
+				F080C5F6212558A500F32C6B /* AllTableViewControllerCellTableViewCell.xib */,
+				F016C15E2126B27500890DE3 /* SubjectsExpandableTableViewCell.swift */,
+				F016C15F2126B27500890DE3 /* SubjectsExpandableTableViewCell.xib */,
+				F016C1682126B2A700890DE3 /* SubjectsExpandedTableViewCell.swift */,
+				F016C232212AB75600890DE3 /* MyTeachersTableViewCell.swift */,
+				F016C236212B3C2800890DE3 /* AthleticsCollectionViewCell.swift */,
+				F016C23A212B44E900890DE3 /* GameScheduleTableViewCell.swift */,
+				F016C23B212B44E900890DE3 /* GameScheduleTableViewCell.xib */,
+				F016C233212AB75600890DE3 /* MyTeachersTableViewCell.xib */,
+				F016C1692126B2A700890DE3 /* SubjectsExpandedTableViewCell.xib */,
+				F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		F05BE2F92111859C00E429F2 /* documentation */ = {
+			isa = PBXGroup;
+			children = (
+				F05BE2FA211185AC00E429F2 /* date cases */,
+				F05BE2FE2111AE8700E429F2 /* period cases */,
+			);
+			path = documentation;
+			sourceTree = "<group>";
+		};
 		F06EDD2621054AF100297B8B = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +398,8 @@
 				F06EDD4921054AF200297B8B /* PHS AppTests */,
 				F06EDD5421054AF200297B8B /* PHS AppUITests */,
 				F06EDD3021054AF100297B8B /* Products */,
+				1A291F14DEE4BF590D7A7A27 /* Pods */,
+				8651979BF2EE44A756C55DD8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +416,45 @@
 		F06EDD3121054AF100297B8B /* PHS App */ = {
 			isa = PBXGroup;
 			children = (
+				F0C704C8212E7DD400C6F49C /* PHS App.entitlements */,
+				F08201A2212D24B2007DEC1D /* JSON files */,
+				F0820198212D21B1007DEC1D /* CoreData Classes */,
+				F080C58E212507D800F32C6B /* helper classes */,
+				F05BE2F92111859C00E429F2 /* documentation */,
+				F05BE2E0210C629F00E429F2 /* objects */,
+				F06EDDA821055AAA00297B8B /* extensions */,
+				F06EDD7F21054C0300297B8B /* Fonts */,
 				F06EDD3221054AF100297B8B /* AppDelegate.swift */,
 				F06EDD3421054AF100297B8B /* ViewController.swift */,
+				F06EDDA6210552B400297B8B /* HomeViewController.swift */,
+				F082015A212C9B5F007DEC1D /* MeTableViewController.swift */,
+				F0B1DD2D211CB0EB00901E31 /* PersistentService.swift */,
+				F06EDDB32108F84300297B8B /* MeViewController.swift */,
+				F0F583D021215F710046A837 /* IDCardViewController.swift */,
+				F0F583D2212164EA0046A837 /* TeachersViewController.swift */,
+				F016C1B22127643600890DE3 /* AthleticsViewController.swift */,
+				F016C238212B410B00890DE3 /* AthleticsDetailViewController.swift */,
+				F0F583D62121650E0046A837 /* CalendarViewController.swift */,
+				F0F583D82121651A0046A837 /* PortolaPilotViewController.swift */,
+				F0F583DA212165250046A837 /* PnnViewController.swift */,
 				F06EDD3621054AF100297B8B /* Main.storyboard */,
+				F080C5792123525800F32C6B /* ScanViewController.swift */,
+				F016C1BE2128EDC300890DE3 /* UnderConstructionView.swift */,
+				F016C21421291B6600890DE3 /* NameInputViewController.swift */,
+				F016C21A21294E0B00890DE3 /* IDInputViewController.swift */,
+				F016C21E212A0B0000890DE3 /* PickClassesViewController.swift */,
+				F016C228212A1FC300890DE3 /* PickerViewController.swift */,
+				F016C22A212A3FC000890DE3 /* DetailPickerViewController.swift */,
+				F016C22C212A58BB00890DE3 /* PickTeachersViewController.swift */,
+				F016C22E212A624A00890DE3 /* TeacherPickerViewController.swift */,
+				F016C21C2129696800890DE3 /* FirstScanViewController.swift */,
+				F016C230212A7E9900890DE3 /* WelcomeViewController.swift */,
+				F016C1BC2128ECEC00890DE3 /* UnderConstructionView.xib */,
 				F06EDD3C21054AF200297B8B /* Assets.xcassets */,
 				F06EDD3E21054AF200297B8B /* LaunchScreen.storyboard */,
 				F06EDD4121054AF200297B8B /* Info.plist */,
 				F06EDD3921054AF100297B8B /* PHS_App.xcdatamodeld */,
+				F038F661212F6C0B0070ED1D /* GoogleService-Info.plist */,
 			);
 			path = "PHS App";
 			sourceTree = "<group>";
@@ -128,6 +477,127 @@
 			path = "PHS AppUITests";
 			sourceTree = "<group>";
 		};
+		F06EDD7F21054C0300297B8B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDD8021054C0300297B8B /* Lato */,
+				F06EDD8B21054C0300297B8B /* Heebo */,
+			);
+			name = Fonts;
+			path = ../../../Files/Fonts;
+			sourceTree = "<group>";
+		};
+		F06EDD8021054C0300297B8B /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDD8121054C0300297B8B /* Lato-Italic.ttf */,
+				F06EDD8221054C0300297B8B /* Lato-LightItalic.ttf */,
+				F06EDD8321054C0300297B8B /* Lato-Bold.ttf */,
+				F06EDD8421054C0300297B8B /* Lato-Black.ttf */,
+				F06EDD8521054C0300297B8B /* Lato-HairlineItalic.ttf */,
+				F06EDD8621054C0300297B8B /* Lato-Regular.ttf */,
+				F06EDD8721054C0300297B8B /* Lato-Hairline.ttf */,
+				F06EDD8821054C0300297B8B /* Lato-BlackItalic.ttf */,
+				F06EDD8921054C0300297B8B /* Lato-BoldItalic.ttf */,
+				F06EDD8A21054C0300297B8B /* Lato-Light.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		F06EDD8B21054C0300297B8B /* Heebo */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDD8C21054C0300297B8B /* Heebo-Thin.ttf */,
+				F06EDD8D21054C0300297B8B /* Heebo-Medium.ttf */,
+				F06EDD8E21054C0300297B8B /* Heebo-Black.ttf */,
+				F06EDD8F21054C0300297B8B /* Heebo-Bold.ttf */,
+				F06EDD9021054C0300297B8B /* Heebo-Regular.ttf */,
+				F06EDD9121054C0300297B8B /* Heebo-ExtraBold.ttf */,
+				F06EDD9221054C0300297B8B /* OFL.txt */,
+				F06EDD9321054C0300297B8B /* Heebo-Light.ttf */,
+			);
+			path = Heebo;
+			sourceTree = "<group>";
+		};
+		F06EDDA821055AAA00297B8B /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDDA921055ABF00297B8B /* my_dropShadow.swift */,
+				F06EDDAB2105A41C00297B8B /* my_setGradientBackground.swift */,
+				F06EDDB52108F8A500297B8B /* my_setNavigatinoBar.swift */,
+				F06EDDB9210C54A400297B8B /* my_unquotedJSONFormatter.swift */,
+				F05BE2E3210C678E00E429F2 /* my_customDateFormatter.swift */,
+				F05BE2F1211067AF00E429F2 /* my_stringToDateFormatter.swift */,
+				F05BE2E5210E739F00E429F2 /* my_daysAwayFromToday.swift */,
+				F05BE2E7210E78B700E429F2 /* my_getWeekdayString.swift */,
+				F05BE2EB21105B4100E429F2 /* my_getPeriodsFromToday.swift */,
+				F05BE2FC2111A33300E429F2 /* my_getStartEndLabel.swift */,
+				F05BE3002111B04800E429F2 /* my_getStartEndPeriodLabel.swift */,
+				F05BE2EF2110621C00E429F2 /* my_getStartEndTimeFromToday.swift */,
+				F05BE2F721117F8C00E429F2 /* my_getScheduleFromToday.swift */,
+				F05BE2F521113D4300E429F2 /* my_getTomorrow.swift */,
+				F05BE30A2114245300E429F2 /* my_nextMonday.swift */,
+				F05BE3042114028E00E429F2 /* my_numberToLabel.swift */,
+				F05BE3062114051600E429F2 /* my_boolToLabel.swift */,
+				F05BE308211411C400E429F2 /* my_isWeekend.swift */,
+				F04F237821142F8900513EC8 /* my_configureTopLabel.swift */,
+				F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */,
+				F04F23AC2116D22600513EC8 /* my_UIViewFadeIn.swift */,
+				F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */,
+				F04F237E211591FE00513EC8 /* my_numOfMinDuringSchool.swift */,
+				F04F2383211597DE00513EC8 /* my_minutesFromSchoolStart.swift */,
+				F04F2385211598CF00513EC8 /* my_isSchoolDay.swift */,
+				F04F2387211599BA00513EC8 /* my_isDuringSchool.swift */,
+				F04F23AE2118BDFE00513EC8 /* my_UTC.swift */,
+				F04F23B02118C35100513EC8 /* my_localTime.swift */,
+				F0B1DD37211D0FD300901E31 /* my_adjustFontSize.swift */,
+				F080C5F92126851A00F32C6B /* my_parentViewController.swift */,
+				F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		F080C58E212507D800F32C6B /* helper classes */ = {
+			isa = PBXGroup;
+			children = (
+				F03A208D211F7CCF00BD086F /* CheckInternet.swift */,
+				F016C224212A1B8B00890DE3 /* SwiftyJSON.swift */,
+				F016C222212A1B6000890DE3 /* PickerView.swift */,
+			);
+			path = "helper classes";
+			sourceTree = "<group>";
+		};
+		F0820198212D21B1007DEC1D /* CoreData Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F080C5F0212541F300F32C6B /* Teachers+CoreDataClass.swift */,
+				F080C5F1212541F300F32C6B /* Teachers+CoreDataProperties.swift */,
+				F0B1DD39211E413300901E31 /* DayType+CoreDataClass.swift */,
+				F0B1DD3A211E413300901E31 /* DayType+CoreDataProperties.swift */,
+				F0B1DD33211CEDE600901E31 /* SavedEvents+CoreDataClass.swift */,
+				F0B1DD34211CEDE600901E31 /* SavedEvents+CoreDataProperties.swift */,
+				F0B1DD27211BF8AC00901E31 /* Today+CoreDataClass.swift */,
+				F0B1DD28211BF8AC00901E31 /* Today+CoreDataProperties.swift */,
+				F016C1C8212910E000890DE3 /* User+CoreDataClass.swift */,
+				F016C1C9212910E000890DE3 /* User+CoreDataProperties.swift */,
+				F016C1C02129100100890DE3 /* MyClasses+CoreDataClass.swift */,
+				F016C1C12129100100890DE3 /* MyClasses+CoreDataProperties.swift */,
+				F016C1C22129100100890DE3 /* MyTeachers+CoreDataClass.swift */,
+				F016C1C32129100100890DE3 /* MyTeachers+CoreDataProperties.swift */,
+				F016C1B42128B55E00890DE3 /* Coaches+CoreDataClass.swift */,
+				F016C1B52128B55E00890DE3 /* Coaches+CoreDataProperties.swift */,
+			);
+			path = "CoreData Classes";
+			sourceTree = "<group>";
+		};
+		F08201A2212D24B2007DEC1D /* JSON files */ = {
+			isa = PBXGroup;
+			children = (
+				F08201A0212D24AB007DEC1D /* specialDays.txt */,
+			);
+			path = "JSON files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +605,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F06EDD5A21054AF200297B8B /* Build configuration list for PBXNativeTarget "PHS App" */;
 			buildPhases = (
+				32187A2E43C48E7B00C12AB4 /* [CP] Check Pods Manifest.lock */,
 				F06EDD2B21054AF100297B8B /* Sources */,
 				F06EDD2C21054AF100297B8B /* Frameworks */,
 				F06EDD2D21054AF100297B8B /* Resources */,
+				F0F583B321210F8A0046A837 /* Embed Frameworks */,
+				34A255E5A7D4E54EC6488285 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +625,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F06EDD5D21054AF200297B8B /* Build configuration list for PBXNativeTarget "PHS AppTests" */;
 			buildPhases = (
+				F28CD0381ABCD668D2009784 /* [CP] Check Pods Manifest.lock */,
 				F06EDD4221054AF200297B8B /* Sources */,
 				F06EDD4321054AF200297B8B /* Frameworks */,
 				F06EDD4421054AF200297B8B /* Resources */,
@@ -170,6 +644,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F06EDD6021054AF200297B8B /* Build configuration list for PBXNativeTarget "PHS AppUITests" */;
 			buildPhases = (
+				894316431290A0FD1BDBC2BD /* [CP] Check Pods Manifest.lock */,
 				F06EDD4D21054AF200297B8B /* Sources */,
 				F06EDD4E21054AF200297B8B /* Frameworks */,
 				F06EDD4F21054AF200297B8B /* Resources */,
@@ -196,6 +671,11 @@
 				TargetAttributes = {
 					F06EDD2E21054AF100297B8B = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					F06EDD4521054AF200297B8B = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -232,9 +712,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06EDD9A21054C0300297B8B /* Lato-Hairline.ttf in Resources */,
+				F06EDD9C21054C0300297B8B /* Lato-BoldItalic.ttf in Resources */,
+				F05BE2FF2111AE8700E429F2 /* period cases in Resources */,
+				F016C16B2126B2A700890DE3 /* SubjectsExpandedTableViewCell.xib in Resources */,
+				F06EDD9821054C0300297B8B /* Lato-HairlineItalic.ttf in Resources */,
+				F06EDD9D21054C0300297B8B /* Lato-Light.ttf in Resources */,
+				F06EDD9921054C0300297B8B /* Lato-Regular.ttf in Resources */,
+				F016C23D212B44E900890DE3 /* GameScheduleTableViewCell.xib in Resources */,
+				F016C1612126B27500890DE3 /* SubjectsExpandableTableViewCell.xib in Resources */,
+				F06EDD9B21054C0300297B8B /* Lato-BlackItalic.ttf in Resources */,
+				F080C5F8212558A500F32C6B /* AllTableViewControllerCellTableViewCell.xib in Resources */,
+				F06EDD9621054C0300297B8B /* Lato-Bold.ttf in Resources */,
 				F06EDD4021054AF200297B8B /* LaunchScreen.storyboard in Resources */,
+				F06EDDA021054C0300297B8B /* Heebo-Black.ttf in Resources */,
+				F06EDDA121054C0300297B8B /* Heebo-Bold.ttf in Resources */,
+				F038F662212F6C0B0070ED1D /* GoogleService-Info.plist in Resources */,
+				F06EDD9721054C0300297B8B /* Lato-Black.ttf in Resources */,
+				F06EDDA321054C0300297B8B /* Heebo-ExtraBold.ttf in Resources */,
+				F016C235212AB75600890DE3 /* MyTeachersTableViewCell.xib in Resources */,
+				F06EDD9521054C0300297B8B /* Lato-LightItalic.ttf in Resources */,
+				F016C1BD2128ECEC00890DE3 /* UnderConstructionView.xib in Resources */,
+				F06EDDA421054C0300297B8B /* OFL.txt in Resources */,
 				F06EDD3D21054AF200297B8B /* Assets.xcassets in Resources */,
+				F06EDDA521054C0300297B8B /* Heebo-Light.ttf in Resources */,
 				F06EDD3821054AF100297B8B /* Main.storyboard in Resources */,
+				F05BE2FB211185AC00E429F2 /* date cases in Resources */,
+				F06EDDA221054C0300297B8B /* Heebo-Regular.ttf in Resources */,
+				F06EDD9E21054C0300297B8B /* Heebo-Thin.ttf in Resources */,
+				F08201A1212D24AB007DEC1D /* specialDays.txt in Resources */,
+				F06EDD9F21054C0300297B8B /* Heebo-Medium.ttf in Resources */,
+				F06EDD9421054C0300297B8B /* Lato-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +762,189 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32187A2E43C48E7B00C12AB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PHS App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34A255E5A7D4E54EC6488285 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PHS App/Pods-PHS App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/RSBarcodes_Swift/RSBarcodes_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSBarcodes_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PHS App/Pods-PHS App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		894316431290A0FD1BDBC2BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PHS AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F28CD0381ABCD668D2009784 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PHS AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F06EDD2B21054AF100297B8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F03A208E211F7CCF00BD086F /* CheckInternet.swift in Sources */,
+				F04F2388211599BA00513EC8 /* my_isDuringSchool.swift in Sources */,
+				F016C21B21294E0B00890DE3 /* IDInputViewController.swift in Sources */,
+				F016C23F212BAF7300890DE3 /* Games.swift in Sources */,
+				F016C22D212A58BB00890DE3 /* PickTeachersViewController.swift in Sources */,
+				F06EDDAC2105A41C00297B8B /* my_setGradientBackground.swift in Sources */,
+				F016C21D2129696800890DE3 /* FirstScanViewController.swift in Sources */,
+				F05BE3012111B04800E429F2 /* my_getStartEndPeriodLabel.swift in Sources */,
+				F0820179212CD302007DEC1D /* CalendarCollectionViewCell.swift in Sources */,
+				F0B1DD29211BF8AC00901E31 /* Today+CoreDataClass.swift in Sources */,
+				F016C225212A1B9200890DE3 /* SwiftyJSON.swift in Sources */,
+				F0F583DB212165250046A837 /* PnnViewController.swift in Sources */,
+				F080C5FA2126851A00F32C6B /* my_parentViewController.swift in Sources */,
+				F0F583D3212164EA0046A837 /* TeachersViewController.swift in Sources */,
+				F04F23B12118C35100513EC8 /* my_localTime.swift in Sources */,
+				F080C57A2123525800F32C6B /* ScanViewController.swift in Sources */,
+				F0DB35852120DF33000FFEE5 /* CollectionViewCell.swift in Sources */,
+				F04F237921142F8900513EC8 /* my_configureTopLabel.swift in Sources */,
+				F0378900212D4C7B006DEBCE /* my_glowAnimation.swift in Sources */,
+				F04F23AF2118BDFE00513EC8 /* my_UTC.swift in Sources */,
+				F0F583D121215F710046A837 /* IDCardViewController.swift in Sources */,
+				F016C21521291B6600890DE3 /* NameInputViewController.swift in Sources */,
+				F016C1B72128B55E00890DE3 /* Coaches+CoreDataProperties.swift in Sources */,
+				F016C1602126B27500890DE3 /* SubjectsExpandableTableViewCell.swift in Sources */,
+				F05BE309211411C400E429F2 /* my_isWeekend.swift in Sources */,
+				F080C5F3212541F300F32C6B /* Teachers+CoreDataProperties.swift in Sources */,
+				F04F237D2115565000513EC8 /* my_UTCTimeDifference.swift in Sources */,
+				F016C223212A1B6100890DE3 /* PickerView.swift in Sources */,
+				F05BE3072114051600E429F2 /* my_boolToLabel.swift in Sources */,
+				F04F2386211598CF00513EC8 /* my_isSchoolDay.swift in Sources */,
+				F0B1DD2E211CB0EB00901E31 /* PersistentService.swift in Sources */,
+				F016C1C62129100100890DE3 /* MyTeachers+CoreDataClass.swift in Sources */,
+				F06EDDBA210C54A400297B8B /* my_unquotedJSONFormatter.swift in Sources */,
+				F06EDDB62108F8A500297B8B /* my_setNavigatinoBar.swift in Sources */,
+				F0B1DD38211D0FD300901E31 /* my_adjustFontSize.swift in Sources */,
+				F016C217212928C900890DE3 /* GradeCollectionViewCell.swift in Sources */,
+				F04F237F211591FE00513EC8 /* my_numOfMinDuringSchool.swift in Sources */,
+				F06EDDAA21055ABF00297B8B /* my_dropShadow.swift in Sources */,
+				F016C1C52129100100890DE3 /* MyClasses+CoreDataProperties.swift in Sources */,
+				F016C1CB212910E000890DE3 /* User+CoreDataProperties.swift in Sources */,
+				F016C1C72129100100890DE3 /* MyTeachers+CoreDataProperties.swift in Sources */,
+				F04F237B2114EF9C00513EC8 /* my_fadeIn.swift in Sources */,
+				F016C1B32127643600890DE3 /* AthleticsViewController.swift in Sources */,
+				F016C229212A1FC300890DE3 /* PickerViewController.swift in Sources */,
+				F06EDDB42108F84300297B8B /* MeViewController.swift in Sources */,
 				F06EDD3B21054AF100297B8B /* PHS_App.xcdatamodeld in Sources */,
+				F0820155212C939E007DEC1D /* SchoolEvents.swift in Sources */,
+				F016C21F212A0B0000890DE3 /* PickClassesViewController.swift in Sources */,
+				F016C1CA212910E000890DE3 /* User+CoreDataClass.swift in Sources */,
+				F04F2384211597DE00513EC8 /* my_minutesFromSchoolStart.swift in Sources */,
+				F016C1C42129100100890DE3 /* MyClasses+CoreDataClass.swift in Sources */,
+				F016C23C212B44E900890DE3 /* GameScheduleTableViewCell.swift in Sources */,
+				F05BE2F821117F8C00E429F2 /* my_getScheduleFromToday.swift in Sources */,
+				F016C234212AB75600890DE3 /* MyTeachersTableViewCell.swift in Sources */,
+				F080C5F2212541F300F32C6B /* Teachers+CoreDataClass.swift in Sources */,
+				F0B1DD36211CEDE600901E31 /* SavedEvents+CoreDataProperties.swift in Sources */,
+				F016C239212B410B00890DE3 /* AthleticsDetailViewController.swift in Sources */,
+				F05BE2EE211061E900E429F2 /* Date.swift in Sources */,
+				F0F583D72121650E0046A837 /* CalendarViewController.swift in Sources */,
+				F080C5F7212558A500F32C6B /* AllTableViewControllerCellTableViewCell.swift in Sources */,
+				F05BE2F02110621C00E429F2 /* my_getStartEndTimeFromToday.swift in Sources */,
+				F016C16A2126B2A700890DE3 /* SubjectsExpandedTableViewCell.swift in Sources */,
+				F016C22F212A624A00890DE3 /* TeacherPickerViewController.swift in Sources */,
+				F05BE3052114028E00E429F2 /* my_numberToLabel.swift in Sources */,
 				F06EDD3521054AF100297B8B /* ViewController.swift in Sources */,
+				F05BE2F621113D4300E429F2 /* my_getTomorrow.swift in Sources */,
+				F0F583D92121651A0046A837 /* PortolaPilotViewController.swift in Sources */,
+				F016C1B62128B55E00890DE3 /* Coaches+CoreDataClass.swift in Sources */,
+				F05BE2F2211067AF00E429F2 /* my_stringToDateFormatter.swift in Sources */,
+				F0B1DD35211CEDE600901E31 /* SavedEvents+CoreDataClass.swift in Sources */,
+				F05BE2EC21105B4100E429F2 /* my_getPeriodsFromToday.swift in Sources */,
 				F06EDD3321054AF100297B8B /* AppDelegate.swift in Sources */,
+				F05BE2E4210C678E00E429F2 /* my_customDateFormatter.swift in Sources */,
+				F0B1DD3B211E413400901E31 /* DayType+CoreDataClass.swift in Sources */,
+				F0B1DD2A211BF8AC00901E31 /* Today+CoreDataProperties.swift in Sources */,
+				F016C1BF2128EDC300890DE3 /* UnderConstructionView.swift in Sources */,
+				F05BE2E8210E78B700E429F2 /* my_getWeekdayString.swift in Sources */,
+				F05BE2FD2111A33300E429F2 /* my_getStartEndLabel.swift in Sources */,
+				F016C219212928E300890DE3 /* HouseCollectionViewCell.swift in Sources */,
+				F016C237212B3C2800890DE3 /* AthleticsCollectionViewCell.swift in Sources */,
+				F016C241212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift in Sources */,
+				F04F23AD2116D22600513EC8 /* my_UIViewFadeIn.swift in Sources */,
+				F05BE2E6210E739F00E429F2 /* my_daysAwayFromToday.swift in Sources */,
+				F0B1DD3C211E413400901E31 /* DayType+CoreDataProperties.swift in Sources */,
+				F05BE30B2114245300E429F2 /* my_nextMonday.swift in Sources */,
+				F016C231212A7E9900890DE3 /* WelcomeViewController.swift in Sources */,
+				F016C22B212A3FC000890DE3 /* DetailPickerViewController.swift in Sources */,
+				F06EDDA7210552B400297B8B /* HomeViewController.swift in Sources */,
+				F082015B212C9B5F007DEC1D /* MeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,42 +1115,53 @@
 		};
 		F06EDD5B21054AF200297B8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDAA27E44849C266F13D7B61 /* Pods-PHS App.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_ENTITLEMENTS = "PHS App/PHS App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4V5643CZ2;
 				INFOPLIST_FILE = "PHS App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phsapp.PHS-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.epicteam.portolapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F06EDD5C21054AF200297B8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6293CF10D69EB1973D32F21E /* Pods-PHS App.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_ENTITLEMENTS = "PHS App/PHS App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4V5643CZ2;
 				INFOPLIST_FILE = "PHS App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phsapp.PHS-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.epicteam.portolapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		F06EDD5E21054AF200297B8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29937BBAC61A4E70A847ECF8 /* Pods-PHS AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +1183,7 @@
 		};
 		F06EDD5F21054AF200297B8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1BA66B17B2A0A829B81EF22 /* Pods-PHS AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +1205,7 @@
 		};
 		F06EDD6121054AF200297B8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA385D90DF3662EFFC539CDB /* Pods-PHS AppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +1226,7 @@
 		};
 		F06EDD6221054AF200297B8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE0A3DC9D51E7EA71F93D7AE /* Pods-PHS AppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

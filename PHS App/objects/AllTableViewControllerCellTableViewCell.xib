@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Light.ttf">
+            <string>Heebo-Light</string>
+        </array>
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allTeacherCell" rowHeight="48" id="KGk-i7-Jjw" customClass="AllTableViewControllerCellTableViewCell" customModule="PHS_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBd-Tl-vUU">
+                        <rect key="frame" x="11" y="6.5" width="48.5" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="iBd-Tl-vUU" secondAttribute="height" multiplier="1:1" id="pKQ-vz-fLD"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JJ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJI-Ho-uma">
+                        <rect key="frame" x="9" y="5" width="49" height="48.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="OJI-Ho-uma" secondAttribute="height" multiplier="1:1" id="ShE-vU-QnP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Heebo-Light" family="Heebo" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEACHER NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxZ-0e-3dw">
+                        <rect key="frame" x="69" y="14.5" width="245" height="19"/>
+                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                        <color key="textColor" red="0.41960784313725491" green="0.25098039215686274" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBJECT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ij-RP-YDo">
+                        <rect key="frame" x="69" y="31.5" width="245" height="17"/>
+                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                        <color key="textColor" red="0.41960784313725491" green="0.25098039215686274" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-bD-exw">
+                        <rect key="frame" x="312.5" y="12" width="36.5" height="36.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="RNU-bD-exw" secondAttribute="height" multiplier="1:1" id="rZl-3V-DeO"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YxZ-0e-3dw" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" multiplier="0.55" id="4Rj-nB-J0n"/>
+                    <constraint firstItem="RNU-bD-exw" firstAttribute="leading" secondItem="YxZ-0e-3dw" secondAttribute="trailing" constant="-1.5" id="6T8-YH-Z7d"/>
+                    <constraint firstItem="iBd-Tl-vUU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="77j-eq-wAj"/>
+                    <constraint firstItem="8Ij-RP-YDo" firstAttribute="top" secondItem="YxZ-0e-3dw" secondAttribute="bottom" constant="-2" id="M4Y-NX-m9a"/>
+                    <constraint firstItem="iBd-Tl-vUU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="Mf4-f7-daY"/>
+                    <constraint firstItem="OJI-Ho-uma" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.8" id="U3B-IB-hZy"/>
+                    <constraint firstItem="8Ij-RP-YDo" firstAttribute="width" secondItem="YxZ-0e-3dw" secondAttribute="width" id="ZMi-Md-fVP"/>
+                    <constraint firstItem="YxZ-0e-3dw" firstAttribute="leading" secondItem="OJI-Ho-uma" secondAttribute="trailing" constant="11" id="cWn-q8-F8S"/>
+                    <constraint firstAttribute="trailing" secondItem="RNU-bD-exw" secondAttribute="trailing" constant="26" id="dBe-Hd-UMV"/>
+                    <constraint firstItem="iBd-Tl-vUU" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.8" id="fE7-dv-Epe"/>
+                    <constraint firstItem="RNU-bD-exw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="laX-aP-9hF"/>
+                    <constraint firstItem="OJI-Ho-uma" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="mhb-t1-s5f"/>
+                    <constraint firstItem="OJI-Ho-uma" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-1" id="n3h-Ez-4U4"/>
+                    <constraint firstItem="8Ij-RP-YDo" firstAttribute="leading" secondItem="OJI-Ho-uma" secondAttribute="trailing" constant="11" id="xXg-an-rx0"/>
+                    <constraint firstItem="RNU-bD-exw" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.6" id="zk4-hZ-m7o"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="circleImageView" destination="iBd-Tl-vUU" id="pXT-pU-mSV"/>
+                <outlet property="email" destination="RNU-bD-exw" id="ZuT-hv-v5c"/>
+                <outlet property="initialsLabel" destination="OJI-Ho-uma" id="GK5-3I-XPD"/>
+                <outlet property="name" destination="YxZ-0e-3dw" id="XTI-jD-GMy"/>
+                <outlet property="subject" destination="8Ij-RP-YDo" id="USu-C5-g8x"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="122.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="email" width="23" height="19"/>
+    </resources>
+</document>

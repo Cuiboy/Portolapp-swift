@@ -1,4 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Coaches" representedClassName="Coaches" syncable="YES">
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="first" attributeType="String" syncable="YES"/>
+        <attribute name="gender" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="last" attributeType="String" syncable="YES"/>
+        <attribute name="team1" attributeType="String" syncable="YES"/>
+        <attribute name="team2" optional="YES" attributeType="String" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="email"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="DayType" representedClassName="DayType" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="date"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="MyClasses" representedClassName="MyClasses" syncable="YES">
+        <attribute name="period1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="period2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="period3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="period4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="period5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="period6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="period7" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="period8" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MyTeachers" representedClassName="MyTeachers" syncable="YES">
+        <attribute name="period" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="teacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teachers" inverseName="myTeacher" inverseEntity="Teachers" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="period"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="SavedEvents" representedClassName="SavedEvents" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notification" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="identifier"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Teachers" representedClassName="Teachers" syncable="YES">
+        <attribute name="first" attributeType="String" syncable="YES"/>
+        <attribute name="gender" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="last" attributeType="String" syncable="YES"/>
+        <attribute name="subject1" attributeType="String" syncable="YES"/>
+        <attribute name="subject2" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="myTeacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyTeachers" inverseName="teacher" inverseEntity="MyTeachers" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Today" representedClassName="Today" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nextMondayType" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="todayType" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tomorrowType" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="first" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="house" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="shortID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="longID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="Coaches" positionX="187" positionY="261" width="128" height="135"/>
+        <element name="DayType" positionX="-74" positionY="18" width="128" height="75"/>
+        <element name="MyClasses" positionX="-54" positionY="162" width="128" height="163"/>
+        <element name="MyTeachers" positionX="-65" positionY="414" width="128" height="75"/>
+        <element name="SavedEvents" positionX="-297" positionY="144" width="128" height="120"/>
+        <element name="Teachers" positionX="187" positionY="-36" width="128" height="150"/>
+        <element name="Today" positionX="-306" positionY="-36" width="128" height="105"/>
+        <element name="User" positionX="-261" positionY="342" width="128" height="133"/>
+    </elements>
 </model>
