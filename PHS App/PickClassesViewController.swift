@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PickClassesViewController: UIViewController {
     @IBOutlet weak var prevButton: UIButton!
@@ -115,7 +116,10 @@ class PickClassesViewController: UIViewController {
     
     var isFreshLaunch = true
     var isPrevButtonHidden = false
-
+    var isPageEditing = false
+    var mySelectedTeachers = [MyTeachers]()
+    var myClasses = [String?]()
+    
     
     var buttons = [UIButton]()
     var labels = [UILabel]()
@@ -145,6 +149,7 @@ class PickClassesViewController: UIViewController {
    
     
     func createArrays() {
+       
         buttons.append(p1Button)
         buttons.append(p2Button)
         buttons.append(p3Button)
@@ -169,22 +174,35 @@ class PickClassesViewController: UIViewController {
         classLabels.append(p6ClassLabel)
         classLabels.append(p7ClassLabel)
         classLabels.append(p8ClassLabel)
-        for _ in 0...7 {
-            periods.append(nil)
+        if !isPageEditing {
+            for _ in 0...7 {
+                periods.append(nil)
+            }
         }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createArrays()
         autoResizeUI()
-        if !isFreshLaunch  {
-            skipButton.titleLabel!.text = "CANCEL"
-        }
         if isPrevButtonHidden {
             prevButton.isHidden = true
         } else {
             prevButton.isHidden = false
+        }
+        if isPageEditing {
+            print(periods.count)
+            for i in 0...classLabels.count - 1 {
+                classLabels[i].text = periods[i]
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if !isFreshLaunch  {
+            skipButton.setTitle("CANCEL", for: .normal)
         }
     }
 

@@ -21,6 +21,8 @@ var fetchedCoachesCount = 0
         var subject1 = String()
     var subject2: String?
     var gender = Bool()
+    
+    
 
         if let data = try? String(contentsOf: URL(string: "https://spreadsheets.google.com/feeds/list/1LYh5MBpUI480rVDntpZOci3C78HdnMdeBRkjPGbsQl8/od6/public/basic?alt=json")!) {
             let jsonData = JSON(parseJSON: data)
@@ -183,10 +185,17 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
 
 
     var underConstructionView = UnderConstructionView()
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet var navigationBar: UINavigationBar!
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true)
     }
+    
+    
+    @IBOutlet var editButton: UIBarButtonItem!
+    @IBAction func editTapped(_ sender: Any) {
+        performSegue(withIdentifier: "editClasses", sender: nil)
+    }
+    
     
     @IBOutlet weak var segmentioView: Segmentio!
     var content = [SegmentioItem]()
@@ -328,6 +337,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                         }
                     }
                 }
+                
             }
             
             let newRequest = try PersistentService.context.fetch(fetchRequest)
@@ -465,7 +475,11 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         let fetchRequest: NSFetchRequest<MyTeachers> = MyTeachers.fetchRequest()
         do {
             let request = try PersistentService.context.fetch(fetchRequest)
-            print(request.count)
+            if request.count > 0 {
+                navigationBar.topItem?.rightBarButtonItem = editButton
+            } else {
+                navigationBar.topItem?.rightBarButtonItem = nil
+            }
             myTeachers = request
         } catch {
             
@@ -794,6 +808,16 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                 vc.isFreshLaunch = false
                 vc.isPrevButtonHidden = true
             }
+        } else if segue.identifier == "editClasses" {
+            if let vc = segue.destination as? PickClassesViewController {
+                vc.isPageEditing = true
+                vc.isFreshLaunch = false
+                vc.isPrevButtonHidden = true
+                vc.mySelectedTeachers = self.myTeachers
+                vc.periods = myClasses
+                
+                
+            }
         }
     }
     
@@ -829,7 +853,8 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             }
             
             fetchAndReload(withClasses: true)
-        
+            navigationBar.topItem?.rightBarButtonItem = editButton
+            
         }
         
     }

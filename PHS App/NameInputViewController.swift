@@ -10,7 +10,7 @@ import UIKit
 import TextFieldEffects
 import CoreData
 
-class NameInputViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+class NameInputViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var yourName: UILabel!
@@ -26,7 +26,12 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
                 performSegue(withIdentifier: "nextToID", sender: nil)
 
             } else {
-                performSegue(withIdentifier: "nameToID", sender: nil)
+                if isPageEditing {
+                    performSegue(withIdentifier: "editingToID", sender: nil)
+                } else {
+                    performSegue(withIdentifier: "nameToID", sender: nil)
+
+                }
             }
         } else {
            
@@ -52,10 +57,13 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     var last: String?
     var grade: Int?
     var house: String?
+    var longID: String?
+    var shortID: String?
     
    var gradeArray = [9, 10, 11]
     var houseArray = ["Hercules", "Orion", "Pegasus", "Poseidon"]
-    var isFreshLaunch = true 
+    var isFreshLaunch = true
+    var isPageEditing = false
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "nextToID" {
@@ -77,6 +85,18 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
             vc.house = house
             vc.grade = grade
             vc.isFreshLaunch = false
+        } else if segue.identifier == "editingToID" {
+            let vc = segue.destination as! IDInputViewController
+            vc.first = first
+            vc.first = first
+            vc.last = last
+            vc.house = house
+            vc.grade = grade
+            vc.shortID = Int(shortID!)
+            vc.longID = Int(longID!)
+            vc.isFreshLaunch = false
+            vc.isPageEditing = true
+            
         }
     }
     
@@ -103,6 +123,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
         if collectionView == gradeCollectionView {
              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "grade", for: indexPath) as!GradeCollectionViewCell
                 cell.label.text = "\(gradeArray[indexPath.item])"
+            
             cell.label.textAlignment = .center
                 cell.label.bounds = CGRect(x: 0, y: 0, width: CGFloat(55).relativeToWidth, height: CGFloat(55).relativeToWidth)
                 cell.label.textColor = UIColor.white
@@ -117,6 +138,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
                 cell.circle.layer.backgroundColor = UIColor.white.withAlphaComponent(0).cgColor
                 cell.addSubview(cell.circle)
             cell.addSubview(cell.label)
+            
                 return cell
                 
             
@@ -137,35 +159,58 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.roundedRect.layer.backgroundColor = UIColor.white.withAlphaComponent(0).cgColor
             cell.addSubview(cell.roundedRect)
              cell.addSubview(cell.label)
+          
             return cell
         }
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let cell = collectionView.cellForItem(at: indexPath)!
+        if cell.isSelected {
+            collectionView.deselectItem(at: indexPath, animated: true)
+           self.collectionView(collectionView, didDeselectItemAt: indexPath)
+            if collectionView == gradeCollectionView {
+                grade = nil
+            } else if collectionView == houseCollectionView {
+                house = nil
+            }
+            return false
+        } else {
+            return true
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == gradeCollectionView {
-            let cell = collectionView.cellForItem(at: indexPath)
-            grade = gradeArray[indexPath.item]
-           
-            if let item = cell as? GradeCollectionViewCell {
-                UIView.animate(withDuration: 0.3) {
-                      item.label.textColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
-                    item.circle.backgroundColor = UIColor.white.withAlphaComponent(1)
+            let cell = collectionView.cellForItem(at: indexPath)!
+            
+                grade = gradeArray[indexPath.item]
+                
+                if let item = cell as? GradeCollectionViewCell {
+                    UIView.animate(withDuration: 0.3) {
+                        item.label.textColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
+                        item.circle.backgroundColor = UIColor.white.withAlphaComponent(1)
+                    }
+                    
                 }
-             
-            }
+            
+          
         } else {
-            let cell = collectionView.cellForItem(at: indexPath)
-            house = houseArray[indexPath.item]
-         
-            if let item = cell as? HouseCollectionViewCell {
-                UIView.animate(withDuration: 0.3) {
-                     item.label.textColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
-                    item.roundedRect.backgroundColor = UIColor.white.withAlphaComponent(1)
+            let cell = collectionView.cellForItem(at: indexPath)!
 
-                }
-               
+                house = houseArray[indexPath.item]
+                
+                if let item = cell as? HouseCollectionViewCell {
+                    UIView.animate(withDuration: 0.3) {
+                        item.label.textColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
+                        item.roundedRect.backgroundColor = UIColor.white.withAlphaComponent(1)
+                        
+                    }
+
             }
+            
+            
         }
     }
     
@@ -205,6 +250,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.view.gestureRecognizers?.first!.isEnabled = true
         if textField == lastName {
             first = firstName.text
         } else if textField == firstName {
@@ -223,6 +269,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
         return true
     }
     
+    
 
     override func prefersHomeIndicatorAutoHidden() -> Bool {
     return true
@@ -231,7 +278,6 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         firstName.delegate = self
         lastName.delegate = self
@@ -255,38 +301,102 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
         houseLayout.minimumInteritemSpacing = CGFloat(20).relativeToWidth
         houseLayout.sectionInset = UIEdgeInsetsMake(0, 35, 0, 35)
         houseLayout.minimumLineSpacing = CGFloat(20).relativeToWidth
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(screenTapped))
+        gestureRecognizer.delegate = self
+        view.addGestureRecognizer(gestureRecognizer)
+        gestureRecognizer.isEnabled = false
+        
         if CheckInternet.Connection() {
-            
+            DispatchQueue.global(qos: .background).async {
+                fetchTeachers()
+                DispatchQueue.main.async {
+                    let fetchRequest: NSFetchRequest<Teachers> = Teachers.fetchRequest()
+                    let sort = NSSortDescriptor(key: "last", ascending: true)
+                    fetchRequest.sortDescriptors = [sort]
+                    do {
+                        let newRequest = try PersistentService.context.fetch(fetchRequest)
+                        
+                        savedTeachers = newRequest
+                        generateAlphaDict()
+                        generateSubjectsDict()
+                        
+                    } catch {
+                        
+                    }
+                }
+            }
         } else {
             let ac = UIAlertController(title: "No Internet Connection", message: "Trouble loading certain data, make sure you are connected to the Internet. You may still continue the set-up process.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel))
             present(ac, animated: true)
         }
-        DispatchQueue.global(qos: .background).async {
-            fetchTeachers()
-            DispatchQueue.main.async {
-              let fetchRequest: NSFetchRequest<Teachers> = Teachers.fetchRequest()
-                let sort = NSSortDescriptor(key: "last", ascending: true)
-                fetchRequest.sortDescriptors = [sort]
-                do {
-                    let newRequest = try PersistentService.context.fetch(fetchRequest)
-                    
-                    savedTeachers = newRequest
-                    generateAlphaDict()
-                    generateSubjectsDict()
-                    
-                } catch {
-                    
-                }
-            }
-        }
+      
+            
+          
+        
+       
         
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if !isFreshLaunch {
+            if isPageEditing {
+                firstName.text = first
+                lastName.text = last
+                gradeCollectionView.selectItem(at: [0, grade! - 9], animated: true, scrollPosition: [])
+                self.collectionView(self.gradeCollectionView, didSelectItemAt: [0, grade! - 9])
+                
+                
+                var houseArrayIndex = Int()
+                for i in 0...houseArray.count - 1 {
+                    if houseArray[i] == house {
+                        houseArrayIndex = i
+                        break
+                    }
+                }
+                houseCollectionView.selectItem(at: [0, houseArrayIndex], animated: true, scrollPosition: [])
+                self.collectionView(self.houseCollectionView, didSelectItemAt: [0, houseArrayIndex])
+                
+                
+            }
+        }
+    }
+    
+    @objc func screenTapped() {
+        if firstName.isEditing || lastName.isEditing {
+            if firstName.text != nil {
+                first = firstName.text!
+                firstName.resignFirstResponder()
+                self.view.gestureRecognizers?.first!.isEnabled = false
+
+            } else {
+                firstName = nil
+                firstName.resignFirstResponder()
+                self.view.gestureRecognizers?.first!.isEnabled = false
+
+            }
+            if lastName.text != nil {
+              last = lastName.text!
+                lastName.resignFirstResponder()
+                self.view.gestureRecognizers?.first!.isEnabled = false
+
+            } else {
+                lastName = nil
+                lastName.resignFirstResponder()
+                self.view.gestureRecognizers?.first!.isEnabled = false
+
+            }
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if isFreshLaunch == false {
-            skipButton.titleLabel!.text = "CANCEL"
+            skipButton.setTitle("CANCEL", for: .normal)
+            
         }
     }
    

@@ -85,7 +85,8 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     var delete = UIButton()
     var longIDLabel = UILabel()
     
-    var isFreshLaunch = true 
+    var isFreshLaunch = true
+    var isPageEditing = false 
     
     override func prefersHomeIndicatorAutoHidden() -> Bool {
         return true
@@ -118,16 +119,29 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
             self.view.addSubview(rescan)
         self.view.addSubview(delete)
         if isFreshLaunch == false {
-            skipButton.titleLabel!.text = "CANCEL"
-            nextButton.titleLabel!.text = "SAVE"
-        }
+            skipButton.setTitle("CANCEL", for: .normal)
+            nextButton.setTitle("SAVE", for: .normal)
+                    }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//
+//    }
+//
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+
         if isFreshLaunch == false {
             skipButton.titleLabel!.text = "CANCEL"
         }
+        if isPageEditing {
+            print("PAGE EDITING")
+            shortIDTextField.text = String(shortID!)
+            longIDTextField.text = String(longID!)
+            generateBarcode(string: String(longID!))
+        }
+
     }
     
     @objc func screenTapped() {

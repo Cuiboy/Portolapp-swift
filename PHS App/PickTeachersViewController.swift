@@ -13,7 +13,13 @@ class PickTeachersViewController: UIViewController {
     @IBOutlet weak var yourTeachers: UILabel!
     @IBOutlet weak var prevButton: UIButton!
     @IBAction func prevTapped(_ sender: Any) {
-        let _ = navigationController?.popViewController(animated: true)
+        if isFreshLaunch {
+            let _ = navigationController?.popViewController(animated: true)
+        } else {
+            if isSecondScreen {
+                dismiss(animated: true)
+            }
+        }
     }
     @IBOutlet weak var p1label: UILabel!
     @IBOutlet weak var p2Label: UILabel!

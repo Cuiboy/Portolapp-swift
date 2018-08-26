@@ -12,5 +12,5 @@ import CoreData
 
 @objc(MyTeachers)
 public class MyTeachers: NSManagedObject {
-
+    
 }

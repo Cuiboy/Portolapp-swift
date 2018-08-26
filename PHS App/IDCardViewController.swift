@@ -17,7 +17,11 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
         dismiss(animated: true)
     }
     
- 
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBAction func editTapped(_ sender: Any) {
+        performSegue(withIdentifier: "editNameInput", sender: nil)
+    }
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var shortID: UILabel!
@@ -26,10 +30,11 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var longID: UILabel!
     @IBOutlet weak var addCardView: UIView!
     var addCardLabel = UILabel()
-    
+    var thisUser = User()
     @IBOutlet weak var houseHeader: UILabel!
     @IBOutlet weak var gradeHeader: UILabel!
     @IBOutlet weak var shortIDHeader: UILabel!
+    
     func autoResizeUI() {
        let subviews: [UIView] = [nameLabel, barcode, gradeHeader, shortIDHeader, houseHeader, gradeLabel, shortID, house, longID]
         for view in subviews {
@@ -54,7 +59,9 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
             let request = try PersistentService.context.fetch(userRequest)
             if request.count > 0 {
                 let object = request.first!
+                thisUser = object
                 if object.first != nil && object.longID > 100000000 {
+                    navigationBar.topItem?.rightBarButtonItem = editButton
                     autoResizeUI()
                     gradeLabel.text = String(object.grade)
                     nameLabel.text = "\(object.first!) \(object.last!)"
@@ -62,7 +69,10 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                     house.text = object.house?.uppercased()
                     longID.text = String(object.longID)
                     barcode.image = RSUnifiedCodeGenerator.shared.generateCode(String(object.longID), machineReadableCodeObjectType: AVMetadataObject.ObjectType.code39.rawValue)
-                }} else {
+                }
+                
+            } else {
+                    navigationBar.topItem?.rightBarButtonItem = nil
                     let subviews: [UIView] = [nameLabel, barcode, gradeHeader, shortIDHeader, houseHeader, gradeLabel, shortID, house, longID]
                     for view in subviews {
                         view.alpha = 0
@@ -115,7 +125,10 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                     house.text = object.house?.uppercased()
                     longID.text = String(object.longID)
                     barcode.image = RSUnifiedCodeGenerator.shared.generateCode(String(object.longID), machineReadableCodeObjectType: AVMetadataObject.ObjectType.code39.rawValue)
+                    navigationBar.topItem?.rightBarButtonItem = editButton
+        
                 }
+                
             } catch {
                 
             }
@@ -135,6 +148,18 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
         if segue.identifier == "showNameInput" {
             if let vc = segue.destination as? NameInputViewController {
                 vc.isFreshLaunch = false
+            }
+        } else if segue.identifier == "editNameInput" {
+            if let vc = segue.destination as? NameInputViewController {
+                vc.isFreshLaunch = false
+                vc.isPageEditing = true
+                vc.first = thisUser.first
+                vc.last = thisUser.last
+                vc.house = thisUser.house
+                vc.grade = Int(thisUser.grade)
+                vc.shortID = String(thisUser.shortID)
+                vc.longID = String(thisUser.longID)
+                
             }
         }
     }

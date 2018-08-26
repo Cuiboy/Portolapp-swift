@@ -743,7 +743,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                             
                             performSelector(inBackground: #selector(configureNextSchoolDayStart), with: nil)
                         } else {
-                            let startTime = my_getSchedule(type: nextMonday, date: nil)!.first!
+                            let startTime = my_getSchedule(type: nextMonday, date: Date().nextMonday())!.first!
                             loadTimeLeftLabel(text: timeStringFromDate(date: startTime), size: CGFloat(140))
                             loadEndsLabel(text: "SCHOOL STARTS")
                             loadMinutesLabel(text: "MONDAY")

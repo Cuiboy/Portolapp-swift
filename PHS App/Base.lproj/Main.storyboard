@@ -234,6 +234,12 @@
                                                 <action selector="dismiss:" destination="L27-3s-fRb" id="qCO-9o-A4o"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Kc7-1a-eR4">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="editTapped:" destination="L27-3s-fRb" id="JNQ-YL-UgP"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -348,6 +354,7 @@
                     <connections>
                         <outlet property="addCardView" destination="HMN-l2-8To" id="3Lc-Kp-DAA"/>
                         <outlet property="barcode" destination="ax9-FD-v1u" id="Iu8-39-5Dz"/>
+                        <outlet property="editButton" destination="Kc7-1a-eR4" id="Hsb-l0-iC5"/>
                         <outlet property="gradeHeader" destination="GmV-HI-9Gi" id="xef-d5-H91"/>
                         <outlet property="gradeLabel" destination="Gra-F5-EGS" id="L2d-0F-aXO"/>
                         <outlet property="house" destination="Pcw-vo-1aa" id="Q5H-rO-SQZ"/>
@@ -358,11 +365,12 @@
                         <outlet property="shortID" destination="AEn-8t-2U6" id="wIn-ev-Yis"/>
                         <outlet property="shortIDHeader" destination="La7-b6-fHw" id="Gqj-SE-Kfg"/>
                         <segue destination="Qaa-Xz-SgA" kind="presentation" identifier="showNameInput" id="ed4-KL-Kwa"/>
+                        <segue destination="Qaa-Xz-SgA" kind="presentation" identifier="editNameInput" id="onz-Xl-FGv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9Q-fZ-qWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2316" y="-1586"/>
+            <point key="canvasLocation" x="2316" y="-1586.4532019704434"/>
         </scene>
         <!--Tools-->
         <scene sceneID="tne-QT-ifu">
@@ -660,6 +668,7 @@
                         <segue destination="hEw-hx-6m6" kind="show" identifier="skipToID" id="0qt-aY-LCM"/>
                         <segue destination="hEw-hx-6m6" kind="show" identifier="nextToID" id="vyR-Au-hqr"/>
                         <segue destination="hEw-hx-6m6" kind="presentation" identifier="nameToID" id="8P9-lF-81m"/>
+                        <segue destination="hEw-hx-6m6" kind="presentation" identifier="editingToID" id="KGU-h1-DuD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKo-9m-k0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -941,6 +950,12 @@
                                                 <action selector="dismiss:" destination="k3R-Py-56r" id="X3a-63-iDA"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="S5K-wm-Fu0">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="editTapped:" destination="k3R-Py-56r" id="y8V-y8-ZBl"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -995,6 +1010,7 @@
                     <connections>
                         <outlet property="adminTableView" destination="AwZ-bZ-z12" id="qXh-lh-zpH"/>
                         <outlet property="allTableView" destination="MFv-mR-7yM" id="uN2-tr-md5"/>
+                        <outlet property="editButton" destination="S5K-wm-Fu0" id="ALy-b3-c8m"/>
                         <outlet property="myTeachersTableView" destination="CA6-Zp-h96" id="RAt-fe-gXP"/>
                         <outlet property="navigationBar" destination="Xf8-OP-cSR" id="dNP-YQ-o0u"/>
                         <outlet property="noTeachersView" destination="nkn-sd-WZ6" id="ktu-Cd-gg3"/>
@@ -1002,6 +1018,7 @@
                         <outlet property="subjectsTableView" destination="Uuf-yj-lSJ" id="tZH-Ze-fG9"/>
                         <segue destination="15H-Kr-pAx" kind="show" identifier="fillClasses" id="K86-Ow-k8S"/>
                         <segue destination="OZm-rS-hlp" kind="show" identifier="fillTeachers" id="Gvf-WZ-d9S"/>
+                        <segue destination="15H-Kr-pAx" kind="presentation" identifier="editClasses" id="H9y-O2-0zF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8k-0p-KDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1364,7 +1381,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oK2-pN-jw5">
-                                                                    <rect key="frame" x="16" y="26.666666666666671" width="28" height="28"/>
+                                                                    <rect key="frame" x="16" y="24.333333333333329" width="28" height="28"/>
                                                                     <color key="backgroundColor" red="0.41960784313725491" green="0.25098039215686274" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="28" id="kr2-tp-sg9"/>
@@ -1377,13 +1394,13 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0P-0H-Wrq">
-                                                                    <rect key="frame" x="10" y="30.666666666666671" width="40" height="20"/>
+                                                                    <rect key="frame" x="10" y="28.333333333333329" width="40" height="20"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                     <color key="textColor" red="0.41960784313725491" green="0.25098039215686274" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhC-aZ-RQs">
-                                                                    <rect key="frame" x="27" y="74" width="6" height="6"/>
+                                                                    <rect key="frame" x="27" y="69.333333333333329" width="6" height="6"/>
                                                                     <color key="backgroundColor" red="0.396078431372549" green="0.25882352941176473" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="FhC-aZ-RQs" secondAttribute="height" multiplier="1:1" id="1ge-se-O0r"/>
@@ -3098,10 +3115,10 @@
         <image name="tabBarToolsOutline" width="24" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xp6-8F-uX8"/>
+        <segue reference="spv-fz-2ul"/>
         <segue reference="Gvf-WZ-d9S"/>
-        <segue reference="K86-Ow-k8S"/>
-        <segue reference="8P9-lF-81m"/>
-        <segue reference="ed4-KL-Kwa"/>
+        <segue reference="H9y-O2-0zF"/>
+        <segue reference="KGU-h1-DuD"/>
+        <segue reference="onz-Xl-FGv"/>
     </inferredMetricsTieBreakers>
 </document>
