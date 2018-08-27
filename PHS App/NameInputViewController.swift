@@ -262,9 +262,12 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
         if textField == firstName {
             first = textField.text
            firstName.resignFirstResponder()
+            self.view.gestureRecognizers?.first!.isEnabled = false
         } else if textField == lastName {
             last = textField.text
             lastName.resignFirstResponder()
+            self.view.gestureRecognizers?.first!.isEnabled = false
+
         }
         return true
     }

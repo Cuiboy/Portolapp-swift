@@ -17,7 +17,12 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     @IBOutlet weak var yourID: UILabel!
     @IBOutlet weak var previousButton: UIButton!
     @IBAction func previousTapped(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
+        if isFreshLaunch {
+            _ = navigationController?.popViewController(animated: true)
+        } else {
+            dismiss(animated: true)
+        }
+        
     }
     
     @IBOutlet weak var shortIDTextField: HoshiTextField!
@@ -136,10 +141,15 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
             skipButton.titleLabel!.text = "CANCEL"
         }
         if isPageEditing {
-            print("PAGE EDITING")
-            shortIDTextField.text = String(shortID!)
-            longIDTextField.text = String(longID!)
-            generateBarcode(string: String(longID!))
+            if shortID != nil {
+                shortIDTextField.text = String(shortID!)
+            }
+            if longID != nil {
+                 longIDTextField.text = String(longID!)
+                  generateBarcode(string: String(longID!))
+            }
+           
+          
         }
 
     }
@@ -154,7 +164,9 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                 shortIDTextField.resignFirstResponder()
             }
             if longIDTextField.text != nil {
+   
                 if CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: longIDTextField.text!)) {
+        
                     if let number = Int(longIDTextField.text!) {
                         if number > 100000000 && number < 999999999 {
                             longID = number
@@ -171,9 +183,20 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                             }))
                             present(ac, animated: true)
                         }
+                    } else {
+                        longID = nil
+                        
+                        longIDTextField.resignFirstResponder()
+                        self.barImageView.image = nil
+                        self.barImageView.alpha = 0
+                        self.rescan.alpha = 0
+                        self.delete.alpha = 0
+                        self.longIDLabel.alpha = 0
+                        self.scanIDView.alpha = 1
                     }
                   
                 } else {
+               
                     let ac = UIAlertController(title: "Not a valid ID number", message: "Your student ID number must be 9 digits long and contain only numbers", preferredStyle: .alert)
                     ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
                         self.longIDTextField.text = nil
@@ -182,8 +205,10 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                     longIDTextField.resignFirstResponder()
                 }
                 
+
             } else {
                 longID = nil
+                
                 longIDTextField.resignFirstResponder()
             }
         }
