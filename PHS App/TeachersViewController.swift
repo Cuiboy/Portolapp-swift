@@ -181,6 +181,8 @@ var savedCoaches = [Coaches]()
 var coachesTeamDictionary = [String: [Coaches]]()
 var coachesRows = [String]()
 
+ var myClasses = [String?]()
+
 class TeachersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
 
 
@@ -211,7 +213,8 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     var fillInLabel = UILabel()
     
     var myTeachers = [MyTeachers]()
-    var myClasses = [String?]()
+   
+    var classesToDisplay = [String?]()
     
     var allTeachersCount = Int()
     var allCoachesCount = Int()
@@ -477,6 +480,9 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             let request = try PersistentService.context.fetch(fetchRequest)
             if request.count > 0 {
                 navigationBar.topItem?.rightBarButtonItem = editButton
+                for teacher in request {
+                    print(teacher.teacher?.last ?? "nil")
+                }
             } else {
                 navigationBar.topItem?.rightBarButtonItem = nil
             }
@@ -491,8 +497,11 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             if request.count > 0 {
                 let object = request.first!
                 myClasses = [object.period1, object.period2, object.period3, object.period4, object.period5, object.period6, object.period7, object.period8]
+                classesToDisplay = myClasses.filter { $0 != "Free Period" && $0 != "Sports" && $0 != "Sport" }
+                print(classesToDisplay)
             } else {
                 myClasses = []
+                classesToDisplay = []
             }
             
            
@@ -754,12 +763,12 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                 myCell.gender = myTeacher.teacher!.gender
                 myCell.initialsLabel.text = "\(Array(myCell.first)[0])\(Array(myCell.last)[0])"
                 myCell.teacherLabel.text = "\(myCell.first.uppercased()) \(myCell.last.uppercased())"
-                if myClasses[indexPath.row] == nil {
+                if classesToDisplay[indexPath.row] == nil {
                     myCell.periodLabel.text = ""
                     myCell.classLabel.text = "PERIOD \(period)"
                 } else {
                     myCell.periodLabel.text = "PERIOD \(period)"
-                    myCell.classLabel.text = myClasses[indexPath.row]
+                    myCell.classLabel.text = classesToDisplay[indexPath.row]
                 }
                 
           
@@ -825,6 +834,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "skipFromSecondScreen" {
             print("skipped from second page")
             myClasses = []
+            classesToDisplay = []
             myTeachers = []
         }
     }
@@ -843,15 +853,26 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                 savingClasses.period7 = vc.classes[6]
                 savingClasses.period8 = vc.classes[7]
                 PersistentService.saveContext()
+                
+                let fetchrequest: NSFetchRequest<MyTeachers> = MyTeachers.fetchRequest()
+                var storedTeachers = [MyTeachers]()
+                do {
+                    let request = try PersistentService.context.fetch(fetchrequest)
+                    storedTeachers = request
+                } catch {
+                    }
                 for i in 0...7 {
                     myClasses.append(vc.classes[i])
-                    let mySchedule = MyTeachers(context: PersistentService.context)
-                    mySchedule.period = Int16(i + 1)
-                    mySchedule.teacher = vc.myTeachers[i]
+                    storedTeachers[i].setValue(Int16(i + 1), forKey: "period")
+                    storedTeachers[i].setValue(vc.myTeachers[i], forKey: "teacher")
                     PersistentService.saveContext()
+                    
                 }
+            
+               
             }
             
+            classesToDisplay = myClasses.filter {$0 != "Free Period" && $0 != "Sport" && $0 != "Sports" }
             fetchAndReload(withClasses: true)
             navigationBar.topItem?.rightBarButtonItem = editButton
             
