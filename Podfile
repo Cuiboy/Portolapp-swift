@@ -19,7 +19,10 @@ pod 'XLActionController/Spotify'
 pod 'XLActionController/Tweetbot'
 pod 'XLActionController/Twitter'
 pod 'XLActionController/Youtube'
+
 pod 'Firebase/Core'
+pod 'Fabric', '~> 1.7.11'
+pod 'Crashlytics', '~> 3.10.7'
 
   target 'PHS AppTests' do
     inherit! :search_paths

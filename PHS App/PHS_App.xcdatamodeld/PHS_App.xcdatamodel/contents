@@ -60,7 +60,7 @@
         <attribute name="last" attributeType="String" syncable="YES"/>
         <attribute name="subject1" attributeType="String" syncable="YES"/>
         <attribute name="subject2" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="myTeacher" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MyTeachers" inverseName="teacher" inverseEntity="MyTeachers" syncable="YES"/>
+        <relationship name="myTeacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyTeachers" inverseName="teacher" inverseEntity="MyTeachers" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>

@@ -497,6 +497,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             if request.count > 0 {
                 let object = request.first!
                 myClasses = [object.period1, object.period2, object.period3, object.period4, object.period5, object.period6, object.period7, object.period8]
+                print(myClasses)
                 classesToDisplay = myClasses.filter { $0 != "Free Period" && $0 != "Sports" && $0 != "Sport" }
                 print(classesToDisplay)
             } else {
@@ -697,7 +698,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         } else if tableView == adminTableView {
             return adminRows.count
         } else if tableView == myTeachersTableView {
-            return myTeachers.count
+            return classesToDisplay.count
         }
       
         return 0
@@ -755,6 +756,9 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             return cell
         } else if tableView == myTeachersTableView {
             let myCell = Bundle.main.loadNibNamed("MyTeachersTableViewCell", owner: self, options: nil)?.first as! MyTeachersTableViewCell
+            print(myTeachers.count, 100)
+            print(myClasses.count, 101)
+            print(classesToDisplay.count, 102)
             let myTeacher = myTeachers[indexPath.row]
             if myTeacher.teacher != nil {
                 let period = myTeacher.period
@@ -842,22 +846,42 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func unwindToTeacherPage(segue: UIStoryboardSegue) {
         if segue.identifier == "unwindToTeacherPage" {
             if let vc = segue.source as? PickTeachersViewController {
-                let savingClasses = MyClasses(context: PersistentService.context)
                 
-                savingClasses.period1 = vc.classes[0]
-                savingClasses.period2 = vc.classes[1]
-                savingClasses.period3 = vc.classes[2]
-                savingClasses.period4 = vc.classes[3]
-                savingClasses.period5 = vc.classes[4]
-                savingClasses.period6 = vc.classes[5]
-                savingClasses.period7 = vc.classes[6]
-                savingClasses.period8 = vc.classes[7]
-                PersistentService.saveContext()
+//                let savingClasses = MyClasses(context: PersistentService.context)
+//
+//                savingClasses.period1 = vc.classes[0]
+//                savingClasses.period2 = vc.classes[1]
+//                savingClasses.period3 = vc.classes[2]
+//                savingClasses.period4 = vc.classes[3]
+//                savingClasses.period5 = vc.classes[4]
+//                savingClasses.period6 = vc.classes[5]
+//                savingClasses.period7 = vc.classes[6]
+//                savingClasses.period8 = vc.classes[7]
+//                PersistentService.saveContext()
+                let classesFetchrequest: NSFetchRequest<MyClasses> = MyClasses.fetchRequest()
+                do {
+                    let request = try PersistentService.context.fetch(classesFetchrequest)
+                    let object = request.first!
+                          object.setValue(vc.classes[0], forKey: "period1")
+                          object.setValue(vc.classes[1], forKey: "period2")
+                          object.setValue(vc.classes[2], forKey: "period3")
+                          object.setValue(vc.classes[3], forKey: "period4")
+                          object.setValue(vc.classes[4], forKey: "period5")
+                          object.setValue(vc.classes[5], forKey: "period6")
+                          object.setValue(vc.classes[6], forKey: "period7")
+                          object.setValue(vc.classes[7], forKey: "period8")
+                    PersistentService.saveContext()
+                    
+                } catch {
+                    
+                }
                 
-                let fetchrequest: NSFetchRequest<MyTeachers> = MyTeachers.fetchRequest()
+                
+                
+                let teacherFetchrequest: NSFetchRequest<MyTeachers> = MyTeachers.fetchRequest()
                 var storedTeachers = [MyTeachers]()
                 do {
-                    let request = try PersistentService.context.fetch(fetchrequest)
+                    let request = try PersistentService.context.fetch(teacherFetchrequest)
                     storedTeachers = request
                 } catch {
                     }
@@ -872,7 +896,6 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                
             }
             
-            classesToDisplay = myClasses.filter {$0 != "Free Period" && $0 != "Sport" && $0 != "Sports" }
             fetchAndReload(withClasses: true)
             navigationBar.topItem?.rightBarButtonItem = editButton
             
@@ -903,7 +926,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         do {
             let request = try PersistentService.context.fetch(teacherFetch)
             myTeachers = request
-            print(myTeachers.count)
+           
         } catch {
             
         }
@@ -914,13 +937,19 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                 print(request.count)
                 let object = request.first!
                 myClasses = [object.period1, object.period2, object.period3, object.period4, object.period5, object.period6, object.period7, object.period8]
+                
             } catch {
                 
             }
         }
         
-        myTeachers = myTeachers.filter { $0.teacher != nil }
+        print(myTeachers.count, "MYTEACHERS")
+        print(myClasses.count, myClasses)
+        print(classesToDisplay.count, classesToDisplay)
         
+        
+        myTeachers = myTeachers.filter { $0.teacher != nil }
+        classesToDisplay = myClasses.filter {$0 != "Free Period" && $0 != "Sport" && $0 != "Sports"}
         
         view.bringSubview(toFront: myTeachersTableView)
         myTeachersTableView.reloadData()

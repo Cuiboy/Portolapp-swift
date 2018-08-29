@@ -11,6 +11,7 @@ import Segmentio
 import UserNotifications
 
 class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if upcomingGames.count >= 3 {
             return 3
@@ -57,6 +58,7 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
         schedule.removeAll()
         performSelector(inBackground: #selector(loadSchedule), with: nil)
     }
+    
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var segmentioView: Segmentio!
     var content = [SegmentioItem]()

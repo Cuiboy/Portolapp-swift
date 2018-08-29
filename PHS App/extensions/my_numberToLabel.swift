@@ -7,26 +7,83 @@
 //
 
 import Foundation
+import CoreData
+
+func myClassArray() -> [String?] {
+    let fetchRequest: NSFetchRequest<MyClasses> = MyClasses.fetchRequest()
+    do {
+        let request = try PersistentService.context.fetch(fetchRequest)
+        if request.count == 0 {
+            return []
+        } else {
+            let object = request.first
+            return [object?.period1, object?.period2, object?.period3, object?.period4, object?.period5, object?.period6, object?.period7, object?.period8]
+        }
+    } catch {
+        
+    }
+    return []
+}
 
 extension Int {
     func getPeriodLabel() -> String {
+        print("CALLED", self)
         switch self {
         case 1:
-            return "PERIOD 1"
+            if myClassArray().count == 0 {
+                return "PERIOD 1"
+            } else {
+                print("RETURNING", myClassArray())
+                return myClassArray()[0]?.uppercased() ?? "PERIOD 1"
+            }
         case 2:
-            return "PERIOD 2"
+            if myClassArray().count == 0 {
+                return "PERIOD 2"
+            } else {
+                 return myClassArray()[1]?.uppercased() ?? "PERIOD 2"
+            }
         case 3:
-            return "PERIOD 3"
+            if myClassArray().count == 0 {
+                return "PERIOD 3"
+            } else {
+                return myClassArray()[2]?.uppercased() ?? "PERIOD 3"
+
+            }
         case 4:
-            return "PERIOD 4"
+            if myClassArray().count == 0 {
+                return "PERIOD 4"
+            } else {
+                return myClassArray()[3]?.uppercased() ?? "PERIOD 4"
+
+            }
         case 5:
-            return "PERIOD 5"
+            if myClassArray().count == 0 {
+                return "PERIOD 5"
+            } else {
+                return myClassArray()[4]?.uppercased() ?? "PERIOD 5"
+
+            }
         case 6:
-            return "PERIOD 6"
+            if myClassArray().count == 0 {
+                return "PERIOD 6"
+            } else {
+                return myClassArray()[5]?.uppercased() ?? "PERIOD 6"
+
+            }
         case 7:
-            return "PERIOD 7"
+            if myClassArray().count == 0 {
+                return "PERIOD 7"
+            } else {
+                return myClassArray()[6]?.uppercased() ?? "PERIOD 7"
+
+            }
         case 8:
-            return "PERIOD 8"
+            if myClassArray().count == 0 {
+                return "PERIOD 8"
+            } else {
+                return myClassArray()[7]?.uppercased() ?? "PERIOD 8"
+
+            }
         case 9:
             return "ADVISEMENT"
         case 10:

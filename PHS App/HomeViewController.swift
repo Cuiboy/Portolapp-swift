@@ -234,6 +234,11 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
+        if Date().isSchoolDay() {
+            if Date().getRelativeTime() == relativeTime.during {
+                fetchTimeLeft()
+            }
+        }
     }
     
    
