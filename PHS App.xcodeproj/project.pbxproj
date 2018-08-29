@@ -125,7 +125,7 @@
 		F0B1DD38211D0FD300901E31 /* my_adjustFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD37211D0FD300901E31 /* my_adjustFontSize.swift */; };
 		F0B1DD3B211E413400901E31 /* DayType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD39211E413300901E31 /* DayType+CoreDataClass.swift */; };
 		F0B1DD3C211E413400901E31 /* DayType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD3A211E413300901E31 /* DayType+CoreDataProperties.swift */; };
-		F0B26CE621362D9E00E592B7 /* PHS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CE421362D9E00E592B7 /* PHS_App.xcdatamodeld */; };
+		F0B26CEE2136565C00E592B7 /* PHS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CEB2136565C00E592B7 /* PHS_App.xcdatamodeld */; };
 		F0DB35852120DF33000FFEE5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */; };
 		F0F583D121215F710046A837 /* IDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D021215F710046A837 /* IDCardViewController.swift */; };
 		F0F583D3212164EA0046A837 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D2212164EA0046A837 /* TeachersViewController.swift */; };
@@ -294,8 +294,8 @@
 		F0B1DD37211D0FD300901E31 /* my_adjustFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_adjustFontSize.swift; sourceTree = "<group>"; };
 		F0B1DD39211E413300901E31 /* DayType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayType+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F0B1DD3A211E413300901E31 /* DayType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayType+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F0B26CE521362D9E00E592B7 /* PHS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PHS_App.xcdatamodel; sourceTree = "<group>"; };
-		F0B26CE721362EF600E592B7 /* PHS_App 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PHS_App 2.xcdatamodel"; sourceTree = "<group>"; };
+		F0B26CEC2136565C00E592B7 /* PHS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PHS_App.xcdatamodel; sourceTree = "<group>"; };
+		F0B26CED2136565C00E592B7 /* PHS_App 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PHS_App 2.xcdatamodel"; sourceTree = "<group>"; };
 		F0C704C8212E7DD400C6F49C /* PHS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PHS App.entitlements"; sourceTree = "<group>"; };
 		F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F0F583D021215F710046A837 /* IDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardViewController.swift; sourceTree = "<group>"; };
@@ -454,7 +454,7 @@
 				F06EDD3C21054AF200297B8B /* Assets.xcassets */,
 				F06EDD3E21054AF200297B8B /* LaunchScreen.storyboard */,
 				F06EDD4121054AF200297B8B /* Info.plist */,
-				F0B26CE421362D9E00E592B7 /* PHS_App.xcdatamodeld */,
+				F0B26CEB2136565C00E592B7 /* PHS_App.xcdatamodeld */,
 				F038F661212F6C0B0070ED1D /* GoogleService-Info.plist */,
 			);
 			path = "PHS App";
@@ -874,6 +874,7 @@
 				F03A208E211F7CCF00BD086F /* CheckInternet.swift in Sources */,
 				F04F2388211599BA00513EC8 /* my_isDuringSchool.swift in Sources */,
 				F016C21B21294E0B00890DE3 /* IDInputViewController.swift in Sources */,
+				F0B26CEE2136565C00E592B7 /* PHS_App.xcdatamodeld in Sources */,
 				F016C23F212BAF7300890DE3 /* Games.swift in Sources */,
 				F016C22D212A58BB00890DE3 /* PickTeachersViewController.swift in Sources */,
 				F06EDDAC2105A41C00297B8B /* my_setGradientBackground.swift in Sources */,
@@ -948,7 +949,6 @@
 				F016C1BF2128EDC300890DE3 /* UnderConstructionView.swift in Sources */,
 				F05BE2E8210E78B700E429F2 /* my_getWeekdayString.swift in Sources */,
 				F05BE2FD2111A33300E429F2 /* my_getStartEndLabel.swift in Sources */,
-				F0B26CE621362D9E00E592B7 /* PHS_App.xcdatamodeld in Sources */,
 				F016C219212928E300890DE3 /* HouseCollectionViewCell.swift in Sources */,
 				F016C237212B3C2800890DE3 /* AthleticsCollectionViewCell.swift in Sources */,
 				F016C241212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift in Sources */,
@@ -1302,15 +1302,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F0B26CE421362D9E00E592B7 /* PHS_App.xcdatamodeld */ = {
+		F0B26CEB2136565C00E592B7 /* PHS_App.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F0B26CE721362EF600E592B7 /* PHS_App 2.xcdatamodel */,
-				F0B26CE521362D9E00E592B7 /* PHS_App.xcdatamodel */,
+				F0B26CEC2136565C00E592B7 /* PHS_App.xcdatamodel */,
+				F0B26CED2136565C00E592B7 /* PHS_App 2.xcdatamodel */,
 			);
-			currentVersion = F0B26CE721362EF600E592B7 /* PHS_App 2.xcdatamodel */;
-			name = PHS_App.xcdatamodeld;
-			path = "../../../../../../Downloads/Portolapp-8b64340edaf7aefdcc5ee983ac5e616eafa189f4/PHS App/PHS_App.xcdatamodeld";
+			currentVersion = F0B26CED2136565C00E592B7 /* PHS_App 2.xcdatamodel */;
+			path = PHS_App.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
