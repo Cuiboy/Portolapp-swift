@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreGraphics
+import UserNotifications
 
 enum dayType {
     case today
@@ -214,7 +215,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         
         super.viewDidLoad()
         initialize()
-     
+        
         isAppConnected = CheckInternet.Connection()
         loadSpecialDays()
          getTodayType()
@@ -241,8 +242,37 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+    }
    
     
+    func scheduleLocal(on date: Date, with type: Int) {
+        let notificationDate = Calendar.current.date(byAdding: .day, value: -1, to: date)!
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                var dateComponents = DateComponents()
+                dateComponents.year = Calendar.current.component(.year, from: notificationDate)
+                dateComponents.month = Calendar.current.component(.month, from: notificationDate)
+                dateComponents.day = Calendar.current.component(.day, from: notificationDate)
+                dateComponents.hour = 20
+                dateComponents.minute = 0
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                let content = UNMutableNotificationContent()
+                content.title = "Schedule Reminder"
+                content.body = my_notificationPrompt(type: type)
+                content.sound = UNNotificationSound.default()
+                
+                
+                let request = UNNotificationRequest(identifier: "\(date)\(type)", content: content, trigger: trigger)
+                center.add(request)
+            } else {
+               
+            }
+        }
+    }
 
    
     
@@ -258,10 +288,15 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             if Date().tomorrow == days.date.noon {
                 tomorrow = days.type
-            
+                if today != 20 {
+                    scheduleLocal(on: Date().tomorrow, with: days.type)
+                }
             }
             if Date().nextMonday().noon == days.date.noon {
                 nextMonday = days.type
+                if today != 20 {
+                    scheduleLocal(on: Date().nextMonday(), with: days.type)
+                }
             }
         }
     

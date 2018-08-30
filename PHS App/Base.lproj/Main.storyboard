@@ -750,7 +750,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyp-M5-Jf5">
-                                <rect key="frame" x="22" y="87.666666666666671" width="75" height="30"/>
+                                <rect key="frame" x="24" y="87.666666666666671" width="73" height="30"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
                                 <state key="normal" title="PREVIOUS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1581,27 +1581,47 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSu-sq-guJ" customClass="Segmentio" customModule="Segmentio">
+                                <rect key="frame" x="0.0" y="88" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fi8-Rl-g6u"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gKW-Oe-uU7">
+                                <rect key="frame" x="0.0" y="128" width="375" height="684"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gKW-Oe-uU7" firstAttribute="top" secondItem="lSu-sq-guJ" secondAttribute="bottom" id="60B-kw-aNe"/>
+                            <constraint firstItem="gKW-Oe-uU7" firstAttribute="leading" secondItem="OlH-4e-08a" secondAttribute="leading" id="7BE-of-zUe"/>
+                            <constraint firstItem="gKW-Oe-uU7" firstAttribute="trailing" secondItem="OlH-4e-08a" secondAttribute="trailing" id="BPb-gK-9XG"/>
                             <constraint firstItem="OlH-4e-08a" firstAttribute="top" secondItem="QU2-Qj-Qmq" secondAttribute="top" id="LtA-b3-IZD"/>
                             <constraint firstItem="OlH-4e-08a" firstAttribute="top" secondItem="bLA-wI-680" secondAttribute="top" constant="68" id="MBg-nW-8rg"/>
                             <constraint firstItem="bLA-wI-680" firstAttribute="leading" secondItem="OlH-4e-08a" secondAttribute="leading" id="Nf9-c2-oR3"/>
+                            <constraint firstItem="lSu-sq-guJ" firstAttribute="width" secondItem="IYv-iL-1Gl" secondAttribute="width" id="Og3-rQ-ENe"/>
+                            <constraint firstAttribute="bottom" secondItem="gKW-Oe-uU7" secondAttribute="bottom" id="S74-35-VK5"/>
+                            <constraint firstItem="lSu-sq-guJ" firstAttribute="centerX" secondItem="OlH-4e-08a" secondAttribute="centerX" id="VDe-pq-YN4"/>
                             <constraint firstItem="QU2-Qj-Qmq" firstAttribute="bottom" secondItem="bLA-wI-680" secondAttribute="bottom" id="VTp-Qo-uca"/>
                             <constraint firstItem="QU2-Qj-Qmq" firstAttribute="leading" secondItem="OlH-4e-08a" secondAttribute="leading" id="ZbP-K0-9sB"/>
                             <constraint firstItem="bLA-wI-680" firstAttribute="trailing" secondItem="OlH-4e-08a" secondAttribute="trailing" id="iVb-CZ-BmR"/>
                             <constraint firstItem="QU2-Qj-Qmq" firstAttribute="trailing" secondItem="OlH-4e-08a" secondAttribute="trailing" id="oq8-Wy-EOy"/>
+                            <constraint firstItem="lSu-sq-guJ" firstAttribute="top" secondItem="QU2-Qj-Qmq" secondAttribute="bottom" id="pko-mY-XTy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OlH-4e-08a"/>
                     </view>
                     <navigationItem key="navigationItem" id="b2t-mp-rAJ"/>
                     <connections>
                         <outlet property="navigationBar" destination="QU2-Qj-Qmq" id="kDa-k5-GzA"/>
+                        <outlet property="newsTableView" destination="gKW-Oe-uU7" id="kD1-dE-8l5"/>
+                        <outlet property="segmentioView" destination="lSu-sq-guJ" id="JFg-EI-Efj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4f6-Jd-rr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3609" y="-1338"/>
+            <point key="canvasLocation" x="3608.8000000000002" y="-1338.1773399014778"/>
         </scene>
         <!--Me-->
         <scene sceneID="RLY-KL-iaA">

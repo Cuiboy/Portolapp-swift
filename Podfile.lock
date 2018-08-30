@@ -52,6 +52,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - RSBarcodes_Swift (4.0.0)
   - Segmentio (3.0)
+  - SwiftyXMLParser (4.0.0)
   - TextFieldEffects (1.4.0)
   - XLActionController (4.0.1):
     - XLActionController/Core (= 4.0.1)
@@ -77,6 +78,7 @@ DEPENDENCIES:
   - JTAppleCalendar
   - RSBarcodes_Swift
   - Segmentio
+  - SwiftyXMLParser
   - TextFieldEffects
   - XLActionController
   - XLActionController/Periscope
@@ -101,6 +103,7 @@ SPEC REPOS:
     - nanopb
     - RSBarcodes_Swift
     - Segmentio
+    - SwiftyXMLParser
     - TextFieldEffects
     - XLActionController
 
@@ -118,9 +121,10 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   RSBarcodes_Swift: b3e9801f448f50439f77ce7d0aeeb7aa4e9ebb19
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
+  SwiftyXMLParser: 8065da2e715e86aeba677a34fad8c252db5128bb
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
   XLActionController: 007868251c0eed70d649d06c1625259b73b3a600
 
-PODFILE CHECKSUM: b0e5f87afa8b4c1eb51b0f5f4dca604f2a706e97
+PODFILE CHECKSUM: 59abf8b5852f0bd573510ddd956aa382a9cabe49
 
 COCOAPODS: 1.5.3

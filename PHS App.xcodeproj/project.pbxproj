@@ -126,6 +126,10 @@
 		F0B1DD3B211E413400901E31 /* DayType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD39211E413300901E31 /* DayType+CoreDataClass.swift */; };
 		F0B1DD3C211E413400901E31 /* DayType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD3A211E413300901E31 /* DayType+CoreDataProperties.swift */; };
 		F0B26CEE2136565C00E592B7 /* PHS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CEB2136565C00E592B7 /* PHS_App.xcdatamodeld */; };
+		F0B26CF021376FA200E592B7 /* my_notificationPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CEF21376FA200E592B7 /* my_notificationPrompt.swift */; };
+		F0B26CF22137BA9500E592B7 /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF12137BA9500E592B7 /* NewsArticle.swift */; };
+		F0B26CF52138110A00E592B7 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */; };
+		F0B26CF62138110A00E592B7 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */; };
 		F0DB35852120DF33000FFEE5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */; };
 		F0F583D121215F710046A837 /* IDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D021215F710046A837 /* IDCardViewController.swift */; };
 		F0F583D3212164EA0046A837 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D2212164EA0046A837 /* TeachersViewController.swift */; };
@@ -296,6 +300,10 @@
 		F0B1DD3A211E413300901E31 /* DayType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F0B26CEC2136565C00E592B7 /* PHS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PHS_App.xcdatamodel; sourceTree = "<group>"; };
 		F0B26CED2136565C00E592B7 /* PHS_App 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PHS_App 2.xcdatamodel"; sourceTree = "<group>"; };
+		F0B26CEF21376FA200E592B7 /* my_notificationPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_notificationPrompt.swift; sourceTree = "<group>"; };
+		F0B26CF12137BA9500E592B7 /* NewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
+		F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		F0C704C8212E7DD400C6F49C /* PHS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PHS App.entitlements"; sourceTree = "<group>"; };
 		F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F0F583D021215F710046A837 /* IDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +387,9 @@
 				F016C233212AB75600890DE3 /* MyTeachersTableViewCell.xib */,
 				F016C1692126B2A700890DE3 /* SubjectsExpandedTableViewCell.xib */,
 				F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */,
+				F0B26CF12137BA9500E592B7 /* NewsArticle.swift */,
+				F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */,
+				F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -534,6 +545,7 @@
 				F05BE2EB21105B4100E429F2 /* my_getPeriodsFromToday.swift */,
 				F05BE2FC2111A33300E429F2 /* my_getStartEndLabel.swift */,
 				F05BE3002111B04800E429F2 /* my_getStartEndPeriodLabel.swift */,
+				F0B26CEF21376FA200E592B7 /* my_notificationPrompt.swift */,
 				F05BE2EF2110621C00E429F2 /* my_getStartEndTimeFromToday.swift */,
 				F05BE2F721117F8C00E429F2 /* my_getScheduleFromToday.swift */,
 				F05BE2F521113D4300E429F2 /* my_getTomorrow.swift */,
@@ -720,6 +732,7 @@
 				F016C16B2126B2A700890DE3 /* SubjectsExpandedTableViewCell.xib in Resources */,
 				F06EDD9821054C0300297B8B /* Lato-HairlineItalic.ttf in Resources */,
 				F06EDD9D21054C0300297B8B /* Lato-Light.ttf in Resources */,
+				F0B26CF62138110A00E592B7 /* NewsTableViewCell.xib in Resources */,
 				F06EDD9921054C0300297B8B /* Lato-Regular.ttf in Resources */,
 				F016C23D212B44E900890DE3 /* GameScheduleTableViewCell.xib in Resources */,
 				F016C1612126B27500890DE3 /* SubjectsExpandableTableViewCell.xib in Resources */,
@@ -795,6 +808,7 @@
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/RSBarcodes_Swift/RSBarcodes_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -806,6 +820,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSBarcodes_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -923,7 +938,9 @@
 				F04F2384211597DE00513EC8 /* my_minutesFromSchoolStart.swift in Sources */,
 				F016C1C42129100100890DE3 /* MyClasses+CoreDataClass.swift in Sources */,
 				F016C23C212B44E900890DE3 /* GameScheduleTableViewCell.swift in Sources */,
+				F0B26CF021376FA200E592B7 /* my_notificationPrompt.swift in Sources */,
 				F05BE2F821117F8C00E429F2 /* my_getScheduleFromToday.swift in Sources */,
+				F0B26CF52138110A00E592B7 /* NewsTableViewCell.swift in Sources */,
 				F016C234212AB75600890DE3 /* MyTeachersTableViewCell.swift in Sources */,
 				F080C5F2212541F300F32C6B /* Teachers+CoreDataClass.swift in Sources */,
 				F0B1DD36211CEDE600901E31 /* SavedEvents+CoreDataProperties.swift in Sources */,
@@ -938,6 +955,7 @@
 				F06EDD3521054AF100297B8B /* ViewController.swift in Sources */,
 				F05BE2F621113D4300E429F2 /* my_getTomorrow.swift in Sources */,
 				F0F583D92121651A0046A837 /* PortolaPilotViewController.swift in Sources */,
+				F0B26CF22137BA9500E592B7 /* NewsArticle.swift in Sources */,
 				F016C1B62128B55E00890DE3 /* Coaches+CoreDataClass.swift in Sources */,
 				F05BE2F2211067AF00E429F2 /* my_stringToDateFormatter.swift in Sources */,
 				F0B1DD35211CEDE600901E31 /* SavedEvents+CoreDataClass.swift in Sources */,
