@@ -51,6 +51,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - RSBarcodes_Swift (4.0.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - Segmentio (3.0)
   - SwiftyXMLParser (4.0.0)
   - TextFieldEffects (1.4.0)
@@ -77,6 +80,7 @@ DEPENDENCIES:
   - Firebase/Core
   - JTAppleCalendar
   - RSBarcodes_Swift
+  - SDWebImage
   - Segmentio
   - SwiftyXMLParser
   - TextFieldEffects
@@ -102,6 +106,7 @@ SPEC REPOS:
     - JTAppleCalendar
     - nanopb
     - RSBarcodes_Swift
+    - SDWebImage
     - Segmentio
     - SwiftyXMLParser
     - TextFieldEffects
@@ -120,11 +125,12 @@ SPEC CHECKSUMS:
   JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   RSBarcodes_Swift: b3e9801f448f50439f77ce7d0aeeb7aa4e9ebb19
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
   SwiftyXMLParser: 8065da2e715e86aeba677a34fad8c252db5128bb
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
   XLActionController: 007868251c0eed70d649d06c1625259b73b3a600
 
-PODFILE CHECKSUM: 59abf8b5852f0bd573510ddd956aa382a9cabe49
+PODFILE CHECKSUM: 04989cc6793f6980a6c7234b9208626c9a79710c
 
 COCOAPODS: 1.5.3

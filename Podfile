@@ -20,6 +20,7 @@ pod 'XLActionController/Tweetbot'
 pod 'XLActionController/Twitter'
 pod 'XLActionController/Youtube'
 pod "SwiftyXMLParser"
+pod "SDWebImage"
 
 pod 'Firebase/Core'
 pod 'Fabric', '~> 1.7.11'

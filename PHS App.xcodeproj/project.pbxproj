@@ -130,6 +130,7 @@
 		F0B26CF22137BA9500E592B7 /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF12137BA9500E592B7 /* NewsArticle.swift */; };
 		F0B26CF52138110A00E592B7 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */; };
 		F0B26CF62138110A00E592B7 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */; };
+		F0B26CF82138878C00E592B7 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF72138878C00E592B7 /* NewsDetailViewController.swift */; };
 		F0DB35852120DF33000FFEE5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */; };
 		F0F583D121215F710046A837 /* IDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D021215F710046A837 /* IDCardViewController.swift */; };
 		F0F583D3212164EA0046A837 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D2212164EA0046A837 /* TeachersViewController.swift */; };
@@ -304,6 +305,7 @@
 		F0B26CF12137BA9500E592B7 /* NewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
 		F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		F0B26CF72138878C00E592B7 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		F0C704C8212E7DD400C6F49C /* PHS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PHS App.entitlements"; sourceTree = "<group>"; };
 		F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F0F583D021215F710046A837 /* IDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				F016C238212B410B00890DE3 /* AthleticsDetailViewController.swift */,
 				F0F583D62121650E0046A837 /* CalendarViewController.swift */,
 				F0F583D82121651A0046A837 /* PortolaPilotViewController.swift */,
+				F0B26CF72138878C00E592B7 /* NewsDetailViewController.swift */,
 				F0F583DA212165250046A837 /* PnnViewController.swift */,
 				F06EDD3621054AF100297B8B /* Main.storyboard */,
 				F080C5792123525800F32C6B /* ScanViewController.swift */,
@@ -807,6 +810,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/RSBarcodes_Swift/RSBarcodes_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
@@ -819,6 +823,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSBarcodes_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
@@ -970,6 +975,7 @@
 				F016C219212928E300890DE3 /* HouseCollectionViewCell.swift in Sources */,
 				F016C237212B3C2800890DE3 /* AthleticsCollectionViewCell.swift in Sources */,
 				F016C241212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift in Sources */,
+				F0B26CF82138878C00E592B7 /* NewsDetailViewController.swift in Sources */,
 				F04F23AD2116D22600513EC8 /* my_UIViewFadeIn.swift in Sources */,
 				F05BE2E6210E739F00E429F2 /* my_daysAwayFromToday.swift in Sources */,
 				F0B1DD3C211E413400901E31 /* DayType+CoreDataProperties.swift in Sources */,

@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyXMLParser
 import Segmentio
+import SDWebImage
 
 
 
@@ -27,8 +28,8 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
             cell.dateLabel.text = formatter.string(from: article.pubDate)
-        if article.image != nil {
-            cell.thumbnail.image = article.image
+        if article.imageLink != nil {
+            cell.thumbnail.sd_setImage(with: article.imageLink, placeholderImage: UIImage(named: "newsPlaceholder"))
         }
         return cell
     }
@@ -37,7 +38,20 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
         return 120
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! NewsTableViewCell
+        let article = current[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "newsDetail") as! NewsDetailViewController
+        vc.titleText = cell.newsTitle.text!
+        vc.info = "By \(cell.authorLabel.text!) on \(cell.dateLabel.text!)."
+        vc.imageLink = article.imageLink
+        vc.news = article.content
+        vc.storyLink = article.link
+        print("THE CONTENT IS \(article.content)")
+        
+        present(vc, animated: true)
+        
+    }
 
     var content = [SegmentioItem]()
     
@@ -73,6 +87,14 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if newsTableView.indexPathForSelectedRow != nil {
+          newsTableView.deselectRow(at: newsTableView.indexPathForSelectedRow!, animated: true)
+        }
+       
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if current.count == 0 {
@@ -84,6 +106,7 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
             view.addSubview(indicator)
             view.bringSubview(toFront: indicator)
         }
+        
         segmentioView.valueDidChange = { segmentio, segmentIndex in
             switch segmentIndex {
                 
@@ -200,7 +223,8 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
                 article.category1 = categories[0]!
                 article.category2 = categories[1]
                 article.category3 = categories[2]
-                article.content = object["content:encoded"].text?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil) ?? "Error Loading Article."
+                article.content = object["content:encoded"].text ?? "Error Loading Article."
+                print(article.content)
                 if let linkString = object["link"].text {
                     let array = linkString.components(separatedBy: "/")
                         if array.count >= 5 {
@@ -208,7 +232,7 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
                             if let data = try? String(contentsOf: URL(string: "http://portolapilot.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fportolapilot.com%2F\(shortTitle)%2F")!) {
                                 if let jsonData = JSON(parseJSON: data).dictionaryObject!["thumbnail_url"] as? String {
                                     if let urlImage = URL(string: jsonData) {
-                                        article.image = loadThumbnail(url: urlImage)
+                                        article.imageLink = urlImage
                                     }
                                 }
                             }

@@ -20,5 +20,6 @@ class NewsArticle: NSObject {
     var category3: String?
     var content = String()
     var image: UIImage?
+    var imageLink: URL?
     
 }
