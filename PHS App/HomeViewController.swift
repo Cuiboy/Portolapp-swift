@@ -288,13 +288,13 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             if Date().tomorrow == days.date.noon {
                 tomorrow = days.type
-                if today != 20 {
+                if today != 20 && tomorrow != 0 {
                     scheduleLocal(on: Date().tomorrow, with: days.type)
                 }
             }
             if Date().nextMonday().noon == days.date.noon {
                 nextMonday = days.type
-                if today != 20 {
+                if today != 20 && nextMonday != 0 {
                     scheduleLocal(on: Date().nextMonday(), with: days.type)
                 }
             }
