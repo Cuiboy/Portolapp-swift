@@ -147,7 +147,6 @@ class PickTeachersViewController: UIViewController {
 
             } else {
                 if isSecondScreen {
-                    print("THE CLASSES RIGHT NOW ARE \(classes)")
                     performSegue(withIdentifier: "unwindToTeacherPage", sender: nil)
                 } else {
                     performSegue(withIdentifier: "dismissToTeacherPage", sender: nil)
@@ -184,7 +183,7 @@ class PickTeachersViewController: UIViewController {
         performSegue(withIdentifier: "pickTeacher", sender: nil)
         
     }
-    let subjects = ["English", "History", "Math", "Physical Education", "Science", "Visual and Performing Arts", "World Language", "General Electives", "ROP", "Sport", "Free Period"]
+    let subjects = ["English", "Social Studies", "Math", "Physical Education", "Science", "Visual and Performing Arts", "World Language", "General Electives", "ROP", "Sport", "Free Period"]
     var classes = [String?]()
     var buttons = [UIButton]()
     var classLabels = [UILabel]()
@@ -302,7 +301,7 @@ class PickTeachersViewController: UIViewController {
                         
                     }
                     vc.teacherObjects = preparedArray
-                case "English", "History", "Math", "Physical Education", "Science", "Visual and Performing Arts", "World Language":
+                case "English", "Social Studies", "Math", "Physical Education", "Science", "Visual and Performing Arts", "World Language", "History":
                     var preparedArray = [Teachers]()
                     let subjectGroup = subjectsDictionary[subject.uppercased()]
                     for teachers in subjectGroup! {

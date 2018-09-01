@@ -214,15 +214,11 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
                                             game.sport = sport
                                             if let date = parsedInfo["when"] as? String {
                                               
-                                                if #available(iOS 11.0, *) {
-                                                      let formatter = ISO8601DateFormatter()
-                                                    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-                                                    game.time = formatter.date(from: date) ?? Date.distantPast
-                                                } else {
+                                               
                                                     let formatter = DateFormatter()
                                                     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
                                                     game.time = formatter.date(from: date) ?? Date.distantPast
-                                                }
+                                                
                                                 
                                             }
                                             if let opponent = parsedInfo["other"] as? String {

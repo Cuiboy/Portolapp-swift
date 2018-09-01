@@ -192,9 +192,13 @@ class PickClassesViewController: UIViewController {
             prevButton.isHidden = false
         }
         if isPageEditing {
-            print(periods.count)
             for i in 0...classLabels.count - 1 {
-                classLabels[i].text = periods[i]
+                if periods[i]?.uppercased() == "HISTORY" {
+                    classLabels[i].text = "SOCIAL STUDIES"
+                    continue
+                } else {
+                    classLabels[i].text = periods[i]?.uppercased()
+                }
             }
         }
     }

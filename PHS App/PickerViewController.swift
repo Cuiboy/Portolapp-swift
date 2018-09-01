@@ -28,7 +28,7 @@ class PickerViewController: UIViewController {
         if currentSelectedValue != nil {
               selectedItem = currentSelectedValue!
             switch currentSelectedValue {
-            case "English", "History", "Math", "Physical Education", "Science", "Sport", "Free Period":
+            case "English", "Social Studies", "Math", "Physical Education", "Science", "Sport", "Free Period":
                 performSegue(withIdentifier: "backToClass", sender: nil)
             case "Visual and Performing Arts", "World Language", "General Electives", "ROP":
                 performSegue(withIdentifier: "detailClass", sender: nil)
@@ -40,7 +40,7 @@ class PickerViewController: UIViewController {
     
    
     
-    let classes = ["English", "History", "Math", "Physical Education", "Science", "Visual and Performing Arts", "World Language", "General Electives", "ROP", "Sport", "Free Period"]
+    let classes = ["English", "Social Studies", "Math", "Physical Education", "Science", "Visual and Performing Arts", "World Language", "General Electives", "ROP", "Sport", "Free Period"]
     
     var presentationType = PresentationType.numbers(0, 0)
     var selectedItem: String?

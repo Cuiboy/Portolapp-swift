@@ -47,8 +47,8 @@
 		F016C23F212BAF7300890DE3 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C23E212BAF7300890DE3 /* Games.swift */; };
 		F016C241212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */; };
 		F0378900212D4C7B006DEBCE /* my_glowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */; };
-		F038F662212F6C0B0070ED1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F038F661212F6C0B0070ED1D /* GoogleService-Info.plist */; };
 		F03A208E211F7CCF00BD086F /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A208D211F7CCF00BD086F /* CheckInternet.swift */; };
+		F043CEC7213B3A7200312B56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F043CEC6213B3A7200312B56 /* GoogleService-Info.plist */; };
 		F04F237921142F8900513EC8 /* my_configureTopLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237821142F8900513EC8 /* my_configureTopLabel.swift */; };
 		F04F237B2114EF9C00513EC8 /* my_fadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */; };
 		F04F237D2115565000513EC8 /* my_UTCTimeDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */; };
@@ -215,8 +215,8 @@
 		F016C23E212BAF7300890DE3 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingGamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_glowAnimation.swift; sourceTree = "<group>"; };
-		F038F661212F6C0B0070ED1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F03A208D211F7CCF00BD086F /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		F043CEC6213B3A7200312B56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F04F237821142F8900513EC8 /* my_configureTopLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_configureTopLabel.swift; sourceTree = "<group>"; };
 		F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_fadeIn.swift; sourceTree = "<group>"; };
 		F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_UTCTimeDifference.swift; sourceTree = "<group>"; };
@@ -468,8 +468,8 @@
 				F06EDD3C21054AF200297B8B /* Assets.xcassets */,
 				F06EDD3E21054AF200297B8B /* LaunchScreen.storyboard */,
 				F06EDD4121054AF200297B8B /* Info.plist */,
+				F043CEC6213B3A7200312B56 /* GoogleService-Info.plist */,
 				F0B26CEB2136565C00E592B7 /* PHS_App.xcdatamodeld */,
-				F038F661212F6C0B0070ED1D /* GoogleService-Info.plist */,
 			);
 			path = "PHS App";
 			sourceTree = "<group>";
@@ -627,7 +627,7 @@
 				F06EDD2D21054AF100297B8B /* Resources */,
 				F0F583B321210F8A0046A837 /* Embed Frameworks */,
 				34A255E5A7D4E54EC6488285 /* [CP] Embed Pods Frameworks */,
-				F0B26CEA2136398100E592B7 /* ShellScript */,
+				F043CEC5213B38FB00312B56 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -745,7 +745,6 @@
 				F06EDD4021054AF200297B8B /* LaunchScreen.storyboard in Resources */,
 				F06EDDA021054C0300297B8B /* Heebo-Black.ttf in Resources */,
 				F06EDDA121054C0300297B8B /* Heebo-Bold.ttf in Resources */,
-				F038F662212F6C0B0070ED1D /* GoogleService-Info.plist in Resources */,
 				F06EDD9721054C0300297B8B /* Lato-Black.ttf in Resources */,
 				F06EDDA321054C0300297B8B /* Heebo-ExtraBold.ttf in Resources */,
 				F016C235212AB75600890DE3 /* MyTeachersTableViewCell.xib in Resources */,
@@ -755,6 +754,7 @@
 				F06EDD3D21054AF200297B8B /* Assets.xcassets in Resources */,
 				F06EDDA521054C0300297B8B /* Heebo-Light.ttf in Resources */,
 				F06EDD3821054AF100297B8B /* Main.storyboard in Resources */,
+				F043CEC7213B3A7200312B56 /* GoogleService-Info.plist in Resources */,
 				F05BE2FB211185AC00E429F2 /* date cases in Resources */,
 				F06EDDA221054C0300297B8B /* Heebo-Regular.ttf in Resources */,
 				F06EDD9E21054C0300297B8B /* Heebo-Thin.ttf in Resources */,
@@ -853,12 +853,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F0B26CEA2136398100E592B7 /* ShellScript */ = {
+		F043CEC5213B38FB00312B56 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputPaths = (
 			);

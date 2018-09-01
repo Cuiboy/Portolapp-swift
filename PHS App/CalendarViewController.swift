@@ -84,6 +84,8 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
         let endDate = formatter.date(from: "2019 06 30")!
         dateRange = calendarView.generateDateRange(from: startDate, to: endDate)
         configureDayDetail(withDate: Date().noon)
+        calendarView.scrollToDate(Date(), animateScroll: false)
+
       
     }
    
@@ -128,6 +130,10 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
       
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if calendarView.visibleDates().indates.first!.date < dateRange.first! {
@@ -136,7 +142,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
             leftArrow.isHidden = false
         }
         
-        calendarView.scrollToDate(Date().noon)
+      
     }
     
    

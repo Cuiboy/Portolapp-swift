@@ -497,9 +497,14 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             if request.count > 0 {
                 let object = request.first!
                 myClasses = [object.period1, object.period2, object.period3, object.period4, object.period5, object.period6, object.period7, object.period8]
-                print(myClasses)
+                for i in 0...myClasses.count - 1 {
+                    if myClasses[i] == "History"{
+                        myClasses[i] = "Social Studies"
+                    }
+                }
+             
                 classesToDisplay = myClasses.filter { $0 != "Free Period" && $0 != "Sports" && $0 != "Sport" }
-                print(classesToDisplay)
+               
             } else {
                 myClasses = []
                 classesToDisplay = []
@@ -837,9 +842,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func skipFromSecondScreen(segue: UIStoryboardSegue) {
         if segue.identifier == "skipFromSecondScreen" {
             print("skipped from second page")
-            myClasses = []
-            classesToDisplay = []
-            myTeachers = []
+        
         }
     }
     
@@ -847,17 +850,6 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "unwindToTeacherPage" {
             if let vc = segue.source as? PickTeachersViewController {
                 
-//                let savingClasses = MyClasses(context: PersistentService.context)
-//
-//                savingClasses.period1 = vc.classes[0]
-//                savingClasses.period2 = vc.classes[1]
-//                savingClasses.period3 = vc.classes[2]
-//                savingClasses.period4 = vc.classes[3]
-//                savingClasses.period5 = vc.classes[4]
-//                savingClasses.period6 = vc.classes[5]
-//                savingClasses.period7 = vc.classes[6]
-//                savingClasses.period8 = vc.classes[7]
-//                PersistentService.saveContext()
                 let classesFetchrequest: NSFetchRequest<MyClasses> = MyClasses.fetchRequest()
                 do {
                     let request = try PersistentService.context.fetch(classesFetchrequest)
@@ -884,7 +876,9 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                     let request = try PersistentService.context.fetch(teacherFetchrequest)
                     storedTeachers = request
                 } catch {
+                    
                     }
+                
                 for i in 0...7 {
                     myClasses.append(vc.classes[i])
                     storedTeachers[i].setValue(Int16(i + 1), forKey: "period")
