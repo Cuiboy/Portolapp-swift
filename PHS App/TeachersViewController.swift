@@ -344,8 +344,18 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             }
             
             let newRequest = try PersistentService.context.fetch(fetchRequest)
+            for detailRequest in newRequest {
+                if detailRequest.subject1 == "History"  {
+                    detailRequest.setValue("Social Studies", forKey: "subject1")
+                }
+                if detailRequest.subject2 == "History" {
+                    detailRequest.setValue("Social Studies", forKey: "subject2")
+                }
+            }
+            PersistentService.saveContext()
             
-            savedTeachers = newRequest
+            let finalRequest = try PersistentService.context.fetch(fetchRequest)
+            savedTeachers = finalRequest
            
             
             
