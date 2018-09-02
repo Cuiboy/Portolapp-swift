@@ -244,10 +244,10 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-l2-8To">
-                                <rect key="frame" x="48" y="257.5" width="224" height="73"/>
+                                <rect key="frame" x="48" y="264" width="224" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="73.333333333333314" id="HIB-Ny-Zas"/>
+                                    <constraint firstAttribute="width" secondItem="HMN-l2-8To" secondAttribute="height" multiplier="224:60" id="EjT-uN-e3C"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ax9-FD-v1u">
@@ -1381,7 +1381,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oK2-pN-jw5">
-                                                                    <rect key="frame" x="16" y="24.5" width="28" height="28"/>
+                                                                    <rect key="frame" x="16" y="26.5" width="28" height="28"/>
                                                                     <color key="backgroundColor" red="0.41960784313725491" green="0.25098039215686274" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="28" id="kr2-tp-sg9"/>
@@ -1394,13 +1394,13 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0P-0H-Wrq">
-                                                                    <rect key="frame" x="10" y="28.5" width="40" height="20"/>
+                                                                    <rect key="frame" x="10" y="30.5" width="40" height="20"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                     <color key="textColor" red="0.41960784313725491" green="0.25098039215686274" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhC-aZ-RQs">
-                                                                    <rect key="frame" x="27" y="70" width="5.5" height="6"/>
+                                                                    <rect key="frame" x="27" y="74" width="5.5" height="6"/>
                                                                     <color key="backgroundColor" red="0.396078431372549" green="0.25882352941176473" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="FhC-aZ-RQs" secondAttribute="height" multiplier="1:1" id="1ge-se-O0r"/>

@@ -77,19 +77,8 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                     for view in subviews {
                         view.alpha = 0
                     }
-                    addCardView.backgroundColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
-                    addCardView.layer.cornerRadius = addCardView.bounds.height / 2
-                    addCardLabel.bounds = CGRect(x: 0, y: 0, width: addCardView.frame.width.barRelativeToWidth, height: addCardView.frame.height.barRelativeToWidth)
-                    addCardLabel.center = CGPoint(x: addCardView.frame.width.barRelativeToWidth / 2, y: addCardView.frame.height.relativeToWidth / 2)
-                    addCardLabel.text = "FILL IN YOUR INFO"
-                    addCardLabel.textAlignment = .center
-                    addCardLabel.font = UIFont(name: "Lato-Bold", size: CGFloat(17).relativeToWidth)
-                    addCardLabel.textColor = UIColor.white
-                    addCardView.addSubview(addCardLabel)
-                    addCardLabel.my_dropShadow()
-                    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addCardTapped))
-                    gestureRecognizer.delegate = self
-                    addCardView.addGestureRecognizer(gestureRecognizer)
+                
+                
                 }
             
                 
@@ -98,6 +87,22 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
          catch {
             
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        addCardView.backgroundColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
+        addCardView.layer.cornerRadius = addCardView.bounds.height / 2
+        addCardLabel.bounds = CGRect(x: 0, y: 0, width: addCardView.frame.width, height: addCardView.frame.height)
+        addCardLabel.center = CGPoint(x: addCardView.frame.width.relativeToWidth / 2, y: addCardView.frame.height.relativeToWidth / 2)
+        addCardLabel.text = "FILL IN YOUR INFO"
+        addCardLabel.textAlignment = .center
+        addCardLabel.font = UIFont(name: "Lato-Bold", size: CGFloat(17).relativeToWidth)
+        addCardLabel.textColor = UIColor.white
+        addCardView.addSubview(addCardLabel)
+        addCardLabel.my_dropShadow()
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addCardTapped))
+        gestureRecognizer.delegate = self
+        addCardView.addGestureRecognizer(gestureRecognizer)
     }
     
    
