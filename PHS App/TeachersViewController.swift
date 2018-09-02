@@ -533,14 +533,8 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @objc func fillInTapped() {
-      
-            if myClasses.count == 0 {
                 performSegue(withIdentifier: "fillClasses", sender: nil)
-            } else {
-                performSegue(withIdentifier: "fillTeachers", sender: nil)
-            }
-            
-      
+
     }
     
     
@@ -621,9 +615,9 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         coachesTableView.register(UINib(nibName: "SubjectsExpandedTableViewCell", bundle: nil), forCellReuseIdentifier: SubjectsExpandedTableViewCell.ID)
         
         
-        noTeachersView.backgroundColor = UIColor.white
-        fillTeachersButton.bounds = CGRect(x: 0, y: 0, width: CGFloat(250).relativeToWidth, height: CGFloat(50).relativeToWidth)
-        fillTeachersButton.center = CGPoint(x: UIScreen.main.bounds.midX, y: noTeachersView.bounds.height / 2  - CGFloat(30).relativeToWidth)
+   
+        fillTeachersButton.frame = CGRect(x: 0, y: 0, width: CGFloat(250).relativeToWidth, height: CGFloat(50).relativeToWidth)
+        fillTeachersButton.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.height / 2 - CGFloat(100).relativeToWidth)
         fillTeachersButton.backgroundColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
         fillTeachersButton.layer.cornerRadius = CGFloat(25).relativeToWidth
         fillInLabel.bounds = CGRect(x: 0, y: 0, width: fillTeachersButton.bounds.width, height: fillTeachersButton.bounds.height)
@@ -635,7 +629,6 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         fillTeachersButton.addSubview(fillInLabel)
         fillTeachersButton.my_dropShadow()
         noTeachersView.addSubview(fillTeachersButton)
-        view.addSubview(noTeachersView)
         
         myTeachersTableView.delegate = self
         myTeachersTableView.dataSource = self
@@ -813,18 +806,11 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fillTeachers" {
-            if let vc = segue.destination as? PickTeachersViewController {
-                vc.isFreshLaunch = false
-                vc.isSecondScreen = false
-                vc.classes = myClasses
-                vc.isPrevButtonHidden = true
-
-            }
-        } else if segue.identifier == "fillClasses" {
+        if segue.identifier == "fillClasses" {
             if let vc = segue.destination as? PickClassesViewController {
                 vc.isFreshLaunch = false
                 vc.isPrevButtonHidden = true
+                
             }
         } else if segue.identifier == "editClasses" {
             if let vc = segue.destination as? PickClassesViewController {
@@ -845,6 +831,34 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         
         }
     }
+    
+    @IBAction func newInfoSaved(segue: UIStoryboardSegue) {
+        if segue.identifier == "newInfoSaved" {
+            if let vc = segue.source as? PickTeachersViewController {
+                let newClasses = MyClasses(context: PersistentService.context)
+                newClasses.period1 = vc.classes[0]
+                newClasses.period2 = vc.classes[1]
+                newClasses.period3 = vc.classes[2]
+                newClasses.period4 = vc.classes[3]
+                newClasses.period5 = vc.classes[4]
+                newClasses.period6 = vc.classes[5]
+                newClasses.period7 = vc.classes[6]
+                newClasses.period8 = vc.classes[7]
+                PersistentService.saveContext()
+                for i in 0...7 {
+                    myClasses.append(vc.classes[i])
+                    let newTeacher = MyTeachers(context: PersistentService.context)
+                    newTeacher.period = Int16(i.advanced(by: 1))
+                    newTeacher.teacher = vc.myTeachers[i]
+                    PersistentService.saveContext()
+                    
+                }
+            }
+            fetchAndReload(withClasses: true)
+            navigationBar.topItem?.rightBarButtonItem = editButton
+        }
+    }
+    
     
     @IBAction func unwindToTeacherPage(segue: UIStoryboardSegue) {
         if segue.identifier == "unwindToTeacherPage" {

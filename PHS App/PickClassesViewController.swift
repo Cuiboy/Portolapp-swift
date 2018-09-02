@@ -107,7 +107,11 @@ class PickClassesViewController: UIViewController {
             if isFreshLaunch {
                 self.performSegue(withIdentifier: "nextToTeacher", sender: nil)
             } else {
-                self.performSegue(withIdentifier: "classToTeacher", sender: nil)
+                if isPageEditing {
+                    self.performSegue(withIdentifier: "editToTeacher", sender: nil)
+                } else {
+                    self.performSegue(withIdentifier: "classToTeacher", sender: nil)
+                }
             }
         }
     }
@@ -256,7 +260,15 @@ class PickClassesViewController: UIViewController {
                 vc.isFreshLaunch = false
                 vc.isSecondScreen = true
             }
+        } else if segue.identifier == "editToTeacher" {
+            if let vc = segue.destination as? PickTeachersViewController {
+                vc.classes = periods
+                vc.isPageEditing = true
+                vc.isFreshLaunch = false
+                vc.isSecondScreen = true
+            }
         }
+        
     }
    
  

@@ -146,10 +146,10 @@ class PickTeachersViewController: UIViewController {
                 performSegue(withIdentifier: "finishToWelcome", sender: nil)
 
             } else {
-                if isSecondScreen {
+                if  isPageEditing {
                     performSegue(withIdentifier: "unwindToTeacherPage", sender: nil)
                 } else {
-                    performSegue(withIdentifier: "dismissToTeacherPage", sender: nil)
+                    performSegue(withIdentifier: "newInfoSaved", sender: nil)
                 }
             }
         }
@@ -195,6 +195,8 @@ class PickTeachersViewController: UIViewController {
     
     var isFreshLaunch = true
     var isSecondScreen = false
+    var isPageEditing = false
+    
     
     func makeArrays() {
         buttons.append(p1Button)
