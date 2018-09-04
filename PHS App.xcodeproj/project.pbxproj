@@ -49,6 +49,7 @@
 		F0378900212D4C7B006DEBCE /* my_glowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */; };
 		F03A208E211F7CCF00BD086F /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A208D211F7CCF00BD086F /* CheckInternet.swift */; };
 		F043CEC7213B3A7200312B56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F043CEC6213B3A7200312B56 /* GoogleService-Info.plist */; };
+		F043CECA213E8A9B00312B56 /* my_isLongBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043CEC9213E8A9B00312B56 /* my_isLongBreak.swift */; };
 		F04F237921142F8900513EC8 /* my_configureTopLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237821142F8900513EC8 /* my_configureTopLabel.swift */; };
 		F04F237B2114EF9C00513EC8 /* my_fadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */; };
 		F04F237D2115565000513EC8 /* my_UTCTimeDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */; };
@@ -217,6 +218,7 @@
 		F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_glowAnimation.swift; sourceTree = "<group>"; };
 		F03A208D211F7CCF00BD086F /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		F043CEC6213B3A7200312B56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F043CEC9213E8A9B00312B56 /* my_isLongBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_isLongBreak.swift; sourceTree = "<group>"; };
 		F04F237821142F8900513EC8 /* my_configureTopLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_configureTopLabel.swift; sourceTree = "<group>"; };
 		F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_fadeIn.swift; sourceTree = "<group>"; };
 		F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_UTCTimeDifference.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				F0B1DD37211D0FD300901E31 /* my_adjustFontSize.swift */,
 				F080C5F92126851A00F32C6B /* my_parentViewController.swift */,
 				F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */,
+				F043CEC9213E8A9B00312B56 /* my_isLongBreak.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				F080C5F3212541F300F32C6B /* Teachers+CoreDataProperties.swift in Sources */,
 				F04F237D2115565000513EC8 /* my_UTCTimeDifference.swift in Sources */,
 				F016C223212A1B6100890DE3 /* PickerView.swift in Sources */,
+				F043CECA213E8A9B00312B56 /* my_isLongBreak.swift in Sources */,
 				F05BE3072114051600E429F2 /* my_boolToLabel.swift in Sources */,
 				F04F2386211598CF00513EC8 /* my_isSchoolDay.swift in Sources */,
 				F0B1DD2E211CB0EB00901E31 /* PersistentService.swift in Sources */,

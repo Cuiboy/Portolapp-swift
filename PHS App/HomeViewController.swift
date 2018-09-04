@@ -71,7 +71,11 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var showMoreButton: UIButton!
     @IBAction func buttonTapped(_ sender: Any) {
-        
+        print(specialDays.count)
+        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
+            print(request.count)
+          
+        })
 
     }
     
@@ -173,7 +177,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         eventTitle3.addGestureRecognizer(event3Gesture)
         showMoreButton.titleLabel!.font = showMoreButton.titleLabel!.font.withSize(showMoreButton.titleLabel!.font.pointSize.relativeToWidth.relativeToWidth)
         showMoreButton.imageEdgeInsets.left = showMoreButton.imageEdgeInsets.left.relativeToWidth.relativeToWidth
-        showMoreButton.isHidden = true 
+        showMoreButton.isHidden = false
     }
   
     func startAnimation() {
@@ -215,9 +219,18 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         
         super.viewDidLoad()
         initialize()
-        
+        let notificationScheduled = UserDefaults.standard.bool(forKey: "notificationScheduled")
+        if !notificationScheduled {
+            UserDefaults.standard.set(true, forKey: "notificationScheduled")
+            UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
+                if request.count > 0 {
+                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                }
+            })
+        }
         isAppConnected = CheckInternet.Connection()
         loadSpecialDays()
+        scheduleNotifications()
          getTodayType()
         DispatchQueue.global(qos: .background).async {
             self.fadeInViews(isAppOpened: self.isAppOpenedByUser, completion: {
@@ -227,6 +240,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                     UserDefaults.standard.set(true, forKey: "launchedBefore")
                     self.performSegue(withIdentifier: "welcome", sender: nil)
                 }
+              
             })
         }
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
@@ -253,21 +267,24 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
-                var dateComponents = DateComponents()
-                dateComponents.year = Calendar.current.component(.year, from: notificationDate)
-                dateComponents.month = Calendar.current.component(.month, from: notificationDate)
-                dateComponents.day = Calendar.current.component(.day, from: notificationDate)
-                dateComponents.hour = 20
-                dateComponents.minute = 0
-                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-                let content = UNMutableNotificationContent()
-                content.title = "Schedule Reminder"
-                content.body = my_notificationPrompt(type: type)
-                content.sound = UNNotificationSound.default()
-                
-                
-                let request = UNNotificationRequest(identifier: "\(date)\(type)", content: content, trigger: trigger)
-                center.add(request)
+                if date.isLongBreak == false {
+                    var dateComponents = DateComponents()
+                    dateComponents.year = Calendar.current.component(.year, from: notificationDate)
+                    dateComponents.month = Calendar.current.component(.month, from: notificationDate)
+                    dateComponents.day = Calendar.current.component(.day, from: notificationDate)
+                    dateComponents.hour = 20
+                    dateComponents.minute = 0
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                    let content = UNMutableNotificationContent()
+                    content.title = "Schedule Reminder"
+                    content.body = my_notificationPrompt(type: type)
+                    content.sound = UNNotificationSound.default()
+                    
+                    
+                    let request = UNNotificationRequest(identifier: "\(date.noon)\(type)", content: content, trigger: trigger)
+                    center.add(request)
+                }
+              
             } else {
                
             }
@@ -288,18 +305,20 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             if Date().tomorrow == days.date.noon {
                 tomorrow = days.type
-                if today != 20 && tomorrow != 0 {
-                    scheduleLocal(on: Date().tomorrow, with: days.type)
-                }
+            
             }
             if Date().nextMonday().noon == days.date.noon {
                 nextMonday = days.type
-                if today != 20 && nextMonday != 0 {
-                    scheduleLocal(on: Date().nextMonday(), with: days.type)
-                }
+                
             }
         }
     
+    }
+    
+    func scheduleNotifications() {
+        for days in specialDays {
+            scheduleLocal(on: days.date, with: days.type)
+        }
     }
     
     func fadeInViews(isAppOpened: Bool, completion: () -> ()) {

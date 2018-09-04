@@ -253,6 +253,8 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
                             
                         }
                     }
+                    schedule = schedule.sorted(by: { $0.time < $1.time } )
+                    upcomingGames = upcomingGames.sorted(by: {$0.time < $1.time})
                 }
               
                 
