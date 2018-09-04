@@ -177,7 +177,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         eventTitle3.addGestureRecognizer(event3Gesture)
         showMoreButton.titleLabel!.font = showMoreButton.titleLabel!.font.withSize(showMoreButton.titleLabel!.font.pointSize.relativeToWidth.relativeToWidth)
         showMoreButton.imageEdgeInsets.left = showMoreButton.imageEdgeInsets.left.relativeToWidth.relativeToWidth
-        showMoreButton.isHidden = false
+        showMoreButton.isHidden = true
     }
   
     func startAnimation() {
