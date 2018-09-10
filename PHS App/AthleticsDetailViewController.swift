@@ -76,72 +76,77 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("GameScheduleTableViewCell", owner: self, options: nil)?.first as! GameScheduleTableViewCell
-        cell.sport = sport
-        let game = schedule[indexPath.row]
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = Calendar.current.timeZone
-        dateFormatter.dateFormat = "M/dd"
-        cell.date.text = dateFormatter.string(from: game.time)
-        let weekFormatter = DateFormatter()
-        weekFormatter.timeZone = Calendar.current.timeZone
-        weekFormatter.dateFormat = "EEEE"
-        let weekdayString = weekFormatter.string(from: game.time).uppercased()
-        cell.weekday.text = weekdayString
-        let timeFormatter = DateFormatter()
-        timeFormatter.timeZone = Calendar.current.timeZone
-        timeFormatter.dateFormat = "h:mm a"
-        let timeString = timeFormatter.string(from: game.time)
-        cell.time.text = timeString
-        if game.isAway {
-            cell.isAway.text = "AWAY"
-        } else {
-            cell.isAway.text = "HOME"
-        }
-        cell.gameTime = game.time
-        cell.identifier = "\(sport)\(Calendar.current.component(.day, from: game.time))\(Calendar.current.component(.month, from: game.time))"
-        UNUserNotificationCenter.current().getPendingNotificationRequests { request in
-            for notification in request {
-                if cell.identifier == notification.identifier {
-                    cell.notification = true
-                    DispatchQueue.main.async {
-                        cell.bell.alpha = 1
-                        
-                }
-                    break
-                } else {
-                    cell.notification = false
-                    DispatchQueue.main.async {
-                        cell.bell.alpha = 0
+        if let cell = Bundle.main.loadNibNamed("GameScheduleTableViewCell", owner: self, options: nil)?.first as? GameScheduleTableViewCell {
+            cell.sport = sport
+            let game = schedule[indexPath.row]
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = Calendar.current.timeZone
+            dateFormatter.dateFormat = "M/dd"
+            cell.date.text = dateFormatter.string(from: game.time)
+            let weekFormatter = DateFormatter()
+            weekFormatter.timeZone = Calendar.current.timeZone
+            weekFormatter.dateFormat = "EEEE"
+            let weekdayString = weekFormatter.string(from: game.time).uppercased()
+            cell.weekday.text = weekdayString
+            let timeFormatter = DateFormatter()
+            timeFormatter.timeZone = Calendar.current.timeZone
+            timeFormatter.dateFormat = "h:mm a"
+            let timeString = timeFormatter.string(from: game.time)
+            cell.time.text = timeString
+            if game.isAway {
+                cell.isAway.text = "AWAY"
+            } else {
+                cell.isAway.text = "HOME"
+            }
+            cell.gameTime = game.time
+            cell.identifier = "\(sport)\(Calendar.current.component(.day, from: game.time))\(Calendar.current.component(.month, from: game.time))"
+            UNUserNotificationCenter.current().getPendingNotificationRequests { request in
+                for notification in request {
+                    if cell.identifier == notification.identifier {
+                        cell.notification = true
+                        DispatchQueue.main.async {
+                            cell.bell.alpha = 1
+                            
+                        }
+                        break
+                    } else {
+                        cell.notification = false
+                        DispatchQueue.main.async {
+                            cell.bell.alpha = 0
+                        }
                     }
                 }
             }
-        }
-        if game.homeScore != nil && game.awayScore != nil {
-            print("called")
-            cell.gameScheduleView.alpha = 0
-            cell.gameResultView.alpha = 1
-        cell.homeScore.text = String(game.homeScore!)
-        cell.awayScore.text = String(game.awayScore!)
-            if game.isAway {
-                cell.homeTeam.text = game.other?.uppercased()
-                cell.otherTeam = game.other ?? " "
-                cell.awayTeam.text = "PORTOLA"
+            if game.homeScore != nil && game.awayScore != nil {
+                print("called")
+                cell.gameScheduleView.alpha = 0
+                cell.gameResultView.alpha = 1
+                cell.homeScore.text = String(game.homeScore!)
+                cell.awayScore.text = String(game.awayScore!)
+                if game.isAway {
+                    cell.homeTeam.text = game.other?.uppercased()
+                    cell.otherTeam = game.other ?? " "
+                    cell.awayTeam.text = "PORTOLA"
+                } else {
+                    cell.homeTeam.text = "PORTOLA"
+                    cell.otherTeam = game.other ?? " "
+                    cell.awayTeam.text = game.other?.uppercased()
+                }
+                
             } else {
-                cell.homeTeam.text = "PORTOLA"
+                cell.gameScheduleView.alpha = 1
+                cell.gameResultView.alpha = 0
+                cell.sendSubview(toBack: cell.gameResultView)
+                cell.awayTeamSchedule.text = game.other?.uppercased()
                 cell.otherTeam = game.other ?? " "
-                cell.awayTeam.text = game.other?.uppercased()
+                
             }
-            
+            return cell
         } else {
-            cell.gameScheduleView.alpha = 1
-            cell.gameResultView.alpha = 0
-            cell.sendSubview(toBack: cell.gameResultView)
-            cell.awayTeamSchedule.text = game.other?.uppercased()
-            cell.otherTeam = game.other ?? " "
-            
+            return UITableViewCell()
         }
-      return cell
+        
+       
     }
     
     var sport = String()

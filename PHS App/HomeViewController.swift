@@ -859,9 +859,17 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             for i in 0...schedule.count - 1 {
                 if schedule[i].UTC() >= Date() {
                     if let minutes = Calendar.current.dateComponents([.minute], from: Date(), to: schedule[i].UTC()).minute {
-
-                        loadTimeLeftLabel(text: String(minutes), size: 160)
-                        loadMinutesLabel(text: "MINUTES")
+                        if minutes == 0 {
+                            loadTimeLeftLabel(text: "<1", size: 160)
+                            loadMinutesLabel(text: "MINUTE")
+                        } else if minutes == 1 {
+                            loadTimeLeftLabel(text: String(minutes), size: 160)
+                            loadMinutesLabel(text: "MINUTE")
+                        } else {
+                            loadTimeLeftLabel(text: String(minutes), size: 160)
+                            loadMinutesLabel(text: "MINUTES")
+                        }
+                        
                             if let rawLabel = my_getStartEndPeriodLabel(type: today) {
                                 let rawLabelNumber = rawLabel[i - 1]
                                 label = rawLabelNumber.getPeriodLabel()

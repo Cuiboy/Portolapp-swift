@@ -14,6 +14,8 @@ import ExpandableCell
 
  var fetchedTeachersCount = 0
 var fetchedCoachesCount = 0
+
+
  func fetchTeachers() {
         var id = Int32()
         var first = String()
@@ -745,7 +747,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                 }
                 cell.subject.font = cell.subject.font.withSize(CGFloat(16).relativeToWidth.relativeToWidth)
                 
-                cell.initialsLabel.text = "\(Array(teacher.first!)[0])\(Array(teacher.last!)[0])"
+                cell.initialsLabel.text = "\(Array(teacher.first ?? "First")[0])\(Array(teacher.last ?? "First")[0])"
                 cell.initialsLabel.font = cell.initialsLabel.font.withSize(CGFloat(19).relativeToWidth)
                 
                 return cell
@@ -753,8 +755,8 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         } else if tableView == adminTableView {
             let admin = adminRows[indexPath.row]
             let role = adminDictionary[adminRows[indexPath.row]]
-            cell.first = admin.first!
-            cell.last = admin.last!
+            cell.first = admin.first ?? "First"
+            cell.last = admin.last ?? "Last"
             cell.gender = admin.gender
             cell.name.text = "\(admin.first?.uppercased() ?? "") \(admin.last?.uppercased() ?? "")"
             cell.name.font = cell.name.font.withSize(CGFloat(16).relativeToWidth)
@@ -770,11 +772,16 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             let myTeacher = myTeachers[indexPath.row]
             if myTeacher.teacher != nil {
                 let period = myTeacher.period
-                myCell.first = myTeacher.teacher!.first!
-                myCell.last = myTeacher.teacher!.last!
-                myCell.gender = myTeacher.teacher!.gender
-                myCell.initialsLabel.text = "\(Array(myCell.first)[0])\(Array(myCell.last)[0])"
-                myCell.teacherLabel.text = "\(myCell.first.uppercased()) \(myCell.last.uppercased())"
+                if let teacherInfo = myTeacher.teacher {
+                    myCell.first = teacherInfo.first ?? "First"
+                    myCell.last = teacherInfo.last ?? "Last"
+                    myCell.gender = teacherInfo.gender
+                    myCell.initialsLabel.text = "\(Array(myCell.first)[0])\(Array(myCell.last)[0])"
+                    myCell.teacherLabel.text = "\(myCell.first.uppercased()) \(myCell.last.uppercased())"
+                }
+                
+                
+               
                 if classesToDisplay[indexPath.row] == nil {
                     myCell.periodLabel.text = ""
                     myCell.classLabel.text = "PERIOD \(period)"

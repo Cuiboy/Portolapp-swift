@@ -89,6 +89,9 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
       
     }
    
+    
+    
+    
     func configureDayDetail(withDate date: Date) {
         periodLabel.isHidden = false
         startEndLabel.isHidden = false
@@ -216,13 +219,14 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
   
     func configureDotsWhenScroll(view: JTAppleCalendarView?, visibleDates: DateSegmentInfo) {
         for days in visibleDates.monthDates {
-            let cell = view?.cellForItem(at: days.indexPath) as! CalendarCollectionViewCell
+            print(days.indexPath)
+            guard let cell = view?.cellForItem(at: days.indexPath) as? CalendarCollectionViewCell else {return}
             if cell.dotView.isHidden == false {
                 cell.dotView.backgroundColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
             }
         }
         for days in visibleDates.indates + visibleDates.outdates {
-            let cell = view?.cellForItem(at: days.indexPath) as! CalendarCollectionViewCell
+            guard let cell = view?.cellForItem(at: days.indexPath) as? CalendarCollectionViewCell else {return}
             if cell.dotView.isHidden == false {
                 cell.dotView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
             }
@@ -279,7 +283,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     }
     
     func calendarDidScroll(_ calendar: JTAppleCalendarView) {
-
         calendarView.deselectAllDates()
     }
     
