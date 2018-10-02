@@ -17,7 +17,37 @@ func myClassArray() -> [String?] {
             return []
         } else {
             let object = request.first
-            return [object?.period1, object?.period2, object?.period3, object?.period4, object?.period5, object?.period6, object?.period7, object?.period8]
+            if object?.period1 == "History" {
+                object?.setValue("Social Studies", forKey: "period1")
+            }
+            if object?.period2 == "History" {
+                object?.setValue("Social Studies", forKey: "period2")
+            }
+            if object?.period3 == "History" {
+                object?.setValue("Social Studies", forKey: "period3")
+            }
+            if object?.period4 == "History" {
+                object?.setValue("Social Studies", forKey: "period4")
+            }
+            if object?.period5 == "History" {
+                object?.setValue("Social Studies", forKey: "period5")
+            }
+            if object?.period6 == "History" {
+                object?.setValue("Social Studies", forKey: "period6")
+            }
+            if object?.period7 == "History" {
+                object?.setValue("Social Studies", forKey: "period7")
+            }
+            if object?.period8 == "History" {
+                object?.setValue("Social Studies", forKey: "period8")
+            }
+            
+            PersistentService.saveContext()
+            let finalRequest = try PersistentService.context.fetch(fetchRequest)
+            if let finalObject = finalRequest.first {
+                return [finalObject.period1, finalObject.period2, finalObject.period3, finalObject.period4, finalObject.period5, finalObject.period6, finalObject.period7, finalObject.period8]
+            }
+            
         }
     } catch {
         
@@ -27,13 +57,13 @@ func myClassArray() -> [String?] {
 
 extension Int {
     func getPeriodLabel() -> String {
-        print("CALLED", self)
+       
         switch self {
         case 1:
             if myClassArray().count == 0 {
                 return "PERIOD 1"
             } else {
-                print("RETURNING", myClassArray())
+               
                 return myClassArray()[0]?.uppercased() ?? "PERIOD 1"
             }
         case 2:

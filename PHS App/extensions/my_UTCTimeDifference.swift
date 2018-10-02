@@ -9,17 +9,9 @@
 import Foundation
 
 func UTCDifference() -> Int {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "H"
-    formatter.timeZone = TimeZone(abbreviation: "UTC")
-    let UTCstring = formatter.string(from: Date().noon)
-    let UTC = Int(UTCstring)!
     
-    let currentFormatter = DateFormatter()
-    currentFormatter.dateFormat = "H"
-    let currentString = currentFormatter.string(from: Date().noon)
-    let current = Int(currentString)!
+let offset = Double(TimeZone.current.secondsFromGMT())
     
-    return UTC - current
+    return Int(offset / 3600)
     
 }

@@ -93,7 +93,7 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     var isFreshLaunch = true
     var isPageEditing = false 
     
-    override func prefersHomeIndicatorAutoHidden() -> Bool {
+    override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
     override func viewDidLoad() {

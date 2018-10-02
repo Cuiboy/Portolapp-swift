@@ -33,7 +33,7 @@ class FirstScanViewController: RSCodeReaderViewController {
                     let ac = UIAlertController (title: "No Camera Usage Permission", message: "You have denied the app's camera usage, please go to settings to double-check camera usage permission.?", preferredStyle: .alert)
                     
                     let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
-                        guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                             return
                         }
                         

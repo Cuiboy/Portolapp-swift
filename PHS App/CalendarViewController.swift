@@ -44,7 +44,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
         calendarView.minimumInteritemSpacing = 0
         calendarView.minimumLineSpacing = 0
         calendarView.allowsMultipleSelection = false
-        calendarView.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        calendarView.sectionInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
        
         
         

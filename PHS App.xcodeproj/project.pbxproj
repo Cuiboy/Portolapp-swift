@@ -31,7 +31,6 @@
 		F016C21B21294E0B00890DE3 /* IDInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C21A21294E0B00890DE3 /* IDInputViewController.swift */; };
 		F016C21D2129696800890DE3 /* FirstScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C21C2129696800890DE3 /* FirstScanViewController.swift */; };
 		F016C21F212A0B0000890DE3 /* PickClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C21E212A0B0000890DE3 /* PickClassesViewController.swift */; };
-		F016C223212A1B6100890DE3 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C222212A1B6000890DE3 /* PickerView.swift */; };
 		F016C225212A1B9200890DE3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C224212A1B8B00890DE3 /* SwiftyJSON.swift */; };
 		F016C229212A1FC300890DE3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C228212A1FC300890DE3 /* PickerViewController.swift */; };
 		F016C22B212A3FC000890DE3 /* DetailPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C22A212A3FC000890DE3 /* DetailPickerViewController.swift */; };
@@ -46,11 +45,13 @@
 		F016C23D212B44E900890DE3 /* GameScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F016C23B212B44E900890DE3 /* GameScheduleTableViewCell.xib */; };
 		F016C23F212BAF7300890DE3 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C23E212BAF7300890DE3 /* Games.swift */; };
 		F016C241212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */; };
+		F030E67D215449FD00606B11 /* HomeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030E67C215449FD00606B11 /* HomeScrollViewController.swift */; };
 		F0378900212D4C7B006DEBCE /* my_glowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */; };
 		F03A208E211F7CCF00BD086F /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A208D211F7CCF00BD086F /* CheckInternet.swift */; };
 		F043CEC7213B3A7200312B56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F043CEC6213B3A7200312B56 /* GoogleService-Info.plist */; };
 		F043CECA213E8A9B00312B56 /* my_isLongBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043CEC9213E8A9B00312B56 /* my_isLongBreak.swift */; };
 		F043CECC2145D7C400312B56 /* My_Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043CECB2145D7C400312B56 /* My_Colors.swift */; };
+		F043CEF0214A275200312B56 /* my_removeDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043CEEF214A275200312B56 /* my_removeDuplicates.swift */; };
 		F04F237921142F8900513EC8 /* my_configureTopLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237821142F8900513EC8 /* my_configureTopLabel.swift */; };
 		F04F237B2114EF9C00513EC8 /* my_fadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */; };
 		F04F237D2115565000513EC8 /* my_UTCTimeDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */; };
@@ -119,6 +120,7 @@
 		F082015B212C9B5F007DEC1D /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F082015A212C9B5F007DEC1D /* MeTableViewController.swift */; };
 		F0820179212CD302007DEC1D /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0820178212CD302007DEC1D /* CalendarCollectionViewCell.swift */; };
 		F08201A1212D24AB007DEC1D /* specialDays.txt in Resources */ = {isa = PBXBuildFile; fileRef = F08201A0212D24AB007DEC1D /* specialDays.txt */; };
+		F082EC2C21635A5700678399 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F082EC2B21635A5700678399 /* JoinViewController.swift */; };
 		F0B1DD29211BF8AC00901E31 /* Today+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD27211BF8AC00901E31 /* Today+CoreDataClass.swift */; };
 		F0B1DD2A211BF8AC00901E31 /* Today+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD28211BF8AC00901E31 /* Today+CoreDataProperties.swift */; };
 		F0B1DD2E211CB0EB00901E31 /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD2D211CB0EB00901E31 /* PersistentService.swift */; };
@@ -133,6 +135,7 @@
 		F0B26CF52138110A00E592B7 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */; };
 		F0B26CF62138110A00E592B7 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */; };
 		F0B26CF82138878C00E592B7 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF72138878C00E592B7 /* NewsDetailViewController.swift */; };
+		F0CC681E215AA49F009D02F1 /* BellScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CC681D215AA49F009D02F1 /* BellScheduleViewController.swift */; };
 		F0DB35852120DF33000FFEE5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */; };
 		F0F583D121215F710046A837 /* IDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D021215F710046A837 /* IDCardViewController.swift */; };
 		F0F583D3212164EA0046A837 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D2212164EA0046A837 /* TeachersViewController.swift */; };
@@ -201,7 +204,6 @@
 		F016C21A21294E0B00890DE3 /* IDInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDInputViewController.swift; sourceTree = "<group>"; };
 		F016C21C2129696800890DE3 /* FirstScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScanViewController.swift; sourceTree = "<group>"; };
 		F016C21E212A0B0000890DE3 /* PickClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickClassesViewController.swift; sourceTree = "<group>"; };
-		F016C222212A1B6000890DE3 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerView.swift; path = "../../../../../../../Downloads/PickerView-master/Pod/Classes/PickerView.swift"; sourceTree = "<group>"; };
 		F016C224212A1B8B00890DE3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F016C228212A1FC300890DE3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		F016C22A212A3FC000890DE3 /* DetailPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPickerViewController.swift; sourceTree = "<group>"; };
@@ -216,11 +218,13 @@
 		F016C23B212B44E900890DE3 /* GameScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		F016C23E212BAF7300890DE3 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingGamesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F030E67C215449FD00606B11 /* HomeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollViewController.swift; sourceTree = "<group>"; };
 		F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_glowAnimation.swift; sourceTree = "<group>"; };
 		F03A208D211F7CCF00BD086F /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		F043CEC6213B3A7200312B56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F043CEC9213E8A9B00312B56 /* my_isLongBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_isLongBreak.swift; sourceTree = "<group>"; };
 		F043CECB2145D7C400312B56 /* My_Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Colors.swift; sourceTree = "<group>"; };
+		F043CEEF214A275200312B56 /* my_removeDuplicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_removeDuplicates.swift; sourceTree = "<group>"; };
 		F04F237821142F8900513EC8 /* my_configureTopLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_configureTopLabel.swift; sourceTree = "<group>"; };
 		F04F237A2114EF9C00513EC8 /* my_fadeIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_fadeIn.swift; sourceTree = "<group>"; };
 		F04F237C2115565000513EC8 /* my_UTCTimeDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_UTCTimeDifference.swift; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 		F082015A212C9B5F007DEC1D /* MeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		F0820178212CD302007DEC1D /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		F08201A0212D24AB007DEC1D /* specialDays.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = specialDays.txt; sourceTree = "<group>"; };
+		F082EC2B21635A5700678399 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		F0B1DD27211BF8AC00901E31 /* Today+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Today+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F0B1DD28211BF8AC00901E31 /* Today+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Today+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F0B1DD2D211CB0EB00901E31 /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
@@ -311,6 +316,7 @@
 		F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		F0B26CF72138878C00E592B7 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		F0C704C8212E7DD400C6F49C /* PHS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PHS App.entitlements"; sourceTree = "<group>"; };
+		F0CC681D215AA49F009D02F1 /* BellScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellScheduleViewController.swift; sourceTree = "<group>"; };
 		F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F0F583D021215F710046A837 /* IDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardViewController.swift; sourceTree = "<group>"; };
 		F0F583D2212164EA0046A837 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
@@ -468,6 +474,9 @@
 				F016C22E212A624A00890DE3 /* TeacherPickerViewController.swift */,
 				F016C21C2129696800890DE3 /* FirstScanViewController.swift */,
 				F016C230212A7E9900890DE3 /* WelcomeViewController.swift */,
+				F030E67C215449FD00606B11 /* HomeScrollViewController.swift */,
+				F0CC681D215AA49F009D02F1 /* BellScheduleViewController.swift */,
+				F082EC2B21635A5700678399 /* JoinViewController.swift */,
 				F016C1BC2128ECEC00890DE3 /* UnderConstructionView.xib */,
 				F06EDD3C21054AF200297B8B /* Assets.xcassets */,
 				F06EDD3E21054AF200297B8B /* LaunchScreen.storyboard */,
@@ -575,6 +584,7 @@
 				F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */,
 				F043CECB2145D7C400312B56 /* My_Colors.swift */,
 				F043CEC9213E8A9B00312B56 /* my_isLongBreak.swift */,
+				F043CEEF214A275200312B56 /* my_removeDuplicates.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -584,7 +594,6 @@
 			children = (
 				F03A208D211F7CCF00BD086F /* CheckInternet.swift */,
 				F016C224212A1B8B00890DE3 /* SwiftyJSON.swift */,
-				F016C222212A1B6000890DE3 /* PickerView.swift */,
 			);
 			path = "helper classes";
 			sourceTree = "<group>";
@@ -694,6 +703,7 @@
 				TargetAttributes = {
 					F06EDD2E21054AF100297B8B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -702,10 +712,12 @@
 					};
 					F06EDD4521054AF200297B8B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = F06EDD2E21054AF100297B8B;
 					};
 					F06EDD5021054AF200297B8B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = F06EDD2E21054AF100297B8B;
 					};
 				};
@@ -815,6 +827,7 @@
 				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/PickerView/PickerView.framework",
 				"${BUILT_PRODUCTS_DIR}/RSBarcodes_Swift/RSBarcodes_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
@@ -828,6 +841,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PickerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSBarcodes_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
@@ -914,6 +928,7 @@
 				F080C5FA2126851A00F32C6B /* my_parentViewController.swift in Sources */,
 				F0F583D3212164EA0046A837 /* TeachersViewController.swift in Sources */,
 				F04F23B12118C35100513EC8 /* my_localTime.swift in Sources */,
+				F030E67D215449FD00606B11 /* HomeScrollViewController.swift in Sources */,
 				F080C57A2123525800F32C6B /* ScanViewController.swift in Sources */,
 				F0DB35852120DF33000FFEE5 /* CollectionViewCell.swift in Sources */,
 				F04F237921142F8900513EC8 /* my_configureTopLabel.swift in Sources */,
@@ -926,7 +941,6 @@
 				F05BE309211411C400E429F2 /* my_isWeekend.swift in Sources */,
 				F080C5F3212541F300F32C6B /* Teachers+CoreDataProperties.swift in Sources */,
 				F04F237D2115565000513EC8 /* my_UTCTimeDifference.swift in Sources */,
-				F016C223212A1B6100890DE3 /* PickerView.swift in Sources */,
 				F043CECA213E8A9B00312B56 /* my_isLongBreak.swift in Sources */,
 				F05BE3072114051600E429F2 /* my_boolToLabel.swift in Sources */,
 				F04F2386211598CF00513EC8 /* my_isSchoolDay.swift in Sources */,
@@ -950,7 +964,9 @@
 				F016C1CA212910E000890DE3 /* User+CoreDataClass.swift in Sources */,
 				F04F2384211597DE00513EC8 /* my_minutesFromSchoolStart.swift in Sources */,
 				F016C1C42129100100890DE3 /* MyClasses+CoreDataClass.swift in Sources */,
+				F0CC681E215AA49F009D02F1 /* BellScheduleViewController.swift in Sources */,
 				F016C23C212B44E900890DE3 /* GameScheduleTableViewCell.swift in Sources */,
+				F043CEF0214A275200312B56 /* my_removeDuplicates.swift in Sources */,
 				F0B26CF021376FA200E592B7 /* my_notificationPrompt.swift in Sources */,
 				F05BE2F821117F8C00E429F2 /* my_getScheduleFromToday.swift in Sources */,
 				F0B26CF52138110A00E592B7 /* NewsTableViewCell.swift in Sources */,
@@ -986,6 +1002,7 @@
 				F016C241212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift in Sources */,
 				F0B26CF82138878C00E592B7 /* NewsDetailViewController.swift in Sources */,
 				F04F23AD2116D22600513EC8 /* my_UIViewFadeIn.swift in Sources */,
+				F082EC2C21635A5700678399 /* JoinViewController.swift in Sources */,
 				F05BE2E6210E739F00E429F2 /* my_daysAwayFromToday.swift in Sources */,
 				F0B1DD3C211E413400901E31 /* DayType+CoreDataProperties.swift in Sources */,
 				F05BE30B2114245300E429F2 /* my_nextMonday.swift in Sources */,
@@ -1179,7 +1196,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.epicteam.portolapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1202,7 +1219,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.epicteam.portolapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1223,7 +1240,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phsapp.PHS-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PHS App.app/PHS App";
 			};
@@ -1245,7 +1262,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phsapp.PHS-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PHS App.app/PHS App";
 			};
@@ -1266,7 +1283,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phsapp.PHS-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "PHS App";
 			};
@@ -1287,7 +1304,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phsapp.PHS-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "PHS App";
 			};

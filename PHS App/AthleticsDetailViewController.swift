@@ -136,7 +136,7 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
             } else {
                 cell.gameScheduleView.alpha = 1
                 cell.gameResultView.alpha = 0
-                cell.sendSubview(toBack: cell.gameResultView)
+                cell.sendSubviewToBack(cell.gameResultView)
                 cell.awayTeamSchedule.text = game.other?.uppercased()
                 cell.otherTeam = game.other ?? " "
                 
@@ -185,8 +185,8 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
         upcoming.font = upcoming.font.withSize(CGFloat(19).relativeToWidth)
       
         view.addSubview(scheduleView)
-        view.bringSubview(toFront: homeView)
-         view.bringSubview(toFront: segmentioView)
+        view.bringSubviewToFront(homeView)
+         view.bringSubviewToFront(segmentioView)
         performSelector(inBackground: #selector(loadSchedule), with: nil)
         let layout = self.upcomingView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumLineSpacing = -10
@@ -299,9 +299,18 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
                     }
                 } else {
                     if games.homeScore! > games.awayScore! {
-                        wins += 1
+                        if sport == "Girls Golf" || sport == "Boys Golf" {
+                            losses += 1
+                        } else {
+                            wins += 1
+                        }
                     } else if games.homeScore! < games.awayScore! {
-                        losses += 1
+                        if sport == "Girls Golf" || sport == "Boys Golf" {
+                            wins += 1
+                        } else {
+                            losses += 1
+                        }
+                        
                     } else {
                         if ties == nil {
                             ties = 1
@@ -328,9 +337,9 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
         segmentioView.valueDidChange = { segmentio, segmentIndex in
             switch segmentIndex {
             case 0:
-               self.view.sendSubview(toBack: self.scheduleView)
+               self.view.sendSubviewToBack(self.scheduleView)
             case 1:
-                self.view.bringSubview(toFront: self.scheduleView)
+                self.view.bringSubviewToFront(self.scheduleView)
 
             default:
                 break

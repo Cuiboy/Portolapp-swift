@@ -274,7 +274,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
 
-    override func prefersHomeIndicatorAutoHidden() -> Bool {
+    override var prefersHomeIndicatorAutoHidden: Bool {
     return true
     }
     
@@ -298,11 +298,11 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
         
         let gradeLayout = self.gradeCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         gradeLayout.minimumInteritemSpacing = CGFloat(20).relativeToWidth
-        gradeLayout.sectionInset = UIEdgeInsetsMake(0, CGFloat(30).relativeToWidth, 0, CGFloat(30).relativeToWidth)
+        gradeLayout.sectionInset = UIEdgeInsets.init(top: 0, left: CGFloat(30).relativeToWidth, bottom: 0, right: CGFloat(30).relativeToWidth)
     
         let houseLayout = self.houseCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         houseLayout.minimumInteritemSpacing = CGFloat(20).relativeToWidth
-        houseLayout.sectionInset = UIEdgeInsetsMake(0, 35, 0, 35)
+        houseLayout.sectionInset = UIEdgeInsets.init(top: 0, left: 35, bottom: 0, right: 35)
         houseLayout.minimumLineSpacing = CGFloat(20).relativeToWidth
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(screenTapped))

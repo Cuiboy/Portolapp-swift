@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
     func localTime() -> Date {
-        if let date = Calendar.current.date(byAdding: .hour, value: -UTCDifference(), to: self) {
+        if let date = Calendar.current.date(byAdding: .hour, value: UTCDifference(), to: self) {
              return date
         } else {
             return self

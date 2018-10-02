@@ -21,6 +21,7 @@ pod 'XLActionController/Twitter'
 pod 'XLActionController/Youtube'
 pod "SwiftyXMLParser"
 pod "SDWebImage"
+pod "PickerView"
 
 pod 'Firebase/Core'
 pod 'Fabric', '~> 1.7.11'

@@ -10,12 +10,17 @@ import Foundation
 
 extension Date {
     func minFromSchoolStart() -> Int {
-        let now = self
-       
-        let todaySchedule = my_getSchedule(type: today, date: self)
-        let start = todaySchedule!.first!
-        let interval = Calendar.current.dateComponents([.minute], from: start, to: now).minute
-        return interval!
+        if today == 20 || !self.isSchoolDay() {
+            return 1
+        } else {
+            let now = self
+            
+            let todaySchedule = my_getSchedule(type: today, date: self)
+            let start = todaySchedule!.first!
+            let interval = Calendar.current.dateComponents([.minute], from: start, to: now).minute
+            return interval!
+        }
+        
         
     }
 }

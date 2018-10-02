@@ -131,7 +131,7 @@ class PickClassesViewController: UIViewController {
   
     var periods = [String?]()
  
-    override func prefersHomeIndicatorAutoHidden() -> Bool {
+    override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
     

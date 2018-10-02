@@ -107,7 +107,7 @@ class GameScheduleTableViewCell: UITableViewCell {
                     let ac = UIAlertController (title: "Could not save evnent", message: "There was an error saving your event, go to settings to double-check calendar usage permission.?", preferredStyle: .alert)
                     
                     let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
-                        guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                             return
                         }
                         
@@ -143,7 +143,7 @@ class GameScheduleTableViewCell: UITableViewCell {
                 let content = UNMutableNotificationContent()
                 content.title = "\(self.sport) vs \(self.otherTeam)"
                 content.body = "\(self.sport)'s will play \(self.otherTeam) soon, go to the game and show your support!"
-                content.sound = UNNotificationSound.default()
+                content.sound = UNNotificationSound.default
             
                
                 let request = UNNotificationRequest(identifier: self.identifier, content: content, trigger: trigger)
@@ -152,7 +152,7 @@ class GameScheduleTableViewCell: UITableViewCell {
                 let ac = UIAlertController (title: "No Permission", message: "We do not ahve permission to send you notifications, would you like to change that in settings?", preferredStyle: .alert)
                 
                 let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
-                    guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                         return
                     }
                     
@@ -173,7 +173,7 @@ class GameScheduleTableViewCell: UITableViewCell {
     
     
     
-    func setAlertController(title: String, message: String?, preferredStyle: UIAlertControllerStyle, actionTitle: String) {
+    func setAlertController(title: String, message: String?, preferredStyle: UIAlertController.Style, actionTitle: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil))
         self.parentViewController?.present(ac, animated: true)

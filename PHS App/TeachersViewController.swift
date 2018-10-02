@@ -353,6 +353,9 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                 if detailRequest.subject2 == "History" {
                     detailRequest.setValue("Social Studies", forKey: "subject2")
                 }
+                if detailRequest.first == "Jennifer" && detailRequest.last == "Ochsner" {
+                    detailRequest.setValue("Jen", forKey: "first")
+                }
             }
             PersistentService.saveContext()
             
@@ -535,11 +538,11 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         segmentioView.selectedSegmentioIndex = 0
         
         if self.myTeachers.count == 0 {
-            self.view.bringSubview(toFront: self.noTeachersView)
+            self.view.bringSubviewToFront(self.noTeachersView)
         } else {
             
             myTeachers = myTeachers.filter { $0.teacher != nil }
-            self.view.bringSubview(toFront: self.myTeachersTableView)
+            self.view.bringSubviewToFront(self.myTeachersTableView)
         }
         
     }
@@ -559,21 +562,21 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
           
             case 0:
                 if self.myTeachers.count == 0 {
-                    self.view.bringSubview(toFront: self.noTeachersView)
+                    self.view.bringSubviewToFront(self.noTeachersView)
                 } else {
-                    self.view.bringSubview(toFront: self.myTeachersTableView)
+                    self.view.bringSubviewToFront(self.myTeachersTableView)
                 }
             case 1:
-                self.view.bringSubview(toFront: self.allTableView)
+                self.view.bringSubviewToFront(self.allTableView)
             case 2:
-                self.view.bringSubview(toFront: self.subjectsTableView)
+                self.view.bringSubviewToFront(self.subjectsTableView)
             case 3:
-                self.view.bringSubview(toFront: self.adminTableView)
+                self.view.bringSubviewToFront(self.adminTableView)
             case 4:
                 if self.displayCoaches {
-                    self.view.bringSubview(toFront: self.coachesTableView)
+                    self.view.bringSubviewToFront(self.coachesTableView)
                 } else {
-                    self.view.bringSubview(toFront: self.underConstructionView)
+                    self.view.bringSubviewToFront(self.underConstructionView)
                 }
             default:
                 print("more coming")
@@ -766,9 +769,6 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             return cell
         } else if tableView == myTeachersTableView {
             let myCell = Bundle.main.loadNibNamed("MyTeachersTableViewCell", owner: self, options: nil)?.first as! MyTeachersTableViewCell
-            print(myTeachers.count, 100)
-            print(myClasses.count, 101)
-            print(classesToDisplay.count, 102)
             let myTeacher = myTeachers[indexPath.row]
             if myTeacher.teacher != nil {
                 let period = myTeacher.period
@@ -976,7 +976,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         myTeachers = myTeachers.filter { $0.teacher != nil }
         classesToDisplay = myClasses.filter {$0 != "Free Period" && $0 != "Sport" && $0 != "Sports"}
         
-        view.bringSubview(toFront: myTeachersTableView)
+        view.bringSubviewToFront(myTeachersTableView)
         myTeachersTableView.reloadData()
         
 

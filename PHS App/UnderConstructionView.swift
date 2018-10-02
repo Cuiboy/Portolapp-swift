@@ -44,7 +44,7 @@ class UnderConstructionView: UIView, UIGestureRecognizerDelegate, MFMailComposeV
         buttonLabel.font = UIFont(name: "Lato-Light", size: CGFloat(18).relativeToWidth)
         buttonLabel.textColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
         buttonView.addSubview(buttonLabel)
-        buttonView.bringSubview(toFront: buttonLabel)
+        buttonView.bringSubviewToFront(buttonLabel)
         self.addSubview(buttonView)
         buttonView.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(joinUsTapped))

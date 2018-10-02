@@ -104,7 +104,7 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
             indicator.startAnimating()
             indicator.alpha = 1
             view.addSubview(indicator)
-            view.bringSubview(toFront: indicator)
+            view.bringSubviewToFront(indicator)
         }
         
         segmentioView.valueDidChange = { segmentio, segmentIndex in
@@ -162,7 +162,7 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    func setAlertController(title: String, message: String?, preferredStyle: UIAlertControllerStyle, actionTitle: String) {
+    func setAlertController(title: String, message: String?, preferredStyle: UIAlertController.Style, actionTitle: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil))
        present(ac, animated: true)

@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class PickTeachersViewController: UIViewController {
     @IBOutlet weak var yourTeachers: UILabel!
     @IBOutlet weak var prevButton: UIButton!
@@ -155,7 +156,7 @@ class PickTeachersViewController: UIViewController {
         }
     }
     
-    override func prefersHomeIndicatorAutoHidden() -> Bool {
+    override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
     

@@ -73,17 +73,27 @@ func defaultDaysStartEnd(dayType: dayType, date: Date?) -> [Date] {
 func DateFromTime(hour: Int, minute: Int) -> Date {
     var dateComponents = DateComponents()
     dateComponents.timeZone = Calendar.current.timeZone
-    dateComponents.year = Calendar.current.component(.year, from: Date())
-    dateComponents.month = Calendar.current.component(.month, from: Date())
-    dateComponents.day = Calendar.current.component(.day, from: Date())
-    dateComponents.hour = hour - UTCDifference()
-//    dateComponents.hour = hour
+    dateComponents.year = Calendar.current.component(.year, from: Date().noon)
+    dateComponents.month = Calendar.current.component(.month, from: Date().noon)
+    dateComponents.day = Calendar.current.component(.day, from: Date().noon)
+    
+   
+    
+    dateComponents.hour = hour + UTCDifference()
+  
     dateComponents.minute = minute
+    
+   
+    
     let userCalendar = Calendar.current
     
-    if let finalDateObject = userCalendar.date(from: dateComponents){
-       return finalDateObject
+    if let milDate = userCalendar.date(from: dateComponents)?.timeIntervalSince1970 {
+        return Date(timeIntervalSince1970: milDate)
+
     }
+    
+    
+    
    return Date()
 }
 
