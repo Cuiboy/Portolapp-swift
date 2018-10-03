@@ -108,20 +108,29 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
             let schedule = my_getSchedule(type: dayType, date: nil)
             let start = schedule!.first!
             let end = schedule!.last!
-            let hourStart = Calendar.current.component(.hour, from: start) + UTCDifference()
+            print(start, end, date)
+            let hourStart = Calendar.current.component(.hour, from: start)
             let minuteStart = Calendar.current.component(.minute, from: start)
-            let hourEnd = Calendar.current.component(.hour, from: end) + UTCDifference()
+            let hourEnd = Calendar.current.component(.hour, from: end)
             let minuteEnd = Calendar.current.component(.minute, from: end)
             var startComponents = DateComponents()
-            startComponents.hour = hourStart
+            startComponents.year = Calendar.current.component(.year, from: date)
+            startComponents.month = Calendar.current.component(.month, from: date)
+            startComponents.day = Calendar.current.component(.day, from: date)
+            startComponents.hour = hourStart - UTCDifference()
             startComponents.minute = minuteStart
             var endComponents = DateComponents()
-            endComponents.hour = hourEnd
+            endComponents.year = Calendar.current.component(.year, from: date)
+            endComponents.month = Calendar.current.component(.month, from: date)
+            endComponents.day = Calendar.current.component(.day, from: date)
+            endComponents.hour = hourEnd - UTCDifference()
             endComponents.minute = minuteEnd
             let formatter = DateFormatter()
-            formatter.dateFormat = "h:mm"
+            formatter.timeZone = Calendar.current.timeZone
+            formatter.dateFormat = "h:mm a"
             let newStart = Calendar.current.date(from: startComponents)!
             let newEnd = Calendar.current.date(from: endComponents)!
+            print(newStart, newEnd)
             startEndLabel.text = "\(formatter.string(from: newStart)) - \(formatter.string(from: newEnd))"
             
             

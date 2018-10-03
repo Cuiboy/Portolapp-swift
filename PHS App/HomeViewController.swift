@@ -267,8 +267,9 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        
+//        UNUserNotificationCenter.current().getPendingNotificationRequests { (request) in
+//            print(request)
+//        }
     }
     
     
@@ -652,7 +653,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                             formatter.locale = Calendar.current.locale
                             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
                             let UTCDate = formatter.date(from: dateGet) ?? Date.distantPast
-                            let currentDate = Calendar.current.date(byAdding: .hour, value: UTCDifference(), to: UTCDate) ?? Date.distantPast
+                            let currentDate = Calendar.current.date(byAdding: .hour, value: -UTCDifference(), to: UTCDate) ?? Date.distantPast
                             date = currentDate
                         
                     } else {
@@ -696,7 +697,9 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         if schoolEvents.count > 0 {
             schoolEvents = schoolEvents.filter {
                 $0.date.noon >= Date().noon
+                
             }
+            schoolEvents = schoolEvents.sorted(by: {$0.date < $1.date})
             for events in schoolEvents {
                 if let dayAway = my_daysAwayFromToday(date: events.date.noon) {
                     if dayAway == 0 {

@@ -30,6 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         UIImage(named: "calendar")!,
         UIImage(named: "pilot")!,
         UIImage(named: "pnn")!
+        
     ]
     
     let currentIcons = ["Teachers", "ID Card", "Athletics", "Call", "Calendar", "Portola Pilot"]

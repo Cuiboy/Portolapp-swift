@@ -46,10 +46,10 @@ func my_notificationPrompt(type: Int) -> String {
         return "Tomorrow is minimum day, you will have even periods. School will start at 8:00 and end at 12:28."
     case 11:
         //PSAT 9
-        return "Tomorrow is freshmen PSAT. Freshmen will start testing at 8:00and office hours will start at 10:54 for all students followed by even periods."
+        return "Tomorrow is freshmen PSAT. Freshmen will start testing at 8:00 and Sophomores & Juniors will start at 11:20. You will have odd periods."
     case 12:
         //PE testing
-        return "Tomorrow is freshmen PSAT. Freshmen will start testing at 8:30 and office hours will start at 10:54 for all students followed by odd periods."
+        return "Tomorrow is freshmen PE Testing. Freshmen will start testing at 8:30 and Sophomores & Juniors will start at 11:20. You will have odd periods."
         
     case 13:
         //first 2 days of school
@@ -66,13 +66,13 @@ func my_notificationPrompt(type: Int) -> String {
         return "Tomorrow is pre-testing schedule. School will start at 8:30, you will have period 1, 2, 3, 5 and 7."
     case 17:
         //Testing
-        return "Tomorrow is sophomores and juniors testing. School will start at 8:00 for sophomores and juniors, and office hours will start at 10:54 for all students."
+        return "Tomorrow is sophomores and juniors testing. School will start at 8:00 for sophomores and juniors, and 11:30 for freshmen."
     case 18:
         //CAASPP odd
-        return "Tomorrow is juniors CAASPP testing. School will start at 8:00 for juniors. Office hours start at 10:54 for all students followed by odd periods."
+        return "Tomorrow is juniors CAASPP testing. School will start at 8:00 for juniors and 11:20 for freshmen and sophomores. You will have odd periods."
     case 19:
         //CAASPP even
-        return "Tomorrow is juniors CAASPP testing. School will start at 8:00 for juniors. Office hours start at 10:54 for all students followed by even periods."
+        return "Tomorrow is juniors CAASPP testing. School will start at 8:00 for juniors and 11:20 for freshmen and sophomores. You will have even periods."
     case 20:
         //NO SCHOOL
         return "No school tomorrow! Enjoy your day off!"

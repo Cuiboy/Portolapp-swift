@@ -9,8 +9,8 @@
 import Foundation
 
  func my_daysAwayFromToday(date: Date) -> Int? {
-    let today = Calendar.current.startOfDay(for: Date())
-    let dateGet = Calendar.current.startOfDay(for: date)
+    let today = Date().noon
+    let dateGet = date.noon
     if let interval = Calendar.current.dateComponents([.day], from: today, to: dateGet).day {
         return interval
     } else {
