@@ -45,6 +45,8 @@
 		F016C23D212B44E900890DE3 /* GameScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F016C23B212B44E900890DE3 /* GameScheduleTableViewCell.xib */; };
 		F016C23F212BAF7300890DE3 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C23E212BAF7300890DE3 /* Games.swift */; };
 		F016C241212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */; };
+		F0252BE42165DB3500F9C554 /* HouseRankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0252BE32165DB3500F9C554 /* HouseRankCollectionViewCell.swift */; };
+		F0252BE62165EBBE00F9C554 /* Houses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0252BE52165EBBE00F9C554 /* Houses.swift */; };
 		F030E67D215449FD00606B11 /* HomeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030E67C215449FD00606B11 /* HomeScrollViewController.swift */; };
 		F0378900212D4C7B006DEBCE /* my_glowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */; };
 		F03A208E211F7CCF00BD086F /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A208D211F7CCF00BD086F /* CheckInternet.swift */; };
@@ -121,6 +123,7 @@
 		F0820179212CD302007DEC1D /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0820178212CD302007DEC1D /* CalendarCollectionViewCell.swift */; };
 		F08201A1212D24AB007DEC1D /* specialDays.txt in Resources */ = {isa = PBXBuildFile; fileRef = F08201A0212D24AB007DEC1D /* specialDays.txt */; };
 		F082EC2C21635A5700678399 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F082EC2B21635A5700678399 /* JoinViewController.swift */; };
+		F082EC2E2164B04200678399 /* HousePointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F082EC2D2164B04200678399 /* HousePointsViewController.swift */; };
 		F0B1DD29211BF8AC00901E31 /* Today+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD27211BF8AC00901E31 /* Today+CoreDataClass.swift */; };
 		F0B1DD2A211BF8AC00901E31 /* Today+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD28211BF8AC00901E31 /* Today+CoreDataProperties.swift */; };
 		F0B1DD2E211CB0EB00901E31 /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1DD2D211CB0EB00901E31 /* PersistentService.swift */; };
@@ -218,6 +221,8 @@
 		F016C23B212B44E900890DE3 /* GameScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		F016C23E212BAF7300890DE3 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		F016C240212BDF1300890DE3 /* UpcomingGamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingGamesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0252BE32165DB3500F9C554 /* HouseRankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRankCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0252BE52165EBBE00F9C554 /* Houses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Houses.swift; sourceTree = "<group>"; };
 		F030E67C215449FD00606B11 /* HomeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollViewController.swift; sourceTree = "<group>"; };
 		F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_glowAnimation.swift; sourceTree = "<group>"; };
 		F03A208D211F7CCF00BD086F /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
@@ -300,6 +305,7 @@
 		F0820178212CD302007DEC1D /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		F08201A0212D24AB007DEC1D /* specialDays.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = specialDays.txt; sourceTree = "<group>"; };
 		F082EC2B21635A5700678399 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		F082EC2D2164B04200678399 /* HousePointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousePointsViewController.swift; sourceTree = "<group>"; };
 		F0B1DD27211BF8AC00901E31 /* Today+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Today+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F0B1DD28211BF8AC00901E31 /* Today+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Today+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F0B1DD2D211CB0EB00901E31 /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
@@ -402,6 +408,8 @@
 				F0B26CF12137BA9500E592B7 /* NewsArticle.swift */,
 				F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */,
 				F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */,
+				F0252BE32165DB3500F9C554 /* HouseRankCollectionViewCell.swift */,
+				F0252BE52165EBBE00F9C554 /* Houses.swift */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -477,6 +485,7 @@
 				F030E67C215449FD00606B11 /* HomeScrollViewController.swift */,
 				F0CC681D215AA49F009D02F1 /* BellScheduleViewController.swift */,
 				F082EC2B21635A5700678399 /* JoinViewController.swift */,
+				F082EC2D2164B04200678399 /* HousePointsViewController.swift */,
 				F016C1BC2128ECEC00890DE3 /* UnderConstructionView.xib */,
 				F06EDD3C21054AF200297B8B /* Assets.xcassets */,
 				F06EDD3E21054AF200297B8B /* LaunchScreen.storyboard */,
@@ -957,6 +966,7 @@
 				F016C1C72129100100890DE3 /* MyTeachers+CoreDataProperties.swift in Sources */,
 				F04F237B2114EF9C00513EC8 /* my_fadeIn.swift in Sources */,
 				F016C1B32127643600890DE3 /* AthleticsViewController.swift in Sources */,
+				F0252BE42165DB3500F9C554 /* HouseRankCollectionViewCell.swift in Sources */,
 				F016C229212A1FC300890DE3 /* PickerViewController.swift in Sources */,
 				F06EDDB42108F84300297B8B /* MeViewController.swift in Sources */,
 				F0820155212C939E007DEC1D /* SchoolEvents.swift in Sources */,
@@ -968,6 +978,7 @@
 				F016C23C212B44E900890DE3 /* GameScheduleTableViewCell.swift in Sources */,
 				F043CEF0214A275200312B56 /* my_removeDuplicates.swift in Sources */,
 				F0B26CF021376FA200E592B7 /* my_notificationPrompt.swift in Sources */,
+				F082EC2E2164B04200678399 /* HousePointsViewController.swift in Sources */,
 				F05BE2F821117F8C00E429F2 /* my_getScheduleFromToday.swift in Sources */,
 				F0B26CF52138110A00E592B7 /* NewsTableViewCell.swift in Sources */,
 				F043CECC2145D7C400312B56 /* My_Colors.swift in Sources */,
@@ -1010,6 +1021,7 @@
 				F016C22B212A3FC000890DE3 /* DetailPickerViewController.swift in Sources */,
 				F06EDDA7210552B400297B8B /* HomeViewController.swift in Sources */,
 				F082015B212C9B5F007DEC1D /* MeTableViewController.swift in Sources */,
+				F0252BE62165EBBE00F9C554 /* Houses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

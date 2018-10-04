@@ -29,18 +29,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         UIImage(named: "call")!,
         UIImage(named: "calendar")!,
         UIImage(named: "pilot")!,
-        UIImage(named: "pnn")!
-        
+        UIImage(named: "pnn")!,
+        UIImage(named: "housePoints")!
     ]
     
-    let currentIcons = ["Teachers", "ID Card", "Athletics", "Call", "Calendar", "Portola Pilot"]
+    let currentIcons = ["Teachers", "ID Card", "Athletics", "Call", "Calendar", "Portola Pilot", "House Points"]
     let currentIconImages: [UIImage] = [
         UIImage(named: "teachers")!,
         UIImage(named: "id")!,
         UIImage(named: "athletics")!,
         UIImage(named: "call")!,
         UIImage(named: "calendar")!,
-        UIImage(named: "pilot")!
+        UIImage(named: "pilot")!,
+        UIImage(named: "housePoints")!
     ]
     
     override func viewWillAppear(_ animated: Bool) {
