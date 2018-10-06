@@ -250,7 +250,7 @@ class BellScheduleViewController: UIViewController {
     
     func configureHoliday() {
         noSchoolLabel.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: CGFloat(60).relativeToWidth)
-        noSchoolLabel.center = progressView.center
+        noSchoolLabel.center = CGPoint(x: self.view.center.x, y: self.view.center.y - CGFloat(40).relativeToWidth)
         noSchoolLabel.text = "NO SCHOOL TODAY"
         noSchoolLabel.font = UIFont(name: "Lato-Light", size: CGFloat(30).relativeToWidth)
         noSchoolLabel.textAlignment = .center

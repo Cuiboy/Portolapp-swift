@@ -79,7 +79,11 @@ class HousePointsViewController: UIViewController, UICollectionViewDelegate, UIC
             
         }) { (_) in
             self.configureGraph(isInitial: false)
-            self.housePointNumber.text = self.defineRank()
+            if self.userHouse != nil {
+                self.housePointNumber.text = self.defineRank()
+            } else {
+                 self.housePointNumber.text = "N/A"
+            }
         }
     }
     
@@ -136,6 +140,11 @@ class HousePointsViewController: UIViewController, UICollectionViewDelegate, UIC
                         present(ac, animated: true)
                      self.housePointNumber.text = "N/A"
                 }
+            } else {
+                let ac = UIAlertController(title: "No Information", message: "We don't know which house you are in. Please fill out your info under Tools -> ID Card.", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .cancel))
+                present(ac, animated: true)
+                self.housePointNumber.text = "N/A"
             }
             
         } catch {
