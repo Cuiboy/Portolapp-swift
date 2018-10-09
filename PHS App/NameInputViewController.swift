@@ -101,7 +101,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("called")
+  
         if collectionView == gradeCollectionView {
             return 3
         } else if collectionView == houseCollectionView {

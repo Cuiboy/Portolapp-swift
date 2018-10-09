@@ -118,7 +118,7 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
                 }
             }
             if game.homeScore != nil && game.awayScore != nil {
-                print("called")
+               
                 cell.gameScheduleView.alpha = 0
                 cell.gameResultView.alpha = 1
                 cell.homeScore.text = String(game.homeScore!)

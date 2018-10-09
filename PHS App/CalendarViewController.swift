@@ -108,7 +108,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
             let schedule = my_getSchedule(type: dayType, date: nil)
             let start = schedule!.first!
             let end = schedule!.last!
-            print(start, end, date)
+          
             let hourStart = Calendar.current.component(.hour, from: start)
             let minuteStart = Calendar.current.component(.minute, from: start)
             let hourEnd = Calendar.current.component(.hour, from: end)

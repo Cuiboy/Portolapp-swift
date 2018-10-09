@@ -190,15 +190,15 @@ class BellScheduleViewController: UIViewController {
     }
     
     func configureLabels() {
-        print(bellSchedule)
-        print(classesString)
+
+
         guard bellSchedule.count == classesString.count else {return}
         bellSchedule.append(my_getStartEndTimeFromToday(type: today, dayType: dayType.today, date: nil)[1])
         classesString.append("End Time")
         let top = progressView.frame.minY
         let bottom = progressView.frame.maxY
 
-  print(top, bottom)
+
         let scaleFactor = CGFloat((bellSchedule.count * 2) - 1)
         for i in 0...classesString.count - 1 {
             let label = UILabel()

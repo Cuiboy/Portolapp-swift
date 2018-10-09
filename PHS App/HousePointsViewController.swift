@@ -264,7 +264,6 @@ class HousePointsViewController: UIViewController, UICollectionViewDelegate, UIC
             }
         } else {
             UIView.animate(withDuration: 0.7, animations: {
-                print(herPointDiff, ornPointDiff, pegPointDiff, posPointDiff)
                     self.herHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(herPointDiff))
                     self.ornHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(ornPointDiff))
                     self.pegHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(pegPointDiff))

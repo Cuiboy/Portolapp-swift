@@ -274,7 +274,7 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
 
     func generateBarcode(string: String) {
         longIDTextField.text = string
-        print("GENERATING BARCODE")
+
         if let scannedCode = RSUnifiedCodeGenerator.shared.generateCode(string, machineReadableCodeObjectType: AVMetadataObject.ObjectType.code39.rawValue) {
             barImageView.bounds = CGRect(x: 0, y: 0, width: CGFloat(240).relativeToWidth, height: CGFloat(80).relativeToWidth)
             barImageView.center = scanIDView.center

@@ -24,10 +24,11 @@ enum dayType {
     var nextMonday = Int()
 
 func getDayType(date: Date) -> Int {
-    
+    print("THE DAY WE GOT IS \(date.tomorrow.noon)")
     var isSpecial = false
     for days in specialDays {
-        if days.date.noon == date.noon {
+        if days.date.noon == date.tomorrow.noon {
+            print("OMG IT IS \(days.date.noon) \(date.tomorrow.noon)")
             isSpecial = true
             return Int(days.type)
         }
@@ -365,6 +366,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             } else {
                 if minute != Calendar.current.component(.minute, from: Date()) {
                     if Date().isSchoolDay() {
+                 
                         if timeOfDay == .during {
                           
                             loadProgressingBar(isInitial: false)
@@ -921,6 +923,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                         }
                         
                             if let rawLabel = my_getStartEndPeriodLabel(type: today) {
+                                print(Date().getRelativeTime())
                                 let rawLabelNumber = rawLabel[i - 1]
                                 label = rawLabelNumber.getPeriodLabel()
                                 if let startEndLabel = my_getStartEndLabel(type: today) {

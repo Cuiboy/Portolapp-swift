@@ -16,13 +16,16 @@ enum relativeTime {
 
 extension Date {
     func getRelativeTime() -> relativeTime? {
-        let currentTime = self
+        let currentTime = self.localTime()
+        print("TODAY IS \(currentTime.isSchoolDay())")
+        print("LOCAL TIME IS \(currentTime)")
             if currentTime.isSchoolDay() {
+                
                 let type = getDayType(date: currentTime)
                 let schedule = my_getSchedule(type: type, date: currentTime)!
                 let start = schedule.first!
                 let end = schedule.last!
-            
+                print(currentTime, start, end)
                 if currentTime < start {
                    
                     return .before
