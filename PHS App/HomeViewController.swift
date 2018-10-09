@@ -28,7 +28,6 @@ func getDayType(date: Date) -> Int {
     var isSpecial = false
     for days in specialDays {
         if days.date.noon == date.tomorrow.noon {
-            print("OMG IT IS \(days.date.noon) \(date.tomorrow.noon)")
             isSpecial = true
             return Int(days.type)
         }
@@ -609,7 +608,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         if classLabels.count > 1 {
              distance = (endingPosition - startingPosition) / ( classLabels.count - 1 )
             for i in 0...( classLabels.count - 1 ) {
-                let classLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
+                let classLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
                 classLabel.center = CGPoint(x: startingPosition + distance * i, y: Int(self.view.bounds.midY) + Int(CGFloat(50).barRelativeToWidth))
                 classLabel.textAlignment = .center
                 classLabel.text = classLabels[i]

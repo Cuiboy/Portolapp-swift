@@ -17,8 +17,7 @@ enum relativeTime {
 extension Date {
     func getRelativeTime() -> relativeTime? {
         let currentTime = self.localTime()
-        print("TODAY IS \(currentTime.isSchoolDay())")
-        print("LOCAL TIME IS \(currentTime)")
+        
             if currentTime.isSchoolDay() {
                 
                 let type = getDayType(date: currentTime)

@@ -10,9 +10,9 @@ import Foundation
 
 extension Date {
     func isSchoolDay() -> Bool {
-        print("TODAY IS ACTUALLY \(self)")
+    
         let type = getDayType(date: self)
-        print("TODAY TYPE IS \(type)")
+
         if type == 20 {
             
             return false
