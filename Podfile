@@ -20,12 +20,13 @@ pod 'XLActionController/Tweetbot'
 pod 'XLActionController/Twitter'
 pod 'XLActionController/Youtube'
 pod "SwiftyXMLParser"
-pod "SDWebImage"
+# pod "SDWebImage"
 pod "PickerView"
 
 pod 'Firebase/Core'
 pod 'Fabric', '~> 1.7.11'
 pod 'Crashlytics', '~> 3.10.7'
+
 
   target 'PHS AppTests' do
     inherit! :search_paths

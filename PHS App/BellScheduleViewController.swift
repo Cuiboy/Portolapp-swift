@@ -77,7 +77,9 @@ class BellScheduleViewController: UIViewController {
         super.viewWillLayoutSubviews()
         progressView.layer.cornerRadius = progressView.bounds.width / 2
         progress.layer.cornerRadius = progress.bounds.height / 2
-        configureLabels()
+        if Date().isSchoolDay() {
+            configureLabels()
+        }
     }
     
     func initilize() {
@@ -195,8 +197,7 @@ class BellScheduleViewController: UIViewController {
         classesString.append("End Time")
         let top = progressView.frame.minY
         let bottom = progressView.frame.maxY
-//        let left = progressView.bounds.minX
-//        let right = progressView.bounds.maxX
+
   print(top, bottom)
         let scaleFactor = CGFloat((bellSchedule.count * 2) - 1)
         for i in 0...classesString.count - 1 {
