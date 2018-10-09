@@ -16,7 +16,7 @@ enum relativeTime {
 
 extension Date {
     func getRelativeTime() -> relativeTime? {
-        if let currentTime = Calendar.current.date(byAdding: .hour, value: UTCDifference(), to: self) {
+        let currentTime = self
             if currentTime.isSchoolDay() {
                 let type = getDayType(date: currentTime)
                 let schedule = my_getSchedule(type: type, date: currentTime)!
@@ -35,11 +35,10 @@ extension Date {
                 }
                 
             } else {
+               print(currentTime)
                 return nil
             }
-        } else {
-            return nil
-        }
+        
      
     }
 }

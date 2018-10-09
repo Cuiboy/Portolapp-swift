@@ -28,7 +28,11 @@ class HomeScrollViewController: UIViewController, UIPageViewControllerDelegate, 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        self.distanceConstant.constant = self.distanceConstant.constant.relativeToWidth
+        if self.distanceConstant.constant >= self.distanceConstant.constant.barRelativeToWidth {
+            self.distanceConstant.constant = self.distanceConstant.constant.relativeToWidth
+        } else {
+            self.distanceConstant.constant = self.distanceConstant.constant + CGFloat(20)
+        }
         
         
     }

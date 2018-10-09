@@ -83,7 +83,7 @@ class BellScheduleViewController: UIViewController {
     }
     
     func initilize() {
-        if today != 20 && Date().noon.isSchoolDay() {
+        if today != 20 && Date().isSchoolDay() {
             for i in 0...my_getSchedule(type: today, date: nil)!.count - 1 {
                 if i % 2 == 0 {
                     bellSchedule.append(my_getSchedule(type: today, date: nil)![i])

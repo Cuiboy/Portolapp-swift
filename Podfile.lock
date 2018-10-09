@@ -8,6 +8,9 @@ PODS:
     - FirebaseAnalytics (= 5.1.1)
   - Firebase/CoreOnly (5.6.0):
     - FirebaseCore (= 5.1.1)
+  - Firebase/Messaging (5.6.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (= 3.1.0)
   - FirebaseAnalytics (5.1.1):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -22,6 +25,11 @@ PODS:
   - FirebaseInstanceID (3.2.1):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
+  - FirebaseMessaging (3.1.0):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - GoogleUtilities/Reachability (~> 5.2)
+    - Protobuf (~> 3.1)
   - GoogleAppMeasurement (5.1.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
     - GoogleUtilities/MethodSwizzler (~> 5.2.0)
@@ -51,7 +59,8 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - PickerView (0.3.4)
-  - RSBarcodes_Swift (4.0.0)
+  - Protobuf (3.6.1)
+  - RSBarcodes_Swift (4.2.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
@@ -79,11 +88,12 @@ DEPENDENCIES:
   - ExpandableCell
   - Fabric (~> 1.7.11)
   - Firebase/Core
-  - JTAppleCalendar
+  - Firebase/Messaging
+  - JTAppleCalendar (~> 7.0)
   - PickerView
-  - RSBarcodes_Swift
-  - SDWebImage
-  - Segmentio
+  - RSBarcodes_Swift (~> 4.2.0)
+  - SDWebImage (~> 4.0)
+  - Segmentio (~> 3.0)
   - SwiftyXMLParser
   - TextFieldEffects
   - XLActionController
@@ -103,11 +113,13 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseInstanceID
+    - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleUtilities
     - JTAppleCalendar
     - nanopb
     - PickerView
+    - Protobuf
     - RSBarcodes_Swift
     - SDWebImage
     - Segmentio
@@ -123,18 +135,20 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 993577e91157feb40945abedd6ab346d8a4b6ac8
   FirebaseCore: cb9ee75e0894def766167c95a4d5a14b1c138269
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
+  FirebaseMessaging: f67b3719f520ee200da0e20ce577fe2bce0c01d0
   GoogleAppMeasurement: f7507b39b70ad0bd80b3d81518b2f43868974307
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
   JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PickerView: 7edcbbd008682d574eb42916d74a18ebd8dba109
-  RSBarcodes_Swift: b3e9801f448f50439f77ce7d0aeeb7aa4e9ebb19
+  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  RSBarcodes_Swift: 17663ab68e0126041ee2d6f9fd944a1137b8daf0
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
   SwiftyXMLParser: 8065da2e715e86aeba677a34fad8c252db5128bb
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
   XLActionController: 007868251c0eed70d649d06c1625259b73b3a600
 
-PODFILE CHECKSUM: 931fd72ea387a48e078d9af54f66b397f2f67411
+PODFILE CHECKSUM: 2dcc6f555a1e7fe093ab571beda822ee9b1954ed
 
 COCOAPODS: 1.5.3

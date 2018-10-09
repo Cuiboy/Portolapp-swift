@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F1E12B6725665E992A254F0AF7DB50EC"
+               BlueprintIdentifier = "582E3F750E87A09290A42466C4524680"
                BlueprintName = "SwiftyXMLParser"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SwiftyXMLParser.framework">
