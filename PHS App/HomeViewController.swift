@@ -24,7 +24,7 @@ enum dayType {
     var nextMonday = Int()
 
 func getDayType(date: Date) -> Int {
-    print("THE DAY WE GOT IS \(date.tomorrow.noon)")
+   
     var isSpecial = false
     for days in specialDays {
         if days.date.noon == date.tomorrow.noon {
@@ -231,6 +231,11 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
             })
         }
+        let clubKickoffScheduled = UserDefaults.standard.bool(forKey: "clubKickoff")
+        if !clubKickoffScheduled {
+            UserDefaults.standard.set(true, forKey: "clubKickoff")
+           scheduleKickoff()
+        }
         isAppConnected = CheckInternet.Connection()
         loadSpecialDays()
         scheduleNotifications()
@@ -299,6 +304,34 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
               
             } else {
                
+            }
+        }
+    }
+
+    func scheduleKickoff() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+             
+                    var dateComponents = DateComponents()
+                    dateComponents.year = 2018
+                    dateComponents.month = 10
+                    dateComponents.day = 11
+                dateComponents.hour = 11
+                    dateComponents.minute = 44
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                    let content = UNMutableNotificationContent()
+                    content.title = "Interested in Joining App Team Epic?"
+                    content.body = "Are you interesed in joining App Team Epic and work on the Portola App? Come check out our table at club kickoff if you have any questions!"
+                    content.sound = UNNotificationSound.default
+                    
+                    
+                    let request = UNNotificationRequest(identifier: "clubkickofflocalnotif", content: content, trigger: trigger)
+                    center.add(request)
+                print(request)
+                
+            } else {
+                
             }
         }
     }
@@ -922,7 +955,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                         }
                         
                             if let rawLabel = my_getStartEndPeriodLabel(type: today) {
-                                print(Date().getRelativeTime())
                                 let rawLabelNumber = rawLabel[i - 1]
                                 label = rawLabelNumber.getPeriodLabel()
                                 if let startEndLabel = my_getStartEndLabel(type: today) {
