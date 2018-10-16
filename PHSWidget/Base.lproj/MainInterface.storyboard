@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="PHSWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="VMB-es-6DZ">
+                                <rect key="frame" x="112.5" y="27.5" width="150" height="55"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="50"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCHOOL STARTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xTj-eg-qdC">
+                                <rect key="frame" x="0.0" y="7" width="375" height="21"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="u80-LE-32a">
+                                <rect key="frame" x="0.0" y="85" width="375" height="21"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="VMB-es-6DZ" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="1Ij-oi-WJX"/>
+                            <constraint firstItem="VMB-es-6DZ" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" multiplier="0.5" id="7Yi-v5-isj"/>
+                            <constraint firstItem="u80-LE-32a" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="Kgv-oM-qR9"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="u80-LE-32a" secondAttribute="bottom" constant="4" id="Vlk-02-cNi"/>
+                            <constraint firstItem="xTj-eg-qdC" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="YMc-RH-ZPn"/>
+                            <constraint firstItem="VMB-es-6DZ" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="0.4" id="a8F-Pi-iKf"/>
+                            <constraint firstItem="VMB-es-6DZ" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="dC7-nZ-4K7"/>
+                            <constraint firstItem="xTj-eg-qdC" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="7" id="hU1-kL-7o9"/>
+                            <constraint firstItem="xTj-eg-qdC" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="psN-Nq-QiD"/>
+                            <constraint firstItem="u80-LE-32a" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="yHx-ht-PPP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="110"/>
+                    <connections>
+                        <outlet property="endsLabel" destination="xTj-eg-qdC" id="3Tz-Gr-q03"/>
+                        <outlet property="minutesLabel" destination="u80-LE-32a" id="EMZ-aC-Ao5"/>
+                        <outlet property="timeLabel" destination="VMB-es-6DZ" id="BSK-WJ-QnY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="98.050974512743636"/>
+        </scene>
+    </scenes>
+</document>

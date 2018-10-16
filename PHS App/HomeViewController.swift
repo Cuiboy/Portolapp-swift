@@ -27,7 +27,7 @@ func getDayType(date: Date) -> Int {
    
     var isSpecial = false
     for days in specialDays {
-        if days.date.noon == date.tomorrow.noon {
+        if days.date.noon == date.noon {
             isSpecial = true
             return Int(days.type)
         }
@@ -71,11 +71,8 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var showMoreButton: UIButton!
     @IBAction func buttonTapped(_ sender: Any) {
-        print(specialDays.count)
-        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
-            print(request.count)
-          
-        })
+        
+        
 
     }
     
@@ -231,11 +228,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
             })
         }
-        let clubKickoffScheduled = UserDefaults.standard.bool(forKey: "clubKickoff")
-        if !clubKickoffScheduled {
-            UserDefaults.standard.set(true, forKey: "clubKickoff")
-           scheduleKickoff()
-        }
+       
         isAppConnected = CheckInternet.Connection()
         loadSpecialDays()
         scheduleNotifications()
@@ -308,33 +301,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
-    func scheduleKickoff() {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            if granted {
-             
-                    var dateComponents = DateComponents()
-                    dateComponents.year = 2018
-                    dateComponents.month = 10
-                    dateComponents.day = 11
-                dateComponents.hour = 11
-                    dateComponents.minute = 44
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-                    let content = UNMutableNotificationContent()
-                    content.title = "Interested in Joining App Team Epic?"
-                    content.body = "Are you interesed in joining App Team Epic and work on the Portola App? Come check out our table at club kickoff if you have any questions!"
-                    content.sound = UNNotificationSound.default
-                    
-                    
-                    let request = UNNotificationRequest(identifier: "clubkickofflocalnotif", content: content, trigger: trigger)
-                    center.add(request)
-                print(request)
-                
-            } else {
-                
-            }
-        }
-    }
+    
 
    
     
@@ -463,89 +430,89 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func configureWeekdays() {
       
-        joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
-        joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
-        joinButton.layer.borderColor = UIColor.white.cgColor
-        joinButton.layer.borderWidth = 2
-        joinButton.layer.cornerRadius = joinButton.bounds.height / 2
-        joinButton.clipsToBounds = true
-        view.addSubview(joinButton)
-        joinLabel.bounds = joinButton.bounds
-        joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
-        joinLabel.textAlignment = .center
-        joinLabel.textColor = UIColor.white
-        joinLabel.text = "JOIN US"
-        joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(25).relativeToWidth)
-        joinButton.addSubview(joinLabel)
-        let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
-        joinGesture.delegate = self
-        joinButton.addGestureRecognizer(joinGesture)
-        joinButton.alpha = 0 
-//        for i in 0...4 {
-//            let weekdayLabels = ["M", "T", "W", "T", "F"]
-//            let weekdayLabel = UILabel()
-//            weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
-//            weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
-//            weekdayLabel.textAlignment = .center
-//            weekdayLabel.text = weekdayLabels[i]
-//            weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
-//            weekdayLabel.textColor = UIColor.white
-//            weekdayLabel.my_dropShadow()
-//            weekdayLabelView.addSubview(weekdayLabel)
-//
-//        }
-//        view.addSubview(weekdayLabelView)
+//        joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
+//        joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
+//        joinButton.layer.borderColor = UIColor.white.cgColor
+//        joinButton.layer.borderWidth = 2
+//        joinButton.layer.cornerRadius = joinButton.bounds.height / 2
+//        joinButton.clipsToBounds = true
+//        view.addSubview(joinButton)
+//        joinLabel.bounds = joinButton.bounds
+//        joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
+//        joinLabel.textAlignment = .center
+//        joinLabel.textColor = UIColor.white
+//        joinLabel.text = "JOIN US"
+//        joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(25).relativeToWidth)
+//        joinButton.addSubview(joinLabel)
+//        let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
+//        joinGesture.delegate = self
+//        joinButton.addGestureRecognizer(joinGesture)
+//        joinButton.alpha = 0
+        for i in 0...4 {
+            let weekdayLabels = ["M", "T", "W", "T", "F"]
+            let weekdayLabel = UILabel()
+            weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
+            weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
+            weekdayLabel.textAlignment = .center
+            weekdayLabel.text = weekdayLabels[i]
+            weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
+            weekdayLabel.textColor = UIColor.white
+            weekdayLabel.my_dropShadow()
+            weekdayLabelView.addSubview(weekdayLabel)
+
+        }
+        view.addSubview(weekdayLabelView)
     }
 
     func configureWeekdayDots() {
-//        for i in 0 ... 4 {
-//             drawDots(withFill: false, loopNumber: i)
-//        }
-//         let weekToday = Calendar.current.component(.weekday, from: Date())
-//        if weekToday == 1 {
-//            view.addSubview(weekdayDots)
-//        } else if weekToday == 6  || weekToday == 7 {
-//         for i in 0...4 {
-//         drawDots(withFill: true, loopNumber: i)
-//            view.addSubview(weekdayDots)
-//            }
-//         } else {
-//         for i in 0...(weekToday - 2) {
-//         drawDots(withFill: true, loopNumber: i)
-//            view.addSubview(weekdayDots)
-//         }
-//
-//         }
+        for i in 0 ... 4 {
+             drawDots(withFill: false, loopNumber: i)
+        }
+         let weekToday = Calendar.current.component(.weekday, from: Date())
+        if weekToday == 1 {
+            view.addSubview(weekdayDots)
+        } else if weekToday == 6  || weekToday == 7 {
+         for i in 0...4 {
+         drawDots(withFill: true, loopNumber: i)
+            view.addSubview(weekdayDots)
+            }
+         } else {
+         for i in 0...(weekToday - 2) {
+         drawDots(withFill: true, loopNumber: i)
+            view.addSubview(weekdayDots)
+         }
+
+         }
         
     }
 
     func drawDots(withFill: Bool, loopNumber: Int) {
-//        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 30, height: 30))
-//        let img = renderer.image {
-//            ctx in
-//
-//            if withFill {
-//                ctx.cgContext.setFillColor(UIColor.white.cgColor)
-//            }
-//
-//            ctx.cgContext.setStrokeColor(UIColor.white.cgColor)
-//
-//            ctx.cgContext.setLineWidth(2)
-//            let rectangle = CGRect(x: 2.5, y: 2.5, width: 25, height: 25)
-//            ctx.cgContext.addEllipse(in: rectangle)
-//
-//            if withFill {
-//                ctx.cgContext.drawPath(using: .fillStroke)
-//            } else {
-//                ctx.cgContext.drawPath(using: .stroke)
-//            }
-//
-//        }
-//        let image = UIImageView(image: img)
-//        image.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * loopNumber, y: Int(self.view.bounds.height * 0.41))
-//        image.my_dropShadow()
-//
-//        weekdayDots.addSubview(image)
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 30, height: 30))
+        let img = renderer.image {
+            ctx in
+
+            if withFill {
+                ctx.cgContext.setFillColor(UIColor.white.cgColor)
+            }
+
+            ctx.cgContext.setStrokeColor(UIColor.white.cgColor)
+
+            ctx.cgContext.setLineWidth(2)
+            let rectangle = CGRect(x: 2.5, y: 2.5, width: 25, height: 25)
+            ctx.cgContext.addEllipse(in: rectangle)
+
+            if withFill {
+                ctx.cgContext.drawPath(using: .fillStroke)
+            } else {
+                ctx.cgContext.drawPath(using: .stroke)
+            }
+
+        }
+        let image = UIImageView(image: img)
+        image.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * loopNumber, y: Int(self.view.bounds.height * 0.41))
+        image.my_dropShadow()
+
+        weekdayDots.addSubview(image)
     }
     
     func configureBar() {
@@ -613,9 +580,9 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
          progressBar.my_setGradientBackground(colorOne: UIColor(red:0.89, green:0.62, blue:0.99, alpha:1.0), colorTwo: UIColor.white, inBounds: bound)
         if isInitial {
             numerator = CGFloat(Date().localTime().minFromSchoolStart())
-            print(numerator)
+          
              percentage = numerator / denominator
-            print(percentage)
+           
             progressBar.center = CGPoint(x: (barStartingPoint) + Int(CGFloat(123).barRelativeToWidth * percentage), y: midPointY + Int(CGFloat(20).barRelativeToWidth))
             progressBar.bounds.size = CGSize(width: CGFloat(20) + (CGFloat(246).barRelativeToWidth * percentage), height: CGFloat(20).barRelativeToWidth)
             view.addSubview(progressBar)
@@ -806,7 +773,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             interval += 1
 
             if dayType != 20 {
-                print("FOUND \(onDate)")
+               
                 //found a non-20 day
                     let currentDate = onDate.noon
                 let firstDayStartTime = uniq(source: my_getSchedule(type: dayType, date: currentDate)!).first!

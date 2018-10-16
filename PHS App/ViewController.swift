@@ -91,7 +91,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func drawLines() {
         let safeTopY = navigationBar.bounds.maxY - (20 - UIApplication.shared.statusBarFrame.height)
-        print(20 - UIApplication.shared.statusBarFrame.height)
+       
         var bottomConstant = 0
         if UIScreen.main.bounds.height == 812 {
             bottomConstant = 34
@@ -123,10 +123,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
 
     func callNumber(number: String) {
-        print("Called")
          let numberString = number
         guard let url = URL(string: "telprompt://\(numberString)") else {
-            print("returned")
+           
             return
             
         }

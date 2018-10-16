@@ -9,6 +9,34 @@
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
+		<key>PHSWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F02F21742175C4A80079F3F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F06EDD2E21054AF100297B8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F06EDD4521054AF200297B8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F06EDD5021054AF200297B8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

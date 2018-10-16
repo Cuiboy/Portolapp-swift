@@ -228,7 +228,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
   
     func configureDotsWhenScroll(view: JTAppleCalendarView?, visibleDates: DateSegmentInfo) {
         for days in visibleDates.monthDates {
-            print(days.indexPath)
+          
             guard let cell = view?.cellForItem(at: days.indexPath) as? CalendarCollectionViewCell else {return}
             if cell.dotView.isHidden == false {
                 cell.dotView.backgroundColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
