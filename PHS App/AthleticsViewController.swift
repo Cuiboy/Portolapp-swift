@@ -19,7 +19,7 @@ class AthleticsViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentioView: Segmentio!
     var content = [SegmentioItem]()
-    let allIcons = ["Baseball", "Boys Basketball", "Track", "Football", "Girls Golf", "Girls Lacrosse", "Boys Soccer", "Softball", "Girls Tennis", "Boys Swim", "Cross Country", "Girls Volleyball", "Boys Water Polo", "Boys Wrestling", "Girls Basketball", "Boys Golf", "Boys Lacrosse", "Girls Soccer", "Boys Tennis", "Girls Water Polo", "Girls Swim", "Girls Wrestling", "Boys Volleyball"]
+    let allIcons = ["Baseball", "Boys Basketball", "Track", "Football", "Girls Golf", "Girls Lacrosse", "Boys Soccer", "Softball", "Girls Tennis", "Boys Swim", "Cross Country", "Girls Volleyball", "Boys Water Polo","Wrestling", "Girls Basketball", "Boys Golf", "Boys Lacrosse", "Girls Soccer", "Boys Tennis", "Girls Water Polo", "Girls Swim", "Boys Volleyball"]
     let allImages: [UIImage] = [
         UIImage(named: "Baseball")!,
         UIImage(named: "Basketball")!,
@@ -42,13 +42,12 @@ class AthleticsViewController: UIViewController, UICollectionViewDelegate, UICol
          UIImage(named: "Tennis")!,
         UIImage(named: "Water Polo")!,
         UIImage(named: "Swim")!,
-        UIImage(named: "Wrestling")!,
         UIImage(named: "Volleyball")!
     ]
     
     let fallIndex: [Int] = [3, 4, 8, 10, 11, 12]
-    let winterIndex: [Int] = [1, 6, 17, 14, 13, 19, 21]
-    let springIndex: [Int] = [0, 2, 5, 7, 9, 15, 16, 18, 20, 22]
+    let winterIndex: [Int] = [1, 6, 17, 14, 13, 19]
+    let springIndex: [Int] = [0, 2, 5, 7, 9, 15, 16, 18, 20, 21]
     
     var fallIcons = [String]()
     var winterIcons = [String]()

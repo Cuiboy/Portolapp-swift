@@ -287,9 +287,18 @@ class AthleticsDetailViewController: UIViewController, UITableViewDelegate, UITa
             if games.homeScore != nil && games.awayScore != nil {
                 if games.isAway {
                     if games.homeScore! < games.awayScore! {
-                        wins += 1
+                        if sport == "Girls Golf" || sport == "Boys Golf" {
+                            losses += 1
+                        } else {
+                            wins += 1
+                        }
                     } else if games.homeScore! > games.awayScore! {
-                        losses += 1
+                        if sport == "Girls Golf" || sport == "Boys Golf" {
+                            wins += 1
+                        } else {
+                            losses += 1
+                        }
+                        
                     } else {
                         if ties == nil {
                             ties = 1
