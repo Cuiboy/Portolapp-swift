@@ -14,7 +14,6 @@ extension Date {
         let type = getDayType(date: self)
 
         if type == 20 {
-            
             return false
         } else {
             if Calendar.current.component(.weekday, from: self) == 7 ||  Calendar.current.component(.weekday, from: self) == 1 {

@@ -44,7 +44,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var timeOfDay: relativeTime?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.timeOfDay = Date().getRelativeTime()
+        self.timeOfDay = Date().timeOfSchoolDay()
         loadSpecialDays()
            getTodayType()
         configureTimeLeftLabel()
@@ -54,7 +54,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if Date().isSchoolDay() {
-            if Date().getRelativeTime() == relativeTime.during {
+            if Date().timeOfSchoolDay() == relativeTime.during {
                 fetchTimeLeft()
             }
         }
@@ -118,13 +118,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @objc func update() {
         if Calendar.current.component(.day, from: Date()) != day {
             getTodayType()
-            timeOfDay = Date().getRelativeTime()
+            timeOfDay = Date().timeOfSchoolDay()
             configureTimeLeftLabel()
           
             day = Calendar.current.component(.day, from: Date())
         } else {
-            if timeOfDay != Date().getRelativeTime() {
-                timeOfDay = Date().getRelativeTime()
+            if timeOfDay != Date().timeOfSchoolDay() {
+                timeOfDay = Date().timeOfSchoolDay()
                 self.configureTimeLeftLabel()
                
             } else {

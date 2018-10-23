@@ -51,56 +51,10 @@
 		F02F217A2175C4A80079F3F9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21792175C4A80079F3F9 /* TodayViewController.swift */; };
 		F02F217D2175C4A80079F3F9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02F217B2175C4A80079F3F9 /* MainInterface.storyboard */; };
 		F02F21812175C4A80079F3F9 /* PHSWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F02F21752175C4A80079F3F9 /* PHSWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F02F21922175CCFC0079F3F9 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F21882175CCFC0079F3F9 /* Lato-Italic.ttf */; };
-		F02F21932175CCFC0079F3F9 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F21892175CCFC0079F3F9 /* Lato-LightItalic.ttf */; };
-		F02F21942175CCFC0079F3F9 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F218A2175CCFC0079F3F9 /* Lato-Bold.ttf */; };
-		F02F21952175CCFC0079F3F9 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F218B2175CCFC0079F3F9 /* Lato-Black.ttf */; };
-		F02F21962175CCFC0079F3F9 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F218C2175CCFC0079F3F9 /* Lato-HairlineItalic.ttf */; };
-		F02F21972175CCFC0079F3F9 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F218D2175CCFC0079F3F9 /* Lato-Regular.ttf */; };
-		F02F21982175CCFC0079F3F9 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F218E2175CCFC0079F3F9 /* Lato-Hairline.ttf */; };
-		F02F21992175CCFC0079F3F9 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F218F2175CCFC0079F3F9 /* Lato-BlackItalic.ttf */; };
-		F02F219A2175CCFC0079F3F9 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F21902175CCFC0079F3F9 /* Lato-BoldItalic.ttf */; };
-		F02F219B2175CCFC0079F3F9 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F02F21912175CCFC0079F3F9 /* Lato-Light.ttf */; };
-		F02F21C32175CFB10079F3F9 /* my_stringToDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F219F2175CFB10079F3F9 /* my_stringToDateFormatter.swift */; };
-		F02F21C42175CFB10079F3F9 /* my_setGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A02175CFB10079F3F9 /* my_setGradientBackground.swift */; };
-		F02F21C52175CFB10079F3F9 /* my_glowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A12175CFB10079F3F9 /* my_glowAnimation.swift */; };
-		F02F21C62175CFB10079F3F9 /* my_notificationPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A22175CFB10079F3F9 /* my_notificationPrompt.swift */; };
-		F02F21C72175CFB10079F3F9 /* my_localTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A32175CFB10079F3F9 /* my_localTime.swift */; };
-		F02F21C82175CFB10079F3F9 /* my_fadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A42175CFB10079F3F9 /* my_fadeIn.swift */; };
-		F02F21C92175CFB10079F3F9 /* my_customDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A52175CFB10079F3F9 /* my_customDateFormatter.swift */; };
-		F02F21CA2175CFB10079F3F9 /* my_UTCTimeDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A62175CFB10079F3F9 /* my_UTCTimeDifference.swift */; };
-		F02F21CB2175CFB10079F3F9 /* my_getPeriodsFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A72175CFB10079F3F9 /* my_getPeriodsFromToday.swift */; };
-		F02F21CC2175CFB10079F3F9 /* my_configureTopLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A82175CFB10079F3F9 /* my_configureTopLabel.swift */; };
-		F02F21CD2175CFB10079F3F9 /* my_minutesFromSchoolStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21A92175CFB10079F3F9 /* my_minutesFromSchoolStart.swift */; };
-		F02F21CE2175CFB10079F3F9 /* my_dropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21AA2175CFB10079F3F9 /* my_dropShadow.swift */; };
-		F02F21CF2175CFB10079F3F9 /* my_numOfMinDuringSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21AB2175CFB10079F3F9 /* my_numOfMinDuringSchool.swift */; };
-		F02F21D02175CFB10079F3F9 /* my_isLongBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21AC2175CFB10079F3F9 /* my_isLongBreak.swift */; };
-		F02F21D12175CFB10079F3F9 /* my_getScheduleFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21AD2175CFB10079F3F9 /* my_getScheduleFromToday.swift */; };
-		F02F21D22175CFB10079F3F9 /* my_UTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21AE2175CFB10079F3F9 /* my_UTC.swift */; };
-		F02F21D32175CFB10079F3F9 /* my_isDuringSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21AF2175CFB10079F3F9 /* my_isDuringSchool.swift */; };
-		F02F21D42175CFB10079F3F9 /* my_parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B02175CFB10079F3F9 /* my_parentViewController.swift */; };
-		F02F21D52175CFB10079F3F9 /* my_UIViewFadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B12175CFB10079F3F9 /* my_UIViewFadeIn.swift */; };
-		F02F21D62175CFB10079F3F9 /* my_getStartEndTimeFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B22175CFB10079F3F9 /* my_getStartEndTimeFromToday.swift */; };
-		F02F21D72175CFB10079F3F9 /* my_nextMonday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B32175CFB10079F3F9 /* my_nextMonday.swift */; };
-		F02F21D82175CFB10079F3F9 /* My_Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B42175CFB10079F3F9 /* My_Colors.swift */; };
-		F02F21D92175CFB10079F3F9 /* my_setNavigatinoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B52175CFB10079F3F9 /* my_setNavigatinoBar.swift */; };
-		F02F21DA2175CFB10079F3F9 /* my_isSchoolDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B62175CFB10079F3F9 /* my_isSchoolDay.swift */; };
-		F02F21DB2175CFB10079F3F9 /* removingDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B72175CFB10079F3F9 /* removingDuplicates.swift */; };
-		F02F21DC2175CFB10079F3F9 /* my_daysAwayFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B82175CFB10079F3F9 /* my_daysAwayFromToday.swift */; };
-		F02F21DD2175CFB10079F3F9 /* my_getStartEndPeriodLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21B92175CFB10079F3F9 /* my_getStartEndPeriodLabel.swift */; };
-		F02F21DE2175CFB10079F3F9 /* my_adjustFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21BA2175CFB10079F3F9 /* my_adjustFontSize.swift */; };
-		F02F21DF2175CFB10079F3F9 /* my_removeDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21BB2175CFB10079F3F9 /* my_removeDuplicates.swift */; };
-		F02F21E02175CFB10079F3F9 /* my_getWeekdayString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21BC2175CFB10079F3F9 /* my_getWeekdayString.swift */; };
-		F02F21E12175CFB10079F3F9 /* my_boolToLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21BD2175CFB10079F3F9 /* my_boolToLabel.swift */; };
-		F02F21E22175CFB10079F3F9 /* my_getStartEndLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21BE2175CFB10079F3F9 /* my_getStartEndLabel.swift */; };
-		F02F21E32175CFB10079F3F9 /* my_unquotedJSONFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21BF2175CFB10079F3F9 /* my_unquotedJSONFormatter.swift */; };
-		F02F21E42175CFB10079F3F9 /* my_isWeekend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21C02175CFB10079F3F9 /* my_isWeekend.swift */; };
-		F02F21E52175CFB10079F3F9 /* my_getTomorrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21C12175CFB10079F3F9 /* my_getTomorrow.swift */; };
 		F02F21E82175D0610079F3F9 /* specialDays.txt in Resources */ = {isa = PBXBuildFile; fileRef = F02F21E72175D0610079F3F9 /* specialDays.txt */; };
 		F02F21EC2175D0830079F3F9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21EA2175D0820079F3F9 /* SwiftyJSON.swift */; };
 		F02F21ED2175D0830079F3F9 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21EB2175D0820079F3F9 /* CheckInternet.swift */; };
 		F02F22072175D0AA0079F3F9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21EF2175D0A90079F3F9 /* Date.swift */; };
-		F02F22242175D3FD0079F3F9 /* mt_numbersToLabelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F22232175D3FD0079F3F9 /* mt_numbersToLabelWidget.swift */; };
 		F030E67D215449FD00606B11 /* HomeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030E67C215449FD00606B11 /* HomeScrollViewController.swift */; };
 		F0378900212D4C7B006DEBCE /* my_glowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */; };
 		F03A208E211F7CCF00BD086F /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A208D211F7CCF00BD086F /* CheckInternet.swift */; };
@@ -199,6 +153,55 @@
 		F0F583D72121650E0046A837 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D62121650E0046A837 /* CalendarViewController.swift */; };
 		F0F583D92121651A0046A837 /* PortolaPilotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D82121651A0046A837 /* PortolaPilotViewController.swift */; };
 		F0F583DB212165250046A837 /* PnnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583DA212165250046A837 /* PnnViewController.swift */; };
+		F0F8BDBA217EECE300037B21 /* my_schoolTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDB9217EECE300037B21 /* my_schoolTime.swift */; };
+		F0F8BDC6217EF3F400037B21 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDBC217EF3F400037B21 /* Lato-Italic.ttf */; };
+		F0F8BDC7217EF3F400037B21 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDBD217EF3F400037B21 /* Lato-LightItalic.ttf */; };
+		F0F8BDC8217EF3F400037B21 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDBE217EF3F400037B21 /* Lato-Bold.ttf */; };
+		F0F8BDC9217EF3F400037B21 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDBF217EF3F400037B21 /* Lato-Black.ttf */; };
+		F0F8BDCA217EF3F400037B21 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDC0217EF3F400037B21 /* Lato-HairlineItalic.ttf */; };
+		F0F8BDCB217EF3F400037B21 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDC1217EF3F400037B21 /* Lato-Regular.ttf */; };
+		F0F8BDCC217EF3F400037B21 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDC2217EF3F400037B21 /* Lato-Hairline.ttf */; };
+		F0F8BDCD217EF3F400037B21 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDC3217EF3F400037B21 /* Lato-BlackItalic.ttf */; };
+		F0F8BDCE217EF3F400037B21 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDC4217EF3F400037B21 /* Lato-BoldItalic.ttf */; };
+		F0F8BDCF217EF3F400037B21 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F8BDC5217EF3F400037B21 /* Lato-Light.ttf */; };
+		F0F8BDF8217EF41C00037B21 /* my_stringToDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDD2217EF41C00037B21 /* my_stringToDateFormatter.swift */; };
+		F0F8BDF9217EF41C00037B21 /* my_setGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDD3217EF41C00037B21 /* my_setGradientBackground.swift */; };
+		F0F8BDFA217EF41C00037B21 /* my_glowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDD4217EF41C00037B21 /* my_glowAnimation.swift */; };
+		F0F8BDFB217EF41C00037B21 /* my_notificationPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDD5217EF41C00037B21 /* my_notificationPrompt.swift */; };
+		F0F8BDFC217EF41C00037B21 /* my_localTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDD6217EF41C00037B21 /* my_localTime.swift */; };
+		F0F8BDFD217EF41C00037B21 /* my_fadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDD7217EF41C00037B21 /* my_fadeIn.swift */; };
+		F0F8BDFE217EF41C00037B21 /* my_customDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDD8217EF41C00037B21 /* my_customDateFormatter.swift */; };
+		F0F8BDFF217EF41C00037B21 /* my_UTCTimeDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDD9217EF41C00037B21 /* my_UTCTimeDifference.swift */; };
+		F0F8BE00217EF41C00037B21 /* my_getPeriodsFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDDA217EF41C00037B21 /* my_getPeriodsFromToday.swift */; };
+		F0F8BE01217EF41C00037B21 /* my_configureTopLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDDB217EF41C00037B21 /* my_configureTopLabel.swift */; };
+		F0F8BE02217EF41C00037B21 /* my_schoolTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDDC217EF41C00037B21 /* my_schoolTime.swift */; };
+		F0F8BE03217EF41C00037B21 /* my_minutesFromSchoolStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDDD217EF41C00037B21 /* my_minutesFromSchoolStart.swift */; };
+		F0F8BE04217EF41C00037B21 /* my_dropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDDE217EF41C00037B21 /* my_dropShadow.swift */; };
+		F0F8BE05217EF41C00037B21 /* my_numOfMinDuringSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDDF217EF41C00037B21 /* my_numOfMinDuringSchool.swift */; };
+		F0F8BE06217EF41C00037B21 /* my_isLongBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE0217EF41C00037B21 /* my_isLongBreak.swift */; };
+		F0F8BE07217EF41C00037B21 /* my_getScheduleFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE1217EF41C00037B21 /* my_getScheduleFromToday.swift */; };
+		F0F8BE08217EF41C00037B21 /* my_UTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE2217EF41C00037B21 /* my_UTC.swift */; };
+		F0F8BE09217EF41C00037B21 /* my_isDuringSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE3217EF41C00037B21 /* my_isDuringSchool.swift */; };
+		F0F8BE0A217EF41C00037B21 /* my_parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE4217EF41C00037B21 /* my_parentViewController.swift */; };
+		F0F8BE0B217EF41C00037B21 /* my_UIViewFadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE5217EF41C00037B21 /* my_UIViewFadeIn.swift */; };
+		F0F8BE0C217EF41C00037B21 /* my_getStartEndTimeFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE6217EF41C00037B21 /* my_getStartEndTimeFromToday.swift */; };
+		F0F8BE0D217EF41C00037B21 /* my_nextMonday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE7217EF41C00037B21 /* my_nextMonday.swift */; };
+		F0F8BE0E217EF41C00037B21 /* My_Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE8217EF41C00037B21 /* My_Colors.swift */; };
+		F0F8BE0F217EF41C00037B21 /* my_setNavigatinoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDE9217EF41C00037B21 /* my_setNavigatinoBar.swift */; };
+		F0F8BE10217EF41C00037B21 /* my_isSchoolDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDEA217EF41C00037B21 /* my_isSchoolDay.swift */; };
+		F0F8BE11217EF41C00037B21 /* removingDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDEB217EF41C00037B21 /* removingDuplicates.swift */; };
+		F0F8BE13217EF41C00037B21 /* my_daysAwayFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDED217EF41C00037B21 /* my_daysAwayFromToday.swift */; };
+		F0F8BE14217EF41C00037B21 /* my_getStartEndPeriodLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDEE217EF41C00037B21 /* my_getStartEndPeriodLabel.swift */; };
+		F0F8BE15217EF41C00037B21 /* my_adjustFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDEF217EF41C00037B21 /* my_adjustFontSize.swift */; };
+		F0F8BE16217EF41C00037B21 /* my_removeDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDF0217EF41C00037B21 /* my_removeDuplicates.swift */; };
+		F0F8BE17217EF41C00037B21 /* my_getWeekdayString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDF1217EF41C00037B21 /* my_getWeekdayString.swift */; };
+		F0F8BE18217EF41C00037B21 /* my_boolToLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDF2217EF41C00037B21 /* my_boolToLabel.swift */; };
+		F0F8BE19217EF41C00037B21 /* my_getStartEndLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDF3217EF41C00037B21 /* my_getStartEndLabel.swift */; };
+		F0F8BE1A217EF41C00037B21 /* my_unquotedJSONFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDF4217EF41C00037B21 /* my_unquotedJSONFormatter.swift */; };
+		F0F8BE1B217EF41C00037B21 /* my_isWeekend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDF5217EF41C00037B21 /* my_isWeekend.swift */; };
+		F0F8BE1C217EF41C00037B21 /* my_getTomorrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BDF6217EF41C00037B21 /* my_getTomorrow.swift */; };
+		F0F8BE1E217EF49800037B21 /* my_numbersToLabelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BE1D217EF49800037B21 /* my_numbersToLabelWidget.swift */; };
+		F0F8BE20217EF52E00037B21 /* my_schoolTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8BE1F217EF52E00037B21 /* my_schoolTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,56 +303,10 @@
 		F02F21792175C4A80079F3F9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		F02F217C2175C4A80079F3F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		F02F217E2175C4A80079F3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F02F21882175CCFC0079F3F9 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
-		F02F21892175CCFC0079F3F9 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
-		F02F218A2175CCFC0079F3F9 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
-		F02F218B2175CCFC0079F3F9 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
-		F02F218C2175CCFC0079F3F9 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
-		F02F218D2175CCFC0079F3F9 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
-		F02F218E2175CCFC0079F3F9 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
-		F02F218F2175CCFC0079F3F9 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
-		F02F21902175CCFC0079F3F9 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
-		F02F21912175CCFC0079F3F9 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
-		F02F219F2175CFB10079F3F9 /* my_stringToDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_stringToDateFormatter.swift; sourceTree = "<group>"; };
-		F02F21A02175CFB10079F3F9 /* my_setGradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_setGradientBackground.swift; sourceTree = "<group>"; };
-		F02F21A12175CFB10079F3F9 /* my_glowAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_glowAnimation.swift; sourceTree = "<group>"; };
-		F02F21A22175CFB10079F3F9 /* my_notificationPrompt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_notificationPrompt.swift; sourceTree = "<group>"; };
-		F02F21A32175CFB10079F3F9 /* my_localTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_localTime.swift; sourceTree = "<group>"; };
-		F02F21A42175CFB10079F3F9 /* my_fadeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_fadeIn.swift; sourceTree = "<group>"; };
-		F02F21A52175CFB10079F3F9 /* my_customDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_customDateFormatter.swift; sourceTree = "<group>"; };
-		F02F21A62175CFB10079F3F9 /* my_UTCTimeDifference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_UTCTimeDifference.swift; sourceTree = "<group>"; };
-		F02F21A72175CFB10079F3F9 /* my_getPeriodsFromToday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getPeriodsFromToday.swift; sourceTree = "<group>"; };
-		F02F21A82175CFB10079F3F9 /* my_configureTopLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_configureTopLabel.swift; sourceTree = "<group>"; };
-		F02F21A92175CFB10079F3F9 /* my_minutesFromSchoolStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_minutesFromSchoolStart.swift; sourceTree = "<group>"; };
-		F02F21AA2175CFB10079F3F9 /* my_dropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_dropShadow.swift; sourceTree = "<group>"; };
-		F02F21AB2175CFB10079F3F9 /* my_numOfMinDuringSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_numOfMinDuringSchool.swift; sourceTree = "<group>"; };
-		F02F21AC2175CFB10079F3F9 /* my_isLongBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_isLongBreak.swift; sourceTree = "<group>"; };
-		F02F21AD2175CFB10079F3F9 /* my_getScheduleFromToday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getScheduleFromToday.swift; sourceTree = "<group>"; };
-		F02F21AE2175CFB10079F3F9 /* my_UTC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_UTC.swift; sourceTree = "<group>"; };
-		F02F21AF2175CFB10079F3F9 /* my_isDuringSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_isDuringSchool.swift; sourceTree = "<group>"; };
-		F02F21B02175CFB10079F3F9 /* my_parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_parentViewController.swift; sourceTree = "<group>"; };
-		F02F21B12175CFB10079F3F9 /* my_UIViewFadeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_UIViewFadeIn.swift; sourceTree = "<group>"; };
-		F02F21B22175CFB10079F3F9 /* my_getStartEndTimeFromToday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getStartEndTimeFromToday.swift; sourceTree = "<group>"; };
-		F02F21B32175CFB10079F3F9 /* my_nextMonday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_nextMonday.swift; sourceTree = "<group>"; };
-		F02F21B42175CFB10079F3F9 /* My_Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_Colors.swift; sourceTree = "<group>"; };
-		F02F21B52175CFB10079F3F9 /* my_setNavigatinoBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_setNavigatinoBar.swift; sourceTree = "<group>"; };
-		F02F21B62175CFB10079F3F9 /* my_isSchoolDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_isSchoolDay.swift; sourceTree = "<group>"; };
-		F02F21B72175CFB10079F3F9 /* removingDuplicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = removingDuplicates.swift; sourceTree = "<group>"; };
-		F02F21B82175CFB10079F3F9 /* my_daysAwayFromToday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_daysAwayFromToday.swift; sourceTree = "<group>"; };
-		F02F21B92175CFB10079F3F9 /* my_getStartEndPeriodLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getStartEndPeriodLabel.swift; sourceTree = "<group>"; };
-		F02F21BA2175CFB10079F3F9 /* my_adjustFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_adjustFontSize.swift; sourceTree = "<group>"; };
-		F02F21BB2175CFB10079F3F9 /* my_removeDuplicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_removeDuplicates.swift; sourceTree = "<group>"; };
-		F02F21BC2175CFB10079F3F9 /* my_getWeekdayString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getWeekdayString.swift; sourceTree = "<group>"; };
-		F02F21BD2175CFB10079F3F9 /* my_boolToLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_boolToLabel.swift; sourceTree = "<group>"; };
-		F02F21BE2175CFB10079F3F9 /* my_getStartEndLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getStartEndLabel.swift; sourceTree = "<group>"; };
-		F02F21BF2175CFB10079F3F9 /* my_unquotedJSONFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_unquotedJSONFormatter.swift; sourceTree = "<group>"; };
-		F02F21C02175CFB10079F3F9 /* my_isWeekend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_isWeekend.swift; sourceTree = "<group>"; };
-		F02F21C12175CFB10079F3F9 /* my_getTomorrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getTomorrow.swift; sourceTree = "<group>"; };
 		F02F21E72175D0610079F3F9 /* specialDays.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = specialDays.txt; sourceTree = "<group>"; };
 		F02F21EA2175D0820079F3F9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F02F21EB2175D0820079F3F9 /* CheckInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		F02F21EF2175D0A90079F3F9 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		F02F22232175D3FD0079F3F9 /* mt_numbersToLabelWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mt_numbersToLabelWidget.swift; sourceTree = "<group>"; };
 		F030E67C215449FD00606B11 /* HomeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollViewController.swift; sourceTree = "<group>"; };
 		F03788FF212D4C7B006DEBCE /* my_glowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_glowAnimation.swift; sourceTree = "<group>"; };
 		F03A208D211F7CCF00BD086F /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
@@ -456,6 +413,55 @@
 		F0F583D62121650E0046A837 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F0F583D82121651A0046A837 /* PortolaPilotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortolaPilotViewController.swift; sourceTree = "<group>"; };
 		F0F583DA212165250046A837 /* PnnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PnnViewController.swift; sourceTree = "<group>"; };
+		F0F8BDB9217EECE300037B21 /* my_schoolTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_schoolTime.swift; sourceTree = "<group>"; };
+		F0F8BDBC217EF3F400037B21 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		F0F8BDBD217EF3F400037B21 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		F0F8BDBE217EF3F400037B21 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		F0F8BDBF217EF3F400037B21 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		F0F8BDC0217EF3F400037B21 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		F0F8BDC1217EF3F400037B21 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		F0F8BDC2217EF3F400037B21 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		F0F8BDC3217EF3F400037B21 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F0F8BDC4217EF3F400037B21 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F0F8BDC5217EF3F400037B21 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		F0F8BDD2217EF41C00037B21 /* my_stringToDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_stringToDateFormatter.swift; sourceTree = "<group>"; };
+		F0F8BDD3217EF41C00037B21 /* my_setGradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_setGradientBackground.swift; sourceTree = "<group>"; };
+		F0F8BDD4217EF41C00037B21 /* my_glowAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_glowAnimation.swift; sourceTree = "<group>"; };
+		F0F8BDD5217EF41C00037B21 /* my_notificationPrompt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_notificationPrompt.swift; sourceTree = "<group>"; };
+		F0F8BDD6217EF41C00037B21 /* my_localTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_localTime.swift; sourceTree = "<group>"; };
+		F0F8BDD7217EF41C00037B21 /* my_fadeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_fadeIn.swift; sourceTree = "<group>"; };
+		F0F8BDD8217EF41C00037B21 /* my_customDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_customDateFormatter.swift; sourceTree = "<group>"; };
+		F0F8BDD9217EF41C00037B21 /* my_UTCTimeDifference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_UTCTimeDifference.swift; sourceTree = "<group>"; };
+		F0F8BDDA217EF41C00037B21 /* my_getPeriodsFromToday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getPeriodsFromToday.swift; sourceTree = "<group>"; };
+		F0F8BDDB217EF41C00037B21 /* my_configureTopLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_configureTopLabel.swift; sourceTree = "<group>"; };
+		F0F8BDDC217EF41C00037B21 /* my_schoolTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_schoolTime.swift; sourceTree = "<group>"; };
+		F0F8BDDD217EF41C00037B21 /* my_minutesFromSchoolStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_minutesFromSchoolStart.swift; sourceTree = "<group>"; };
+		F0F8BDDE217EF41C00037B21 /* my_dropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_dropShadow.swift; sourceTree = "<group>"; };
+		F0F8BDDF217EF41C00037B21 /* my_numOfMinDuringSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_numOfMinDuringSchool.swift; sourceTree = "<group>"; };
+		F0F8BDE0217EF41C00037B21 /* my_isLongBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_isLongBreak.swift; sourceTree = "<group>"; };
+		F0F8BDE1217EF41C00037B21 /* my_getScheduleFromToday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getScheduleFromToday.swift; sourceTree = "<group>"; };
+		F0F8BDE2217EF41C00037B21 /* my_UTC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_UTC.swift; sourceTree = "<group>"; };
+		F0F8BDE3217EF41C00037B21 /* my_isDuringSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_isDuringSchool.swift; sourceTree = "<group>"; };
+		F0F8BDE4217EF41C00037B21 /* my_parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_parentViewController.swift; sourceTree = "<group>"; };
+		F0F8BDE5217EF41C00037B21 /* my_UIViewFadeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_UIViewFadeIn.swift; sourceTree = "<group>"; };
+		F0F8BDE6217EF41C00037B21 /* my_getStartEndTimeFromToday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getStartEndTimeFromToday.swift; sourceTree = "<group>"; };
+		F0F8BDE7217EF41C00037B21 /* my_nextMonday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_nextMonday.swift; sourceTree = "<group>"; };
+		F0F8BDE8217EF41C00037B21 /* My_Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_Colors.swift; sourceTree = "<group>"; };
+		F0F8BDE9217EF41C00037B21 /* my_setNavigatinoBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_setNavigatinoBar.swift; sourceTree = "<group>"; };
+		F0F8BDEA217EF41C00037B21 /* my_isSchoolDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_isSchoolDay.swift; sourceTree = "<group>"; };
+		F0F8BDEB217EF41C00037B21 /* removingDuplicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = removingDuplicates.swift; sourceTree = "<group>"; };
+		F0F8BDED217EF41C00037B21 /* my_daysAwayFromToday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_daysAwayFromToday.swift; sourceTree = "<group>"; };
+		F0F8BDEE217EF41C00037B21 /* my_getStartEndPeriodLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getStartEndPeriodLabel.swift; sourceTree = "<group>"; };
+		F0F8BDEF217EF41C00037B21 /* my_adjustFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_adjustFontSize.swift; sourceTree = "<group>"; };
+		F0F8BDF0217EF41C00037B21 /* my_removeDuplicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_removeDuplicates.swift; sourceTree = "<group>"; };
+		F0F8BDF1217EF41C00037B21 /* my_getWeekdayString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getWeekdayString.swift; sourceTree = "<group>"; };
+		F0F8BDF2217EF41C00037B21 /* my_boolToLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_boolToLabel.swift; sourceTree = "<group>"; };
+		F0F8BDF3217EF41C00037B21 /* my_getStartEndLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getStartEndLabel.swift; sourceTree = "<group>"; };
+		F0F8BDF4217EF41C00037B21 /* my_unquotedJSONFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_unquotedJSONFormatter.swift; sourceTree = "<group>"; };
+		F0F8BDF5217EF41C00037B21 /* my_isWeekend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_isWeekend.swift; sourceTree = "<group>"; };
+		F0F8BDF6217EF41C00037B21 /* my_getTomorrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_getTomorrow.swift; sourceTree = "<group>"; };
+		F0F8BE1D217EF49800037B21 /* my_numbersToLabelWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_numbersToLabelWidget.swift; sourceTree = "<group>"; };
+		F0F8BE1F217EF52E00037B21 /* my_schoolTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = my_schoolTime.swift; sourceTree = "<group>"; };
 		FDAA27E44849C266F13D7B61 /* Pods-PHS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PHS App/Pods-PHS App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -522,87 +528,17 @@
 		F02F21782175C4A80079F3F9 /* PHSWidget */ = {
 			isa = PBXGroup;
 			children = (
+				F0F8BDD0217EF41C00037B21 /* extensions */,
+				F0F8BDBB217EF3F400037B21 /* Lato */,
 				F02F21EE2175D0A90079F3F9 /* objects */,
 				F02F21E92175D0820079F3F9 /* helper classes */,
 				F02F21E62175D0610079F3F9 /* JSON files */,
-				F02F219D2175CFB10079F3F9 /* extensions */,
-				F02F21862175CCBD0079F3F9 /* Fonts */,
 				F02F21792175C4A80079F3F9 /* TodayViewController.swift */,
 				F02F217B2175C4A80079F3F9 /* MainInterface.storyboard */,
 				F02F217E2175C4A80079F3F9 /* Info.plist */,
 			);
 			path = PHSWidget;
 			sourceTree = "<group>";
-		};
-		F02F21862175CCBD0079F3F9 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F02F21872175CCFC0079F3F9 /* Lato */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		F02F21872175CCFC0079F3F9 /* Lato */ = {
-			isa = PBXGroup;
-			children = (
-				F02F21882175CCFC0079F3F9 /* Lato-Italic.ttf */,
-				F02F21892175CCFC0079F3F9 /* Lato-LightItalic.ttf */,
-				F02F218A2175CCFC0079F3F9 /* Lato-Bold.ttf */,
-				F02F218B2175CCFC0079F3F9 /* Lato-Black.ttf */,
-				F02F218C2175CCFC0079F3F9 /* Lato-HairlineItalic.ttf */,
-				F02F218D2175CCFC0079F3F9 /* Lato-Regular.ttf */,
-				F02F218E2175CCFC0079F3F9 /* Lato-Hairline.ttf */,
-				F02F218F2175CCFC0079F3F9 /* Lato-BlackItalic.ttf */,
-				F02F21902175CCFC0079F3F9 /* Lato-BoldItalic.ttf */,
-				F02F21912175CCFC0079F3F9 /* Lato-Light.ttf */,
-			);
-			name = Lato;
-			path = ../../../../Files/Fonts/Lato;
-			sourceTree = "<group>";
-		};
-		F02F219D2175CFB10079F3F9 /* extensions */ = {
-			isa = PBXGroup;
-			children = (
-				F02F22232175D3FD0079F3F9 /* mt_numbersToLabelWidget.swift */,
-				F02F219F2175CFB10079F3F9 /* my_stringToDateFormatter.swift */,
-				F02F21A02175CFB10079F3F9 /* my_setGradientBackground.swift */,
-				F02F21A12175CFB10079F3F9 /* my_glowAnimation.swift */,
-				F02F21A22175CFB10079F3F9 /* my_notificationPrompt.swift */,
-				F02F21A32175CFB10079F3F9 /* my_localTime.swift */,
-				F02F21A42175CFB10079F3F9 /* my_fadeIn.swift */,
-				F02F21A52175CFB10079F3F9 /* my_customDateFormatter.swift */,
-				F02F21A62175CFB10079F3F9 /* my_UTCTimeDifference.swift */,
-				F02F21A72175CFB10079F3F9 /* my_getPeriodsFromToday.swift */,
-				F02F21A82175CFB10079F3F9 /* my_configureTopLabel.swift */,
-				F02F21A92175CFB10079F3F9 /* my_minutesFromSchoolStart.swift */,
-				F02F21AA2175CFB10079F3F9 /* my_dropShadow.swift */,
-				F02F21AB2175CFB10079F3F9 /* my_numOfMinDuringSchool.swift */,
-				F02F21AC2175CFB10079F3F9 /* my_isLongBreak.swift */,
-				F02F21AD2175CFB10079F3F9 /* my_getScheduleFromToday.swift */,
-				F02F21AE2175CFB10079F3F9 /* my_UTC.swift */,
-				F02F21AF2175CFB10079F3F9 /* my_isDuringSchool.swift */,
-				F02F21B02175CFB10079F3F9 /* my_parentViewController.swift */,
-				F02F21B12175CFB10079F3F9 /* my_UIViewFadeIn.swift */,
-				F02F21B22175CFB10079F3F9 /* my_getStartEndTimeFromToday.swift */,
-				F02F21B32175CFB10079F3F9 /* my_nextMonday.swift */,
-				F02F21B42175CFB10079F3F9 /* My_Colors.swift */,
-				F02F21B52175CFB10079F3F9 /* my_setNavigatinoBar.swift */,
-				F02F21B62175CFB10079F3F9 /* my_isSchoolDay.swift */,
-				F02F21B72175CFB10079F3F9 /* removingDuplicates.swift */,
-				F02F21B82175CFB10079F3F9 /* my_daysAwayFromToday.swift */,
-				F02F21B92175CFB10079F3F9 /* my_getStartEndPeriodLabel.swift */,
-				F02F21BA2175CFB10079F3F9 /* my_adjustFontSize.swift */,
-				F02F21BB2175CFB10079F3F9 /* my_removeDuplicates.swift */,
-				F02F21BC2175CFB10079F3F9 /* my_getWeekdayString.swift */,
-				F02F21BD2175CFB10079F3F9 /* my_boolToLabel.swift */,
-				F02F21BE2175CFB10079F3F9 /* my_getStartEndLabel.swift */,
-				F02F21BF2175CFB10079F3F9 /* my_unquotedJSONFormatter.swift */,
-				F02F21C02175CFB10079F3F9 /* my_isWeekend.swift */,
-				F02F21C12175CFB10079F3F9 /* my_getTomorrow.swift */,
-			);
-			name = extensions;
-			path = "PHS App/extensions";
-			sourceTree = SOURCE_ROOT;
 		};
 		F02F21E62175D0610079F3F9 /* JSON files */ = {
 			isa = PBXGroup;
@@ -837,6 +773,7 @@
 				F04F2383211597DE00513EC8 /* my_minutesFromSchoolStart.swift */,
 				F04F2385211598CF00513EC8 /* my_isSchoolDay.swift */,
 				F04F2387211599BA00513EC8 /* my_isDuringSchool.swift */,
+				F0F8BDB9217EECE300037B21 /* my_schoolTime.swift */,
 				F04F23AE2118BDFE00513EC8 /* my_UTC.swift */,
 				F04F23B02118C35100513EC8 /* my_localTime.swift */,
 				F0B1DD37211D0FD300901E31 /* my_adjustFontSize.swift */,
@@ -888,6 +825,69 @@
 			);
 			path = "JSON files";
 			sourceTree = "<group>";
+		};
+		F0F8BDBB217EF3F400037B21 /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				F0F8BDBC217EF3F400037B21 /* Lato-Italic.ttf */,
+				F0F8BDBD217EF3F400037B21 /* Lato-LightItalic.ttf */,
+				F0F8BDBE217EF3F400037B21 /* Lato-Bold.ttf */,
+				F0F8BDBF217EF3F400037B21 /* Lato-Black.ttf */,
+				F0F8BDC0217EF3F400037B21 /* Lato-HairlineItalic.ttf */,
+				F0F8BDC1217EF3F400037B21 /* Lato-Regular.ttf */,
+				F0F8BDC2217EF3F400037B21 /* Lato-Hairline.ttf */,
+				F0F8BDC3217EF3F400037B21 /* Lato-BlackItalic.ttf */,
+				F0F8BDC4217EF3F400037B21 /* Lato-BoldItalic.ttf */,
+				F0F8BDC5217EF3F400037B21 /* Lato-Light.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		F0F8BDD0217EF41C00037B21 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0F8BDD2217EF41C00037B21 /* my_stringToDateFormatter.swift */,
+				F0F8BDD3217EF41C00037B21 /* my_setGradientBackground.swift */,
+				F0F8BDD4217EF41C00037B21 /* my_glowAnimation.swift */,
+				F0F8BDD5217EF41C00037B21 /* my_notificationPrompt.swift */,
+				F0F8BDD6217EF41C00037B21 /* my_localTime.swift */,
+				F0F8BDD7217EF41C00037B21 /* my_fadeIn.swift */,
+				F0F8BDD8217EF41C00037B21 /* my_customDateFormatter.swift */,
+				F0F8BDD9217EF41C00037B21 /* my_UTCTimeDifference.swift */,
+				F0F8BDDA217EF41C00037B21 /* my_getPeriodsFromToday.swift */,
+				F0F8BDDB217EF41C00037B21 /* my_configureTopLabel.swift */,
+				F0F8BDDC217EF41C00037B21 /* my_schoolTime.swift */,
+				F0F8BDDD217EF41C00037B21 /* my_minutesFromSchoolStart.swift */,
+				F0F8BDDE217EF41C00037B21 /* my_dropShadow.swift */,
+				F0F8BDDF217EF41C00037B21 /* my_numOfMinDuringSchool.swift */,
+				F0F8BDE0217EF41C00037B21 /* my_isLongBreak.swift */,
+				F0F8BE1F217EF52E00037B21 /* my_schoolTime.swift */,
+				F0F8BDE1217EF41C00037B21 /* my_getScheduleFromToday.swift */,
+				F0F8BDE2217EF41C00037B21 /* my_UTC.swift */,
+				F0F8BDE3217EF41C00037B21 /* my_isDuringSchool.swift */,
+				F0F8BDE4217EF41C00037B21 /* my_parentViewController.swift */,
+				F0F8BDE5217EF41C00037B21 /* my_UIViewFadeIn.swift */,
+				F0F8BDE6217EF41C00037B21 /* my_getStartEndTimeFromToday.swift */,
+				F0F8BDE7217EF41C00037B21 /* my_nextMonday.swift */,
+				F0F8BDE8217EF41C00037B21 /* My_Colors.swift */,
+				F0F8BDE9217EF41C00037B21 /* my_setNavigatinoBar.swift */,
+				F0F8BDEA217EF41C00037B21 /* my_isSchoolDay.swift */,
+				F0F8BDEB217EF41C00037B21 /* removingDuplicates.swift */,
+				F0F8BE1D217EF49800037B21 /* my_numbersToLabelWidget.swift */,
+				F0F8BDED217EF41C00037B21 /* my_daysAwayFromToday.swift */,
+				F0F8BDEE217EF41C00037B21 /* my_getStartEndPeriodLabel.swift */,
+				F0F8BDEF217EF41C00037B21 /* my_adjustFontSize.swift */,
+				F0F8BDF0217EF41C00037B21 /* my_removeDuplicates.swift */,
+				F0F8BDF1217EF41C00037B21 /* my_getWeekdayString.swift */,
+				F0F8BDF2217EF41C00037B21 /* my_boolToLabel.swift */,
+				F0F8BDF3217EF41C00037B21 /* my_getStartEndLabel.swift */,
+				F0F8BDF4217EF41C00037B21 /* my_unquotedJSONFormatter.swift */,
+				F0F8BDF5217EF41C00037B21 /* my_isWeekend.swift */,
+				F0F8BDF6217EF41C00037B21 /* my_getTomorrow.swift */,
+			);
+			name = extensions;
+			path = "PHS App/extensions";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -1030,18 +1030,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F02F21922175CCFC0079F3F9 /* Lato-Italic.ttf in Resources */,
-				F02F21932175CCFC0079F3F9 /* Lato-LightItalic.ttf in Resources */,
-				F02F21962175CCFC0079F3F9 /* Lato-HairlineItalic.ttf in Resources */,
 				F02F21E82175D0610079F3F9 /* specialDays.txt in Resources */,
-				F02F219B2175CCFC0079F3F9 /* Lato-Light.ttf in Resources */,
+				F0F8BDC8217EF3F400037B21 /* Lato-Bold.ttf in Resources */,
+				F0F8BDCD217EF3F400037B21 /* Lato-BlackItalic.ttf in Resources */,
+				F0F8BDCF217EF3F400037B21 /* Lato-Light.ttf in Resources */,
+				F0F8BDC6217EF3F400037B21 /* Lato-Italic.ttf in Resources */,
+				F0F8BDCE217EF3F400037B21 /* Lato-BoldItalic.ttf in Resources */,
+				F0F8BDCB217EF3F400037B21 /* Lato-Regular.ttf in Resources */,
 				F02F217D2175C4A80079F3F9 /* MainInterface.storyboard in Resources */,
-				F02F21972175CCFC0079F3F9 /* Lato-Regular.ttf in Resources */,
-				F02F21992175CCFC0079F3F9 /* Lato-BlackItalic.ttf in Resources */,
-				F02F21952175CCFC0079F3F9 /* Lato-Black.ttf in Resources */,
-				F02F21982175CCFC0079F3F9 /* Lato-Hairline.ttf in Resources */,
-				F02F21942175CCFC0079F3F9 /* Lato-Bold.ttf in Resources */,
-				F02F219A2175CCFC0079F3F9 /* Lato-BoldItalic.ttf in Resources */,
+				F0F8BDCC217EF3F400037B21 /* Lato-Hairline.ttf in Resources */,
+				F0F8BDCA217EF3F400037B21 /* Lato-HairlineItalic.ttf in Resources */,
+				F0F8BDC9217EF3F400037B21 /* Lato-Black.ttf in Resources */,
+				F0F8BDC7217EF3F400037B21 /* Lato-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1216,46 +1216,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F02F21D92175CFB10079F3F9 /* my_setNavigatinoBar.swift in Sources */,
-				F02F21C42175CFB10079F3F9 /* my_setGradientBackground.swift in Sources */,
-				F02F21DC2175CFB10079F3F9 /* my_daysAwayFromToday.swift in Sources */,
-				F02F21DD2175CFB10079F3F9 /* my_getStartEndPeriodLabel.swift in Sources */,
-				F02F21D82175CFB10079F3F9 /* My_Colors.swift in Sources */,
-				F02F21DB2175CFB10079F3F9 /* removingDuplicates.swift in Sources */,
-				F02F21E32175CFB10079F3F9 /* my_unquotedJSONFormatter.swift in Sources */,
+				F0F8BE11217EF41C00037B21 /* removingDuplicates.swift in Sources */,
+				F0F8BE0E217EF41C00037B21 /* My_Colors.swift in Sources */,
+				F0F8BE20217EF52E00037B21 /* my_schoolTime.swift in Sources */,
+				F0F8BE17217EF41C00037B21 /* my_getWeekdayString.swift in Sources */,
+				F0F8BE15217EF41C00037B21 /* my_adjustFontSize.swift in Sources */,
+				F0F8BE16217EF41C00037B21 /* my_removeDuplicates.swift in Sources */,
+				F0F8BDFD217EF41C00037B21 /* my_fadeIn.swift in Sources */,
+				F0F8BDFB217EF41C00037B21 /* my_notificationPrompt.swift in Sources */,
+				F0F8BDFE217EF41C00037B21 /* my_customDateFormatter.swift in Sources */,
 				F02F21EC2175D0830079F3F9 /* SwiftyJSON.swift in Sources */,
-				F02F21D52175CFB10079F3F9 /* my_UIViewFadeIn.swift in Sources */,
-				F02F21CB2175CFB10079F3F9 /* my_getPeriodsFromToday.swift in Sources */,
+				F0F8BE1B217EF41C00037B21 /* my_isWeekend.swift in Sources */,
+				F0F8BE18217EF41C00037B21 /* my_boolToLabel.swift in Sources */,
+				F0F8BE00217EF41C00037B21 /* my_getPeriodsFromToday.swift in Sources */,
+				F0F8BE05217EF41C00037B21 /* my_numOfMinDuringSchool.swift in Sources */,
 				F02F22072175D0AA0079F3F9 /* Date.swift in Sources */,
-				F02F21C32175CFB10079F3F9 /* my_stringToDateFormatter.swift in Sources */,
-				F02F21E22175CFB10079F3F9 /* my_getStartEndLabel.swift in Sources */,
-				F02F21D22175CFB10079F3F9 /* my_UTC.swift in Sources */,
-				F02F21CD2175CFB10079F3F9 /* my_minutesFromSchoolStart.swift in Sources */,
-				F02F21D02175CFB10079F3F9 /* my_isLongBreak.swift in Sources */,
-				F02F21D62175CFB10079F3F9 /* my_getStartEndTimeFromToday.swift in Sources */,
-				F02F21C52175CFB10079F3F9 /* my_glowAnimation.swift in Sources */,
-				F02F21CE2175CFB10079F3F9 /* my_dropShadow.swift in Sources */,
-				F02F21D12175CFB10079F3F9 /* my_getScheduleFromToday.swift in Sources */,
-				F02F21D42175CFB10079F3F9 /* my_parentViewController.swift in Sources */,
-				F02F21CA2175CFB10079F3F9 /* my_UTCTimeDifference.swift in Sources */,
-				F02F21E42175CFB10079F3F9 /* my_isWeekend.swift in Sources */,
-				F02F21D72175CFB10079F3F9 /* my_nextMonday.swift in Sources */,
-				F02F21DF2175CFB10079F3F9 /* my_removeDuplicates.swift in Sources */,
-				F02F21D32175CFB10079F3F9 /* my_isDuringSchool.swift in Sources */,
-				F02F21C72175CFB10079F3F9 /* my_localTime.swift in Sources */,
-				F02F21CF2175CFB10079F3F9 /* my_numOfMinDuringSchool.swift in Sources */,
-				F02F21E52175CFB10079F3F9 /* my_getTomorrow.swift in Sources */,
-				F02F21C62175CFB10079F3F9 /* my_notificationPrompt.swift in Sources */,
-				F02F21C92175CFB10079F3F9 /* my_customDateFormatter.swift in Sources */,
-				F02F21E02175CFB10079F3F9 /* my_getWeekdayString.swift in Sources */,
-				F02F21DA2175CFB10079F3F9 /* my_isSchoolDay.swift in Sources */,
-				F02F22242175D3FD0079F3F9 /* mt_numbersToLabelWidget.swift in Sources */,
-				F02F21DE2175CFB10079F3F9 /* my_adjustFontSize.swift in Sources */,
-				F02F21C82175CFB10079F3F9 /* my_fadeIn.swift in Sources */,
-				F02F21E12175CFB10079F3F9 /* my_boolToLabel.swift in Sources */,
+				F0F8BE08217EF41C00037B21 /* my_UTC.swift in Sources */,
+				F0F8BE02217EF41C00037B21 /* my_schoolTime.swift in Sources */,
+				F0F8BDFF217EF41C00037B21 /* my_UTCTimeDifference.swift in Sources */,
+				F0F8BE0A217EF41C00037B21 /* my_parentViewController.swift in Sources */,
+				F0F8BE0D217EF41C00037B21 /* my_nextMonday.swift in Sources */,
+				F0F8BDF8217EF41C00037B21 /* my_stringToDateFormatter.swift in Sources */,
+				F0F8BE10217EF41C00037B21 /* my_isSchoolDay.swift in Sources */,
+				F0F8BE13217EF41C00037B21 /* my_daysAwayFromToday.swift in Sources */,
+				F0F8BE06217EF41C00037B21 /* my_isLongBreak.swift in Sources */,
+				F0F8BE14217EF41C00037B21 /* my_getStartEndPeriodLabel.swift in Sources */,
+				F0F8BE07217EF41C00037B21 /* my_getScheduleFromToday.swift in Sources */,
+				F0F8BDFC217EF41C00037B21 /* my_localTime.swift in Sources */,
+				F0F8BE1C217EF41C00037B21 /* my_getTomorrow.swift in Sources */,
+				F0F8BE03217EF41C00037B21 /* my_minutesFromSchoolStart.swift in Sources */,
+				F0F8BE0B217EF41C00037B21 /* my_UIViewFadeIn.swift in Sources */,
+				F0F8BE04217EF41C00037B21 /* my_dropShadow.swift in Sources */,
+				F0F8BE0F217EF41C00037B21 /* my_setNavigatinoBar.swift in Sources */,
+				F0F8BE09217EF41C00037B21 /* my_isDuringSchool.swift in Sources */,
+				F0F8BDF9217EF41C00037B21 /* my_setGradientBackground.swift in Sources */,
+				F0F8BE19217EF41C00037B21 /* my_getStartEndLabel.swift in Sources */,
+				F0F8BE1E217EF49800037B21 /* my_numbersToLabelWidget.swift in Sources */,
+				F0F8BE1A217EF41C00037B21 /* my_unquotedJSONFormatter.swift in Sources */,
 				F02F217A2175C4A80079F3F9 /* TodayViewController.swift in Sources */,
+				F0F8BE01217EF41C00037B21 /* my_configureTopLabel.swift in Sources */,
 				F02F21ED2175D0830079F3F9 /* CheckInternet.swift in Sources */,
-				F02F21CC2175CFB10079F3F9 /* my_configureTopLabel.swift in Sources */,
+				F0F8BE0C217EF41C00037B21 /* my_getStartEndTimeFromToday.swift in Sources */,
+				F0F8BDFA217EF41C00037B21 /* my_glowAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1349,6 +1351,7 @@
 				F0B1DD2A211BF8AC00901E31 /* Today+CoreDataProperties.swift in Sources */,
 				F016C1BF2128EDC300890DE3 /* UnderConstructionView.swift in Sources */,
 				F05BE2E8210E78B700E429F2 /* my_getWeekdayString.swift in Sources */,
+				F0F8BDBA217EECE300037B21 /* my_schoolTime.swift in Sources */,
 				F05BE2FD2111A33300E429F2 /* my_getStartEndLabel.swift in Sources */,
 				F016C219212928E300890DE3 /* HouseCollectionViewCell.swift in Sources */,
 				F016C237212B3C2800890DE3 /* AthleticsCollectionViewCell.swift in Sources */,

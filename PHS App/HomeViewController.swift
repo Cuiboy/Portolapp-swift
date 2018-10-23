@@ -29,6 +29,7 @@ func getDayType(date: Date) -> Int {
     for days in specialDays {
         if days.date.noon == date.noon {
             isSpecial = true
+      
             return Int(days.type)
         }
     }
@@ -219,6 +220,8 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         
         super.viewDidLoad()
         initialize()
+       
+        
         let notificationScheduled = UserDefaults.standard.bool(forKey: "notificationScheduled")
         if !notificationScheduled {
             UserDefaults.standard.set(true, forKey: "notificationScheduled")
@@ -246,7 +249,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
        
-        
+         print(Date().timeOfSchoolDay())
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -312,8 +315,10 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         for days in specialDays {
           
             if Date().noon == days.date.noon {
+            
                 today = days.type
                
+            
             }
             if Date().tomorrow == days.date.noon {
                 tomorrow = days.type
@@ -335,7 +340,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func fadeInViews(isAppOpened: Bool, completion: () -> ()) {
         DispatchQueue.main.async {
-            self.timeOfDay = Date().getRelativeTime()
+            self.timeOfDay = Date().timeOfSchoolDay()
             self.fetchEvents()
             self.configureWeekdays()
             self.configureWeekdayDots()
@@ -360,7 +365,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
            day = Calendar.current.component(.day, from: Date())
         } else {
             if timeOfDay != Date().getRelativeTime() {
-                    timeOfDay = Date().getRelativeTime()
+                    timeOfDay = Date().timeOfSchoolDay()
                     self.configureTimeLeftLabel()
             } else {
                 if minute != Calendar.current.component(.minute, from: Date()) {
@@ -397,7 +402,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         eventTitles.removeAll()
         savedEvents.removeAll()
         getTodayType()
-        timeOfDay = Date().getRelativeTime()
+        timeOfDay = Date().timeOfSchoolDay()
             configureTimeLeftLabel()
             for subview in weekdayDots.subviews {
                 subview.removeFromSuperview()
@@ -829,7 +834,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
    @objc func configureTimeLeftLabel() {
         if Date().isSchoolDay() {
-        
             switch timeOfDay! {
                
             case .before:
