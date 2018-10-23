@@ -160,8 +160,8 @@ class BellScheduleViewController: UIViewController {
         
         
      
-        if Date().getRelativeTime() != nil {
-            switch Date().getRelativeTime()! {
+        if Date().timeOfSchoolDay() != nil {
+            switch Date().timeOfSchoolDay()! {
             case relativeTime.before:
                 progress.center = CGPoint(x: progressView.bounds.midX, y: minimum)
             case relativeTime.during:
