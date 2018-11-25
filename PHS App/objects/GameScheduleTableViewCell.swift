@@ -149,7 +149,7 @@ class GameScheduleTableViewCell: UITableViewCell {
                 let request = UNNotificationRequest(identifier: self.identifier, content: content, trigger: trigger)
                 center.add(request)
             } else {
-                let ac = UIAlertController (title: "No Permission", message: "We do not ahve permission to send you notifications, would you like to change that in settings?", preferredStyle: .alert)
+                let ac = UIAlertController (title: "No Permission", message: "We do not have permission to send you notifications, would you like to change that in settings?", preferredStyle: .alert)
                 
                 let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
                     guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {

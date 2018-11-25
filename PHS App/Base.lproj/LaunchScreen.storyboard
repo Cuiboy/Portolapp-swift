@@ -70,7 +70,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARTWORK BY ANESKA SMITH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0k-pl-pcL">
-                                <rect key="frame" x="101.66666666666669" y="762.33333333333337" width="172" height="15.666666666666629"/>
+                                <rect key="frame" x="101.66666666666669" y="752.33333333333337" width="172" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                             <constraint firstItem="aHS-Do-JWi" firstAttribute="width" secondItem="qkg-Pw-WWk" secondAttribute="width" multiplier="0.4" id="GpH-UD-e6q"/>
                             <constraint firstItem="aHS-Do-JWi" firstAttribute="centerX" secondItem="3of-so-GQC" secondAttribute="centerX" id="Uap-NI-Y6x"/>
                             <constraint firstItem="f0k-pl-pcL" firstAttribute="centerX" secondItem="3of-so-GQC" secondAttribute="centerX" id="nOg-sV-JzQ"/>
-                            <constraint firstItem="3of-so-GQC" firstAttribute="bottom" secondItem="f0k-pl-pcL" secondAttribute="bottom" id="sNF-Kj-0Ba"/>
+                            <constraint firstItem="3of-so-GQC" firstAttribute="bottom" secondItem="f0k-pl-pcL" secondAttribute="bottom" constant="10" id="sNF-Kj-0Ba"/>
                             <constraint firstItem="aHS-Do-JWi" firstAttribute="centerY" secondItem="3of-so-GQC" secondAttribute="centerY" id="uXW-bJ-VnN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3of-so-GQC"/>

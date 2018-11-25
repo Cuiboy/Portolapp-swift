@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreGraphics
+import UserNotifications
 
 class BellScheduleViewController: UIViewController {
     
@@ -37,14 +38,50 @@ class BellScheduleViewController: UIViewController {
 
     }
     
+    func patchUserDefaults() {
+        //remote notification patch
+        let isNotifGranted = UserDefaults.standard.bool(forKey: "notifGranted")
+        if !isNotifGranted {
+            UserDefaults.standard.set(true, forKey: "notifGranted")
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (isGranted, error) in
+                if !isGranted {
+                    let ac = UIAlertController (title: "Turn on Notifications", message: "Turn on notifications for Portolapp to receive updates on all things Portola!", preferredStyle: .alert)
+                    
+                    let settingsAction = UIAlertAction(title: "Yes", style: .default) { (_) -> Void in
+                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                            return
+                        }
+                        
+                        if UIApplication.shared.canOpenURL(settingsUrl) {
+                            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                                
+                            })
+                        }
+                    }
+                    ac.addAction(settingsAction)
+                    let cancelAction = UIAlertAction(title: "No", style: .default, handler: nil)
+                    ac.addAction(cancelAction)
+                    self.present(ac, animated: true, completion: nil)
+                    
+                } else {
+                    print("notification granted")
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initilize()
-        
         drawProgressLine()
         configureTime()
         configureHoliday()
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        patchUserDefaults()
     }
     
     

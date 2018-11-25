@@ -185,6 +185,20 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         showMoreButton.isHidden = true
     }
   
+    func fadeInViews(isAppOpened: Bool, completion: () -> ()) {
+        DispatchQueue.main.async {
+            self.timeOfDay = Date().timeOfSchoolDay()
+            self.fetchEvents()
+            self.configureWeekdays()
+            self.configureWeekdayDots()
+            self.configureProgressBar()
+            self.configureBar()
+            self.configureBarLabel(type: today)
+            self.configureTimeLeftLabel()
+        }
+        completion()
+    }
+    
     func startAnimation() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.3, delay: 0.1, animations: {
@@ -221,12 +235,15 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    override func viewDidLoad() {
+    func userDefaults() {
+        //first launch
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if !launchedBefore {
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            self.performSegue(withIdentifier: "welcome", sender: nil)
+        }
         
-        super.viewDidLoad()
-        initialize()
-       
-        
+        //local notification patch
         let ifNotifUpdated = UserDefaults.standard.bool(forKey: "updateNotification")
         if !ifNotifUpdated {
             UserDefaults.standard.set(true, forKey: "notificationScheduled")
@@ -236,22 +253,31 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
             })
         }
-       
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //lay out UI
+        initialize()
+        
+        //set-up
         isAppConnected = CheckInternet.Connection()
         loadSpecialDays()
         scheduleNotifications()
-         getTodayType()
+        getTodayType()
         DispatchQueue.global(qos: .background).async {
+            //User Defaults
+            self.userDefaults()
             self.fadeInViews(isAppOpened: self.isAppOpenedByUser, completion: {
               self.startAnimation()
-                let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-                if !launchedBefore {
-                    UserDefaults.standard.set(true, forKey: "launchedBefore")
-                    self.performSegue(withIdentifier: "welcome", sender: nil)
-                }
-              
             })
         }
+        
+       
+        
+        //initilize timer
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
        
         
@@ -269,13 +295,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             self.joinButton.backgroundColor = UIColor.clear
             self.joinLabel.textColor = UIColor.white
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-//        UNUserNotificationCenter.current().getPendingNotificationRequests { (request) in
-//            print(request)
-//        }
     }
     
     
@@ -341,7 +360,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         var reducedSpecialDays = [SpecialDays]()
    
         reducedSpecialDays = specialDays.filter { $0.date > Date() }
-             print(reducedSpecialDays.count)
+        
         for days in reducedSpecialDays {
             scheduleLocal(on: days.date, with: days.type)
         }
@@ -349,19 +368,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    func fadeInViews(isAppOpened: Bool, completion: () -> ()) {
-        DispatchQueue.main.async {
-            self.timeOfDay = Date().timeOfSchoolDay()
-            self.fetchEvents()
-            self.configureWeekdays()
-            self.configureWeekdayDots()
-            self.configureProgressBar()
-            self.configureBar()
-            self.configureBarLabel(type: today)
-            self.configureTimeLeftLabel()
-        }
-        completion()
-    }
+ 
     
     @objc func update() {
         if isAppConnected == false {
