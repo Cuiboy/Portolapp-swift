@@ -30,7 +30,8 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var longID: UILabel!
     @IBOutlet weak var addCardView: UIView!
     var addCardLabel = UILabel()
-    var thisUser = User()
+//    var thisUser = User(context: PersistentService.context)
+    var thisUser = UserInfo()
     @IBOutlet weak var houseHeader: UILabel!
     @IBOutlet weak var gradeHeader: UILabel!
     @IBOutlet weak var shortIDHeader: UILabel!
@@ -59,8 +60,15 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
             let request = try PersistentService.context.fetch(userRequest)
             if request.count > 0 {
                 let object = request.first!
-                thisUser = object
+               
                 if object.first != nil && object.longID > 100000000 {
+                    thisUser.first = object.first!
+                    thisUser.last = object.last!
+                    thisUser.longID = object.longID
+                    thisUser.shortID = object.shortID
+                    thisUser.grade = object.grade
+                    thisUser.house = object.house!
+               
                     navigationBar.topItem?.rightBarButtonItem = editButton
                     autoResizeUI()
                     gradeLabel.text = String(object.grade)
@@ -87,6 +95,11 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
          catch {
             
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print(thisUser.first)
     }
     
     override func viewWillLayoutSubviews() {
@@ -119,11 +132,20 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func unwindToIDCard(segue: UIStoryboardSegue) {
         if segue.identifier == "unwindToIDCard" {
+        
+     
             let updateRequest: NSFetchRequest<User> = User.fetchRequest()
             do {
                 let request = try PersistentService.context.fetch(updateRequest)
+                
                 if let object = request.first {
                     autoResizeUI()
+                    thisUser.first = object.first!
+                    thisUser.last = object.last!
+                    thisUser.longID = object.longID
+                    thisUser.shortID = object.shortID
+                    thisUser.grade = object.grade
+                    thisUser.house = object.house!
                     gradeLabel.text = String(object.grade)
                     nameLabel.text = "\(object.first!) \(object.last!)"
                     shortID.text = String(object.shortID)
@@ -131,12 +153,13 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                     longID.text = String(object.longID)
                     barcode.image = RSUnifiedCodeGenerator.shared.generateCode(String(object.longID), machineReadableCodeObjectType: AVMetadataObject.ObjectType.code39.rawValue)
                     navigationBar.topItem?.rightBarButtonItem = editButton
-        
+                    
                 }
                 
             } catch {
                 
             }
+            
         }
     }
 
@@ -164,7 +187,7 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                 vc.grade = Int(thisUser.grade)
                 vc.shortID = String(thisUser.shortID)
                 vc.longID = String(thisUser.longID)
-                
+               
             }
         }
     }

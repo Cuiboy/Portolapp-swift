@@ -166,11 +166,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             
         
-            actionController.addAction(Action("Call Front Office", style: .default, handler: { action in
+            actionController.addAction(Action("Front Office", style: .default, handler: { action in
                 self.callNumber(number: "9499368200")
             }))
-            actionController.addAction(Action("Call Attendance Office", style: .default, handler: { action in
+            actionController.addAction(Action("Attendance Office", style: .default, handler: { action in
                 self.callNumber(number: "9499368201")
+            }))
+            actionController.addAction(Action("Counseling Office", style: .default, handler: { action in
+                self.callNumber(number: "9499368227")
             }))
             actionController.addAction(Action("Cancel", style: .cancel, handler: {
                 action in

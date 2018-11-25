@@ -23,6 +23,11 @@ pod "SwiftyXMLParser"
 pod "SDWebImage", '~> 4.0'
 pod "PickerView"
 
+pod 'OneSignal', '>= 2.6.2', '< 3.0'
+
+
+
+
 
 pod 'Firebase/Core'
 pod 'Fabric', '~> 1.7.11'
@@ -41,9 +46,15 @@ pod 'Firebase/Messaging'
 
   end
 
+ 
+
   
 end
 
+   target 'OneSignalNotificationServiceExtension' do
+	use_frameworks!
+     pod 'OneSignal', '>= 2.6.2', '< 3.0'
+  end
 
 
 post_install do |installer|

@@ -50,11 +50,13 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
             longID = Int(longIDTextField.text!)
         }
         if shortID != nil && longID != nil {
-            saveData()
+          
             if isFreshLaunch {
+                  saveData()
                 performSegue(withIdentifier: "nextToClass", sender: nil)
 
             } else {
+                saveEdits()
                 performSegue(withIdentifier: "unwindToIDCard", sender: nil)
             }
         } else {
@@ -75,6 +77,27 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         user.shortID = Int32(shortID ?? 0)
         user.longID = Int32(longID ?? 0)
         PersistentService.saveContext()
+    }
+    func saveEdits() {
+        let updateRequest: NSFetchRequest<User> = User.fetchRequest()
+        do {
+          let request = try PersistentService.context.fetch(updateRequest)
+            if let user = request.first {
+                let shortIDEdit = Int32(shortID ?? 0)
+                let longIDEdit = Int32(longID ?? 0)
+                user.setValue(first, forKey: "first")
+                user.setValue(last, forKey: "last")
+                user.setValue(grade, forKey: "grade")
+                user.setValue(house, forKey: "house")
+                user.setValue(shortIDEdit, forKey: "shortID")
+                user.setValue(longIDEdit, forKey: "longID")
+                PersistentService.saveContext()
+            }
+        } catch {
+            
+        }
+       
+        
     }
     
     var first: String?

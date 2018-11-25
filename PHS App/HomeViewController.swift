@@ -72,7 +72,12 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var showMoreButton: UIButton!
     @IBAction func buttonTapped(_ sender: Any) {
-        
+        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (notif) in
+            print(notif)
+        })
+        UNUserNotificationCenter.current().getDeliveredNotifications { (notifDel) in
+            print("THIS", notifDel)
+        }
         
 
     }
@@ -222,8 +227,8 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         initialize()
        
         
-        let notificationScheduled = UserDefaults.standard.bool(forKey: "notificationScheduled")
-        if !notificationScheduled {
+        let ifNotifUpdated = UserDefaults.standard.bool(forKey: "updateNotification")
+        if !ifNotifUpdated {
             UserDefaults.standard.set(true, forKey: "notificationScheduled")
             UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
                 if request.count > 0 {
@@ -249,7 +254,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
        
-         print(Date().timeOfSchoolDay())
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -333,9 +338,15 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func scheduleNotifications() {
-        for days in specialDays {
+        var reducedSpecialDays = [SpecialDays]()
+   
+        reducedSpecialDays = specialDays.filter { $0.date > Date() }
+             print(reducedSpecialDays.count)
+        for days in reducedSpecialDays {
             scheduleLocal(on: days.date, with: days.type)
         }
+        
+        
     }
     
     func fadeInViews(isAppOpened: Bool, completion: () -> ()) {

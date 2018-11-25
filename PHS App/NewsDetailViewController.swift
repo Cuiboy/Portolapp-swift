@@ -34,14 +34,16 @@ class NewsDetailViewController: UIViewController {
     var storyURL: URL?
     
     override func viewDidLoad() {
-        
+    
         super.viewDidLoad()
         storyURL = URL(string: storyLink)
         navigationBar.my_setNavigationBar()
         newsTitle.text = titleText.uppercased()
         newsInfo.text = info.uppercased()
         imageView.sd_setImage(with: imageLink, placeholderImage: UIImage(named: "newsPlaceholder"))
-        let attributedText = try! NSAttributedString(data: news.data(using: .unicode, allowLossyConversion: true)!, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue ], documentAttributes: nil)
+        let newsFix = news.replacingOccurrences(of: "<p>", with: "<br><p>")
+        let attributedText = try! NSAttributedString(data: newsFix.data(using: .unicode, allowLossyConversion: true)!, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue ], documentAttributes: nil)
+  
         content.text = attributedText.string
         
 //        let attributedString = NSMutableAttributedString(string: content.text!)

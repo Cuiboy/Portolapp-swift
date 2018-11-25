@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N69-M2-pZp">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchText" translatesAutoresizingMaskIntoConstraints="NO" id="Oeu-Ot-9Gg">
-                                <rect key="frame" x="34" y="286.66666666666669" width="306" height="178"/>
+                                <rect key="frame" x="34.333333333333343" y="286.66666666666669" width="306.33333333333326" height="178"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Oeu-Ot-9Gg" secondAttribute="height" multiplier="346:201" id="W0V-hA-PUR"/>
                                     <constraint firstAttribute="height" constant="178" id="j4g-BY-U06"/>
@@ -56,10 +55,47 @@
             </objects>
             <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="F7L-aE-fKj">
+            <objects>
+                <viewController id="N69-M2-pZp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qkg-Pw-WWk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen_AneskaSmith" translatesAutoresizingMaskIntoConstraints="NO" id="aHS-Do-JWi">
+                                <rect key="frame" x="112.66666666666669" y="336" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aHS-Do-JWi" secondAttribute="height" multiplier="1:1" id="mhr-Bo-aaN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARTWORK BY ANESKA SMITH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0k-pl-pcL">
+                                <rect key="frame" x="101.66666666666669" y="762.33333333333337" width="172" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aHS-Do-JWi" firstAttribute="width" secondItem="qkg-Pw-WWk" secondAttribute="width" multiplier="0.4" id="GpH-UD-e6q"/>
+                            <constraint firstItem="aHS-Do-JWi" firstAttribute="centerX" secondItem="3of-so-GQC" secondAttribute="centerX" id="Uap-NI-Y6x"/>
+                            <constraint firstItem="f0k-pl-pcL" firstAttribute="centerX" secondItem="3of-so-GQC" secondAttribute="centerX" id="nOg-sV-JzQ"/>
+                            <constraint firstItem="3of-so-GQC" firstAttribute="bottom" secondItem="f0k-pl-pcL" secondAttribute="bottom" id="sNF-Kj-0Ba"/>
+                            <constraint firstItem="aHS-Do-JWi" firstAttribute="centerY" secondItem="3of-so-GQC" secondAttribute="centerY" id="uXW-bJ-VnN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3of-so-GQC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZr-hW-vuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.60000000000002" y="374.6305418719212"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Asset 1" width="756" height="394"/>
+        <image name="Asset 1" width="756.33331298828125" height="394.33334350585938"/>
         <image name="launchBackground" width="748" height="1334"/>
-        <image name="launchText" width="534" height="203"/>
+        <image name="launchScreen_AneskaSmith" width="384" height="384"/>
+        <image name="launchText" width="534" height="203.33332824707031"/>
     </resources>
 </document>

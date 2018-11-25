@@ -88,7 +88,6 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
         } else if segue.identifier == "editingToID" {
             let vc = segue.destination as! IDInputViewController
             vc.first = first
-            vc.first = first
             vc.last = last
             vc.house = house
             vc.grade = grade
@@ -241,11 +240,21 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == firstName {
-            first = textField.text
-            firstName.resignFirstResponder()
+            if textField.text == "" {
+                first = nil
+            } else {
+                first = textField.text
+                firstName.resignFirstResponder()
+            }
+           
         } else if textField == lastName {
-            last = textField.text
-            firstName.resignFirstResponder()
+            if textField.text == "" {
+                last = nil
+            } else {
+                last = textField.text
+                firstName.resignFirstResponder()
+            }
+           
         }
     }
     

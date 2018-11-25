@@ -73,7 +73,7 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.my_setNavigationBar()
-       print("VIEW DID LOAD")
+       
         
         
         setSegmentedControl()
@@ -219,12 +219,19 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
                 } else {
                     article.pubDate = Date.distantPast
                 }
-                article.author = object["dc:creator"].text ?? "Student Journalist"
+                if let rawAuthor = object["dc:creator"].text {
+                    if rawAuthor.contains(",") {
+                        let newAuthor = rawAuthor.split(separator: ",")
+                        article.author = String(newAuthor[0])
+                    }
+                } else {
+                    article.author = "Student Journalist"
+                }
+                
                 article.category1 = categories[0]!
                 article.category2 = categories[1]
                 article.category3 = categories[2]
                 article.content = object["content:encoded"].text ?? "Error Loading Article."
-                print(article.content)
                 if let linkString = object["link"].text {
                     let array = linkString.components(separatedBy: "/")
                         if array.count >= 5 {
