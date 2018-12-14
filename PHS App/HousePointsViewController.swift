@@ -235,15 +235,21 @@ class HousePointsViewController: UIViewController, UICollectionViewDelegate, UIC
             default: break
             }
         }
+        var divisionConstant = CGFloat()
+        divisionConstant = CGFloat(1) / CGFloat(self.houses[0].points / 10)
         if isInitial {
+            
+            print(divisionConstant, "THIS")
             UIView.animate(withDuration: 0.7, animations: {
                 if isZero {
-                    self.herHeight.constant = CGFloat(20).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(herPoint))
-                    self.ornHeight.constant = CGFloat(20).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(ornPoint))
-                    self.pegHeight.constant = CGFloat(20).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(pegPoint))
-                    self.posHeight.constant = CGFloat(20).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(posPoint))
+            
+                    self.herHeight.constant = CGFloat(10).relativeToWidth + divisionConstant *  CGFloat(15) *  (CGFloat(herPoint))
+                    self.ornHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15) *  (CGFloat(ornPoint))
+                    self.pegHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15) *  (CGFloat(pegPoint))
+                    self.posHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15) * (CGFloat(posPoint))
                     self.view.layoutIfNeeded()
                 } else {
+                
                     self.herHeight.constant = CGFloat(30).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(herPoint) - CGFloat(self.houses[self.houses.count - 1].points))
                     self.ornHeight.constant = CGFloat(30).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(ornPoint) - CGFloat(self.houses[self.houses.count - 1].points))
                     self.pegHeight.constant = CGFloat(30).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(pegPoint) - CGFloat(self.houses[self.houses.count - 1].points))
@@ -264,10 +270,10 @@ class HousePointsViewController: UIViewController, UICollectionViewDelegate, UIC
             }
         } else {
             UIView.animate(withDuration: 0.7, animations: {
-                    self.herHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(herPointDiff))
-                    self.ornHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(ornPointDiff))
-                    self.pegHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(pegPointDiff))
-                    self.posHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(posPointDiff))
+                    self.herHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(herPointDiff) * divisionConstant)
+                    self.ornHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(ornPointDiff) * divisionConstant)
+                    self.pegHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(pegPointDiff) * divisionConstant)
+                    self.posHeight.constant += CGFloat(15).relativeToWidth * (CGFloat(posPointDiff) * divisionConstant)
                     self.view.layoutIfNeeded()
                
             }) { (_) in

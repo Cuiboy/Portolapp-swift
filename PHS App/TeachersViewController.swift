@@ -1087,6 +1087,7 @@ extension TeachersViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return CGFloat(50).relativeToWidth
+        
     }
     
     
