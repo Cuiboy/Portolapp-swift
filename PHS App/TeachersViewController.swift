@@ -110,14 +110,14 @@ func generateSubjectsDict() {
             var key2 = teacher.subject2!
             if key == "Spanish" || key == "French" || key == "Chinese" {
                 key = "World Language"
-            }   else if key == "Principal" || key == "Assistant Principal" || key == "Administrative Assistant" || key == "Lead Counselor" {
+            }   else if key == "Principal" || key == "Assistant Principal" || key == "Administrative Assistant" || key == "Lead Counselor" || key == "Admin" {
                 adminDictionary[teacher] = key
                 adminRows.append(teacher)
                 key = "Administration"
             }
             if  key2 == "Spanish" || key2 == "French" || key2 == "Chinese" {
                 key2 = "World Language"
-            } else if key2 == "Principal" || key2 == "Assistant Principal" || key2 == "Administrative Assistnat" || key2 == "Lead Counselor" {
+            } else if key2 == "Principal" || key2 == "Assistant Principal" || key2 == "Administrative Assistnat" || key2 == "Lead Counselor" || key2 == "Admin" {
                 adminDictionary[teacher] = key
                 adminRows.append(teacher)
                 key2 = "Administration"
@@ -144,7 +144,7 @@ func generateSubjectsDict() {
             
             if key == "Spanish" || key == "French" || key == "Chinese" {
                 key = "World Language"
-            }   else if key == "Principal" || key == "Assistant Principal" || key == "Administrative Assistant" || key == "Lead Counselor" {
+            }   else if key == "Principal" || key == "Assistant Principal" || key == "Administrative Assistant" || key == "Lead Counselor" || key == "Admin" {
                 adminDictionary[teacher] = key
                 adminRows.append(teacher)
                 key = "Administration"
@@ -165,8 +165,8 @@ func generateSubjectsDict() {
    
     }
     
-    subjectsDictionary = subjectsDictionary.filter {$0.key != "ADMINISTRATION"}
-    subjectsRows = subjectsRows.filter { $0 != "ADMINISTRATION" }
+    subjectsDictionary = subjectsDictionary.filter {$0.key != "ADMIN"}
+    subjectsRows = subjectsRows.filter { $0 != "ADMIN" }
     subjectsRows = [String](subjectsDictionary.keys)
     subjectsRows = subjectsRows.sorted()
 }
@@ -757,7 +757,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             }
         } else if tableView == adminTableView {
             let admin = adminRows[indexPath.row]
-            let role = adminDictionary[adminRows[indexPath.row]]
+            let role = admin.subject1
             cell.first = admin.first ?? "First"
             cell.last = admin.last ?? "Last"
             cell.gender = admin.gender

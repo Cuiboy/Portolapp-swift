@@ -168,7 +168,7 @@ class PickTeachersViewController: UIViewController {
             if subjects.contains(selectedClass!) {
                 subject = selectedClass!
             } else if vapa.contains(selectedClass!) {
-                    subject = "Visual and Performing Arts"
+                    subject = "VAPA"
                 } else if others.contains(selectedClass!) {
                     subject = "General Electives"
             } else if worldLanguage.contains(selectedClass!) {
@@ -304,7 +304,7 @@ class PickTeachersViewController: UIViewController {
                         
                     }
                     vc.teacherObjects = preparedArray
-                case "English", "Social Studies", "Math", "Physical Education", "Science", "Visual and Performing Arts", "World Language", "History":
+                case "English", "Social Studies", "Math", "Physical Education", "Science", "VAPA", "World Language", "History":
                     var preparedArray = [Teachers]()
                     let subjectGroup = subjectsDictionary[subject.uppercased()]
                     for teachers in subjectGroup! {
