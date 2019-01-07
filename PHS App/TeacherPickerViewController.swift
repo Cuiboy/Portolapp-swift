@@ -40,12 +40,12 @@ class TeacherPickerViewController: UIViewController {
     
     var selectedSubject = String()
 
-    var teacherObjects = [Teachers]()
+    var teacherObjects = [NewTeachers]()
     
     
     var presentationType = PresentationType.numbers(0, 0)
-    var selectedItem: Teachers?
-    var currentSelectedValue: Teachers?
+    var selectedItem: NewTeachers?
+    var currentSelectedValue: NewTeachers?
     var updateSelectedValue: ((_ newSelectedValue: String) -> Void)?
     
     var itemsType: PickerViewController.ItemsType = .label
@@ -127,7 +127,7 @@ extension TeacherPickerViewController: PickerViewDataSource {
     
     func pickerView(_ pickerView: PickerView, titleForRow row: Int, index: Int) -> String {
         
-        return "\(teacherObjects[index].first!) \(teacherObjects[index].last!)"
+        return "\(teacherObjects[index].first) \(teacherObjects[index].last)"
     }
     
     

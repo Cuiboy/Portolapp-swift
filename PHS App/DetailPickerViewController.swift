@@ -59,7 +59,7 @@ class DetailPickerViewController: UIViewController {
         super.viewDidLoad()
         navigationBar.my_setNavigationBar()
         switch selectedSubject {
-        case "Visual and Performing Arts":
+        case "VAPA":
             classes = vapa
         case "World Language":
             classes = worldLanguage
@@ -73,9 +73,6 @@ class DetailPickerViewController: UIViewController {
         configurePicker()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
     
     
     

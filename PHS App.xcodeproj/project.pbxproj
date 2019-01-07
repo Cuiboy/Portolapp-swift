@@ -11,6 +11,12 @@
 		3B78114EB8BF6A7CC5FB4FF9 /* Pods_PHS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233A212F644D67C9BBAA7DB7 /* Pods_PHS_App.framework */; };
 		872CDE1E408EE6001325A8A0 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD0B2F187575C59B71BD044 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		AD5400F6DA67199C4345329A /* Pods_PHS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA1E85C1FB0C6EFC8F8C842 /* Pods_PHS_AppTests.framework */; };
+		F006C5E121E2BF3C000F55E8 /* teachersInfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = F006C5E021E2BF3C000F55E8 /* teachersInfo.txt */; };
+		F006C5E721E2CD7F000F55E8 /* NewTeachers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F006C5E621E2CD7F000F55E8 /* NewTeachers.swift */; };
+		F006C5ED21E2D6A0000F55E8 /* MyNewTeachers+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F006C5E921E2D6A0000F55E8 /* MyNewTeachers+CoreDataClass.swift */; };
+		F006C5EE21E2D6A0000F55E8 /* MyNewTeachers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F006C5EA21E2D6A0000F55E8 /* MyNewTeachers+CoreDataProperties.swift */; };
+		F006C5EF21E2D6A0000F55E8 /* MySchedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F006C5EB21E2D6A0000F55E8 /* MySchedule+CoreDataClass.swift */; };
+		F006C5F021E2D6A0000F55E8 /* MySchedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F006C5EC21E2D6A0000F55E8 /* MySchedule+CoreDataProperties.swift */; };
 		F016C1602126B27500890DE3 /* SubjectsExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C15E2126B27500890DE3 /* SubjectsExpandableTableViewCell.swift */; };
 		F016C1612126B27500890DE3 /* SubjectsExpandableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F016C15F2126B27500890DE3 /* SubjectsExpandableTableViewCell.xib */; };
 		F016C16A2126B2A700890DE3 /* SubjectsExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016C1682126B2A700890DE3 /* SubjectsExpandedTableViewCell.swift */; };
@@ -278,6 +284,13 @@
 		BE0A3DC9D51E7EA71F93D7AE /* Pods-PHS AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PHS AppUITests/Pods-PHS AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C1BA66B17B2A0A829B81EF22 /* Pods-PHS AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHS AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PHS AppTests/Pods-PHS AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB8A0E03C847B41B6BB9D8CF /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		F006C5E021E2BF3C000F55E8 /* teachersInfo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = teachersInfo.txt; sourceTree = "<group>"; };
+		F006C5E621E2CD7F000F55E8 /* NewTeachers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeachers.swift; sourceTree = "<group>"; };
+		F006C5E821E2D204000F55E8 /* PHS_App 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PHS_App 3.xcdatamodel"; sourceTree = "<group>"; };
+		F006C5E921E2D6A0000F55E8 /* MyNewTeachers+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyNewTeachers+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F006C5EA21E2D6A0000F55E8 /* MyNewTeachers+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyNewTeachers+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F006C5EB21E2D6A0000F55E8 /* MySchedule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySchedule+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F006C5EC21E2D6A0000F55E8 /* MySchedule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySchedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F016C15E2126B27500890DE3 /* SubjectsExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		F016C15F2126B27500890DE3 /* SubjectsExpandableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectsExpandableTableViewCell.xib; sourceTree = "<group>"; };
 		F016C1682126B2A700890DE3 /* SubjectsExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsExpandedTableViewCell.swift; sourceTree = "<group>"; };
@@ -632,6 +645,7 @@
 				F0252BE32165DB3500F9C554 /* HouseRankCollectionViewCell.swift */,
 				F0252BE52165EBBE00F9C554 /* Houses.swift */,
 				F08E8FB621AA194300D45815 /* UserInfo.swift */,
+				F006C5E621E2CD7F000F55E8 /* NewTeachers.swift */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -837,6 +851,10 @@
 		F0820198212D21B1007DEC1D /* CoreData Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F006C5E921E2D6A0000F55E8 /* MyNewTeachers+CoreDataClass.swift */,
+				F006C5EA21E2D6A0000F55E8 /* MyNewTeachers+CoreDataProperties.swift */,
+				F006C5EB21E2D6A0000F55E8 /* MySchedule+CoreDataClass.swift */,
+				F006C5EC21E2D6A0000F55E8 /* MySchedule+CoreDataProperties.swift */,
 				F080C5F0212541F300F32C6B /* Teachers+CoreDataClass.swift */,
 				F080C5F1212541F300F32C6B /* Teachers+CoreDataProperties.swift */,
 				F0B1DD39211E413300901E31 /* DayType+CoreDataClass.swift */,
@@ -861,6 +879,7 @@
 			isa = PBXGroup;
 			children = (
 				F08201A0212D24AB007DEC1D /* specialDays.txt */,
+				F006C5E021E2BF3C000F55E8 /* teachersInfo.txt */,
 			);
 			path = "JSON files";
 			sourceTree = "<group>";
@@ -1139,6 +1158,7 @@
 				F06EDD4021054AF200297B8B /* LaunchScreen.storyboard in Resources */,
 				F06EDDA021054C0300297B8B /* Heebo-Black.ttf in Resources */,
 				F06EDDA121054C0300297B8B /* Heebo-Bold.ttf in Resources */,
+				F006C5E121E2BF3C000F55E8 /* teachersInfo.txt in Resources */,
 				F06EDD9721054C0300297B8B /* Lato-Black.ttf in Resources */,
 				F06EDDA321054C0300297B8B /* Heebo-ExtraBold.ttf in Resources */,
 				F016C235212AB75600890DE3 /* MyTeachersTableViewCell.xib in Resources */,
@@ -1369,11 +1389,13 @@
 				F016C21B21294E0B00890DE3 /* IDInputViewController.swift in Sources */,
 				F0B26CEE2136565C00E592B7 /* PHS_App.xcdatamodeld in Sources */,
 				F016C23F212BAF7300890DE3 /* Games.swift in Sources */,
+				F006C5E721E2CD7F000F55E8 /* NewTeachers.swift in Sources */,
 				F016C22D212A58BB00890DE3 /* PickTeachersViewController.swift in Sources */,
 				F06EDDAC2105A41C00297B8B /* my_setGradientBackground.swift in Sources */,
 				F016C21D2129696800890DE3 /* FirstScanViewController.swift in Sources */,
 				F05BE3012111B04800E429F2 /* my_getStartEndPeriodLabel.swift in Sources */,
 				F0820179212CD302007DEC1D /* CalendarCollectionViewCell.swift in Sources */,
+				F006C5EE21E2D6A0000F55E8 /* MyNewTeachers+CoreDataProperties.swift in Sources */,
 				F0B1DD29211BF8AC00901E31 /* Today+CoreDataClass.swift in Sources */,
 				F016C225212A1B9200890DE3 /* SwiftyJSON.swift in Sources */,
 				F0F583DB212165250046A837 /* PnnViewController.swift in Sources */,
@@ -1390,9 +1412,11 @@
 				F016C21521291B6600890DE3 /* NameInputViewController.swift in Sources */,
 				F016C1B72128B55E00890DE3 /* Coaches+CoreDataProperties.swift in Sources */,
 				F016C1602126B27500890DE3 /* SubjectsExpandableTableViewCell.swift in Sources */,
+				F006C5F021E2D6A0000F55E8 /* MySchedule+CoreDataProperties.swift in Sources */,
 				F05BE309211411C400E429F2 /* my_isWeekend.swift in Sources */,
 				F080C5F3212541F300F32C6B /* Teachers+CoreDataProperties.swift in Sources */,
 				F04F237D2115565000513EC8 /* my_UTCTimeDifference.swift in Sources */,
+				F006C5EF21E2D6A0000F55E8 /* MySchedule+CoreDataClass.swift in Sources */,
 				F043CECA213E8A9B00312B56 /* my_isLongBreak.swift in Sources */,
 				F05BE3072114051600E429F2 /* my_boolToLabel.swift in Sources */,
 				F04F2386211598CF00513EC8 /* my_isSchoolDay.swift in Sources */,
@@ -1412,6 +1436,7 @@
 				F0252BE42165DB3500F9C554 /* HouseRankCollectionViewCell.swift in Sources */,
 				F08E8FB721AA194300D45815 /* UserInfo.swift in Sources */,
 				F016C229212A1FC300890DE3 /* PickerViewController.swift in Sources */,
+				F006C5ED21E2D6A0000F55E8 /* MyNewTeachers+CoreDataClass.swift in Sources */,
 				F06EDDB42108F84300297B8B /* MeViewController.swift in Sources */,
 				F0820155212C939E007DEC1D /* SchoolEvents.swift in Sources */,
 				F016C21F212A0B0000890DE3 /* PickClassesViewController.swift in Sources */,
@@ -1950,10 +1975,11 @@
 		F0B26CEB2136565C00E592B7 /* PHS_App.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F006C5E821E2D204000F55E8 /* PHS_App 3.xcdatamodel */,
 				F0B26CEC2136565C00E592B7 /* PHS_App.xcdatamodel */,
 				F0B26CED2136565C00E592B7 /* PHS_App 2.xcdatamodel */,
 			);
-			currentVersion = F0B26CED2136565C00E592B7 /* PHS_App 2.xcdatamodel */;
+			currentVersion = F006C5E821E2D204000F55E8 /* PHS_App 3.xcdatamodel */;
 			path = PHS_App.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

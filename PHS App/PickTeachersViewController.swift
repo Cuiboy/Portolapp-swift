@@ -150,6 +150,7 @@ class PickTeachersViewController: UIViewController {
                 if  isPageEditing {
                     performSegue(withIdentifier: "unwindToTeacherPage", sender: nil)
                 } else {
+                    print("should be here")
                     performSegue(withIdentifier: "newInfoSaved", sender: nil)
                 }
             }
@@ -184,7 +185,7 @@ class PickTeachersViewController: UIViewController {
         performSegue(withIdentifier: "pickTeacher", sender: nil)
         
     }
-    let subjects = ["English", "Social Studies", "Math", "Physical Education", "Science", "Visual and Performing Arts", "World Language", "General Electives", "ROP", "Sport", "Free Period"]
+    let subjects = ["English", "Social Studies", "Math", "Physical Education", "Science", "VAPA", "World Language", "General Electives", "ROP", "Sport", "Free Period"]
     var classes = [String?]()
     var buttons = [UIButton]()
     var classLabels = [UILabel]()
@@ -192,7 +193,7 @@ class PickTeachersViewController: UIViewController {
     var subject = String()
     var period = Int()
     
-    var myTeachers = [Teachers?]()
+    var myTeachers = [NewTeachers?]()
     
     var isFreshLaunch = true
     var isSecondScreen = false
@@ -269,17 +270,12 @@ class PickTeachersViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func unwindToTeachers(segue: UIStoryboardSegue) {
         if segue.identifier == "backToTeacher" {
             if let source = segue.source as? TeacherPickerViewController {
                 let teacher = source.selectedItem
                 myTeachers[period - 1] = teacher!
-                let teacherLabel = "\(teacher!.first!) \(teacher!.last!)"
+                let teacherLabel = "\(teacher!.first) \(teacher!.last)"
                 teacherLabels[period - 1].text = teacherLabel.uppercased()
             }
                 
@@ -293,7 +289,7 @@ class PickTeachersViewController: UIViewController {
             if let vc = segue.destination as? TeacherPickerViewController {
                 switch subject {
                 case "All", "General Electives", "ROP":
-                    var preparedArray = [Teachers]()
+                    var preparedArray = [NewTeachers]()
                     for classSubjects in subjectsRows {
                         if classSubjects != "ADMINISTRATION" || classSubjects != "SUPPORT STAFF" || classSubjects != "SPECIAL EDUCATION" {
                             let subjectGroup = subjectsDictionary[classSubjects]
@@ -305,14 +301,14 @@ class PickTeachersViewController: UIViewController {
                     }
                     vc.teacherObjects = preparedArray
                 case "English", "Social Studies", "Math", "Physical Education", "Science", "VAPA", "World Language", "History":
-                    var preparedArray = [Teachers]()
+                    var preparedArray = [NewTeachers]()
                     let subjectGroup = subjectsDictionary[subject.uppercased()]
                     for teachers in subjectGroup! {
                        preparedArray.append(teachers)
                     }
                     vc.teacherObjects = preparedArray
                 default:
-                    var preparedArray = [Teachers]()
+                    var preparedArray = [NewTeachers]()
                     for classSubjects in subjectsRows {
                         if classSubjects != "ADMINISTRATION" || classSubjects != "SUPPORT STAFF" || classSubjects != "SPECIAL EDUCATION" {
                             let subjectGroup = subjectsDictionary[classSubjects]
@@ -327,43 +323,27 @@ class PickTeachersViewController: UIViewController {
             }
           
         } else if segue.identifier == "skipToWelcome" {
-            if !classes.contains(nil) {
-                let myClasses = MyClasses(context: PersistentService.context)
-                myClasses.period1 = classes[0]
-                myClasses.period2 = classes[1]
-                myClasses.period3 = classes[2]
-                myClasses.period4 = classes[3]
-                myClasses.period5 = classes[4]
-                myClasses.period6 = classes[5]
-                myClasses.period7 = classes[6]
-                myClasses.period8 = classes[7]
-                PersistentService.saveContext()
-            }
-         
-      
+
         
         } else if segue.identifier == "finishToWelcome" {
+
             if !classes.contains(nil) {
-                let myClasses = MyClasses(context: PersistentService.context)
-                myClasses.period1 = classes[0]
-                myClasses.period2 = classes[1]
-                myClasses.period3 = classes[2]
-                myClasses.period4 = classes[3]
-                myClasses.period5 = classes[4]
-                myClasses.period6 = classes[5]
-                myClasses.period7 = classes[6]
-                myClasses.period8 = classes[7]
-                PersistentService.saveContext()
-                
+                for i in 0...7 {
+                      let mySchedule = MySchedule(context: PersistentService.context)
+                    mySchedule.name = classes[i]
+                    mySchedule.period = Int16(i + 1)
+                    let currentTeacher = myTeachers[i]
+                    let newTeacher = MyNewTeachers(context: PersistentService.context)
+                    newTeacher.first = currentTeacher?.first
+                    newTeacher.last = currentTeacher?.last
+                    newTeacher.subject1 = currentTeacher?.subject1
+                    newTeacher.subject2 = currentTeacher?.subject2
+                    newTeacher.isFemale = currentTeacher?.isFemale ?? false
+                    mySchedule.teacher = newTeacher
+                    PersistentService.saveContext()
+                    
+                }
             }
-     
-            for i in 0...7 {
-             let mySchedule = MyTeachers(context: PersistentService.context)
-                mySchedule.period = Int16(i + 1)
-                mySchedule.teacher = myTeachers[i]
-                PersistentService.saveContext()
-            }
-           
             
         }
     }

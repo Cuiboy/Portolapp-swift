@@ -10,49 +10,23 @@ import Foundation
 import CoreData
 
 func myClassArray() -> [String?] {
-    let fetchRequest: NSFetchRequest<MyClasses> = MyClasses.fetchRequest()
+    var classes = [String]()
+    let classFetchRequest: NSFetchRequest<MySchedule> = MySchedule.fetchRequest()
     do {
-        let request = try PersistentService.context.fetch(fetchRequest)
-        if request.count == 0 {
-            return []
+        var request = try PersistentService.context.fetch(classFetchRequest)
+        if request.count > 0 {
+            request.sort {$0.period < $1.period}
+            for i in 0...7 {
+                classes.append(request[i].name!)
+            }
         } else {
-            let object = request.first
-            if object?.period1 == "History" {
-                object?.setValue("Social Studies", forKey: "period1")
-            }
-            if object?.period2 == "History" {
-                object?.setValue("Social Studies", forKey: "period2")
-            }
-            if object?.period3 == "History" {
-                object?.setValue("Social Studies", forKey: "period3")
-            }
-            if object?.period4 == "History" {
-                object?.setValue("Social Studies", forKey: "period4")
-            }
-            if object?.period5 == "History" {
-                object?.setValue("Social Studies", forKey: "period5")
-            }
-            if object?.period6 == "History" {
-                object?.setValue("Social Studies", forKey: "period6")
-            }
-            if object?.period7 == "History" {
-                object?.setValue("Social Studies", forKey: "period7")
-            }
-            if object?.period8 == "History" {
-                object?.setValue("Social Studies", forKey: "period8")
-            }
-            
-            PersistentService.saveContext()
-            let finalRequest = try PersistentService.context.fetch(fetchRequest)
-            if let finalObject = finalRequest.first {
-                return [finalObject.period1, finalObject.period2, finalObject.period3, finalObject.period4, finalObject.period5, finalObject.period6, finalObject.period7, finalObject.period8]
-            }
-            
+            classes = []
         }
+       
     } catch {
         
     }
-    return []
+    return classes
 }
 
 extension Int {

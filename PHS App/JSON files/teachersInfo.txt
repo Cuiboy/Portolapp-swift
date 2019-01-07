@@ -1,0 +1,625 @@
+{
+"teachers": [
+{
+"first": "Peter",
+"last": "Abe",
+"subject1": "Physical Education",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Caroline",
+"last": "Aldemir",
+"subject1": "Spanish",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Peggy",
+"last": "Ammermann",
+"subject1": "Chinese",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Laura",
+"last": "Andalon",
+"subject1": "Counseling",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Erin",
+"last": "Arredondo",
+"subject1": "Science",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Kate",
+"last": "Avery",
+"subject1": "English",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Marci",
+"last": "Boden",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Jill",
+"last": "Cavotta",
+"subject1": "English",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Amanda",
+"last": "Cramer",
+"subject1": "Learning Commons",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Desiree",
+"last": "De Santos",
+"subject1": "Special Education",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Sarah",
+"last": "Dean",
+"subject1": "Math",
+"subject2": "Activities",
+"isFemale": true
+},
+{
+"first": "Lewis",
+"last": "Dalahunty",
+"subject1": "Special Education",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Leo",
+"last": "Diego",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Kathy",
+"last": "Elgohary",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Nicole",
+"last": "Epres",
+"subject1": "Counseling",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Adrian",
+"last": "Espinoza",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Courtney",
+"last": "Frei",
+"subject1": "Special Education",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Sharon",
+"last": "Fronk",
+"subject1": "Science",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Brittany",
+"last": "Frymire",
+"subject1": "Athletics Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Samantha",
+"last": "Gardner",
+"subject1": "VAPA",
+"subject2": "Physical Education",
+"isFemale": true
+},
+{
+"first": "Melissa",
+"last": "Gibson",
+"subject1": "Lead Counselor",
+"subject2": "Counseling",
+"isFemale": true
+},
+{
+"first": "Shelley",
+"last": "Godett",
+"subject1": "Math",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Eric",
+"last": "Graham",
+"subject1": "Math",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Desmond",
+"last": "Hamilton",
+"subject1": "English",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Jeffrey",
+"last": "Hernandez",
+"subject1": "Assistant Principal",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Lyndsey",
+"last": "Hicks",
+"subject1": "English",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Daniel",
+"last": "Hunter",
+"subject1": "Social Studies",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Ryan",
+"last": "Itchon",
+"subject1": "Counseling",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Nicole",
+"last": "Jackson",
+"subject1": "Counseling",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Jeanne",
+"last": "Jelnick",
+"subject1": "English",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Jeralyn",
+"last": "Jelnick",
+"subject1": "English",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Jennifer",
+"last": "Johnsen",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Brittney",
+"last": "Kang",
+"subject1": "Science",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Cale",
+"last": "Kavanaugh",
+"subject1": "English",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Ben",
+"last": "Kessler",
+"subject1": "Special Education",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Megan",
+"last": "Kirby",
+"subject1": "French",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Andrew",
+"last": "Kranz",
+"subject1": "Science",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Aaron",
+"last": "Kwan",
+"subject1": "English",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Crystal",
+"last": "Le",
+"subject1": "Math",
+"subject2": "VAPA",
+"isFemale": true
+},
+{
+"first": "Alyssa",
+"last": "Levensailor",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Katherine",
+"last": "Levensailor",
+"subject1": "Science",
+"subject2": "Athletic Director",
+"isFemale": true
+},
+{
+"first": "Kris",
+"last": "Linville",
+"subject1": "Assistant Principal",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Grace",
+"last": "Maginn",
+"subject1": "Spanish",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "George",
+"last": "Mares",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Shari",
+"last": "Markowitz",
+"subject1": "Counseling",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Heidi",
+"last": "Martasian",
+"subject1": "Social Studies",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "James",
+"last": "Matejcek",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Armando",
+"last": "Medina",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Courtney",
+"last": "Moder",
+"subject1": "Science",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Kearci",
+"last": "Moir",
+"subject1": "VAPA",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Kelli",
+"last": "Moline",
+"subject1": "Math",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Maureen",
+"last": "Muir",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Madeline",
+"last": "Mullens",
+"subject1": "English",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Alexandra",
+"last": "Murphy",
+"subject1": "Spanish",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Tina",
+"last": "Murphy",
+"subject1": "VAPA",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Virginia",
+"last": "Nguyen",
+"subject1": "Social Studies",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Jen",
+"last": "Ochsner",
+"subject1": "Math",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "John",
+"last": "Olivares",
+"subject1": "Science",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Amy",
+"last": "Paulsen",
+"subject1": "Assistant Principal",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "John",
+"last": "Pehrson",
+"subject1": "Principal",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Anthony",
+"last": "Pham",
+"subject1": "Science",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Patricia",
+"last": "Pippen",
+"subject1": "Athletics Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Cindy",
+"last": "Prunty",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Pamela",
+"last": "Quiros",
+"subject1": "Learning Commons",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Wind",
+"last": "Ralston",
+"subject1": "Social Studies",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Adrian",
+"last": "Rangel-Sanchez",
+"subject1": "VAPA",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Brianna",
+"last": "Rapp",
+"subject1": "English",
+"subject2": "VAPA",
+"isFemale": true
+},
+{
+"first": "Nicole",
+"last": "Rengifo",
+"subject1": "Counseling",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Jon",
+"last": "Resendez",
+"subject1": "Social Studies",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Mendy",
+"last": "Resendez",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Michelle",
+"last": "Rios",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},{
+"first": "Christina",
+"last": "Sanchez",
+"subject1": "Administrative Assistant",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Doris",
+"last": "Schlothan",
+"subject1": "English",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Natasha",
+"last": "Schottland",
+"subject1": "Social Studies",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Emily",
+"last": "Sheridan",
+"subject1": "Social Studies",
+"subject2": "Activities",
+"isFemale": true
+},{
+"first": "Brian",
+"last": "Smith",
+"subject1": "Social Studies",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Brittany",
+"last": "Sola",
+"subject1": "Spanish",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Desmond",
+"last": "Stevens",
+"subject1": "VAPA",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Michael",
+"last": "Tang",
+"subject1": "Science",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Kyle",
+"last": "Traska",
+"subject1": "VAPA",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Thomas",
+"last": "Trinh",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Karen",
+"last": "Tubbs",
+"subject1": "Spanish",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Diana",
+"last": "Vedder",
+"subject1": "Math",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Grace",
+"last": "Waldner",
+"subject1": "VAPA",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Amanda",
+"last": "Welch",
+"subject1": "Math",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "James",
+"last": "Welker",
+"subject1": "Physical Education",
+"subject2": null,
+"isFemale": false
+},
+{
+"first": "Catherine",
+"last": "Whitt",
+"subject1": "Support Staff",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Katie",
+"last": "Wi",
+"subject1": "Social Studies",
+"subject2": null,
+"isFemale": true
+},
+{
+"first": "Joe",
+"last": "Ziemann",
+"subject1": "Special Education",
+"subject2": null,
+"isFemale": false
+}
+]
+}

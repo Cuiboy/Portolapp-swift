@@ -17,79 +17,48 @@ var fetchedCoachesCount = 0
 
 
  func fetchTeachers() {
-        var id = Int32()
-        var first = String()
-        var last = String()
-        var subject1 = String()
-    var subject2: String?
-    var gender = Bool()
-    
-    
-
-        if let data = try? String(contentsOf: URL(string: "https://spreadsheets.google.com/feeds/list/1LYh5MBpUI480rVDntpZOci3C78HdnMdeBRkjPGbsQl8/od6/public/basic?alt=json")!) {
-            let jsonData = JSON(parseJSON: data)
-            let entryArray = jsonData.dictionaryValue["feed"]!["entry"].arrayValue
-            DispatchQueue.main.async {
-                for entry in entryArray {
-                    let teacherType = entry["content"]["$t"].stringValue
-                    let finalJSON = teacherType.my_unquotedJSONFormatter(string: teacherType, rows: 6)
-                    if finalJSON != "error" {
-                        let teacherJSON = JSON(parseJSON: finalJSON)
-                        let dictionary = teacherJSON.dictionaryObject!
-                        if let idGet = dictionary["id"] as? String {
-                            id = Int32(idGet)!
-                        }
-                        if let firstGet = dictionary["first"] as? String {
-                            first = firstGet
-                        }
-                        if let lastGet = dictionary["last"] as? String {
-                            last = lastGet
-                        }
-                        if let subject1Get = dictionary["subject1"] as? String {
-                            subject1 = subject1Get
-                        }
-                        if let subject2Get = dictionary["subject2"] as? String {
-                            if subject2Get == "nil" {
-                                subject2 = nil
-                            } else {
-                                subject2 = subject2Get
-                            }
-                            if let genderGet = dictionary["gender"] as? String {
-                                if genderGet == "f" {
-                                    gender = true
-                                } else {
-                                    gender = false
-                                }
-                                
-                            }
-                        }
-                        
-                        let teachers = Teachers(context: PersistentService.context)
-                        teachers.id = id
-                        teachers.first = first
-                        teachers.last = last
-                        teachers.subject1 = subject1
-                        teachers.subject2 = subject2
-                        teachers.gender = gender
-                        PersistentService.saveContext()
-                        savedTeachers.append(teachers)
-                        
+    print("CALLED FETCHED TEACEHRS")
+    if let data = Bundle.main.path(forResource: "teachersInfo", ofType: "txt") {
+        if let content = try? String(contentsOfFile: data) {
+            if let jsonData = JSON(parseJSON: content).dictionaryValue["teachers"]?.arrayValue {
+          
+                for member in jsonData {
+                    let detail = member.dictionaryObject!
+                    let object = NewTeachers()
+                    if let first = detail["first"] as? String {
+                        object.first = first
                     }
-                    
+                    if let last = detail["last"] as? String {
+                        object.last = last
+                    }
+                    if let subject1 = detail["subject1"] as? String {
+                        object.subject1 = subject1
+                    }
+                    if let subject2 = detail["subject2"] as? String {
+                        object.subject2 = subject2
+                    } else {
+                        object.subject2 = nil
+                    }
+                    if let isFemale = detail["isFemale"] as? Bool {
+                        object.isFemale = isFemale
+                    }
+                    localTeachers.append(object)
                 }
-                fetchedTeachersCount = entryArray.count
-                
-                }
-            }
            
+            }
+        }
+    }
+    
+    localTeachers = uniq(source: localTeachers)
+    
     
     }
 
 
         
 func generateAlphaDict() {
-    for teacher in savedTeachers {
-        let key = "\(teacher.last![(teacher.last!.startIndex)])"
+    for teacher in localTeachers {
+        let key = "\(teacher.last[(teacher.last.startIndex)])"
         let upper = key.uppercased()
         if var teacherInfo = teachersAlphaDict[upper] {
             teacherInfo.append(teacher)
@@ -103,21 +72,21 @@ func generateAlphaDict() {
 }
 
 func generateSubjectsDict() {
-    for teacher in savedTeachers {
+    for teacher in localTeachers {
         if teacher.subject2 != nil {
            
-            var key = teacher.subject1!
+            var key = teacher.subject1
             var key2 = teacher.subject2!
             if key == "Spanish" || key == "French" || key == "Chinese" {
                 key = "World Language"
-            }   else if key == "Principal" || key == "Assistant Principal" || key == "Administrative Assistant" || key == "Lead Counselor" || key == "Admin" {
+            }   else if key == "Principal" || key == "Assistant Principal" || key == "Administrative Assistant" || key == "Lead Counselor" || key == "Athletic Director" {
                 adminDictionary[teacher] = key
                 adminRows.append(teacher)
                 key = "Administration"
             }
             if  key2 == "Spanish" || key2 == "French" || key2 == "Chinese" {
                 key2 = "World Language"
-            } else if key2 == "Principal" || key2 == "Assistant Principal" || key2 == "Administrative Assistnat" || key2 == "Lead Counselor" || key2 == "Admin" {
+            } else if key2 == "Principal" || key2 == "Assistant Principal" || key2 == "Administrative Assistnat" || key2 == "Lead Counselor" || key2 == "Athletic Director" {
                 adminDictionary[teacher] = key
                 adminRows.append(teacher)
                 key2 = "Administration"
@@ -128,62 +97,55 @@ func generateSubjectsDict() {
                 teacherSubject.append(teacher)
                 subjectsDictionary[upper] = teacherSubject
             } else {
-             
                 subjectsDictionary[upper] = [teacher]
             }
             if var teacherSubject2 = subjectsDictionary[upper2] {
                 teacherSubject2.append(teacher)
                 subjectsDictionary[upper2] = teacherSubject2
             } else {
-           
                 subjectsDictionary[upper2] = [teacher]
             }
             
         } else {
-            var key = teacher.subject1!
-            
+            var key = teacher.subject1
             if key == "Spanish" || key == "French" || key == "Chinese" {
                 key = "World Language"
-            }   else if key == "Principal" || key == "Assistant Principal" || key == "Administrative Assistant" || key == "Lead Counselor" || key == "Admin" {
+            }   else if key == "Principal" || key == "Assistant Principal" || key == "Administrative Assistant" || key == "Lead Counselor" || key == "Athletic Director" {
                 adminDictionary[teacher] = key
                 adminRows.append(teacher)
                 key = "Administration"
             }
             let upper = key.uppercased()
-         
             if var teacherSubject = subjectsDictionary[upper] {
                 teacherSubject.append(teacher)
                 subjectsDictionary[upper] = teacherSubject
             } else {
-             
                 subjectsDictionary[upper] = [teacher]
             }
-          
-        
  
-        
-   
     }
     
-    subjectsDictionary = subjectsDictionary.filter {$0.key != "ADMIN"}
-    subjectsRows = subjectsRows.filter { $0 != "ADMIN" }
+    subjectsDictionary = subjectsDictionary.filter {$0.key != "ADMINISTRATION"}
+    subjectsRows = subjectsRows.filter { $0 != "ADMINISTRATION" }
     subjectsRows = [String](subjectsDictionary.keys)
     subjectsRows = subjectsRows.sorted()
 }
 }
 
 var savedTeachers = [Teachers]()
-var teachersAlphaDict = [String: [Teachers]]()
+var localTeachers = [NewTeachers]()
+var teachersAlphaDict = [String: [NewTeachers]]()
 var teachersAlphaSections = [String]()
-var subjectsDictionary = [String: [Teachers]]()
+var subjectsDictionary = [String: [NewTeachers]]()
 var subjectsRows = [String]()
-var adminDictionary = [Teachers: String]()
-var adminRows = [Teachers]()
+var adminDictionary = [NewTeachers: String]()
+var adminRows = [NewTeachers]()
 var savedCoaches = [Coaches]()
 var coachesTeamDictionary = [String: [Coaches]]()
 var coachesRows = [String]()
 
  var myClasses = [String?]()
+  var masterSchedule = [MySchedule]()
 
 class TeachersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
 
@@ -214,253 +176,16 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     var fillTeachersButton = UIView()
     var fillInLabel = UILabel()
     
-    var myTeachers = [MyTeachers]()
-   
+    var myTeachers = [MyNewTeachers]()
+ 
     var classesToDisplay = [String?]()
-    
+    var displaySchedule = [MySchedule]()
     var allTeachersCount = Int()
     var allCoachesCount = Int()
    var displayCoaches = Bool()
     
     @IBOutlet weak var myTeachersTableView: UITableView!
     
-    
-    func fetchCoaches() {
-        var first = String()
-        var last = String()
-        var email = String()
-        var team1 = String()
-        var team2: String?
-        var gender = Bool()
-        
-        if let data = try? String(contentsOf: URL(string: "https://spreadsheets.google.com/feeds/list/14ewgMDTDGBDbNdlctcPWL_k4EiihCnwfJBhDyYLVqHc/od6/public/basic?alt=json")!) {
-            let jsonData = JSON(parseJSON: data)
-            let entryArray = jsonData.dictionaryValue["feed"]!["entry"].arrayValue
-            DispatchQueue.main.async {
-                let firstItem = entryArray[0]["content"]["$t"].stringValue
-                if firstItem == "first: hold" {
-                    self.displayCoaches = false
-                } else {
-                    self.displayCoaches = true
-                    for i in 1 ... entryArray.count - 1 {
-                        let teacherType = entryArray[i]["content"]["$t"].stringValue
-                        let finalJSON = teacherType.my_unquotedJSONFormatter(string: teacherType, rows: 6)
-                        if finalJSON != "error" {
-                            let teacherJSON = JSON(parseJSON: finalJSON)
-                            let dictionary = teacherJSON.dictionaryObject!
-                            
-                            if let firstGet = dictionary["first"] as? String {
-                                first = firstGet
-                            }
-                            if let lastGet = dictionary["last"] as? String {
-                                last = lastGet
-                            }
-                            if let emailGet = dictionary["email"] as? String {
-                                email = emailGet
-                            }
-                            if let team1Get = dictionary["team1"] as? String {
-                                team1 = team1Get
-                            }
-                            if let team2Get = dictionary["team2"] as? String {
-                                if team2Get == "nil" {
-                                    team2 = nil
-                                } else {
-                                    team2 = team2Get
-                                }
-                                if let genderGet = dictionary["gender"] as? String {
-                                    if genderGet == "f" {
-                                        gender = true
-                                    } else {
-                                        gender = false
-                                    }
-                                    
-                                }
-                            }
-                            
-                            let coaches = Coaches(context: PersistentService.context)
-                            coaches.first = first
-                            coaches.last = last
-                            coaches.email = email
-                            coaches.gender = gender
-                            coaches.team1 = team1
-                            coaches.team2 = team2
-                            PersistentService.saveContext()
-                            savedCoaches.append(coaches)
-                        }
-                        
-                    }
-                    fetchedCoachesCount = entryArray.count - 1
-                }
-                
-            }
-        }
-    }
-        
-
-    func generateTeamsDict() {
-        for coach in savedCoaches {
-            let key = coach.team1!
-            let upper = key.uppercased()
-            if var coachTeam = coachesTeamDictionary[upper] {
-                coachTeam.append(coach)
-                coachesTeamDictionary[upper] = coachTeam
-            } else {
-                coachesTeamDictionary[upper] = [coach]
-            }
-            
-            let key2 = coach.team2
-            if key2 != nil {
-                let upper = key2!.uppercased()
-                if coachesTeamDictionary.keys.contains(upper) {
-                    if var coachTeam2 = coachesTeamDictionary[upper] {
-                        coachTeam2.append(coach)
-                        coachesTeamDictionary[upper] = coachTeam2
-                    }
-                    
-                }
-            }
-            
-        }
-        coachesRows = [String](coachesTeamDictionary.keys)
-
-    }
-    
-    func loadSavedData() {
-        let fetchRequest: NSFetchRequest<Teachers> = Teachers.fetchRequest()
-        let sort = NSSortDescriptor(key: "last", ascending: true)
-        fetchRequest.sortDescriptors = [sort]
-        
-        do {
-           
-            if savedTeachers.count > 0 {
-                 let request = try PersistentService.context.fetch(fetchRequest)
-                if request.count > 0 && request.count > savedTeachers.count {
-                    for teachers in request {
-                        if !savedTeachers.contains(teachers) {
-                            PersistentService.context.delete(teachers)
-                            PersistentService.saveContext()
-                        }
-                    }
-                }
-                
-            }
-            
-            let newRequest = try PersistentService.context.fetch(fetchRequest)
-            for detailRequest in newRequest {
-                if detailRequest.subject1 == "History"  {
-                    detailRequest.setValue("Social Studies", forKey: "subject1")
-                }
-                if detailRequest.subject2 == "History" {
-                    detailRequest.setValue("Social Studies", forKey: "subject2")
-                }
-                if detailRequest.first == "Jennifer" && detailRequest.last == "Ochsner" {
-                    detailRequest.setValue("Jen", forKey: "first")
-                }
-            }
-            PersistentService.saveContext()
-            
-            let finalRequest = try PersistentService.context.fetch(fetchRequest)
-            savedTeachers = finalRequest
-           
-            
-            
-            allTeachersCount = savedTeachers.count
-            
-                if fetchedTeachersCount > 0 && allTeachersCount > 0 {
-                    if fetchedTeachersCount != allTeachersCount {
-                        teachersAlphaDict.removeAll()
-                        teachersAlphaSections.removeAll()
-                        subjectsDictionary.removeAll()
-                        subjectsRows.removeAll()
-                        adminDictionary.removeAll()
-                        adminRows.removeAll()
-                        generateAlphaDict()
-                        generateSubjectsDict()
-                    }
-                   
-                } else if fetchedTeachersCount == 0 && allTeachersCount > 0 {
-                    generateAlphaDict()
-                    generateSubjectsDict()
-                } else if fetchedTeachersCount == 0 && allCoachesCount == 0 {
-                    if CheckInternet.Connection() {
-                        DispatchQueue.global(qos: .background).async {
-                            fetchTeachers()
-                            DispatchQueue.main.async {
-                                self.loadSavedData()
-                                generateAlphaDict()
-                                generateSubjectsDict()
-                                self.reload()
-                            }
-                        }
-                    } else {
-                        let ac = UIAlertController(title: "No Internet Connection", message: "Could not load the list of teachers/coaches, make sure your device is connected to the Internet.", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK", style: .cancel))
-                        present(ac, animated: true)
-                    }
-            }
-        } catch {
-            print(error)
-        }
-    
-    }
-    
-    func loadSavedCoachesData() {
-        let fetchRequest: NSFetchRequest<Coaches> = Coaches.fetchRequest()
-        do {
-            if savedCoaches.count > 0 {
-                //the fetch is already complete
-                let request = try PersistentService.context.fetch(fetchRequest)
-                if request.count > 0 && request.count > savedCoaches.count {
-                    //something was deleted
-                    for coach in request {
-                        if savedCoaches.contains(coach) == false {
-                            //delete the deleted object in core data
-                            PersistentService.context.delete(coach)
-                            PersistentService.saveContext()
-                        }
-                    }
-                }
-            }
-            let newRequest = try PersistentService.context.fetch(fetchRequest)
-            savedCoaches = newRequest
-            allCoachesCount = savedCoaches.count
-   
-                if fetchedCoachesCount > 0 && allCoachesCount > 0 {
-                    if fetchedCoachesCount != allCoachesCount {
-                       coachesTeamDictionary.removeAll()
-                        coachesRows.removeAll()
-                        generateTeamsDict()
-                        self.reload()
-                    }
-                } else if fetchedCoachesCount == 0 && allCoachesCount > 0 {
-                    generateTeamsDict()
-                } else if fetchedCoachesCount == 0 && allCoachesCount == 0 {
-                    if CheckInternet.Connection() {
-                        DispatchQueue.global(qos: .background).async {
-                            self.fetchCoaches()
-                            if self.displayCoaches {
-                                DispatchQueue.main.async {
-                                    self.loadSavedCoachesData()
-                                    self.generateTeamsDict()
-                                    self.reload()
-                                    
-                                }
-                            }
-                          
-                        }
-
-                    } else {
-                        let ac = UIAlertController(title: "No Internet Connection", message: "Could not load the list of teachers/coaches, make sure your device is connected to the Internet.", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK", style: .cancel))
-                            present(ac, animated: true)
-                    }
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-   
     
     func reload() {
         self.coachesTableView.reloadData()
@@ -474,51 +199,47 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         navigationBar.my_setNavigationBar()
         setSegmentedControl()
+        if localTeachers.count == 0 {
+            fetchTeachers()
+        }
         configrueTableViews()
-        loadSavedData()
-        loadSavedCoachesData()
-        if CheckInternet.Connection() {
-            DispatchQueue.global(qos: .background).async {
-                fetchTeachers()
-                self.fetchCoaches()
-                DispatchQueue.main.async {
-                    
-                    self.loadSavedData()
-                    self.loadSavedCoachesData()
-                    
-                }
-            }
+        if teachersAlphaDict.count == 0 {
+            generateAlphaDict()
+
+        }
+        if subjectsDictionary.count == 0 {
+            generateSubjectsDict()
+
         }
         
-        let fetchRequest: NSFetchRequest<MyTeachers> = MyTeachers.fetchRequest()
+        let fetchRequest: NSFetchRequest<MyNewTeachers> = MyNewTeachers.fetchRequest()
         do {
             let request = try PersistentService.context.fetch(fetchRequest)
             if request.count > 0 {
                 navigationBar.topItem?.rightBarButtonItem = editButton
-                for teacher in request {
-                    print(teacher.teacher?.last ?? "nil")
-                }
+                self.view.bringSubviewToFront(self.myTeachersTableView)
             } else {
                 navigationBar.topItem?.rightBarButtonItem = nil
+                self.view.bringSubviewToFront(self.noTeachersView)
             }
             myTeachers = request
         } catch {
             
         }
         
-        let classFetchRequest: NSFetchRequest<MyClasses> = MyClasses.fetchRequest()
+        let scheduleFetchRequest: NSFetchRequest<MySchedule> = MySchedule.fetchRequest()
         do {
-          let request = try PersistentService.context.fetch(classFetchRequest)
+          let request = try PersistentService.context.fetch(scheduleFetchRequest)
             if request.count > 0 {
-                let object = request.first!
-                myClasses = [object.period1, object.period2, object.period3, object.period4, object.period5, object.period6, object.period7, object.period8]
-                for i in 0...myClasses.count - 1 {
-                    if myClasses[i] == "History"{
-                        myClasses[i] = "Social Studies"
-                    }
+                var scheduleArray = request
+                scheduleArray.sort { $0.period < $1.period }
+                masterSchedule = scheduleArray
+                for entry in scheduleArray {
+                    myClasses.append(entry.name)
                 }
              
                 classesToDisplay = myClasses.filter { $0 != "Free Period" && $0 != "Sports" && $0 != "Sport" }
+                displaySchedule = masterSchedule.filter {$0.name != "Free Period" && $0.name != "Sports" && $0.name != "Sport" }
                
             } else {
                 myClasses = []
@@ -537,13 +258,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
       
         segmentioView.selectedSegmentioIndex = 0
         
-        if self.myTeachers.count == 0 {
-            self.view.bringSubviewToFront(self.noTeachersView)
-        } else {
-            
-            myTeachers = myTeachers.filter { $0.teacher != nil }
-            self.view.bringSubviewToFront(self.myTeachersTableView)
-        }
+       
         
     }
     
@@ -609,14 +324,10 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func configrueTableViews() {
-        
+       
         allTableView.delegate = self
         allTableView.dataSource = self
-   
-        
-        
         subjectsTableView.expandableDelegate = self
-  
         subjectsTableView.register(UINib(nibName: "SubjectsExpandableTableViewCell", bundle: nil), forCellReuseIdentifier: SubjectsExpandableTableViewCell.ID)
         subjectsTableView.register(UINib(nibName: "SubjectsExpandedTableViewCell", bundle: nil), forCellReuseIdentifier: SubjectsExpandedTableViewCell.ID)
         
@@ -661,6 +372,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == allTableView {
+           
              return teachersAlphaSections.count
         } else if tableView == adminTableView {
             return 1
@@ -671,7 +383,9 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         if tableView == allTableView {
+            
             return teachersAlphaSections[section]
         }
         return nil
@@ -711,7 +425,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         } else if tableView == adminTableView {
             return adminRows.count
         } else if tableView == myTeachersTableView {
-            return classesToDisplay.count
+            return displaySchedule.count
         }
       
         return 0
@@ -721,78 +435,62 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("AllTableViewControllerCellTableViewCell", owner: self, options: nil)?.first as! AllTableViewControllerCellTableViewCell
+       
         if tableView == allTableView {
            
             let teacherKey = teachersAlphaSections[indexPath.section]
+            
             if let teacherValues = teachersAlphaDict[teacherKey.uppercased()] {
                 let teacher = teacherValues[indexPath.row]
-                cell.first = teacher.first ?? ""
-                cell.last = teacher.last ?? ""
-                cell.gender = teacher.gender
-                cell.name.text = "\(teacher.first?.uppercased() ?? "") \(teacher.last?.uppercased() ?? "")"
+                cell.first = teacher.first
+                cell.last = teacher.last
+                cell.gender = teacher.isFemale
+                cell.name.text = "\(teacher.first.uppercased()) \(teacher.last.uppercased())"
                 cell.name.font = cell.name.font.withSize(CGFloat(16).relativeToWidth)
-                if teacher.subject1 == "Visual and Performing Arts" {
-                    teacher.subject1 = "VAPA"
-                }
-                if teacher.subject2 == "Visual and Performing Arts" {
-                    teacher.subject2 = "VAPA"
-                }
-                if teacher.subject1 == "Principal" || teacher.subject1 == "Assistant Principal" || teacher.subject1 == "Administrative Assistant" || teacher.subject1 == "Lead Counselor" {
-                    teacher.subject1 = "Admin"
-                }
-                if teacher.subject2 == "Principal" || teacher.subject2 == "Assistant Principal" || teacher.subject2 == "Administrative Assistant" || teacher.subject2 == "Lead Counselor" {
-                    teacher.subject2 = "Admin"
-                }
                 if teacher.subject2 != nil {
-                    cell.subject.text = "\(teacher.subject1?.uppercased() ?? "") & \(teacher.subject2?.uppercased() ?? "")"
+                    cell.subject.text = "\(teacher.subject1.uppercased()) & \(teacher.subject2!.uppercased())"
                 } else {
-                    cell.subject.text = "\(teacher.subject1?.uppercased() ?? "")"
+                    cell.subject.text = "\(teacher.subject1.uppercased())"
                 }
                 cell.subject.font = cell.subject.font.withSize(CGFloat(16).relativeToWidth.relativeToWidth)
-                
-                cell.initialsLabel.text = "\(Array(teacher.first ?? "First")[0])\(Array(teacher.last ?? "First")[0])"
+                cell.initialsLabel.text = "\(Array(teacher.first)[0])\(Array(teacher.last)[0])"
                 cell.initialsLabel.font = cell.initialsLabel.font.withSize(CGFloat(19).relativeToWidth)
                 
                 return cell
             }
         } else if tableView == adminTableView {
             let admin = adminRows[indexPath.row]
-            let role = admin.subject1
-            cell.first = admin.first ?? "First"
-            cell.last = admin.last ?? "Last"
-            cell.gender = admin.gender
-            cell.name.text = "\(admin.first?.uppercased() ?? "") \(admin.last?.uppercased() ?? "")"
+            var role = String()
+            if admin.subject1 == "Principal" || admin.subject1 == "Assistant Principal" || admin.subject1 == "Lead Counselor" || admin.subject1 == "Athletic Director" || admin.subject1 == "Administrative Assistant" {
+                role = admin.subject1.uppercased()
+            } else {
+                role = (admin.subject2?.uppercased())!
+            }
+           
+            cell.first = admin.first
+            cell.last = admin.last
+            cell.gender = admin.isFemale
+            cell.name.text = "\(admin.first.uppercased()) \(admin.last.uppercased())"
             cell.name.font = cell.name.font.withSize(CGFloat(16).relativeToWidth)
-            cell.initialsLabel.text = "\(Array(admin.first!)[0])\(Array(admin.last!)[0])"
+            cell.initialsLabel.text = "\(Array(admin.first)[0])\(Array(admin.last)[0])"
             cell.initialsLabel.font = cell.initialsLabel.font.withSize(CGFloat(19).relativeToWidth)
             cell.subject.text = role
             return cell
         } else if tableView == myTeachersTableView {
             let myCell = Bundle.main.loadNibNamed("MyTeachersTableViewCell", owner: self, options: nil)?.first as! MyTeachersTableViewCell
-            let myTeacher = myTeachers[indexPath.row]
-            if myTeacher.teacher != nil {
-                let period = myTeacher.period
-                if let teacherInfo = myTeacher.teacher {
-                    myCell.first = teacherInfo.first ?? "First"
-                    myCell.last = teacherInfo.last ?? "Last"
-                    myCell.gender = teacherInfo.gender
-                    myCell.initialsLabel.text = "\(Array(myCell.first)[0])\(Array(myCell.last)[0])"
-                    myCell.teacherLabel.text = "\(myCell.first.uppercased()) \(myCell.last.uppercased())"
-                }
+            if displaySchedule.count != 0 {
+                let schedule = displaySchedule[indexPath.row]
                 
-                
-               
-                if classesToDisplay[indexPath.row] == nil {
-                    myCell.periodLabel.text = ""
-                    myCell.classLabel.text = "PERIOD \(period)"
-                } else {
-                    myCell.periodLabel.text = "PERIOD \(period)"
-                    myCell.classLabel.text = classesToDisplay[indexPath.row]
-                }
-                
-          
-                
+                myCell.first = schedule.teacher!.first!
+                myCell.last = schedule.teacher!.last!
+                myCell.gender = schedule.teacher!.isFemale
+                myCell.initialsLabel.text = "\(Array(myCell.first)[0])\(Array(myCell.last)[0])"
+                myCell.teacherLabel.text = "\(myCell.first.uppercased()) \(myCell.last.uppercased())"
+                myCell.periodLabel.text = "PERIOD \(schedule.period)"
+                myCell.classLabel.text = schedule.name!
             }
+            
+            
             
             return myCell
             
@@ -852,23 +550,20 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func newInfoSaved(segue: UIStoryboardSegue) {
         if segue.identifier == "newInfoSaved" {
             if let vc = segue.source as? PickTeachersViewController {
-                let newClasses = MyClasses(context: PersistentService.context)
-                newClasses.period1 = vc.classes[0]
-                newClasses.period2 = vc.classes[1]
-                newClasses.period3 = vc.classes[2]
-                newClasses.period4 = vc.classes[3]
-                newClasses.period5 = vc.classes[4]
-                newClasses.period6 = vc.classes[5]
-                newClasses.period7 = vc.classes[6]
-                newClasses.period8 = vc.classes[7]
-                PersistentService.saveContext()
+           
                 for i in 0...7 {
-                    myClasses.append(vc.classes[i])
-                    let newTeacher = MyTeachers(context: PersistentService.context)
-                    newTeacher.period = Int16(i.advanced(by: 1))
-                    newTeacher.teacher = vc.myTeachers[i]
+                    let newSchedule = MySchedule(context: PersistentService.context)
+                    newSchedule.name = vc.classes[i]
+                    newSchedule.period = Int16(i + 1)
+                    let newTeacher = MyNewTeachers(context: PersistentService.context)
+                    let currentTeacher = vc.myTeachers[i]
+                    newTeacher.first = currentTeacher?.first
+                    newTeacher.last = currentTeacher?.last
+                    newTeacher.subject1 = currentTeacher?.subject1
+                    newTeacher.subject2 = currentTeacher?.subject2
+                    newTeacher.isFemale = currentTeacher?.isFemale ?? false
+                    newSchedule.teacher = newTeacher
                     PersistentService.saveContext()
-                    
                 }
             }
             fetchAndReload(withClasses: true)
@@ -880,44 +575,33 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func unwindToTeacherPage(segue: UIStoryboardSegue) {
         if segue.identifier == "unwindToTeacherPage" {
             if let vc = segue.source as? PickTeachersViewController {
-                
-                let classesFetchrequest: NSFetchRequest<MyClasses> = MyClasses.fetchRequest()
+                let scheduleFetchRequest: NSFetchRequest<MySchedule> = MySchedule.fetchRequest()
+                let teacherFetchRequest: NSFetchRequest<MyNewTeachers> = MyNewTeachers.fetchRequest()
                 do {
-                    let request = try PersistentService.context.fetch(classesFetchrequest)
-                    let object = request.first!
-                          object.setValue(vc.classes[0], forKey: "period1")
-                          object.setValue(vc.classes[1], forKey: "period2")
-                          object.setValue(vc.classes[2], forKey: "period3")
-                          object.setValue(vc.classes[3], forKey: "period4")
-                          object.setValue(vc.classes[4], forKey: "period5")
-                          object.setValue(vc.classes[5], forKey: "period6")
-                          object.setValue(vc.classes[6], forKey: "period7")
-                          object.setValue(vc.classes[7], forKey: "period8")
-                    PersistentService.saveContext()
-                    
-                } catch {
-                    
-                }
-                
-                
-                
-                let teacherFetchrequest: NSFetchRequest<MyTeachers> = MyTeachers.fetchRequest()
-                var storedTeachers = [MyTeachers]()
-                do {
-                    let request = try PersistentService.context.fetch(teacherFetchrequest)
-                    storedTeachers = request
-                } catch {
-                    
+                    let request = try PersistentService.context.fetch(scheduleFetchRequest)
+                    let teacherRequest = try PersistentService.context.fetch(teacherFetchRequest)
+                    var requestSort = request
+                    requestSort.sort {$0.period < $1.period}
+                    for i in 0...7 {
+                        let object = requestSort[i]
+                        object.setValue(vc.classes[i], forKey: "name")
+                        object.setValue(Int16(i + 1), forKey: "period")
+                        let currentTeacher = vc.myTeachers[i]
+                        let newTeacher = teacherRequest[i]
+                        newTeacher.setValue(currentTeacher?.first, forKey: "first")
+                        newTeacher.setValue(currentTeacher?.last, forKey: "last")
+                        newTeacher.setValue(currentTeacher?.subject1, forKey: "subject1")
+                        newTeacher.setValue(currentTeacher?.subject2, forKey: "subject2")
+                        newTeacher.setValue(currentTeacher?.isFemale, forKey: "isFemale")
+                        object.setValue(newTeacher, forKey: "teacher")
+                        PersistentService.saveContext()
                     }
-                
-                for i in 0...7 {
-                    myClasses.append(vc.classes[i])
-                    storedTeachers[i].setValue(Int16(i + 1), forKey: "period")
-                    storedTeachers[i].setValue(vc.myTeachers[i], forKey: "teacher")
-                    PersistentService.saveContext()
+                } catch {
                     
                 }
+
             
+                
                
             }
             
@@ -928,63 +612,31 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    @IBAction func dismissToTeacherPage(segue: UIStoryboardSegue) {
-        if segue.identifier == "dismissToTeacherPage" {
-            print("DISMISSED")
-            if let vc = segue.source as? PickTeachersViewController {
-                for i in 0...7 {
-                    let mySchedule = MyTeachers(context: PersistentService.context)
-                    mySchedule.period = Int16(i + 1)
-                    mySchedule.teacher = vc.myTeachers[i]
-                    PersistentService.saveContext()
-                }
-            }
-    
-            fetchAndReload(withClasses: false)
-          
-        }
-       
-    }
     
     func fetchAndReload(withClasses: Bool) {
-        let teacherFetch: NSFetchRequest<MyTeachers> = MyTeachers.fetchRequest()
+        
+        let scheduleFetch: NSFetchRequest<MySchedule> = MySchedule.fetchRequest()
         do {
-            let request = try PersistentService.context.fetch(teacherFetch)
-            myTeachers = request
-           
+            let request = try PersistentService.context.fetch(scheduleFetch)
+            masterSchedule = request
+            masterSchedule.sort { $0.period < $1.period }
+            print(masterSchedule.count, "BUG HERE MAYBE?")
         } catch {
             
         }
-        if withClasses {
-            let classesFetch: NSFetchRequest<MyClasses> = MyClasses.fetchRequest()
-            do {
-                let request = try PersistentService.context.fetch(classesFetch)
-                print(request.count)
-                let object = request.first!
-                myClasses = [object.period1, object.period2, object.period3, object.period4, object.period5, object.period6, object.period7, object.period8]
-                
-            } catch {
-                
-            }
-        }
         
-        print(myTeachers.count, "MYTEACHERS")
-        print(myClasses.count, myClasses)
-        print(classesToDisplay.count, classesToDisplay)
-        
-        
-        myTeachers = myTeachers.filter { $0.teacher != nil }
-        classesToDisplay = myClasses.filter {$0 != "Free Period" && $0 != "Sport" && $0 != "Sports"}
+        displaySchedule = masterSchedule.filter {$0.name != "Free Period" && $0.name != "Sports" && $0.name != "Sport" }
         
         view.bringSubviewToFront(myTeachersTableView)
+       
+        for item in displaySchedule {
+            myTeachers.append(item.teacher!)
+        }
+        
         myTeachersTableView.reloadData()
-        
-
-        
+       
     }
-    
-    
-    
+ 
 }
 
 
@@ -1015,13 +667,13 @@ extension TeachersViewController: ExpandableDelegate {
                 for teacher in teachers {
                     let cell = subjectsTableView.dequeueReusableCell(withIdentifier: SubjectsExpandedTableViewCell.ID) as! SubjectsExpandedTableViewCell
                     
-                    cell.first = teacher.first ?? ""
-                    cell.last = teacher.last ?? ""
-                    cell.gender = teacher.gender
+                    cell.first = teacher.first
+                    cell.last = teacher.last
+                    cell.gender = teacher.isFemale
                     cell.email = nil
-                    cell.nameLabel.text = "\(teacher.first?.uppercased() ?? "") \(teacher.last?.uppercased() ?? "")"
+                    cell.nameLabel.text = "\(teacher.first.uppercased()) \(teacher.last.uppercased())"
                     cell.nameLabel.font = cell.nameLabel.font.withSize(CGFloat(16).relativeToWidth)
-                    cell.initialsLabel.text = "\(Array(teacher.first!)[0])\(Array(teacher.last!)[0])"
+                    cell.initialsLabel.text = "\(Array(teacher.first)[0])\(Array(teacher.last)[0])"
                     cell.initialsLabel.font = cell.initialsLabel.font.withSize(CGFloat(16).relativeToWidth)
                     expandedArray.append(cell)
                 }
@@ -1112,8 +764,5 @@ extension TeachersViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    
-    
-   
+
 }

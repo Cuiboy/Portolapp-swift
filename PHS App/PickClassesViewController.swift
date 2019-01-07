@@ -121,7 +121,7 @@ class PickClassesViewController: UIViewController {
     var isFreshLaunch = true
     var isPrevButtonHidden = false
     var isPageEditing = false
-    var mySelectedTeachers = [MyTeachers]()
+    var mySelectedTeachers = [MyNewTeachers]()
     var myClasses = [String?]()
     
     
@@ -196,13 +196,16 @@ class PickClassesViewController: UIViewController {
             prevButton.isHidden = false
         }
         if isPageEditing {
-            for i in 0...classLabels.count - 1 {
-                if periods[i]?.uppercased() == "HISTORY" {
-                    classLabels[i].text = "SOCIAL STUDIES"
-                    continue
-                } else {
-                    classLabels[i].text = periods[i]?.uppercased()
+            let scheduleFetchRequest: NSFetchRequest<MySchedule> = MySchedule.fetchRequest()
+            do {
+                var request = try PersistentService.context.fetch(scheduleFetchRequest)
+                request.sort {$0.period < $1.period}
+                print(request.count, "READ HERE")
+                for i in 0...7 {
+                    classLabels[i].text = request[i].name?.uppercased()
                 }
+            } catch {
+                
             }
         }
     }
@@ -211,14 +214,11 @@ class PickClassesViewController: UIViewController {
         super.viewDidAppear(true)
         if !isFreshLaunch  {
             skipButton.setTitle("CANCEL", for: .normal)
+           
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     
     @IBAction func unwindToClass(segue: UIStoryboardSegue) {
         if segue.identifier == "backToClass" {

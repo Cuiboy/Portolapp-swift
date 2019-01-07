@@ -56,8 +56,14 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                 performSegue(withIdentifier: "nextToClass", sender: nil)
 
             } else {
-                saveEdits()
-                performSegue(withIdentifier: "unwindToIDCard", sender: nil)
+                if isPageEditing {
+                    saveEdits()
+                    performSegue(withIdentifier: "unwindToIDCard", sender: nil)
+                } else {
+                    saveData()
+                    performSegue(withIdentifier: "unwindToIDCard", sender: nil)
+                }
+               
             }
         } else {
            let ac = UIAlertController(title: "Missing fields", message: "Make sure you fill in all fields before continuing.", preferredStyle: .alert)
@@ -152,11 +158,7 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                     }
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//
-//    }
-//
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
 

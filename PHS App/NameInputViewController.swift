@@ -321,7 +321,9 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
         
         if CheckInternet.Connection() {
             DispatchQueue.global(qos: .background).async {
-                fetchTeachers()
+                if localTeachers.count == 0 {
+                    fetchTeachers()
+                }
                 DispatchQueue.main.async {
                     let fetchRequest: NSFetchRequest<Teachers> = Teachers.fetchRequest()
                     let sort = NSSortDescriptor(key: "last", ascending: true)
@@ -330,8 +332,12 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
                         let newRequest = try PersistentService.context.fetch(fetchRequest)
                         
                         savedTeachers = newRequest
-                        generateAlphaDict()
-                        generateSubjectsDict()
+                        if teachersAlphaDict.count == 0 {
+                            generateAlphaDict()
+                        }
+                        if subjectsDictionary.count == 0 {
+                            generateSubjectsDict()
+                        }
                         
                     } catch {
                         

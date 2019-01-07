@@ -76,7 +76,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             print(notif)
         })
         UNUserNotificationCenter.current().getDeliveredNotifications { (notifDel) in
-            print("THIS", notifDel)
+            
         }
         
 
@@ -254,6 +254,14 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             })
         }
         
+        //teacher local migration notification
+        let isTeacherUpdated = UserDefaults.standard.bool(forKey: "updateTeacher")
+        if !isTeacherUpdated {
+            UserDefaults.standard.set(true, forKey: "updateTeacher")
+            let ac = UIAlertController(title: "Fill in your Schedule", message: "Over break, we have rebuilt the teachers page in order to optimize battery usage. As a result, we had to erase your saved classes and teachers. Head over to the teachers page to fill out your schedule again for a more personal experience.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(ac, animated: true)
+        }
     }
     
     override func viewDidLoad() {
