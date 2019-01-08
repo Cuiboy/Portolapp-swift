@@ -49,15 +49,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
            getTodayType()
         configureTimeLeftLabel()
          Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-        // Do any additional setup after loading the view from its nib.
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         if Date().isSchoolDay() {
             if Date().timeOfSchoolDay() == relativeTime.during {
                 fetchTimeLeft()
             }
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+       
     }
     func loadSpecialDays() {
         if let data = Bundle.main.path(forResource: "specialDays", ofType: "txt") {
