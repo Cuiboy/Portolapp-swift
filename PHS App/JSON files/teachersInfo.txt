@@ -253,6 +253,14 @@
 "isFemale": true
 },
 {
+"first": "Kathy",
+"last": "Kobrine",
+"subject1": "Math",
+"subject2": null,
+"isFemale": true
+},
+
+{
 "first": "Andrew",
 "last": "Kranz",
 "subject1": "Science",
