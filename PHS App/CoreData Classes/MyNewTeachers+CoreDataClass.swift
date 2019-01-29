@@ -12,5 +12,5 @@ import CoreData
 
 @objc(MyNewTeachers)
 public class MyNewTeachers: NSManagedObject {
-
+    //test commit
 }
