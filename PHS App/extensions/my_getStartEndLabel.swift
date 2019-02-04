@@ -42,7 +42,7 @@ func my_getStartEndLabel(type: Int) -> [Bool]? {
 
     case 15:
         //Passion Day
-        return [false, true, false, false, true, false, true, false, false, true, false, true, false, false, true, false]
+        return [false, true, false, false, true, false, true, false]
     case 16:
         //Pre Testing
         return [false, true, false, false, true, false, true, false, false, true, false, true, false]

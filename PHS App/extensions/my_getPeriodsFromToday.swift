@@ -56,7 +56,7 @@ func my_getPeriodsFromToday(type: Int) -> [String] {
         return ["2", "A", "4", "6", "8"]
     case 15:
         //Passion Day
-        return ["A/T", "T/A", "S1", "S2", "L", "S3", "S4", "A"]
+        return ["A", "S1", "S2", "S3"]
     case 16:
         //Pre Testing
         return ["1", "A", "2", "3", "5", "7"]

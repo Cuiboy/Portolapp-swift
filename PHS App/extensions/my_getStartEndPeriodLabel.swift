@@ -57,7 +57,7 @@ func my_getStartEndPeriodLabel(type: Int) -> [Int]? {
     
     case 15:
         //Passion Day
-        return [17, 18, 18, 13, 19, 19, 20, 20, 12, 21, 21, 22, 22, 13, 17, 17]
+        return [9, 19, 19, 13, 20, 20, 21, 21]
     case 16:
         //Pre Testing
         return [1, 9, 9, 13, 2, 2, 3, 3, 12, 5, 5, 7, 7]
