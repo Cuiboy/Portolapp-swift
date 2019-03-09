@@ -41,15 +41,25 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! NewsTableViewCell
         let article = current[indexPath.row]
-        let vc = storyboard?.instantiateViewController(withIdentifier: "newsDetail") as! NewsDetailViewController
-        vc.titleText = cell.newsTitle.text!
-        vc.info = "By \(cell.authorLabel.text!) on \(cell.dateLabel.text!)."
-        vc.imageLink = article.imageLink
-        vc.news = article.content
-        vc.storyLink = article.link
-        print("THE CONTENT IS \(article.content)")
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "newsDetail") as? NewsDetailViewController {
+            vc.titleText = cell.newsTitle.text!
+            vc.info = "By \(cell.authorLabel.text!) on \(cell.dateLabel.text!)."
+            vc.imageLink = article.imageLink
+            vc.news = article.content
+            vc.storyLink = article.link
+            if let navigator = navigationController {
+                navigator.pushViewController(vc, animated: true)
+            } else {
+                print("no navigation controller")
+            }
+        } else {
+            print("no view controller")
+        }
+       
         
-        present(vc, animated: true)
+ 
+     
+        
         
     }
 
@@ -316,14 +326,15 @@ class PortolaPilotViewController: UIViewController, UITableViewDelegate, UITable
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+       
     }
-    */
+ 
 
 }

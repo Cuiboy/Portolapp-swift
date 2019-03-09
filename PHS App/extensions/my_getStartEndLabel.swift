@@ -61,13 +61,13 @@ func my_getStartEndLabel(type: Int) -> [Bool]? {
     case 22:
         //monday schedule
         return [false, true, false, true, false, false, true, false, true, false, false, true, false, true, false, true, false]
-    case 23, 26:
+    case 23, 26, 28:
         //tuesday and friday schedule
         return [false, true, false, false, true, false, false, true, false, false, true, false]
-    case 24, 25:
+    case 24, 25, 27:
         //wednesday and thursday schedule
         return [false, false, false, true, false, false, true, false, false, true, false]
-
+    
    
     default:
         return defaultDaysStartEndLabel()

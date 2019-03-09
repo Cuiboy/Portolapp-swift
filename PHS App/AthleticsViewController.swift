@@ -41,7 +41,6 @@ class AthleticsViewController: UIViewController, UICollectionViewDelegate, UICol
         UIImage(named: "Soccer")!,
          UIImage(named: "Tennis")!,
         UIImage(named: "Water Polo")!,
-        UIImage(named: "Swim")!,
         UIImage(named: "Volleyball")!
     ]
     

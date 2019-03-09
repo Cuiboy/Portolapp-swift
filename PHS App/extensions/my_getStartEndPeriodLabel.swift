@@ -91,6 +91,12 @@ func my_getStartEndPeriodLabel(type: Int) -> [Int]? {
     case 26:
         //friday schedule
         return [2, 9, 9, 13, 4, 4, 12, 6, 6, 13, 8, 8]
+    case 27:
+        //Thursday advisement
+         return [1, 9, 13, 3, 3, 12, 5, 5, 13, 7, 7]
+    case 28:
+        //Friday OH
+         return [2, 10, 10, 13, 4, 4, 12, 6, 6, 13, 8, 8]
     default:
         return defaultDaysStartEndPeriodLabel()
     }

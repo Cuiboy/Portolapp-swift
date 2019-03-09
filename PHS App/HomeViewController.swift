@@ -190,7 +190,9 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             self.timeOfDay = Date().timeOfSchoolDay()
             self.fetchEvents()
             self.configureWeekdays()
+                if Date() >= Date.init(timeIntervalSince1970: 1552806000) {
             self.configureWeekdayDots()
+            }
             self.configureProgressBar()
             self.configureBar()
             self.configureBarLabel(type: today)
@@ -433,8 +435,10 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             for subview in weekdayDots.subviews {
                 subview.removeFromSuperview()
             }
-        
+        if Date() >= Date.init(timeIntervalSince1970: 1552806000) {
             configureWeekdayDots()
+        }
+        
             progressBar.removeFromSuperview()
             configureProgressBar()
             progressBar.viewFadeIn()
@@ -449,50 +453,65 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @objc func joinTapped() {
         UIView.animate(withDuration: 0.3) {
+          
+        }
+        UIView.animate(withDuration: 0.3, animations: {
             self.joinButton.backgroundColor = UIColor.white
             self.joinLabel.textColor = UIColor(red: 0.702, green: 0.667, blue: 0.843, alpha: 1.00)
+        }) { (_) in
+            UIView.animate(withDuration: 0.2, delay: 0.5, animations: {
+                self.joinButton.backgroundColor = UIColor.clear
+                self.joinLabel.textColor = UIColor.white
+            }, completion: nil)
         }
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "join") as? JoinViewController {
-            present(vc, animated: true)
-        }
-        
+//        if let vc = storyboard?.instantiateViewController(withIdentifier: "join") as? JoinViewController {
+//            present(vc, animated: true)
+//        }
+
+        UIApplication.shared.open(URL(string: "https://www.eventbrite.com/e/the-addams-family-musical-tickets-57358504832")!, options: [:], completionHandler: nil)
     }
     
     
     func configureWeekdays() {
-      
-//        joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
-//        joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
-//        joinButton.layer.borderColor = UIColor.white.cgColor
-//        joinButton.layer.borderWidth = 2
-//        joinButton.layer.cornerRadius = joinButton.bounds.height / 2
-//        joinButton.clipsToBounds = true
-//        view.addSubview(joinButton)
-//        joinLabel.bounds = joinButton.bounds
-//        joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
-//        joinLabel.textAlignment = .center
-//        joinLabel.textColor = UIColor.white
-//        joinLabel.text = "JOIN US"
-//        joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(25).relativeToWidth)
-//        joinButton.addSubview(joinLabel)
-//        let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
-//        joinGesture.delegate = self
-//        joinButton.addGestureRecognizer(joinGesture)
-//        joinButton.alpha = 0
-        for i in 0...4 {
-            let weekdayLabels = ["M", "T", "W", "T", "F"]
-            let weekdayLabel = UILabel()
-            weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
-            weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
-            weekdayLabel.textAlignment = .center
-            weekdayLabel.text = weekdayLabels[i]
-            weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
-            weekdayLabel.textColor = UIColor.white
-            weekdayLabel.my_dropShadow()
-            weekdayLabelView.addSubview(weekdayLabel)
-
+        if Date() < Date.init(timeIntervalSince1970: 1552806000) {
+            joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
+            joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
+            joinButton.layer.borderColor = UIColor.white.cgColor
+            joinButton.layer.borderWidth = 2
+            joinButton.layer.cornerRadius = joinButton.bounds.height / 2
+            joinButton.clipsToBounds = true
+            view.addSubview(joinButton)
+            joinLabel.bounds = joinButton.bounds
+            joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
+            joinLabel.textAlignment = .center
+            joinLabel.textColor = UIColor.white
+            joinLabel.text = "BUY MUSICAL TICKETS"
+            joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(18).relativeToWidth)
+            joinButton.addSubview(joinLabel)
+            let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
+            joinGesture.delegate = self
+            joinButton.addGestureRecognizer(joinGesture)
+            joinButton.alpha = 0
+            
+        } else {
+            print("SOMETHING IS LIKE WRONG")
+                    for i in 0...4 {
+                        let weekdayLabels = ["M", "T", "W", "T", "F"]
+                        let weekdayLabel = UILabel()
+                        weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
+                        weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
+                        weekdayLabel.textAlignment = .center
+                        weekdayLabel.text = weekdayLabels[i]
+                        weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
+                        weekdayLabel.textColor = UIColor.white
+                        weekdayLabel.my_dropShadow()
+                        weekdayLabelView.addSubview(weekdayLabel)
+            
+                    }
+                    view.addSubview(weekdayLabelView)
         }
-        view.addSubview(weekdayLabelView)
+  
+
     }
 
     func configureWeekdayDots() {

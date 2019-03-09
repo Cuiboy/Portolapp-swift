@@ -72,10 +72,10 @@ func my_getSchedule(type: Int, date: Date?) -> [Date]? {
     case 22:
         //monday schedule
         return [DateFromTime(hour: 8, minute: 0), DateFromTime(hour: 8, minute: 45), DateFromTime(hour: 8, minute: 51), DateFromTime(hour: 9, minute: 36), DateFromTime(hour: 9, minute: 42), DateFromTime(hour: 10, minute: 27), DateFromTime(hour: 10, minute: 27), DateFromTime(hour: 10, minute: 41), DateFromTime(hour: 10, minute: 47), DateFromTime(hour: 11, minute: 32), DateFromTime(hour: 11, minute: 38), DateFromTime(hour: 12, minute: 23), DateFromTime(hour: 12, minute: 23),DateFromTime(hour: 12, minute: 57), DateFromTime(hour: 13, minute: 3), DateFromTime(hour: 13, minute: 48), DateFromTime(hour: 13, minute: 54), DateFromTime(hour: 14, minute: 39), DateFromTime(hour: 14, minute: 45), DateFromTime(hour: 15, minute: 30)]
-    case 23, 26:
+    case 23, 26, 28:
        
         return [DateFromTime(hour: 8, minute: 30), DateFromTime(hour: 9, minute: 49), DateFromTime(hour: 9, minute: 55), DateFromTime(hour: 10, minute: 20), DateFromTime(hour: 10, minute: 20), DateFromTime(hour: 10, minute: 30), DateFromTime(hour: 10, minute: 36), DateFromTime(hour: 11, minute: 55), DateFromTime(hour: 11, minute: 55), DateFromTime(hour: 12, minute: 30), DateFromTime(hour: 12, minute: 36), DateFromTime(hour: 13, minute: 55), DateFromTime(hour: 13, minute: 55), DateFromTime(hour: 14, minute: 5), DateFromTime(hour: 14, minute: 11), DateFromTime(hour: 15, minute: 30)]
-    case 24, 25:
+    case 24, 25, 27:
 
         return [DateFromTime(hour: 8, minute: 0), DateFromTime(hour: 9, minute: 24), DateFromTime(hour: 9, minute: 24), DateFromTime(hour: 10, minute: 3),DateFromTime(hour: 10, minute: 3), DateFromTime(hour: 10, minute: 14), DateFromTime(hour: 10, minute: 20), DateFromTime(hour: 11, minute: 44), DateFromTime(hour: 11, minute: 44),  DateFromTime(hour: 12, minute: 19), DateFromTime(hour: 12, minute: 25), DateFromTime(hour: 13, minute: 49), DateFromTime(hour: 13, minute: 49), DateFromTime(hour: 14, minute: 0), DateFromTime(hour: 14, minute: 6), DateFromTime(hour: 15, minute: 30)]
 

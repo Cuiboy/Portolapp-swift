@@ -582,18 +582,47 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
                     let teacherRequest = try PersistentService.context.fetch(teacherFetchRequest)
                     var requestSort = request
                     requestSort.sort {$0.period < $1.period}
+                    for i in 0...requestSort.count - 1 {
+                        print(requestSort[i].name)
+                    }
+                    for i in 0...teacherRequest.count - 1 {
+                        print(teacherRequest[i].first)
+                    }
+                    
+                    var tracker = 0
+                    
                     for i in 0...7 {
+                        
                         let object = requestSort[i]
                         object.setValue(vc.classes[i], forKey: "name")
                         object.setValue(Int16(i + 1), forKey: "period")
-                        let currentTeacher = vc.myTeachers[i]
-                        let newTeacher = teacherRequest[i]
-                        newTeacher.setValue(currentTeacher?.first, forKey: "first")
-                        newTeacher.setValue(currentTeacher?.last, forKey: "last")
-                        newTeacher.setValue(currentTeacher?.subject1, forKey: "subject1")
-                        newTeacher.setValue(currentTeacher?.subject2, forKey: "subject2")
-                        newTeacher.setValue(currentTeacher?.isFemale, forKey: "isFemale")
-                        object.setValue(newTeacher, forKey: "teacher")
+                        if vc.classes[i] == "Sports" || vc.classes[i] == "Free Period" {
+                            object.setValue(nil, forKey: "teacher")
+                        } else {
+                            if tracker > teacherRequest.count - 1 {
+                                let newTeacher = MyNewTeachers(context: PersistentService.context)
+                                let currentTeacher = vc.myTeachers[i]
+                                newTeacher.first = currentTeacher?.first
+                                newTeacher.last = currentTeacher?.last
+                                newTeacher.subject1 = currentTeacher?.subject1
+                                newTeacher.subject2 = currentTeacher?.subject2
+                                newTeacher.isFemale = currentTeacher?.isFemale ?? false
+                                 object.setValue(newTeacher, forKey: "teacher")
+                            } else {
+                                let newTeacher = teacherRequest[tracker]
+                                let currentTeacher = vc.myTeachers[i]
+                                newTeacher.setValue(currentTeacher?.first, forKey: "first")
+                                newTeacher.setValue(currentTeacher?.last, forKey: "last")
+                                newTeacher.setValue(currentTeacher?.subject1, forKey: "subject1")
+                                newTeacher.setValue(currentTeacher?.subject2, forKey: "subject2")
+                                newTeacher.setValue(currentTeacher?.isFemale, forKey: "isFemale")
+                                object.setValue(newTeacher, forKey: "teacher")
+                            }
+                        
+                            tracker += 1
+                            
+                        }
+                        
                         PersistentService.saveContext()
                     }
                 } catch {
@@ -620,7 +649,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             let request = try PersistentService.context.fetch(scheduleFetch)
             masterSchedule = request
             masterSchedule.sort { $0.period < $1.period }
-            print(masterSchedule.count, "BUG HERE MAYBE?")
+         
         } catch {
             
         }

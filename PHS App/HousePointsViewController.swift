@@ -243,17 +243,18 @@ class HousePointsViewController: UIViewController, UICollectionViewDelegate, UIC
             UIView.animate(withDuration: 0.7, animations: {
                 if isZero {
             
-                    self.herHeight.constant = CGFloat(10).relativeToWidth + divisionConstant *  CGFloat(15) *  (CGFloat(herPoint))
-                    self.ornHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15) *  (CGFloat(ornPoint))
-                    self.pegHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15) *  (CGFloat(pegPoint))
-                    self.posHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15) * (CGFloat(posPoint))
+                    self.herHeight.constant = CGFloat(10).relativeToWidth + divisionConstant *  CGFloat(15).relativeToWidth *  (CGFloat(herPoint))
+                    self.ornHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15).relativeToWidth *  (CGFloat(ornPoint))
+                    self.pegHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15).relativeToWidth *  (CGFloat(pegPoint))
+                    self.posHeight.constant = CGFloat(10).relativeToWidth + divisionConstant * CGFloat(15).relativeToWidth * (CGFloat(posPoint))
                     self.view.layoutIfNeeded()
                 } else {
                 
-                    self.herHeight.constant = CGFloat(30).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(herPoint) - CGFloat(self.houses[self.houses.count - 1].points))
-                    self.ornHeight.constant = CGFloat(30).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(ornPoint) - CGFloat(self.houses[self.houses.count - 1].points))
-                    self.pegHeight.constant = CGFloat(30).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(pegPoint) - CGFloat(self.houses[self.houses.count - 1].points))
-                    self.posHeight.constant = CGFloat(30).relativeToWidth + CGFloat(15).relativeToWidth * (CGFloat(posPoint) - CGFloat(self.houses[self.houses.count - 1].points))
+                    self.herHeight.constant = CGFloat(30).relativeToWidth + divisionConstant * CGFloat(15).relativeToWidth * (CGFloat(herPoint) - CGFloat(self.houses[self.houses.count - 1].points))
+                    self.ornHeight.constant = CGFloat(30).relativeToWidth + divisionConstant * CGFloat(15).relativeToWidth * (CGFloat(ornPoint) - CGFloat(self.houses[self.houses.count - 1].points))
+                    self.pegHeight.constant = CGFloat(30).relativeToWidth + divisionConstant * CGFloat(15).relativeToWidth * (CGFloat(pegPoint) - CGFloat(self.houses[self.houses.count - 1].points))
+                    self.posHeight.constant = CGFloat(30).relativeToWidth + divisionConstant * CGFloat(15).relativeToWidth * (CGFloat(posPoint) - CGFloat(self.houses[self.houses.count - 1].points))
+                    
                     self.view.layoutIfNeeded()
                 }
             }) { (_) in

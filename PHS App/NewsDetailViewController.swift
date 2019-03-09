@@ -17,7 +17,7 @@ class NewsDetailViewController: UIViewController {
         
     }
     @IBAction func dismiss(_ sender: Any) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var newsTitle: UILabel!
