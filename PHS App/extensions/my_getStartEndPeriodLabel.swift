@@ -21,7 +21,7 @@ func my_getStartEndPeriodLabel(type: Int) -> [Int]? {
         return [2, 9, 9, 11, 13, 4, 4, 12, 6, 6, 13, 8, 8]
     case 3:
         //extended lunch odd
-        return [1, 9, 9, 13, 3, 3, 12, 5, 5, 13, 7, 7]
+        return [1, 10, 10, 13, 3, 3, 12, 5, 5, 13, 7, 7]
     case 4, 14:
         //extended lunch even and hour of code
         return [2, 9, 9, 13, 4, 4, 12, 6, 6, 13, 8, 8]

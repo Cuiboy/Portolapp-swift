@@ -81,7 +81,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         let startDate = formatter.date(from: "2018 08 01")!
-        let endDate = formatter.date(from: "2019 06 30")!
+        let endDate = formatter.date(from: "2019 08 31")!
         dateRange = calendarView.generateDateRange(from: startDate, to: endDate)
         configureDayDetail(withDate: Date().noon)
         calendarView.scrollToDate(Date(), animateScroll: false)
@@ -302,7 +302,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         let startDate = formatter.date(from: "2018 08 01")!
-        let endDate = formatter.date(from: "2019 06 30")!
+        let endDate = formatter.date(from: "2019 08 31")!
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters
     }

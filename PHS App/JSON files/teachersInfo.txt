@@ -213,7 +213,7 @@
 {
 "first": "Jeralyn",
 "last": "Jelnick",
-"subject1": "English",
+"subject1": "Science",
 "subject2": null,
 "isFemale": true
 },

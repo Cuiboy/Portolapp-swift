@@ -29,6 +29,8 @@
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>We want to add events to your calendar.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Use face ID to secure your personal information.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>We need to access the camera to scan your ID card</string>
 	<key>UIAppFonts</key>

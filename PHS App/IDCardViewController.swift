@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import RSBarcodes_Swift
 import AVFoundation
+import LocalAuthentication
 
 class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -35,11 +36,94 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var houseHeader: UILabel!
     @IBOutlet weak var gradeHeader: UILabel!
     @IBOutlet weak var shortIDHeader: UILabel!
+    @IBOutlet weak var asbView: UILabel!
+    @IBOutlet weak var stickerView: UILabel!
+    
+  func faceIDAction() {
+    
+        let context = LAContext()
+        let localizedReasonString = "Secure your information using Face ID and Touch ID."
+        var authError: NSError?
+        if #available(iOS 8.0, *) {
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReasonString) { (success, error) in
+                    DispatchQueue.main.async {
+                        if success {
+                            self.loadIDCard()
+                        } else {
+                           self.authenticateUsingShortID()
+                        }
+                    }
+                }
+            } else {
+                authenticateUsingShortID()
+            }
+        } else {
+            authenticateUsingShortID()
+    }
+    }
+    
+    func loadIDCard() {
+        navigationBar.topItem?.rightBarButtonItem?.isEnabled = true
+        let subviews: [UIView] = [nameLabel, barcode, gradeHeader, shortIDHeader, houseHeader, gradeLabel, shortID, house, longID, asbView, stickerView]
+        for view in subviews {
+            UIView.animate(withDuration: 0.5) {
+                view.alpha = 1
+            }
+        }
+    }
+    
+    func authenticateUsingShortID() {
+        let ac = UIAlertController(title: "Enter School Short ID", message: "enter short ID to verify your identity.", preferredStyle: .alert)
+        ac.addTextField()
+        ac.textFields![0].keyboardType = .numberPad
+        let submitAction = UIAlertAction(title: "Verify", style: .default, handler: { [unowned ac] _ in
+            let answer = ac.textFields![0]
+            
+            if answer.text != nil {
+                if answer.text! == self.shortID.text! {
+                    self.loadIDCard()
+                } else {
+                    self.failVerify(isShortID: true)
+                    answer.text = ""
+                }
+            } else {
+                self.failVerify(isShortID: true)
+                answer.text = ""
+            }
+            
+            })
+        ac.addAction(submitAction)
+       
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+       
+        present(ac, animated: true)
+        
+    }
+    
+    func failVerify(isShortID: Bool) {
+        var messageString = String()
+        if isShortID {
+           messageString = "Short ID"
+        } else {
+            messageString = "Code"
+        }
+        let ac = UIAlertController(title: "Incorrect \(messageString)", message: "You have entered an incorrect \(messageString), please try again.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            if isShortID {
+                self.authenticateUsingShortID()
+            } else {
+                
+            }
+        }))
+        present(ac, animated: true)
+    }
+    
     
     func autoResizeUI() {
-       let subviews: [UIView] = [nameLabel, barcode, gradeHeader, shortIDHeader, houseHeader, gradeLabel, shortID, house, longID]
+       let subviews: [UIView] = [nameLabel, barcode, gradeHeader, shortIDHeader, houseHeader, gradeLabel, shortID, house, longID, asbView, stickerView]
         for view in subviews {
-            view.alpha = 1
+            view.alpha = 0
         }
         addCardView.alpha = 0
         nameLabel.font = nameLabel.font.withSize(CGFloat(31).relativeToWidth)
@@ -50,10 +134,146 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
         shortID.font = shortID.font.withSize(CGFloat(60).relativeToWidth)
         house.font = house.font.withSize(CGFloat(60).relativeToWidth)
         longID.font = longID.font.withSize(CGFloat(31).relativeToWidth)
+        asbView.isUserInteractionEnabled = true
+        asbView.isHidden = true
+        stickerView.isHidden = true
+        stickerView.isUserInteractionEnabled = true
+        let asbGesture = UITapGestureRecognizer(target: self, action: #selector(asbTapped))
+        asbGesture.delegate = self
+        asbView.addGestureRecognizer(asbGesture)
+        
+        let stickerGesture = UITapGestureRecognizer(target: self, action: #selector(stickerTapped))
+        stickerGesture.delegate = self
+        stickerView.addGestureRecognizer(stickerGesture)
     }
     
+    @objc func asbTapped() {
+        if UserDefaults.standard.bool(forKey: "asbActivated") {
+            let ac = UIAlertController(title: "ASB Card", message: "You currenlty have ASB feature activated, you may deactivate it if you wish.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.addAction(UIAlertAction(title: "Deactivate", style: .destructive, handler: { (_) in
+                let sheet = UIAlertController(title: "Deactivate ASB Feature", message: "Are you sure?", preferredStyle: .actionSheet)
+                sheet.addAction(UIAlertAction(title: "Deactivate", style: .destructive, handler: { (_) in
+                    UserDefaults.standard.set(false, forKey: "asbActivated")
+                    self.setStandards()
+                }))
+                sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(sheet, animated: true)
+
+            }))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Enter Code", message: "Show your advisement teacher your ID card to activate ASB on this device.", preferredStyle: .alert)
+            ac.addTextField()
+            let submitAction = UIAlertAction(title: "Verify", style: .default, handler: { [unowned ac] _ in
+                let answer = ac.textFields![0]
+                
+                if answer.text != nil {
+                    if answer.text! == "app-activate-asb-now" {
+                        UserDefaults.standard.set(true, forKey: "asbActivated")
+                        self.setStandards()
+                    } else {
+                        self.failVerify(isShortID: false)
+                        answer.text = ""
+                    }
+                } else {
+                    self.failVerify(isShortID: false)
+                    answer.text = ""
+                }
+                
+            })
+            ac.addAction(submitAction)
+            
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            present(ac, animated: true)
+        }
+       
+    }
+    
+    @objc func stickerTapped() {
+        if UserDefaults.standard.bool(forKey: "stickerActivated") {
+            let ac = UIAlertController(title: "Sticker", message: "You currenlty have sticker feature activated, you may deactivate it if you wish.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.addAction(UIAlertAction(title: "Deactivate", style: .destructive, handler: { (_) in
+                let sheet = UIAlertController(title: "Deactivate Sticker Feature", message: "Are you sure?", preferredStyle: .actionSheet)
+                sheet.addAction(UIAlertAction(title: "Deactivate", style: .destructive, handler: { (_) in
+                    UserDefaults.standard.set(false, forKey: "stickerActivated")
+                    self.setStandards()
+                }))
+                sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(sheet, animated: true)
+            }))
+            present(ac, animated: true)
+
+        } else {
+            let ac = UIAlertController(title: "Enter Code", message: "Show your advisement teacher your ID card to activate sticker on this device.", preferredStyle: .alert)
+            ac.addTextField()
+            let submitAction = UIAlertAction(title: "Verify", style: .default, handler: { [unowned ac] _ in
+                let answer = ac.textFields![0]
+                
+                if answer.text != nil {
+                    if answer.text! == "app-activate-sticker-now" {
+                        UserDefaults.standard.set(true, forKey: "stickerActivated")
+                        self.setStandards()
+                    } else {
+                        self.failVerify(isShortID: false)
+                        answer.text = ""
+                    }
+                } else {
+                    self.failVerify(isShortID: false)
+                    answer.text = ""
+                }
+                
+            })
+            ac.addAction(submitAction)
+            
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            present(ac, animated: true)
+        }
+       
+    }
+    
+    func setStandards() {
+        if UserDefaults.standard.bool(forKey: "asbActivated") {
+            print("asbTrue")
+            asbView.font = UIFont(name: "Lato-Bold", size: asbView.font.pointSize)
+            asbView.textColor = UIColor(red: 0.376, green: 0.271, blue: 0.529, alpha: 1)
+            
+        } else {
+            print("asbFalse")
+
+            asbView.textColor = UIColor.lightGray
+        }
+        
+        if UserDefaults.standard.bool(forKey: "stickerActivated") {
+            print("stickerTrue")
+
+            stickerView.font = UIFont(name: "Lato-Bold", size: asbView.font.pointSize)
+            stickerView.textColor = UIColor(red: 0.376, green: 0.271, blue: 0.529, alpha: 1)
+        } else {
+            print("stickerFalse")
+            stickerView.textColor = UIColor.lightGray
+        }
+        
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notInitial = UserDefaults.standard.bool(forKey: "isInitial")
+        if !notInitial {
+            print("INITIAL")
+
+             UserDefaults.standard.set(true, forKey: "isInitial")
+            UserDefaults.standard.set(false, forKey: "asbActivated")
+            UserDefaults.standard.set(false, forKey: "stickerActivated")
+        }
+       
+    
+      
+        
+        
         navigationBar.my_setNavigationBar()
         let userRequest: NSFetchRequest<User> = User.fetchRequest()
         do {
@@ -62,21 +282,27 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                 let object = request.first!
                
                 if object.first != nil && object.longID > 100000000 {
+                    navigationBar.topItem?.rightBarButtonItem?.isEnabled = false
                     thisUser.first = object.first!
                     thisUser.last = object.last!
                     thisUser.longID = object.longID
                     thisUser.shortID = object.shortID
                     thisUser.grade = object.grade
                     thisUser.house = object.house!
-               
                     navigationBar.topItem?.rightBarButtonItem = editButton
                     autoResizeUI()
+                    setStandards()
+                    
                     gradeLabel.text = String(object.grade)
                     nameLabel.text = "\(object.first!) \(object.last!)"
                     shortID.text = String(object.shortID)
                     house.text = object.house?.uppercased()
                     longID.text = String(object.longID)
                     barcode.image = RSUnifiedCodeGenerator.shared.generateCode(String(object.longID), machineReadableCodeObjectType: AVMetadataObject.ObjectType.code39.rawValue)
+                    
+                    
+                    
+                    faceIDAction()
                 }
                 
             } else {
@@ -99,7 +325,7 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print(thisUser.first)
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -124,10 +350,6 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
         performSegue(withIdentifier: "showNameInput", sender: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     
     @IBAction func unwindToIDCard(segue: UIStoryboardSegue) {
@@ -153,6 +375,11 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                     longID.text = String(object.longID)
                     barcode.image = RSUnifiedCodeGenerator.shared.generateCode(String(object.longID), machineReadableCodeObjectType: AVMetadataObject.ObjectType.code39.rawValue)
                     navigationBar.topItem?.rightBarButtonItem = editButton
+                    loadIDCard()
+                    setStandards()
+                    asbView.isUserInteractionEnabled = true
+                    stickerView.isUserInteractionEnabled = true
+
                     
                 }
                 

@@ -17,7 +17,7 @@ func my_getSchedule(type: Int, date: Date?) -> [Date]? {
         
     case 3, 4:
         //extended lunch
-        return [DateFromTime(hour: 8, minute: 0), DateFromTime(hour: 9, minute: 23), DateFromTime(hour: 9, minute: 29), DateFromTime(hour: 9, minute: 54),  DateFromTime(hour: 9, minute: 54), DateFromTime(hour: 10, minute: 4), DateFromTime(hour: 10, minute: 10), DateFromTime(hour: 11, minute: 33), DateFromTime(hour: 11, minute: 33), DateFromTime(hour: 12, minute: 22), DateFromTime(hour: 12, minute: 28), DateFromTime(hour: 1, minute: 51), DateFromTime(hour: 1, minute: 51), DateFromTime(hour: 14, minute: 1), DateFromTime(hour: 14, minute: 7), DateFromTime(hour: 15, minute: 30)]
+        return [DateFromTime(hour: 8, minute: 0), DateFromTime(hour: 9, minute: 19), DateFromTime(hour: 9, minute: 25), DateFromTime(hour: 10, minute: 4),  DateFromTime(hour: 10, minute: 14), DateFromTime(hour: 10, minute: 20), DateFromTime(hour: 11, minute: 39), DateFromTime(hour: 12, minute: 30), DateFromTime(hour: 12, minute: 36), DateFromTime(hour: 13, minute: 55), DateFromTime(hour: 14, minute: 5), DateFromTime(hour: 14, minute: 11), DateFromTime(hour: 15, minute: 30)]
 
     case 5, 6:
         //finals 3 periods

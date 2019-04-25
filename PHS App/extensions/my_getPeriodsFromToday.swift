@@ -20,7 +20,7 @@ func my_getPeriodsFromToday(type: Int) -> [String] {
         return ["2", "A", "PA", "4", "6", "8"]
     case 3:
         //extended lunch odd
-        return ["1", "A", "3", "L", "5", "7"]
+        return ["1", "OH", "3", "L", "5", "7"]
     case 4:
         //extended lunch even
         return ["2", "A", "4", "L", "6", "8"]

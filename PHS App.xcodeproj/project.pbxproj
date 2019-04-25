@@ -156,6 +156,7 @@
 		F0B26CF52138110A00E592B7 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */; };
 		F0B26CF62138110A00E592B7 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */; };
 		F0B26CF82138878C00E592B7 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B26CF72138878C00E592B7 /* NewsDetailViewController.swift */; };
+		F0C48129225F9A38009AED13 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C48128225F9A38009AED13 /* EventsViewController.swift */; };
 		F0CC681E215AA49F009D02F1 /* BellScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CC681D215AA49F009D02F1 /* BellScheduleViewController.swift */; };
 		F0DB35852120DF33000FFEE5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */; };
 		F0F583D121215F710046A837 /* IDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F583D021215F710046A837 /* IDCardViewController.swift */; };
@@ -439,6 +440,7 @@
 		F0B26CF32138110A00E592B7 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		F0B26CF42138110A00E592B7 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		F0B26CF72138878C00E592B7 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		F0C48128225F9A38009AED13 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		F0C704C8212E7DD400C6F49C /* PHS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PHS App.entitlements"; sourceTree = "<group>"; };
 		F0CC681D215AA49F009D02F1 /* BellScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellScheduleViewController.swift; sourceTree = "<group>"; };
 		F0DB35842120DF33000FFEE5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -699,6 +701,7 @@
 				F06EDD3221054AF100297B8B /* AppDelegate.swift */,
 				F06EDD3421054AF100297B8B /* ViewController.swift */,
 				F06EDDA6210552B400297B8B /* HomeViewController.swift */,
+				F0C48128225F9A38009AED13 /* EventsViewController.swift */,
 				F082015A212C9B5F007DEC1D /* MeTableViewController.swift */,
 				F0B1DD2D211CB0EB00901E31 /* PersistentService.swift */,
 				F06EDDB32108F84300297B8B /* MeViewController.swift */,
@@ -1443,6 +1446,7 @@
 				F016C1CA212910E000890DE3 /* User+CoreDataClass.swift in Sources */,
 				F04F2384211597DE00513EC8 /* my_minutesFromSchoolStart.swift in Sources */,
 				F016C1C42129100100890DE3 /* MyClasses+CoreDataClass.swift in Sources */,
+				F0C48129225F9A38009AED13 /* EventsViewController.swift in Sources */,
 				F0CC681E215AA49F009D02F1 /* BellScheduleViewController.swift in Sources */,
 				F016C23C212B44E900890DE3 /* GameScheduleTableViewCell.swift in Sources */,
 				F043CEF0214A275200312B56 /* my_removeDuplicates.swift in Sources */,

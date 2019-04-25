@@ -124,9 +124,11 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     var views = [UIView]()
     var eventLabels = [UILabel]()
     
+    let lastDay = Date(timeIntervalSince1970: 1559977200)
+    let firstDay2019 = Date(timeIntervalSince1970: 1566457200)
+    var dateDifference = Int()
     
     @objc func timeTapped() {
-        print("tapped")
         timeLeftLabel.my_glowOnTap()
         minutesLabel.my_glowOnTap()
         endsLabel.my_glowOnTap()
@@ -266,30 +268,34 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //lay out UI
         initialize()
         
-        //set-up
-        isAppConnected = CheckInternet.Connection()
-        loadSpecialDays()
-        scheduleNotifications()
-        getTodayType()
-        DispatchQueue.global(qos: .background).async {
-            //User Defaults
-            self.userDefaults()
-            self.fadeInViews(isAppOpened: self.isAppOpenedByUser, completion: {
-              self.startAnimation()
-            })
-        }
+
+            //set-up
+            isAppConnected = CheckInternet.Connection()
+            loadSpecialDays()
+            scheduleNotifications()
+            getTodayType()
+            DispatchQueue.global(qos: .background).async {
+                //User Defaults
+                self.userDefaults()
+                self.fadeInViews(isAppOpened: self.isAppOpenedByUser, completion: {
+                    self.startAnimation()
+                })
+            }
+            
+            
+            
+            //initilize timer
+            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         
-       
-        
-        //initilize timer
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-       
+ 
         
     }
 
@@ -381,6 +387,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
  
     
     @objc func update() {
+        
         if isAppConnected == false {
             if CheckInternet.Connection() {
                 updateWhenFirstConnected()
@@ -389,31 +396,41 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         //update only at midnight
         if Calendar.current.component(.day, from: Date()) != day {
-            updateAtMidNight()
-           day = Calendar.current.component(.day, from: Date())
+            if Date() > lastDay && Date() < firstDay2019 {
+                dateDifference = Calendar.current.dateComponents([.day], from: firstDay2019, to: Date()).day ?? 0
+                loadTimeLeftLabel(text: String(dateDifference), size: CGFloat(140))
+            } else {
+                updateAtMidNight()
+                day = Calendar.current.component(.day, from: Date())
+            }
         } else {
-            if timeOfDay != Date().getRelativeTime() {
+            if Date() > lastDay && Date() < firstDay2019 {
+                //nothing happens
+            } else {
+                if timeOfDay != Date().getRelativeTime() {
                     timeOfDay = Date().timeOfSchoolDay()
                     self.configureTimeLeftLabel()
-            } else {
-                if minute != Calendar.current.component(.minute, from: Date()) {
-                    if Date().isSchoolDay() {
-                 
-                        if timeOfDay == .during {
-                          
-                            loadProgressingBar(isInitial: false)
+                } else {
+                    if minute != Calendar.current.component(.minute, from: Date()) {
+                        if Date().isSchoolDay() {
+                            
+                            if timeOfDay == .during {
+                                
+                                loadProgressingBar(isInitial: false)
+                            }
                         }
-                    }
-                    if Date().isSchoolDay() {
-                        if timeOfDay == .during {
-                            fetchTimeLeft()
+                        if Date().isSchoolDay() {
+                            if timeOfDay == .during {
+                                fetchTimeLeft()
+                            }
                         }
+                        minute = Calendar.current.component(.minute, from: Date())
                     }
-                    minute = Calendar.current.component(.minute, from: Date())
                 }
+                
             }
-          
-        }
+            }
+           
     }
     
   
@@ -494,7 +511,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             joinButton.alpha = 0
             
         } else {
-            print("SOMETHING IS LIKE WRONG")
                     for i in 0...4 {
                         let weekdayLabels = ["M", "T", "W", "T", "F"]
                         let weekdayLabel = UILabel()
@@ -687,6 +703,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @objc func fetchEvents() {
+     
         if CheckInternet.Connection() {
             var date = Date()
             var time = String()
@@ -694,10 +711,12 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             var notification = Bool()
             if let data = try? String(contentsOf: URL(string: "https://portola.epicteam.app/api/events")!) {
                 let jsonData = JSON(parseJSON: data).dictionaryValue["events"]!
+                
                 let array = jsonData.arrayValue
                 for events in array {
                     let dictionary = events.dictionaryObject!
                     if let dateGet = dictionary["date"] as? String {
+                            print(dateGet)
                       
                             let formatter = DateFormatter()
                             formatter.timeZone = Calendar.current.timeZone
@@ -806,36 +825,37 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @objc func configureNextSchoolDayStart() {
-        DispatchQueue.main.async {
-            self.loadEndsLabel(text: "SCHOOL STARTS")
-        }
-        let startingDate = Date().noon
-        var interval = 1
-        var dayType = 20
-        while dayType == 20 {
-            let onDate = Calendar.current.date(byAdding: .day, value: interval, to: startingDate)!
-            if onDate.isWeekend() {
-                dayType = 20
-            } else {
-                dayType = getDayType(date: onDate)
+       
+            DispatchQueue.main.async {
+                self.loadEndsLabel(text: "SCHOOL STARTS")
             }
-            
-            interval += 1
-
-            if dayType != 20 {
-               
-                //found a non-20 day
+            let startingDate = Date().noon
+            var interval = 1
+            var dayType = 20
+            while dayType == 20 {
+                let onDate = Calendar.current.date(byAdding: .day, value: interval, to: startingDate)!
+                if onDate.isWeekend() {
+                    dayType = 20
+                } else {
+                    dayType = getDayType(date: onDate)
+                }
+                
+                interval += 1
+                
+                if dayType != 20 {
+                    
+                    //found a non-20 day
                     let currentDate = onDate.noon
-                let firstDayStartTime = uniq(source: my_getSchedule(type: dayType, date: currentDate)!).first!
-              
+                    let firstDayStartTime = uniq(source: my_getSchedule(type: dayType, date: currentDate)!).first!
+                    
                     let time = timeStringFromDate(date: firstDayStartTime)
                     DispatchQueue.main.async {
                         self.loadTimeLeftLabel(text: time, size: CGFloat(140))
                     }
-            
+                    
                     if Calendar.current.dateComponents([.day], from: startingDate, to: currentDate).day == 1 {
                         DispatchQueue.main.async {
-                          self.loadMinutesLabel(text: "TOMORROW")
+                            self.loadMinutesLabel(text: "TOMORROW")
                         }
                     } else if Calendar.current.dateComponents([.day], from: startingDate, to: currentDate).day! < 7  {
                         DispatchQueue.main.async {
@@ -849,8 +869,10 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                             self.loadMinutesLabel(text: "ON \(schoolStartsString)")
                         }
                     }
+                }
             }
-        }
+        
+        
     }
     
     func loadTimeLeftLabel(text: String, size: CGFloat) {
@@ -878,17 +900,26 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
    @objc func configureTimeLeftLabel() {
+    if Date() > lastDay && Date() < firstDay2019 {
+        print("YES")
+        loadEndsLabel(text: "SCHOOL STARTS IN")
+        loadMinutesLabel(text: "DAYS")
+        dateDifference = Calendar.current.dateComponents([.day], from: Date(), to: firstDay2019).day ?? 0
+        loadTimeLeftLabel(text: String(dateDifference), size: CGFloat(140))
+        
+    } else {
+        print("NO")
         if Date().isSchoolDay() {
             switch timeOfDay! {
-               
+                
             case .before:
                 let startTime = uniq(source: my_getSchedule(type: today, date: nil)!).first!
                 loadTimeLeftLabel(text: timeStringFromDate(date: startTime), size: CGFloat(140))
                 loadEndsLabel(text: "SCHOOL STARTS")
                 loadMinutesLabel(text: "TODAY")
             case .during:
-          
-                 fetchTimeLeft()
+                
+                fetchTimeLeft()
             case .after:
                 if tomorrow == 20 {
                     
@@ -914,7 +945,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                     }
                 }
                 
-            
+                
             }
             
             
@@ -942,9 +973,11 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             } else {
                 
                 performSelector(inBackground: #selector(configureNextSchoolDayStart), with: nil)
-
+                
             }
         }
+    }
+    
         
        
     }
