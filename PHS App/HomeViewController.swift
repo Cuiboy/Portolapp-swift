@@ -111,6 +111,9 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     var fetchedNumber = Int()
     var savedEvents = [SavedEvents]()
     
+    var timer: Timer? = nil
+    
+    
     @IBOutlet weak var eventTime1: UILabel!
     @IBOutlet weak var eventTitle1: UILabel!
     @IBOutlet weak var eventTime2: UILabel!
@@ -144,6 +147,21 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func event3Tapped() {
         eventTitle3.my_glowOnTap()
         eventTime3.my_glowOnTap()
+    }
+    
+    func startTimer() {
+    
+        if timer == nil {
+          
+            timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func stopTimer() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
     }
     
     func initialize() {
@@ -272,7 +290,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //lay out UI
         initialize()
         
@@ -293,24 +310,34 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             
             
             //initilize timer
-            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-        
+            startTimer()
  
         
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+
+        //change status bar color
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
+        
+        //continue application
         if Date().isSchoolDay() {
             if Date().getRelativeTime() == relativeTime.during {
                 fetchTimeLeft()
             }
         }
       
+        
             self.joinButton.backgroundColor = UIColor.clear
             self.joinLabel.textColor = UIColor.white
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        //stop the timer
+        stopTimer()
     }
     
     
@@ -387,7 +414,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
  
     
     @objc func update() {
-        
         if isAppConnected == false {
             if CheckInternet.Connection() {
                 updateWhenFirstConnected()
@@ -716,7 +742,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                 for events in array {
                     let dictionary = events.dictionaryObject!
                     if let dateGet = dictionary["date"] as? String {
-                            print(dateGet)
+                        
                       
                             let formatter = DateFormatter()
                             formatter.timeZone = Calendar.current.timeZone
@@ -824,6 +850,8 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     
     
+    
+    
     @objc func configureNextSchoolDayStart() {
        
             DispatchQueue.main.async {
@@ -901,14 +929,14 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
    @objc func configureTimeLeftLabel() {
     if Date() > lastDay && Date() < firstDay2019 {
-        print("YES")
+      
         loadEndsLabel(text: "SCHOOL STARTS IN")
         loadMinutesLabel(text: "DAYS")
         dateDifference = Calendar.current.dateComponents([.day], from: Date(), to: firstDay2019).day ?? 0
         loadTimeLeftLabel(text: String(dateDifference), size: CGFloat(140))
         
     } else {
-        print("NO")
+       
         if Date().isSchoolDay() {
             switch timeOfDay! {
                 

@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.9</string>
+	<string>0.9.1</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -33,6 +33,8 @@
 	<string>We need to access the camera to scan your ID card</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Use face ID to secure your personal information.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Enable location to improve app usage experience</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Lato-Italic.ttf</string>
