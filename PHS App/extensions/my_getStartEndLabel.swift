@@ -51,7 +51,7 @@ func my_getStartEndLabel(type: Int) -> [Bool]? {
         return [false, false, true, false, false, true, false, true, false]
     case 18, 19:
         //CAASPP
-        return [false, false, true, false, true, false, false, true, false, true, false]
+        return [false, false, true, false, true, false, true, false, false, false, true, false]
     case 20:
         //NO SCHOOL
         return nil

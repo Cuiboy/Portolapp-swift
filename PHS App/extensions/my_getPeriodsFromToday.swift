@@ -65,10 +65,10 @@ func my_getPeriodsFromToday(type: Int) -> [String] {
         return ["TEST", "OH", "4", "6", "8"]
     case 18:
         //CAASPP ODD
-        return ["TEST 11", "OH", "1", "3", "5", "7"]
+        return ["TEST","11", "OH", "1", "3", "5", "7"]
     case 19:
         //CAASPP EVEN
-         return ["TEST 11", "OH", "2", "4", "6", "8"]
+         return ["TEST", "11", "OH", "2", "4", "6", "8"]
     case 20:
         //NO SCHOOL
         return ["NO SCHOOL TODAY"]

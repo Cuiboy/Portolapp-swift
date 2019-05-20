@@ -59,7 +59,7 @@ func my_getSchedule(type: Int, date: Date?) -> [Date]? {
         
     case 18, 19:
         //CAASPP
-        return [DateFromTime(hour: 8, minute: 0), DateFromTime(hour: 10, minute: 54), DateFromTime(hour: 10, minute: 54),DateFromTime(hour: 11, minute: 15), DateFromTime(hour: 11, minute: 21), DateFromTime(hour: 12, minute: 10), DateFromTime(hour: 12, minute: 16), DateFromTime(hour: 13, minute: 5),DateFromTime(hour: 13, minute: 5), DateFromTime(hour: 13, minute: 40), DateFromTime(hour: 13, minute: 46), DateFromTime(hour: 14, minute: 35), DateFromTime(hour: 14, minute: 41), DateFromTime(hour: 15, minute: 30)]
+        return [DateFromTime(hour: 8, minute: 0), DateFromTime(hour: 10, minute: 50), DateFromTime(hour: 11, minute: 0),DateFromTime(hour: 11, minute: 6), DateFromTime(hour: 11, minute: 23), DateFromTime(hour: 11, minute: 29), DateFromTime(hour: 12, minute: 16), DateFromTime(hour: 12, minute: 22),DateFromTime(hour: 13, minute: 9), DateFromTime(hour: 13, minute: 44), DateFromTime(hour: 13, minute: 50), DateFromTime(hour: 14, minute: 37), DateFromTime(hour: 14, minute: 43), DateFromTime(hour: 15, minute: 30)]
 
     case 20:
         //NO SCHOOL

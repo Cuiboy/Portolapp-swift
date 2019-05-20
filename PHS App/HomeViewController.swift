@@ -290,6 +290,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //lay out UI
         initialize()
         
@@ -300,6 +301,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             scheduleNotifications()
             getTodayType()
             DispatchQueue.global(qos: .background).async {
+                
                 //User Defaults
                 self.userDefaults()
                 self.fadeInViews(isAppOpened: self.isAppOpenedByUser, completion: {
@@ -414,12 +416,14 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
  
     
     @objc func update() {
+       /*
         if isAppConnected == false {
             if CheckInternet.Connection() {
                 updateWhenFirstConnected()
                 isAppConnected = true
             }
-        }
+        }*/
+        
         //update only at midnight
         if Calendar.current.component(.day, from: Date()) != day {
             if Date() > lastDay && Date() < firstDay2019 {
