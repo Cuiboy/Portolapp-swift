@@ -121,16 +121,33 @@ class BellScheduleViewController: UIViewController {
     
     func initilize() {
         if today != 20 && Date().isSchoolDay() {
-            for i in 0...my_getSchedule(type: today, date: nil)!.count - 1 {
-                if i % 2 == 0 {
-                    bellSchedule.append(my_getSchedule(type: today, date: nil)![i])
+            if today == 18 || today == 19 {
+              
+                bellSchedule.append(my_getSchedule(type: today, date: nil)![0])
+              
+               
+                for i in 0...uniq(source: my_getSchedule(type: today, date: nil)!).count - 1 {
+                    if i % 2 == 1 && i < 8 {
+                        bellSchedule.append(my_getSchedule(type: today, date: nil)![i])
+                    }
+                    if i % 2 == 0 && i > 7 {
+                        bellSchedule.append(my_getSchedule(type: today, date: nil)![i])
+                    }
+                }
+            } else {
+                for i in 0...my_getSchedule(type: today, date: nil)!.count - 1 {
+                    if i % 2 == 0 {
+                        bellSchedule.append(my_getSchedule(type: today, date: nil)![i])
+                    }
                 }
             }
+          
            
         }
         
         
         if let todayRaw = my_getStartEndPeriodLabel(type: today) {
+          
             for i in 0...todayRaw.count - 1 {
                 var prev: Int?
                 if i > 0 {
@@ -152,9 +169,11 @@ class BellScheduleViewController: UIViewController {
         for classes in classesRaw {
             classesString.append(classes.getPeriodLabel().lowercased().capitalizingFirstLetter())
         }
+
         
         
         if today != 20 && Date().isSchoolDay() {
+        
             percentage = CGFloat(minSinceSchool) / CGFloat(minOfSchool!)
         } else {
             percentage = 0
@@ -228,8 +247,10 @@ class BellScheduleViewController: UIViewController {
     
     func configureLabels() {
 
-
-        guard bellSchedule.count == classesString.count else {return}
+        guard bellSchedule.count == classesString.count else {
+            print(bellSchedule)
+            print(classesString)
+            return}
         bellSchedule.append(my_getStartEndTimeFromToday(type: today, dayType: dayType.today, date: nil)[1])
         classesString.append("End Time")
         let top = progressView.frame.minY

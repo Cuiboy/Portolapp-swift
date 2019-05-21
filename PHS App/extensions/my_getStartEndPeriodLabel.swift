@@ -66,10 +66,10 @@ func my_getStartEndPeriodLabel(type: Int) -> [Int]? {
         return [23, 10, 4, 4, 12, 6, 6, 8, 8]
     case 18:
         //CAASPP odd
-        return [24, 10, 1, 1, 3, 3, 12, 5, 5, 7, 7]
+        return [24, 13, 10, 10, 1, 1, 3, 3, 12, 5, 5, 7, 7]
     case 19:
         //CAASPP even
-        return [24, 10, 2, 2, 4, 4, 12, 6, 6, 8, 8]
+        return [24, 13, 10, 10, 2, 2, 4, 4, 12, 6, 6, 8, 8]
     case 20:
         //NO SCHOOL
         return nil

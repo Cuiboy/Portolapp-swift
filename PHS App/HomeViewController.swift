@@ -297,6 +297,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
             //set-up
             isAppConnected = CheckInternet.Connection()
+            print(isAppConnected)
             loadSpecialDays()
             scheduleNotifications()
             getTodayType()
