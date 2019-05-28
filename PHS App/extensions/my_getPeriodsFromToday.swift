@@ -29,10 +29,10 @@ func my_getPeriodsFromToday(type: Int) -> [String] {
         return ["1", "3", "7"]
     case 6:
         //finals type 2
-        return ["2", "4", "8"]
+        return ["5", "6", "8"]
     case 7:
         //finals two periods
-        return ["5", "6"]
+        return ["2", "4"]
     case 8:
         //minimum 1-8
         return ["1", "2", "3", "4", "5", "6", "7", "8"]

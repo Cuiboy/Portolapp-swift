@@ -31,10 +31,10 @@ func my_getStartEndPeriodLabel(type: Int) -> [Int]? {
         return [1, 3, 3, 7, 7]
     case 6:
         //finals type 2
-        return [2, 4, 4, 8, 8]
+        return [5, 6, 6, 8, 8]
     case 7:
         //finals two periods
-        return [5, 6, 6]
+        return [2, 4, 4]
     case 8:
         //minimum 1-8
         return [1, 2, 2, 3, 3, 4, 4, 13, 5, 5, 6, 6, 7, 7, 8, 8]
