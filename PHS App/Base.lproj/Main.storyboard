@@ -248,10 +248,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joinUs" translatesAutoresizingMaskIntoConstraints="NO" id="HmO-Lf-EEA">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU’RE INVITED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="A53-Fd-eOp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THANK YOU!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="A53-Fd-eOp">
                                 <rect key="frame" x="0.0" y="49.999999999999993" width="414" height="97.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="A53-Fd-eOp" secondAttribute="height" multiplier="375:88" id="wiU-wb-ueL"/>
@@ -260,21 +257,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pl8-8A-Byx">
-                                <rect key="frame" x="24" y="177.33333333333337" width="365" height="216"/>
-                                <string key="text">Are you interested in working in the Tech Industry?
-Are you passionate about programming, designing 
-or marketing? Do you want to leave a legacy here 
-at Portola? This is your opportunity to be a part of 
-something special, to carry on a legacy,  to get an 
-insight of what it’s like to work on a real product 
-with real users, and to see your work appear on 
-the devices of over 90% of the students here at 
-Portola. Positions are now open for developers,
-designers, and marketers.
- 
-Click below for more info!</string>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pl8-8A-Byx">
+                                <rect key="frame" x="24" y="177.33333333333331" width="365" height="216.33333333333331"/>
+                                <mutableString key="text">This past year has been such an incredible experience for us to develop and maintain this app for Portola.
+We have always wanted to make a positive impact
+on our school community and use technology to   
+make people's lives easier. With this app, we have  
+made significant progress towards that goal. 
+It is the end of the year, and we want to thank you
+for supporting our app and putting trust in our work.
+Your continued support motivates us to improve this
+app every day. Now, we would like to hear from you. 
+Your feedback and suggestions will help us with our effort to rebuild the app over the summer and expand this app to the district and beyond.</mutableString>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -289,7 +284,7 @@ Click below for more info!</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtL-gM-Pqd">
-                                <rect key="frame" x="103.66666666666669" y="441.66666666666669" width="207" height="58"/>
+                                <rect key="frame" x="104" y="442" width="206" height="58"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CtL-gM-Pqd" secondAttribute="height" multiplier="210:59" id="Bt5-iK-mcz"/>
@@ -300,19 +295,15 @@ Click below for more info!</string>
                         <constraints>
                             <constraint firstItem="gC8-xF-tFY" firstAttribute="trailing" secondItem="pl8-8A-Byx" secondAttribute="trailing" constant="25" id="067-C2-s6q"/>
                             <constraint firstItem="A53-Fd-eOp" firstAttribute="bottom" secondItem="gC8-xF-tFY" secondAttribute="bottom" multiplier="0.2" id="6pf-SO-YSL"/>
+                            <constraint firstItem="CtL-gM-Pqd" firstAttribute="leading" secondItem="gC8-xF-tFY" secondAttribute="leading" constant="104" id="AdU-2B-yCM"/>
                             <constraint firstItem="CtL-gM-Pqd" firstAttribute="centerX" secondItem="gC8-xF-tFY" secondAttribute="centerX" id="BJw-hO-CWK"/>
                             <constraint firstItem="wj8-k4-Beb" firstAttribute="top" secondItem="gC8-xF-tFY" secondAttribute="top" constant="4" id="DpZ-Y7-Oba"/>
-                            <constraint firstItem="CtL-gM-Pqd" firstAttribute="width" secondItem="HmO-Lf-EEA" secondAttribute="width" multiplier="0.5" id="OF4-ka-k9y"/>
-                            <constraint firstItem="HmO-Lf-EEA" firstAttribute="top" secondItem="yek-oE-Rb7" secondAttribute="top" id="OuY-Zk-Ujo"/>
-                            <constraint firstAttribute="bottom" secondItem="HmO-Lf-EEA" secondAttribute="bottom" id="Y94-NI-RuS"/>
+                            <constraint firstItem="gC8-xF-tFY" firstAttribute="bottom" secondItem="CtL-gM-Pqd" secondAttribute="bottom" constant="236" id="KYc-yT-ZbG"/>
                             <constraint firstItem="pl8-8A-Byx" firstAttribute="leading" secondItem="gC8-xF-tFY" secondAttribute="leading" constant="24" id="cFh-bq-VzT"/>
                             <constraint firstItem="A53-Fd-eOp" firstAttribute="leading" secondItem="gC8-xF-tFY" secondAttribute="leading" id="eMR-c0-Zbs"/>
                             <constraint firstItem="A53-Fd-eOp" firstAttribute="trailing" secondItem="gC8-xF-tFY" secondAttribute="trailing" id="eQ1-PJ-S7R"/>
-                            <constraint firstItem="A53-Fd-eOp" firstAttribute="width" secondItem="HmO-Lf-EEA" secondAttribute="width" id="fH3-Rv-h4M"/>
                             <constraint firstItem="pl8-8A-Byx" firstAttribute="top" secondItem="A53-Fd-eOp" secondAttribute="bottom" constant="30" id="h55-xr-wQV"/>
                             <constraint firstItem="CtL-gM-Pqd" firstAttribute="top" secondItem="pl8-8A-Byx" secondAttribute="bottom" constant="48.333333333333371" id="jHl-ai-rCv"/>
-                            <constraint firstItem="HmO-Lf-EEA" firstAttribute="leading" secondItem="gC8-xF-tFY" secondAttribute="leading" id="kps-vg-SvM"/>
-                            <constraint firstItem="HmO-Lf-EEA" firstAttribute="trailing" secondItem="gC8-xF-tFY" secondAttribute="trailing" id="o0a-VX-ALt"/>
                             <constraint firstItem="wj8-k4-Beb" firstAttribute="leading" secondItem="gC8-xF-tFY" secondAttribute="leading" constant="20" id="z8S-ef-pPg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gC8-xF-tFY"/>
@@ -3847,7 +3838,6 @@ Click below for more info!</string>
         <image name="backgroundRight" width="375" height="812"/>
         <image name="downArrow" width="12" height="8"/>
         <image name="introGradient" width="375" height="667"/>
-        <image name="joinUs" width="562.66668701171875" height="1218"/>
         <image name="leftArrow" width="8" height="12"/>
         <image name="navigationBackground" width="375" height="88"/>
         <image name="rightArrow" width="8" height="13"/>

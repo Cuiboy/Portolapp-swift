@@ -36,8 +36,8 @@ class JoinViewController: UIViewController, UIGestureRecognizerDelegate {
         joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
         joinLabel.textAlignment = .center
         joinLabel.textColor = UIColor.black
-        joinLabel.text = "CONTINUE"
-        joinLabel.font = UIFont(name: "Lato-Light", size: CGFloat(20).relativeToWidth)
+        joinLabel.text = "TALK TO US!"
+        joinLabel.font = UIFont(name: "Lato-Light", size: CGFloat(18).relativeToWidth)
         joinButton.addSubview(joinLabel)
         let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
         joinGesture.delegate = self
@@ -63,7 +63,7 @@ class JoinViewController: UIViewController, UIGestureRecognizerDelegate {
         }) { (_) in
              self.joinButton.backgroundColor = UIColor.clear
         }
-        guard let url = URL(string: "https://bit.ly/ate-try") else { return }
+        guard let url = URL(string: "https://forms.gle/TSarYRRYZ6pDjXVK6") else { return }
         UIApplication.shared.open(url)
     }
     /*

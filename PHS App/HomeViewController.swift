@@ -153,7 +153,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
         if timer == nil {
           
-            timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         }
     }
     
@@ -340,7 +340,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         //stop the timer
-        stopTimer()
+    
     }
     
     
@@ -425,43 +425,56 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         }*/
         
-        //update only at midnight
-        if Calendar.current.component(.day, from: Date()) != day {
-            if Date() > lastDay && Date() < firstDay2019 {
-                dateDifference = Calendar.current.dateComponents([.day], from: firstDay2019, to: Date()).day ?? 0
-                loadTimeLeftLabel(text: String(dateDifference), size: CGFloat(140))
-            } else {
-                updateAtMidNight()
-                day = Calendar.current.component(.day, from: Date())
-            }
+        if Calendar.current.component(.day, from: Date()) + 1 == Calendar.current.component(.day, from: lastDay) && Date().getRelativeTime() == .during {
+            fetchTimeLeft()
         } else {
-            if Date() > lastDay && Date() < firstDay2019 {
-                //nothing happens
-            } else {
-                if timeOfDay != Date().getRelativeTime() {
-                    timeOfDay = Date().timeOfSchoolDay()
-                    self.configureTimeLeftLabel()
+            //update only at midnight
+            if Calendar.current.component(.day, from: Date()) != day {
+                if Date() > lastDay && Date() < firstDay2019 {
+                    dateDifference = Calendar.current.dateComponents([.day], from: firstDay2019, to: Date()).day ?? 0
+                    loadTimeLeftLabel(text: String(dateDifference), size: CGFloat(140))
                 } else {
-                    if minute != Calendar.current.component(.minute, from: Date()) {
-                        if Date().isSchoolDay() {
-                            
-                            if timeOfDay == .during {
-                                
-                                loadProgressingBar(isInitial: false)
-                            }
-                        }
-                        if Date().isSchoolDay() {
-                            if timeOfDay == .during {
-                                fetchTimeLeft()
-                            }
-                        }
-                        minute = Calendar.current.component(.minute, from: Date())
-                    }
+                    updateAtMidNight()
+                    day = Calendar.current.component(.day, from: Date())
                 }
-                
+            } else {
+                if Date() > lastDay && Date() < firstDay2019 {
+                    //nothing happens
+                } else {
+                    if timeOfDay != Date().getRelativeTime() {
+                        timeOfDay = Date().timeOfSchoolDay()
+                        if (Calendar.current.component(.day, from: Date()) + 1 == Calendar.current.component(.day, from: lastDay) && Date().getRelativeTime() == .after) {
+                            dateDifference = Calendar.current.dateComponents([.day], from: Date(), to: firstDay2019).day ?? 0
+                            loadTimeLeftLabel(text: String(dateDifference), size: CGFloat(140))
+                            loadMinutesLabel(text: "DAYS")
+                            loadEndsLabel(text: "SCHOOL STARTS IN")
+                        } else {
+                            self.configureTimeLeftLabel()
+                        }
+                    } else {
+                        if minute != Calendar.current.component(.minute, from: Date()) {
+                            if Date().isSchoolDay() {
+                                
+                                if timeOfDay == .during {
+                                    
+                                    loadProgressingBar(isInitial: false)
+                                }
+                            }
+                            if Date().isSchoolDay() {
+                                if timeOfDay == .during {
+                                    fetchTimeLeft()
+                                }
+                            }
+                            minute = Calendar.current.component(.minute, from: Date())
+                        }
+                    }
+                    
+                }
             }
-            }
-           
+            
+        }
+        
+       
     }
     
   
@@ -512,16 +525,16 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                 self.joinLabel.textColor = UIColor.white
             }, completion: nil)
         }
-//        if let vc = storyboard?.instantiateViewController(withIdentifier: "join") as? JoinViewController {
-//            present(vc, animated: true)
-//        }
-
-        UIApplication.shared.open(URL(string: "https://www.eventbrite.com/e/the-addams-family-musical-tickets-57358504832")!, options: [:], completionHandler: nil)
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "join") as? JoinViewController {
+            present(vc, animated: true)
+        }
+//
+//        UIApplication.shared.open(URL(string: "https://www.eventbrite.com/e/the-addams-family-musical-tickets-57358504832")!, options: [:], completionHandler: nil)
     }
     
     
     func configureWeekdays() {
-        if Date() < Date.init(timeIntervalSince1970: 1552806000) {
+//        if Date() < Date.init(timeIntervalSince1970: 1552806000) {
             joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
             joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
             joinButton.layer.borderColor = UIColor.white.cgColor
@@ -533,53 +546,55 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
             joinLabel.textAlignment = .center
             joinLabel.textColor = UIColor.white
-            joinLabel.text = "BUY MUSICAL TICKETS"
-            joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(18).relativeToWidth)
+        
+        joinLabel.attributedText = NSAttributedString(string: "THANK YOU!", attributes:
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
+            joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(22).relativeToWidth)
             joinButton.addSubview(joinLabel)
             let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
             joinGesture.delegate = self
             joinButton.addGestureRecognizer(joinGesture)
             joinButton.alpha = 0
             
-        } else {
-                    for i in 0...4 {
-                        let weekdayLabels = ["M", "T", "W", "T", "F"]
-                        let weekdayLabel = UILabel()
-                        weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
-                        weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
-                        weekdayLabel.textAlignment = .center
-                        weekdayLabel.text = weekdayLabels[i]
-                        weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
-                        weekdayLabel.textColor = UIColor.white
-                        weekdayLabel.my_dropShadow()
-                        weekdayLabelView.addSubview(weekdayLabel)
-            
-                    }
-                    view.addSubview(weekdayLabelView)
-        }
-  
+//        } else {
+//                    for i in 0...4 {
+//                        let weekdayLabels = ["M", "T", "W", "T", "F"]
+//                        let weekdayLabel = UILabel()
+//                        weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
+//                        weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
+//                        weekdayLabel.textAlignment = .center
+//                        weekdayLabel.text = weekdayLabels[i]
+//                        weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
+//                        weekdayLabel.textColor = UIColor.white
+//                        weekdayLabel.my_dropShadow()
+//                        weekdayLabelView.addSubview(weekdayLabel)
+//
+//                    }
+//                    view.addSubview(weekdayLabelView)
+//        }
+//
 
     }
 
     func configureWeekdayDots() {
-        for i in 0 ... 4 {
-             drawDots(withFill: false, loopNumber: i)
-        }
-         let weekToday = Calendar.current.component(.weekday, from: Date())
-        if weekToday == 1 {
-            view.addSubview(weekdayDots)
-        } else if weekToday == 6  || weekToday == 7 {
-         for i in 0...4 {
-         drawDots(withFill: true, loopNumber: i)
-            view.addSubview(weekdayDots)
-            }
-         } else {
-         for i in 0...(weekToday - 2) {
-         drawDots(withFill: true, loopNumber: i)
-            view.addSubview(weekdayDots)
-         }
-
-         }
+//        for i in 0 ... 4 {
+//             drawDots(withFill: false, loopNumber: i)
+//        }
+//         let weekToday = Calendar.current.component(.weekday, from: Date())
+//        if weekToday == 1 {
+//            view.addSubview(weekdayDots)
+//        } else if weekToday == 6  || weekToday == 7 {
+//         for i in 0...4 {
+//         drawDots(withFill: true, loopNumber: i)
+//            view.addSubview(weekdayDots)
+//            }
+//         } else {
+//         for i in 0...(weekToday - 2) {
+//         drawDots(withFill: true, loopNumber: i)
+//            view.addSubview(weekdayDots)
+//         }
+//
+//         }
         
     }
 
@@ -933,15 +948,16 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
    @objc func configureTimeLeftLabel() {
-    if Date() > lastDay && Date() < firstDay2019 {
-      
+    if Date() > lastDay && Date() < firstDay2019 || (Calendar.current.component(.day, from: Date()) + 1 == Calendar.current.component(.day, from: lastDay) && Date().getRelativeTime() == .after) {
+        
         loadEndsLabel(text: "SCHOOL STARTS IN")
         loadMinutesLabel(text: "DAYS")
         dateDifference = Calendar.current.dateComponents([.day], from: Date(), to: firstDay2019).day ?? 0
         loadTimeLeftLabel(text: String(dateDifference), size: CGFloat(140))
         
     } else {
-       
+       // print(Calendar.current.component(.day, from: Date()))
+        print(Calendar.current.component(.day, from: lastDay))
         if Date().isSchoolDay() {
             switch timeOfDay! {
                 
@@ -1024,18 +1040,34 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             for i in 0...schedule.count - 1 {
               
                 if schedule[i] >= Date().localTime() {
-                    if let minutes = Calendar.current.dateComponents([.minute], from: Date().localTime(), to: schedule[i]).minute {
-                        if minutes == 0 {
-                            loadTimeLeftLabel(text: "<1", size: 160)
-                            loadMinutesLabel(text: "MINUTE")
-                        } else if minutes == 1 {
-                            loadTimeLeftLabel(text: String(minutes), size: 160)
-                            loadMinutesLabel(text: "MINUTE")
-                        } else {
-                            loadTimeLeftLabel(text: String(minutes), size: 160)
-                            loadMinutesLabel(text: "MINUTES")
+                    
+                    if Calendar.current.component(.day, from: Date()) + 1 == Calendar.current.component(.day, from: lastDay) && Date().getRelativeTime() == .during {
+                        if let seconds = Calendar.current.dateComponents([.second], from: Date().localTime(), to: schedule.last!).second {
+                            if seconds >= 10000 {
+                                loadTimeLeftLabel(text: String(seconds), size: 90)
+                                loadMinutesLabel(text: "SECONDS")
+                            } else if seconds >= 1000 {
+                                loadTimeLeftLabel(text: String(seconds), size: 120)
+                                loadMinutesLabel(text: "SECONDS")
+                            } else {
+                                loadTimeLeftLabel(text: String(seconds), size: 160)
+                                loadMinutesLabel(text: "SECONDS")
+                            }
+                            loadEndsLabel(text: "SCHOOL YEAR ENDS IN")
                         }
-                        
+                    } else {
+                        if let minutes = Calendar.current.dateComponents([.minute], from: Date().localTime(), to: schedule[i]).minute {
+                            if minutes == 0 {
+                                loadTimeLeftLabel(text: "<1", size: 160)
+                                loadMinutesLabel(text: "MINUTE")
+                            } else if minutes == 1 {
+                                loadTimeLeftLabel(text: String(minutes), size: 160)
+                                loadMinutesLabel(text: "MINUTE")
+                            } else {
+                                loadTimeLeftLabel(text: String(minutes), size: 160)
+                                loadMinutesLabel(text: "MINUTES")
+                            }
+                            
                             if let rawLabel = my_getStartEndPeriodLabel(type: today) {
                                 let rawLabelNumber = rawLabel[i - 1]
                                 label = rawLabelNumber.getPeriodLabel()
@@ -1043,11 +1075,14 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                                     let isStart = startEndLabel[i - 1]
                                     end = isStart.startEndLabelFromBool()
                                     loadEndsLabel(text: "\(label) \(end) IN")
-                                 
+                                    
                                     break
+                                }
                             }
                         }
                     }
+                    
+                 
 
                 }
                
