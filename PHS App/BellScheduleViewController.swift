@@ -32,6 +32,7 @@ class BellScheduleViewController: UIViewController {
     
     let noSchoolLabel = UILabel()
     
+    var labelConfigured = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -82,6 +83,7 @@ class BellScheduleViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         patchUserDefaults()
+       
     }
     
     
@@ -115,8 +117,11 @@ class BellScheduleViewController: UIViewController {
         super.viewWillLayoutSubviews()
         progressView.layer.cornerRadius = progressView.bounds.width / 2
         progress.layer.cornerRadius = progress.bounds.height / 2
-        if Date().isSchoolDay() {
+        if Date().isSchoolDay() && !labelConfigured {
             configureLabels()
+         
+            labelConfigured = true
+            
         }
     }
     

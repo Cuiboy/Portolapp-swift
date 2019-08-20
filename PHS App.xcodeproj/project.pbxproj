@@ -57,7 +57,6 @@
 		F02F21772175C4A80079F3F9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02F21762175C4A80079F3F9 /* NotificationCenter.framework */; };
 		F02F217A2175C4A80079F3F9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21792175C4A80079F3F9 /* TodayViewController.swift */; };
 		F02F217D2175C4A80079F3F9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02F217B2175C4A80079F3F9 /* MainInterface.storyboard */; };
-		F02F21812175C4A80079F3F9 /* PHSWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F02F21752175C4A80079F3F9 /* PHSWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F02F21E82175D0610079F3F9 /* specialDays.txt in Resources */ = {isa = PBXBuildFile; fileRef = F02F21E72175D0610079F3F9 /* specialDays.txt */; };
 		F02F21EC2175D0830079F3F9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21EA2175D0820079F3F9 /* SwiftyJSON.swift */; };
 		F02F21ED2175D0830079F3F9 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F21EB2175D0820079F3F9 /* CheckInternet.swift */; };
@@ -216,13 +215,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F02F217F2175C4A80079F3F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F06EDD2721054AF100297B8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F02F21742175C4A80079F3F9;
-			remoteInfo = PHSWidget;
-		};
 		F06EDD4721054AF200297B8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F06EDD2721054AF100297B8B /* Project object */;
@@ -254,7 +246,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				F08E8FB221A9FE1800D45815 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
-				F02F21812175C4A80079F3F9 /* PHSWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -995,7 +986,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F02F21802175C4A80079F3F9 /* PBXTargetDependency */,
 				F08E8FB121A9FE1800D45815 /* PBXTargetDependency */,
 			);
 			name = "PHS App";
@@ -1526,11 +1516,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F02F21802175C4A80079F3F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F02F21742175C4A80079F3F9 /* PHSWidget */;
-			targetProxy = F02F217F2175C4A80079F3F9 /* PBXContainerItemProxy */;
-		};
 		F06EDD4821054AF200297B8B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F06EDD2E21054AF100297B8B /* PHS App */;
@@ -1581,6 +1566,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 4Q3B24WQDE;
 				INFOPLIST_FILE = PHSWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1604,6 +1590,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 4Q3B24WQDE;
 				INFOPLIST_FILE = PHSWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1744,6 +1731,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PHS App/PHS App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 4Q3B24WQDE;
 				INFOPLIST_FILE = "PHS App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1768,6 +1756,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PHS App/PHS App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 4Q3B24WQDE;
 				INFOPLIST_FILE = "PHS App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1875,6 +1864,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 4Q3B24WQDE;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1899,6 +1889,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 4Q3B24WQDE;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
