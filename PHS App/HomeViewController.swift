@@ -59,6 +59,7 @@ func loadSpecialDays() {
                     if let type = detail["case"] as? Int {
                         object.type = type
                     }
+                    print(object.date)
                     specialDays.append(object)
                 }
             }
@@ -290,14 +291,13 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tabBarController?.tabBar.isHidden = true
         //lay out UI
         initialize()
         
 
             //set-up
             isAppConnected = CheckInternet.Connection()
-            print(isAppConnected)
             loadSpecialDays()
             scheduleNotifications()
             getTodayType()
@@ -322,7 +322,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewWillAppear(true)
 
         //change status bar color
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
+    
         
         //continue application
         if Date().isSchoolDay() {
@@ -414,9 +414,10 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
- 
     
     @objc func update() {
+        print(today)
+        
        /*
         if isAppConnected == false {
             if CheckInternet.Connection() {
@@ -424,7 +425,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
                 isAppConnected = true
             }
         }*/
-        
+                
         if Calendar.current.component(.day, from: Date()) + 1 == Calendar.current.component(.day, from: lastDay) && Date().getRelativeTime() == .during {
             fetchTimeLeft()
         } else {
@@ -535,66 +536,66 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func configureWeekdays() {
 //        if Date() < Date.init(timeIntervalSince1970: 1552806000) {
-            joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
-            joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
-            joinButton.layer.borderColor = UIColor.white.cgColor
-            joinButton.layer.borderWidth = 2
-            joinButton.layer.cornerRadius = joinButton.bounds.height / 2
-            joinButton.clipsToBounds = true
-            view.addSubview(joinButton)
-            joinLabel.bounds = joinButton.bounds
-            joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
-            joinLabel.textAlignment = .center
-            joinLabel.textColor = UIColor.white
-        
-        joinLabel.attributedText = NSAttributedString(string: "THANK YOU!", attributes:
-            [.underlineStyle: NSUnderlineStyle.single.rawValue])
-            joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(22).relativeToWidth)
-            joinButton.addSubview(joinLabel)
-            let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
-            joinGesture.delegate = self
-            joinButton.addGestureRecognizer(joinGesture)
-            joinButton.alpha = 0
+//            joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
+//            joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
+//            joinButton.layer.borderColor = UIColor.white.cgColor
+//            joinButton.layer.borderWidth = 2
+//            joinButton.layer.cornerRadius = joinButton.bounds.height / 2
+//            joinButton.clipsToBounds = true
+//            view.addSubview(joinButton)
+//            joinLabel.bounds = joinButton.bounds
+//            joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
+//            joinLabel.textAlignment = .center
+//            joinLabel.textColor = UIColor.white
+//
+//        joinLabel.attributedText = NSAttributedString(string: "THANK YOU!", attributes:
+//            [.underlineStyle: NSUnderlineStyle.single.rawValue])
+//            joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(22).relativeToWidth)
+//            joinButton.addSubview(joinLabel)
+//            let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
+//            joinGesture.delegate = self
+//            joinButton.addGestureRecognizer(joinGesture)
+//            joinButton.alpha = 0
             
 //        } else {
-//                    for i in 0...4 {
-//                        let weekdayLabels = ["M", "T", "W", "T", "F"]
-//                        let weekdayLabel = UILabel()
-//                        weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
-//                        weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
-//                        weekdayLabel.textAlignment = .center
-//                        weekdayLabel.text = weekdayLabels[i]
-//                        weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
-//                        weekdayLabel.textColor = UIColor.white
-//                        weekdayLabel.my_dropShadow()
-//                        weekdayLabelView.addSubview(weekdayLabel)
-//
-//                    }
-//                    view.addSubview(weekdayLabelView)
+                    for i in 0...4 {
+                        let weekdayLabels = ["M", "T", "W", "T", "F"]
+                        let weekdayLabel = UILabel()
+                        weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
+                        weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
+                        weekdayLabel.textAlignment = .center
+                        weekdayLabel.text = weekdayLabels[i]
+                        weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
+                        weekdayLabel.textColor = UIColor.white
+                        weekdayLabel.my_dropShadow()
+                        weekdayLabelView.addSubview(weekdayLabel)
+
+                    }
+                    view.addSubview(weekdayLabelView)
 //        }
 //
 
     }
 
     func configureWeekdayDots() {
-//        for i in 0 ... 4 {
-//             drawDots(withFill: false, loopNumber: i)
-//        }
-//         let weekToday = Calendar.current.component(.weekday, from: Date())
-//        if weekToday == 1 {
-//            view.addSubview(weekdayDots)
-//        } else if weekToday == 6  || weekToday == 7 {
-//         for i in 0...4 {
-//         drawDots(withFill: true, loopNumber: i)
-//            view.addSubview(weekdayDots)
-//            }
-//         } else {
-//         for i in 0...(weekToday - 2) {
-//         drawDots(withFill: true, loopNumber: i)
-//            view.addSubview(weekdayDots)
-//         }
-//
-//         }
+        for i in 0 ... 4 {
+             drawDots(withFill: false, loopNumber: i)
+        }
+         let weekToday = Calendar.current.component(.weekday, from: Date())
+        if weekToday == 1 {
+            view.addSubview(weekdayDots)
+        } else if weekToday == 6  || weekToday == 7 {
+         for i in 0...4 {
+         drawDots(withFill: true, loopNumber: i)
+            view.addSubview(weekdayDots)
+            }
+         } else {
+         for i in 0...(weekToday - 2) {
+         drawDots(withFill: true, loopNumber: i)
+            view.addSubview(weekdayDots)
+         }
+
+         }
         
     }
 
@@ -860,7 +861,9 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
            
            
         } else {
-            self.eventTime2.text = "NO EVENTS LOADED"
+            self.eventTime2.text = "INTEGRAL, COMING SOON"
+            eventTime2.font = UIFont(name: "Lato-Light", size: CGFloat(24).relativeToWidth)
+            
         }
         
         

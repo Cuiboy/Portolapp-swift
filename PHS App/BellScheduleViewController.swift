@@ -93,7 +93,8 @@ class BellScheduleViewController: UIViewController {
             initilize()
             configureTime()
             configureHoliday()
-            if today == 20 || !Date().isSchoolDay() {
+            if today == 20 || !Date().isSchoolDay() || Date() < Date(timeIntervalSince1970: 1566432000) {
+                
                 if progressView.isHidden == false {
                     progressView.isHidden = true
                 }
@@ -120,7 +121,10 @@ class BellScheduleViewController: UIViewController {
     }
     
     func initilize() {
-        if today != 20 && Date().isSchoolDay() {
+        if Date() < Date(timeIntervalSince1970: 1566432000) {
+            progressView.isHidden = true
+            configureHoliday()
+        } else if today != 20 && Date().isSchoolDay() {
             if today == 18 || today == 19 {
               
                 bellSchedule.append(my_getSchedule(type: today, date: nil)![0])
@@ -315,7 +319,7 @@ class BellScheduleViewController: UIViewController {
         noSchoolLabel.textAlignment = .center
         noSchoolLabel.textColor = UIColor.white
         view.addSubview(noSchoolLabel)
-        if today == 20 || !Date().isSchoolDay() {
+        if today == 20 || !Date().isSchoolDay() || Date() < Date(timeIntervalSince1970: 1566432000) {
             noSchoolLabel.isHidden = false
         } else {
             noSchoolLabel.isHidden = true
