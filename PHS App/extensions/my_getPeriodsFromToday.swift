@@ -96,6 +96,9 @@ func my_getPeriodsFromToday(type: Int) -> [String] {
     case 28:
         //friday OH
         return ["2", "OH", "4", "6", "8"]
+    case 29:
+        //Super late start
+        return ["2", "4", "6", "8"]
         
     default:
         return defaultDays()

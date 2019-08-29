@@ -20,12 +20,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let icons = ["Clubs", "Teachers", "ID Card", "Athletics", "Call", "Calendar", "Portola Pilot", "PNN"]
+    let icons = ["Clubs", "Teachers", "ID Card", "Call", "Calendar", "Portola Pilot", "PNN"]
     let iconImages: [UIImage] = [
         UIImage(named: "clubs")!,
         UIImage(named: "teachers")!,
         UIImage(named: "id")!,
-        UIImage(named: "athletics")!,
         UIImage(named: "call")!,
         UIImage(named: "calendar")!,
         UIImage(named: "pilot")!,
@@ -33,11 +32,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         UIImage(named: "housePoints")!
     ]
     
-    let currentIcons = ["Teachers", "ID Card", "Athletics", "Call", "Calendar", "Portola Pilot", "House Points"]
+    let currentIcons = ["Teachers", "ID Card", "Call", "Calendar", "Portola Pilot", "House Points"]
     let currentIconImages: [UIImage] = [
         UIImage(named: "teachers")!,
         UIImage(named: "id")!,
-        UIImage(named: "athletics")!,
         UIImage(named: "call")!,
         UIImage(named: "calendar")!,
         UIImage(named: "pilot")!,
@@ -199,12 +197,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
-            if cell.iconLabel.text == "Clubs" {
-                let ac = UIAlertController(title: "Coming Soon", message: "The Clubs Page will hopefully launch on Club Kick-off Day", preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .cancel))
-                    present(ac, animated: true)
-                return false
-            } else if cell.iconLabel.text == "Call" {
+         if cell.iconLabel.text == "Call" {
                 if cell.isSelected {
                     collectionView.deselectItem(at: indexPath, animated: true)
                     return true

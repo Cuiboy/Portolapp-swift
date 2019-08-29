@@ -40,12 +40,15 @@ func getDayType(date: Date) -> Int {
 }
 
 func loadSpecialDays() {
+    
     if let data = Bundle.main.path(forResource: "specialDays", ofType: "txt") {
+       
         if let content = try? String(contentsOfFile: data) {
             
             if let jsonData = JSON(parseJSON: content).dictionaryValue["specialDays"]?.arrayValue {
                 
                 for days in jsonData {
+                   
                     
                     let detail = days.dictionaryObject!
                     let object = SpecialDays()
@@ -59,14 +62,14 @@ func loadSpecialDays() {
                     if let type = detail["case"] as? Int {
                         object.type = type
                     }
-                    print(object.date)
+                
                     specialDays.append(object)
                 }
             }
             
         }
     }
-    
+  
 }
 
 class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -74,7 +77,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var showMoreButton: UIButton!
     @IBAction func buttonTapped(_ sender: Any) {
         UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (notif) in
-            print(notif)
+            
         })
         UNUserNotificationCenter.current().getDeliveredNotifications { (notifDel) in
             
@@ -208,6 +211,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
   
     func fadeInViews(isAppOpened: Bool, completion: () -> ()) {
         DispatchQueue.main.async {
+           
             self.timeOfDay = Date().timeOfSchoolDay()
             self.fetchEvents()
             self.configureWeekdays()
@@ -223,6 +227,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func startAnimation() {
+        
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.3, delay: 0.1, animations: {
                 self.weekdayLabelView.alpha = 1
@@ -295,6 +300,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         //lay out UI
         initialize()
         
+        
 
             //set-up
             isAppConnected = CheckInternet.Connection()
@@ -314,7 +320,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             
             //initilize timer
             startTimer()
- 
+        
         
     }
 
@@ -416,7 +422,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @objc func update() {
-        print(today)
+       
         
        /*
         if isAppConnected == false {
@@ -750,124 +756,124 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @objc func fetchEvents() {
-     
-        if CheckInternet.Connection() {
-            var date = Date()
-            var time = String()
-            var eventTitle = String()
-            var notification = Bool()
-            if let data = try? String(contentsOf: URL(string: "https://portola.epicteam.app/api/events")!) {
-                let jsonData = JSON(parseJSON: data).dictionaryValue["events"]!
-                
-                let array = jsonData.arrayValue
-                for events in array {
-                    let dictionary = events.dictionaryObject!
-                    if let dateGet = dictionary["date"] as? String {
-                        
-                      
-                            let formatter = DateFormatter()
-                            formatter.timeZone = Calendar.current.timeZone
-                            formatter.locale = Calendar.current.locale
-                            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
-                            let UTCDate = formatter.date(from: dateGet) ?? Date.distantPast
-                            let currentDate = Calendar.current.date(byAdding: .hour, value: -UTCDifference(), to: UTCDate) ?? Date.distantPast
-                            date = currentDate
-                        
-                    } else {
-                        date = Date.distantPast
-                    }
-                    if let timeGet = dictionary["time"] as? String {
-                        time = timeGet
-                    } else {
-                        time = "N/A"
-                    }
-                    if let eventTitleGet = dictionary["title"] as? String {
-                        eventTitle = eventTitleGet
-                    } else {
-                        eventTitle = "N/A"
-                    }
-                    if let notificationGet = dictionary["notify"] as? Bool {
-                        notification = notificationGet
-                    }
-                    
-                    let currentEvent = SchoolEvents()
-                    currentEvent.date = date
-                    currentEvent.time = time
-                    currentEvent.title = eventTitle
-                    currentEvent.notification = notification
-                    schoolEvents.append(currentEvent)
-                    
-                }
-            }
-        } else {
-            let ac = UIAlertController(title: "No Internet Connection", message: "Could not load any upcoming events because there is no Internet connection.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .cancel))
-            present(ac, animated: true)
-        }
-       
-        DispatchQueue.main.async {
-            self.configureEvents()
-        }
+     self.configureEvents()
+//        if CheckInternet.Connection() {
+//            var date = Date()
+//            var time = String()
+//            var eventTitle = String()
+//            var notification = Bool()
+//            if let data = try? String(contentsOf: URL(string: "https://portola.epicteam.app/api/events")!) {
+//                let jsonData = JSON(parseJSON: data).dictionaryValue["events"]!
+//
+//                let array = jsonData.arrayValue
+//                for events in array {
+//                    let dictionary = events.dictionaryObject!
+//                    if let dateGet = dictionary["date"] as? String {
+//
+//
+//                            let formatter = DateFormatter()
+//                            formatter.timeZone = Calendar.current.timeZone
+//                            formatter.locale = Calendar.current.locale
+//                            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+//                            let UTCDate = formatter.date(from: dateGet) ?? Date.distantPast
+//                            let currentDate = Calendar.current.date(byAdding: .hour, value: -UTCDifference(), to: UTCDate) ?? Date.distantPast
+//                            date = currentDate
+//
+//                    } else {
+//                        date = Date.distantPast
+//                    }
+//                    if let timeGet = dictionary["time"] as? String {
+//                        time = timeGet
+//                    } else {
+//                        time = "N/A"
+//                    }
+//                    if let eventTitleGet = dictionary["title"] as? String {
+//                        eventTitle = eventTitleGet
+//                    } else {
+//                        eventTitle = "N/A"
+//                    }
+//                    if let notificationGet = dictionary["notify"] as? Bool {
+//                        notification = notificationGet
+//                    }
+//
+//                    let currentEvent = SchoolEvents()
+//                    currentEvent.date = date
+//                    currentEvent.time = time
+//                    currentEvent.title = eventTitle
+//                    currentEvent.notification = notification
+//                    schoolEvents.append(currentEvent)
+//
+//                }
+//            }
+//        } else {
+//            let ac = UIAlertController(title: "No Internet Connection", message: "Could not load any upcoming events because there is no Internet connection.", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "OK", style: .cancel))
+//            present(ac, animated: true)
+//        }
+//
+//        DispatchQueue.main.async {
+//            self.configureEvents()
+//        }
     }
 
     func configureEvents() {
-        if schoolEvents.count > 0 {
-            schoolEvents = schoolEvents.filter {
-                $0.date.noon >= Date().noon
-                
-            }
-            schoolEvents = schoolEvents.sorted(by: {$0.date < $1.date})
-            for events in schoolEvents {
-                if let dayAway = my_daysAwayFromToday(date: events.date.noon) {
-                    if dayAway == 0 {
-                        eventTimes.append("TODAY, \(events.time.uppercased())")
-                    } else if dayAway == 1 {
-                        eventTimes.append("TOMORROW, \(events.time.uppercased())")
-                    } else if dayAway < 7 {
-                        let weekday = getWeekdayString(date: events.date, isUpper: true)
-                        eventTimes.append("\(weekday), \(events.time.uppercased())")
-                    } else {
-                        let day = Calendar.current.component(.day, from: events.date)
-                        let month = Calendar.current.component(.month, from: events.date)
-                        let dateString = "\(month)/\(day)"
-                        eventTimes.append("\(dateString), \(events.time.uppercased())")
-                    }
-                }
-                    eventTitles.append(events.title)
-            }
+//        if schoolEvents.count > 0 {
+//            schoolEvents = schoolEvents.filter {
+//                $0.date.noon >= Date().noon
+//
+//            }
+//            schoolEvents = schoolEvents.sorted(by: {$0.date < $1.date})
+//            for events in schoolEvents {
+//                if let dayAway = my_daysAwayFromToday(date: events.date.noon) {
+//                    if dayAway == 0 {
+//                        eventTimes.append("TODAY, \(events.time.uppercased())")
+//                    } else if dayAway == 1 {
+//                        eventTimes.append("TOMORROW, \(events.time.uppercased())")
+//                    } else if dayAway < 7 {
+//                        let weekday = getWeekdayString(date: events.date, isUpper: true)
+//                        eventTimes.append("\(weekday), \(events.time.uppercased())")
+//                    } else {
+//                        let day = Calendar.current.component(.day, from: events.date)
+//                        let month = Calendar.current.component(.month, from: events.date)
+//                        let dateString = "\(month)/\(day)"
+//                        eventTimes.append("\(dateString), \(events.time.uppercased())")
+//                    }
+//                }
+//                    eventTitles.append(events.title)
+//            }
+//
+//
+//            switch schoolEvents.count {
+//            case 1:
+//                self.eventTime1.text = eventTimes[0]
+//
+//                self.eventTitle1.text = eventTitles[0]
+//
+//            case 2:
+//                self.eventTime1.text = eventTimes[0]
+//                self.eventTime2.text = eventTimes[1]
+//                self.eventTitle1.text = eventTitles[0]
+//                self.eventTitle2.text = eventTitles[1]
+//
+//            default:
+//                self.eventTime1.text = eventTimes[0]
+//                self.eventTime2.text = eventTimes[1]
+//                self.eventTime3.text = eventTimes[2]
+//                self.eventTitle1.text = eventTitles[0]
+//                self.eventTitle2.text = eventTitles[1]
+//                self.eventTitle3.text = eventTitles[2]
+//            }
+//
+//
+//
+//        } else {
+//
+//
+//        }
         
         
-            switch schoolEvents.count {
-            case 1:
-                self.eventTime1.text = eventTimes[0]
-              
-                self.eventTitle1.text = eventTitles[0]
-             
-            case 2:
-                self.eventTime1.text = eventTimes[0]
-                self.eventTime2.text = eventTimes[1]
-                self.eventTitle1.text = eventTitles[0]
-                self.eventTitle2.text = eventTitles[1]
-                
-            default:
-                self.eventTime1.text = eventTimes[0]
-                self.eventTime2.text = eventTimes[1]
-                self.eventTime3.text = eventTimes[2]
-                self.eventTitle1.text = eventTitles[0]
-                self.eventTitle2.text = eventTitles[1]
-                self.eventTitle3.text = eventTitles[2]
-            }
-    
-           
-           
-        } else {
-            self.eventTime2.text = "INTEGRAL, COMING SOON"
-            eventTime2.font = UIFont(name: "Lato-Light", size: CGFloat(24).relativeToWidth)
-            
-        }
-        
-        
-        
+        self.eventTime2.text = "INTEGRAL, COMING SOON"
+        eventTime2.font = UIFont(name: "Lato-Light", size: CGFloat(24).relativeToWidth)
     
     }
 

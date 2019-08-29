@@ -34,7 +34,8 @@ func my_getStartEndTimeFromToday(type: Int, dayType: dayType, date: Date?) -> [D
     case 23, 26, 28:
         //8:30 am start regular
         return [DateFromTime(hour: 8, minute: 30), DateFromTime(hour: 15, minute: 30) ]
-  
+    case 29:
+        return [DateFromTime(hour: 10, minute: 30), DateFromTime(hour: 15, minute: 30)]
     
     default:
         return defaultDaysStartEnd(dayType: dayType, date: date)

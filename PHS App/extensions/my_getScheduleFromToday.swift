@@ -79,6 +79,8 @@ func my_getSchedule(type: Int, date: Date?) -> [Date]? {
 
         return [DateFromTime(hour: 8, minute: 0), DateFromTime(hour: 9, minute: 24), DateFromTime(hour: 9, minute: 24), DateFromTime(hour: 10, minute: 3),DateFromTime(hour: 10, minute: 3), DateFromTime(hour: 10, minute: 14), DateFromTime(hour: 10, minute: 20), DateFromTime(hour: 11, minute: 44), DateFromTime(hour: 11, minute: 44),  DateFromTime(hour: 12, minute: 19), DateFromTime(hour: 12, minute: 25), DateFromTime(hour: 13, minute: 49), DateFromTime(hour: 13, minute: 49), DateFromTime(hour: 14, minute: 0), DateFromTime(hour: 14, minute: 6), DateFromTime(hour: 15, minute: 30)]
 
+    case 29:
+         return [DateFromTime(hour: 10, minute: 30), DateFromTime(hour: 11, minute: 31), DateFromTime(hour: 11, minute: 37), DateFromTime(hour: 12, minute: 38),DateFromTime(hour: 12, minute: 38), DateFromTime(hour: 13, minute: 16), DateFromTime(hour: 13, minute: 22), DateFromTime(hour: 14, minute: 23), DateFromTime(hour: 14, minute: 29),  DateFromTime(hour: 15, minute: 30)]
    
     default:
         return defaultPeriods(date: nil)

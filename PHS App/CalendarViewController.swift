@@ -68,7 +68,9 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
         navigationBar.my_setNavigationBar()
         backgroundView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.15)
         initializeCalendar()
+        
         for objects in specialDays {
+            
             specialDates.append(objects.date.noon)
         }
         let leftGesture = UITapGestureRecognizer(target: self, action: #selector(leftTapped))
@@ -80,8 +82,8 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
         formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
-        let startDate = formatter.date(from: "2018 08 01")!
-        let endDate = formatter.date(from: "2019 08 31")!
+        let startDate = formatter.date(from: "2019 08 01")!
+        let endDate = formatter.date(from: "2020 08 31")!
         dateRange = calendarView.generateDateRange(from: startDate, to: endDate)
         configureDayDetail(withDate: Date().noon)
         calendarView.scrollToDate(Date(), animateScroll: false)
@@ -142,13 +144,11 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
       
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
-    
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if calendarView.visibleDates().indates.first!.date < dateRange.first! {
+          
             leftArrow.isHidden = true
         } else {
             leftArrow.isHidden = false
@@ -165,6 +165,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
 
     @objc func rightTapped() {
          let scrollDate = calendarView.visibleDates().outdates.first!.date
+        print(scrollDate)
         calendarView.scrollToDate(scrollDate)
     }
     
@@ -212,9 +213,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     
     func configureDots(view: JTAppleCell?, cellState: CellState) {
         guard let validCell = view as? CalendarCollectionViewCell else {return}
+      
         if !specialDates.contains(cellState.date.noon) {
+           
             validCell.dotView.isHidden = true
         } else {
+            
             validCell.dotView.isHidden = false
             if cellState.dateBelongsTo == .thisMonth {
                 validCell.dotView.backgroundColor = validCell.dotView.backgroundColor
@@ -276,16 +280,26 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         formatter.dateFormat = "MMMM"
         monthLabel.text = formatter.string(from: date).uppercased()
         configureDotsWhenScroll(view: calendar, visibleDates: visibleDates)
-        if visibleDates.indates.first!.date < dateRange.first! {
-            leftArrow.isHidden = true
+        
+        if visibleDates.indates.count > 0 {
+            if visibleDates.indates.first!.date < dateRange.first! {
+               leftArrow.isHidden = true
+            } else {
+                leftArrow.isHidden = false
+            }
         } else {
-            leftArrow.isHidden = false
+            if visibleDates.monthDates.first!.date < dateRange.first! {
+                leftArrow.isHidden = true
+            } else {
+                leftArrow.isHidden = false
+            }
         }
+        
         if visibleDates.outdates.first!.date > dateRange.last! {
             rightArrow.isHidden = true
         } else {
             rightArrow.isHidden = false
-            
+
         }
         
         
@@ -301,8 +315,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
-        let startDate = formatter.date(from: "2018 08 01")!
-        let endDate = formatter.date(from: "2019 08 31")!
+        let startDate = formatter.date(from: "2019 08 01")!
+        let endDate = formatter.date(from: "2020 08 31")!
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters
     }
