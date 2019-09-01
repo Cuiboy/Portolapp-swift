@@ -39,13 +39,18 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var asbView: UILabel!
     @IBOutlet weak var stickerView: UILabel!
     
+    var isUserData = false
+    
   func faceIDAction() {
     
         let context = LAContext()
         let localizedReasonString = "Secure your information using Face ID and Touch ID."
         var authError: NSError?
+
         if #available(iOS 8.0, *) {
+            
             if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
+                 print("I'm here now")
                 context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReasonString) { (success, error) in
                     DispatchQueue.main.async {
                         if success {
@@ -59,6 +64,7 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                 authenticateUsingShortID()
             }
         } else {
+            
             authenticateUsingShortID()
     }
     }
@@ -263,8 +269,7 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         let notInitial = UserDefaults.standard.bool(forKey: "isInitial")
         if !notInitial {
-            print("INITIAL")
-
+           
              UserDefaults.standard.set(true, forKey: "isInitial")
             UserDefaults.standard.set(false, forKey: "asbActivated")
             UserDefaults.standard.set(false, forKey: "stickerActivated")
@@ -279,6 +284,7 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
         do {
             let request = try PersistentService.context.fetch(userRequest)
             if request.count > 0 {
+                isUserData = true
                 let object = request.first!
                
                 if object.first != nil && object.longID > 100000000 {
@@ -302,16 +308,19 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
                     
                     
                     
-                    faceIDAction()
+                    
                 }
                 
             } else {
+                    isUserData = false
                     navigationBar.topItem?.rightBarButtonItem = nil
-                    let subviews: [UIView] = [nameLabel, barcode, gradeHeader, shortIDHeader, houseHeader, gradeLabel, shortID, house, longID]
+                    let subviews: [UIView] = [nameLabel, barcode, gradeHeader, shortIDHeader, houseHeader, gradeLabel, shortID, house, longID, asbView, stickerView]
                     for view in subviews {
                         view.alpha = 0
                     }
-                
+                    addCardView.isHidden = false
+                    addCardView.alpha = 1
+                view.addSubview(addCardView)
                 
                 }
             
@@ -321,10 +330,15 @@ class IDCardViewController: UIViewController, UIGestureRecognizerDelegate {
          catch {
             
         }
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        if isUserData {
+            faceIDAction()
+        }
+        
         
     }
     

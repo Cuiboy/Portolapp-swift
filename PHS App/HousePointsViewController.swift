@@ -150,6 +150,7 @@ class HousePointsViewController: UIViewController, UICollectionViewDelegate, UIC
         } catch {
             
         }
+        print("OFIOIFSIEOFJEWIOFIOJEW")
     }
     
 
@@ -236,7 +237,16 @@ class HousePointsViewController: UIViewController, UICollectionViewDelegate, UIC
             }
         }
         var divisionConstant = CGFloat()
-        divisionConstant = CGFloat(1) / CGFloat(self.houses[0].points / 10)
+        if self.houses[0].points == 0 {
+            print("IS zERO")
+            divisionConstant = 1.0
+        } else {
+             divisionConstant = 1.0
+//            print("IS NOT ZERO")
+//            print(self.houses[0].points / 10)
+//              divisionConstant = CGFloat(1) / CGFloat(self.houses[0].points / 10)
+        }
+      
         if isInitial {
             
             print(divisionConstant, "THIS")

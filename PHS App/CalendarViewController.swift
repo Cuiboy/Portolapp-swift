@@ -147,13 +147,19 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        if calendarView.visibleDates().indates.first!.date < dateRange.first! {
-          
-            leftArrow.isHidden = true
+        if calendarView.visibleDates().indates.count > 0 {
+            if calendarView.visibleDates().indates.first!.date < dateRange.first! {
+                leftArrow.isHidden = true
+            } else {
+                leftArrow.isHidden = false
+            }
         } else {
-            leftArrow.isHidden = false
+            if calendarView.visibleDates().monthDates.first!.date < dateRange.first! {
+                leftArrow.isHidden = true
+            } else {
+                leftArrow.isHidden = false
+            }
         }
-        
       
     }
     
