@@ -8,14 +8,14 @@
 
 import UIKit
 import CoreGraphics
-import XLActionController
+//import XLActionController
 
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
   
     var isFreshLaunch = true
-    var safeArea = CGFloat()
+    var safeArea = CGFloat() 
     @IBOutlet weak var navigationBackground: UIImageView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -158,29 +158,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cellItem = cell as! CollectionViewCell
         switch cellItem.iconLabel.text! {
         case "Call":
-           
-            let actionController = SkypeActionController()
-            actionController.backgroundColor = UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0)
+            let ac = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            ac.addAction(UIAlertAction(title: "Front Office", style: .default, handler: { (_) in
+            self.callNumber(number: "9499368200")
+        }))
+            ac.addAction(UIAlertAction(title: "Attedance Office", style: .default, handler: { (_) in
+            self.callNumber(number: "9499368201")
+        }))
+            ac.addAction(UIAlertAction(title: "Counseling Office", style: .default, handler: { (_) in
+            self.callNumber(number: "9499368227")
+        }))
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
             
-            
-        
-            actionController.addAction(Action("Front Office", style: .default, handler: { action in
-                self.callNumber(number: "9499368200")
-            }))
-            actionController.addAction(Action("Attendance Office", style: .default, handler: { action in
-                self.callNumber(number: "9499368201")
-            }))
-            actionController.addAction(Action("Counseling Office", style: .default, handler: { action in
-                self.callNumber(number: "9499368227")
-            }))
-            actionController.addAction(Action("Cancel", style: .cancel, handler: {
-                action in
-                cell?.layer.backgroundColor = UIColor.white.cgColor
-            }
-            ))
-            
-            
-            present(actionController, animated: true, completion: nil)
+            present(ac, animated: true)
             
             
         default:

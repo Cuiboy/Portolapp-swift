@@ -212,20 +212,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
 
         }
         
-        let fetchRequest: NSFetchRequest<MyNewTeachers> = MyNewTeachers.fetchRequest()
-        do {
-            let request = try PersistentService.context.fetch(fetchRequest)
-            if request.count > 0 {
-                navigationBar.topItem?.rightBarButtonItem = editButton
-                self.view.bringSubviewToFront(self.myTeachersTableView)
-            } else {
-                navigationBar.topItem?.rightBarButtonItem = nil
-                self.view.bringSubviewToFront(self.noTeachersView)
-            }
-            myTeachers = request
-        } catch {
-            
-        }
+        self.view.bringSubviewToFront(self.allTableView)
         
         let scheduleFetchRequest: NSFetchRequest<MySchedule> = MySchedule.fetchRequest()
         do {
@@ -275,19 +262,14 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         segmentioView.valueDidChange = { segmentio, segmentIndex in
             switch segmentIndex {
           
+          
             case 0:
-                if self.myTeachers.count == 0 {
-                    self.view.bringSubviewToFront(self.noTeachersView)
-                } else {
-                    self.view.bringSubviewToFront(self.myTeachersTableView)
-                }
-            case 1:
                 self.view.bringSubviewToFront(self.allTableView)
-            case 2:
+            case 1:
                 self.view.bringSubviewToFront(self.subjectsTableView)
-            case 3:
+            case 2:
                 self.view.bringSubviewToFront(self.adminTableView)
-            case 4:
+            case 3:
                 if self.displayCoaches {
                     self.view.bringSubviewToFront(self.coachesTableView)
                 } else {
@@ -314,11 +296,10 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
             highlightedState: SegmentioState(backgroundColor: UIColor(red:0.42, green:0.25, blue:0.57, alpha:1.0), titleFont: UIFont(name: "Lato-Bold", size: CGFloat(16).relativeToWidth)!, titleTextColor: .white)
             )
             ,animationDuration: 0.2)
-        let myItem = SegmentioItem(title: "FOR YOU", image: nil)
         let allItem = SegmentioItem(title: "ALL", image: nil)
         let subjectsItem = SegmentioItem(title: "SUBJECTS", image: nil)
         let adminItem = SegmentioItem(title: "ADMIN", image: nil)
-        content = [myItem, allItem, subjectsItem, adminItem]
+        content = [allItem, subjectsItem, adminItem]
         segmentioView.setup(content: content, style: .onlyLabel, options: options)
         
     }
@@ -354,7 +335,7 @@ class TeachersViewController: UIViewController, UITableViewDelegate, UITableView
         fillInLabel.textColor = UIColor.white
         fillTeachersButton.addSubview(fillInLabel)
         fillTeachersButton.my_dropShadow()
-        noTeachersView.addSubview(fillTeachersButton)
+       
         
         myTeachersTableView.delegate = self
         myTeachersTableView.dataSource = self

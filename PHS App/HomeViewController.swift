@@ -216,7 +216,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             self.fetchEvents()
             self.configureWeekdays()
                 if Date() >= Date.init(timeIntervalSince1970: 1552806000) {
-            self.configureWeekdayDots()
+           // self.configureWeekdayDots()
             }
             self.configureProgressBar()
             self.configureBar()
@@ -265,11 +265,12 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func userDefaults() {
         //first launch
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        if !launchedBefore {
-            UserDefaults.standard.set(true, forKey: "launchedBefore")
-            self.performSegue(withIdentifier: "welcome", sender: nil)
-        }
+//        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+//        if !launchedBefore {
+//            UserDefaults.standard.set(true, forKey: "launchedBefore")
+//            self.performSegue(withIdentifier: "welcome", sender: nil)
+//        }
+        
         
         //local notification patch
         let ifNotifUpdated = UserDefaults.standard.bool(forKey: "updateNotification")
@@ -283,17 +284,29 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         //teacher local migration notification
-        let isTeacherUpdated = UserDefaults.standard.bool(forKey: "updateTeacher")
-        if !isTeacherUpdated {
-            UserDefaults.standard.set(true, forKey: "updateTeacher")
-            let ac = UIAlertController(title: "Fill in your Schedule", message: "Over break, we have rebuilt the teachers page in order to optimize battery usage. As a result, we had to erase your saved classes and teachers. Head over to the teachers page to fill out your schedule again for a more personal experience.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        let isTeacherUpdated = UserDefaults.standard.bool(forKey: "updateTeacher")
+//        if !isTeacherUpdated {
+//            UserDefaults.standard.set(true, forKey: "updateTeacher")
+//            let ac = UIAlertController(title: "Fill in your Schedule", message: "Over break, we have rebuilt the teachers page in order to optimize battery usage. As a result, we had to erase your saved classes and teachers. Head over to the teachers page to fill out your schedule again for a more personal experience.", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            present(ac, animated: true)
+//        }
+    
+        let integralDownload = UserDefaults.standard.bool(forKey: "integral")
+        if !integralDownload {
+            UserDefaults.standard.set(true, forKey: "integral")
+            let ac = UIAlertController(title: "New App Available", message: "Portolapp has migrated to our brand new app, Integral. Please download Integral to stay up do date with everything at Portola", preferredStyle: .alert)
+            
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert: UIAlertAction!) in self.launchIntegral()} ))
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
             present(ac, animated: true)
         }
     }
     
-    
-    
+    func launchIntegral() {
+           UIApplication.shared.open(URL(string: "https://apps.apple.com/us/app/integral-digital-backpack/id1480096639")!, options: [:], completionHandler: nil)
+    }
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
@@ -520,66 +533,67 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @objc func joinTapped() {
-        UIView.animate(withDuration: 0.3) {
-          
-        }
-        UIView.animate(withDuration: 0.3, animations: {
-            self.joinButton.backgroundColor = UIColor.white
-            self.joinLabel.textColor = UIColor(red: 0.702, green: 0.667, blue: 0.843, alpha: 1.00)
-        }) { (_) in
-            UIView.animate(withDuration: 0.2, delay: 0.5, animations: {
-                self.joinButton.backgroundColor = UIColor.clear
-                self.joinLabel.textColor = UIColor.white
-            }, completion: nil)
-        }
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "join") as? JoinViewController {
-            present(vc, animated: true)
-        }
+//        UIView.animate(withDuration: 0.3) {
 //
-//        UIApplication.shared.open(URL(string: "https://www.eventbrite.com/e/the-addams-family-musical-tickets-57358504832")!, options: [:], completionHandler: nil)
+//        }
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.joinButton.backgroundColor = UIColor.white
+//            self.joinLabel.textColor = UIColor(red: 0.702, green: 0.667, blue: 0.843, alpha: 1.00)
+//        }) { (_) in
+//            UIView.animate(withDuration: 0.2, delay: 0.5, animations: {
+//                self.joinButton.backgroundColor = UIColor.clear
+//                self.joinLabel.textColor = UIColor.white
+//            }, completion: nil)
+//        }
+//        if let vc = storyboard?.instantiateViewController(withIdentifier: "join") as? JoinViewController {
+//            present(vc, animated: true)
+//        }
+//
+      UIApplication.shared.open(URL(string: "https://apps.apple.com/us/app/integral-digital-backpack/id1480096639")!, options: [:], completionHandler: nil)
     }
     
     
     func configureWeekdays() {
-//        if Date() < Date.init(timeIntervalSince1970: 1552806000) {
-//            joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
-//            joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
-//            joinButton.layer.borderColor = UIColor.white.cgColor
-//            joinButton.layer.borderWidth = 2
-//            joinButton.layer.cornerRadius = joinButton.bounds.height / 2
-//            joinButton.clipsToBounds = true
-//            view.addSubview(joinButton)
-//            joinLabel.bounds = joinButton.bounds
-//            joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
-//            joinLabel.textAlignment = .center
-//            joinLabel.textColor = UIColor.white
-//
-//        joinLabel.attributedText = NSAttributedString(string: "THANK YOU!", attributes:
-//            [.underlineStyle: NSUnderlineStyle.single.rawValue])
-//            joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(22).relativeToWidth)
-//            joinButton.addSubview(joinLabel)
-//            let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
-//            joinGesture.delegate = self
-//            joinButton.addGestureRecognizer(joinGesture)
-//            joinButton.alpha = 0
-            
-//        } else {
-                    for i in 0...4 {
-                        let weekdayLabels = ["M", "T", "W", "T", "F"]
-                        let weekdayLabel = UILabel()
-                        weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
-                        weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
-                        weekdayLabel.textAlignment = .center
-                        weekdayLabel.text = weekdayLabels[i]
-                        weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
-                        weekdayLabel.textColor = UIColor.white
-                        weekdayLabel.my_dropShadow()
-                        weekdayLabelView.addSubview(weekdayLabel)
+       
+            joinButton.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width / 1.5, height: self.view.bounds.width / 6)
+            joinButton.center = CGPoint(x: self.view.bounds.midX, y: self.minutesLabel.center.y + CGFloat(70).relativeToWidth)
+            joinButton.layer.borderColor = UIColor.white.cgColor
+            joinButton.layer.borderWidth = 2
+            joinButton.layer.cornerRadius = joinButton.bounds.height / 2
+            joinButton.clipsToBounds = true
+            view.addSubview(joinButton)
+            joinLabel.bounds = joinButton.bounds
+            joinLabel.center = CGPoint(x: joinButton.bounds.width / 2, y: joinButton.bounds.height / 2)
+            joinLabel.textAlignment = .center
+            joinLabel.textColor = UIColor.white
 
-                    }
-                    view.addSubview(weekdayLabelView)
-//        }
+        joinLabel.attributedText = NSAttributedString(string: "DOWNLOAD INTEGRAL", attributes:
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
+            joinLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(18).relativeToWidth)
+            joinButton.addSubview(joinLabel)
+            let joinGesture = UITapGestureRecognizer(target: self, action: #selector(joinTapped))
+            joinGesture.delegate = self
+            joinButton.addGestureRecognizer(joinGesture)
+            joinButton.alpha = 0
+            
+        
+//        else {
+//                    for i in 0...4 {
+//                        let weekdayLabels = ["M", "T", "W", "T", "F"]
+//                        let weekdayLabel = UILabel()
+//                        weekdayLabel.frame = CGRect(x: 0, y: 0, width: 21, height: 21)
+//                        weekdayLabel.center = CGPoint(x: deviceAnchor6 + deviceAnchor6 * i, y: Int(self.view.bounds.midY) - Int(CGFloat(30).relativeToWidth))
+//                        weekdayLabel.textAlignment = .center
+//                        weekdayLabel.text = weekdayLabels[i]
+//                        weekdayLabel.font = UIFont(name: "Lato-Regular", size: CGFloat(17).relativeToWidth)
+//                        weekdayLabel.textColor = UIColor.white
+//                        weekdayLabel.my_dropShadow()
+//                        weekdayLabelView.addSubview(weekdayLabel)
 //
+//                    }
+//                    view.addSubview(weekdayLabelView)
+//        }
+
 
     }
 
@@ -872,7 +886,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 //        }
         
         
-        self.eventTime2.text = "INTEGRAL, COMING SOON"
+        self.eventTime2.text = "INTEGRAL, AVAILABLE NOW"
         eventTime2.font = UIFont(name: "Lato-Light", size: CGFloat(24).relativeToWidth)
     
     }

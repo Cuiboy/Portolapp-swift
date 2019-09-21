@@ -60,7 +60,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     var longID: String?
     var shortID: String?
     
-   var gradeArray = [9, 10, 11]
+   var gradeArray = [9, 10, 11, 12]
     var houseArray = ["Hercules", "Orion", "Pegasus", "Poseidon"]
     var isFreshLaunch = true
     var isPageEditing = false
@@ -102,7 +102,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
   
         if collectionView == gradeCollectionView {
-            return 3
+            return 4
         } else if collectionView == houseCollectionView {
             return 4
         }
@@ -111,7 +111,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == gradeCollectionView {
-            return CGSize(width: CGFloat(75).relativeToWidth, height: CGFloat(75).relativeToWidth)
+            return CGSize(width: CGFloat(55).relativeToWidth, height: CGFloat(55).relativeToWidth)
         } else if collectionView == houseCollectionView {
             return CGSize(width: UIScreen.main.bounds.width / 3, height: CGFloat(60).relativeToWidth)
         }
@@ -137,7 +137,7 @@ class NameInputViewController: UIViewController, UICollectionViewDelegate, UICol
                 cell.circle.layer.backgroundColor = UIColor.white.withAlphaComponent(0).cgColor
                 cell.addSubview(cell.circle)
             cell.addSubview(cell.label)
-            
+            print(indexPath.item)
                 return cell
                 
             

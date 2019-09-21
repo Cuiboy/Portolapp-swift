@@ -34,7 +34,7 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
             ac.addAction(UIAlertAction(title: "Skip", style: .default, handler: { (_) in
                 self.shortID = nil
                 self.longID = nil
-                self.performSegue(withIdentifier: "skipToClass", sender: nil)
+                self.performSegue(withIdentifier: "skipWelcome", sender: nil)
                 
             }))
             ac.addAction(UIAlertAction(title: "Stay", style: .cancel))
@@ -53,7 +53,7 @@ class IDInputViewController: UIViewController, UITextFieldDelegate, UIGestureRec
           
             if isFreshLaunch {
                   saveData()
-                performSegue(withIdentifier: "nextToClass", sender: nil)
+                performSegue(withIdentifier: "newWelcome", sender: nil)
 
             } else {
                 if isPageEditing {

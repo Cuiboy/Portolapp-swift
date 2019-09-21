@@ -8,9 +8,9 @@
 
 import UIKit
 
-public protocol ExpandableDelegate {
+public protocol ExpandableDelegate: UIScrollViewDelegate {
 
-    //MARK: Required Methods
+    // MARK: Required Methods
     func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 
     func expandableTableView(_ expandableTableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int
@@ -21,7 +21,7 @@ public protocol ExpandableDelegate {
 
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]?
 
-    //MARK: Optional Methods
+    // MARK: Optional Methods
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath)
 
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectExpandedRowAt indexPath: IndexPath)
@@ -34,9 +34,17 @@ public protocol ExpandableDelegate {
 
     func expandableTableView(_ expandableTableView: ExpandableTableView, viewForHeaderInSection section: Int) -> UIView?
 
+    func expandableTableView(_ expandableTableView: ExpandableTableView, heightForFooterInSection section: Int) -> CGFloat
+    
+    func expandableTableView(_ expandableTableView: ExpandableTableView, viewForFooterInSection section: Int) -> UIView?
+    
+    func expandableTableView(_ expandableTableView: ExpandableTableView, titleForFooterInSection section: Int) -> String?
+    
     func numberOfSections(in expandableTableView: ExpandableTableView) -> Int
 
     func expandableTableView(_ expandableTableView: ExpandableTableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    
+    func expandableTableView(_ expandableTableView: ExpandableTableView, didEndDisplaying cell: UITableViewCell, forRow indexPath: IndexPath)
 
     func expandableTableView(_ expandableTableView: ExpandableTableView, willDisplayHeaderView view: UIView, forSection section: Int)
 
@@ -48,6 +56,7 @@ public protocol ExpandableDelegate {
 
     func expandableTableView(_ expandableTableView: UITableView, didUnhighlightRowAt indexPath: IndexPath)
 
+    func expandableTableView(_ expandableTableView: UITableView, didCloseRowAt indexPath: IndexPath)
 }
 
 public extension ExpandableDelegate {
@@ -63,10 +72,23 @@ public extension ExpandableDelegate {
 
     func expandableTableView(_ expandableTableView: ExpandableTableView, viewForHeaderInSection section: Int) -> UIView? { return nil }
 
+    func expandableTableView(_ expandableTableView: ExpandableTableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func expandableTableView(_ expandableTableView: ExpandableTableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func expandableTableView(_ expandableTableView: ExpandableTableView, titleForFooterInSection section: Int) -> String? {
+        return nil
+    }
     func numberOfSections(in expandableTableView: ExpandableTableView) -> Int { return 1 }
 
-    func expandableTableView(_ expandableTableView: ExpandableTableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) { }
-
+    func expandableTableView(_ expandableTableView: ExpandableTableView, willDisplay: UITableViewCell, forRowAt: IndexPath) { }
+    
+    func expandableTableView(_ expandableTableView: ExpandableTableView, didEndDisplaying: UITableViewCell, forRow: IndexPath) { }
+    
     func expandableTableView(_ expandableTableView: ExpandableTableView, willDisplayHeaderView view: UIView, forSection section: Int) { }
 
     func expandableTableView(_ expandableTableView: ExpandableTableView, willDisplayFooterView view: UIView, forSection section: Int) { }
@@ -76,4 +98,5 @@ public extension ExpandableDelegate {
     func expandableTableView(_ expandableTableView: UITableView, didHighlightRowAt indexPath: IndexPath) { }
 
     func expandableTableView(_ expandableTableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) { }
+    func expandableTableView(_ expandableTableView: UITableView, didCloseRowAt indexPath: IndexPath) { }
 }

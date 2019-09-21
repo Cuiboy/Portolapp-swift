@@ -107,6 +107,14 @@ extension PickerViewController: PickerViewDelegate {
 
 extension PickerViewController: PickerViewDataSource {
     func pickerViewNumberOfRows(_ pickerView: PickerView) -> Int {
+        return classes.count
+    }
+    
+    func pickerView(_ pickerView: PickerView, titleForRow row: Int) -> String {
+        return ""
+    }
+    
+    func pikerViewNumberOfRows(_ pickerView: PickerView) -> Int {
       
         return classes.count
     }

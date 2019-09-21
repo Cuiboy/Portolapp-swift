@@ -137,15 +137,19 @@ extension DetailPickerViewController: PickerViewDelegate {
 }
 
 extension DetailPickerViewController: PickerViewDataSource {
+    func pickerView(_ pickerView: PickerView, titleForRow row: Int) -> String {
+        return classes[row]
+    }
+    
     func pickerViewNumberOfRows(_ pickerView: PickerView) -> Int {
         
         return classes.count
     }
     
-    func pickerView(_ pickerView: PickerView, titleForRow row: Int, index: Int) -> String {
-        
-        return classes[index]
-    }
+//    func pickerView(_ pickerView: PickerView, titleForRow row: Int, index: Int) -> String {
+//
+//        return classes[index]
+//    }
     
     
 }

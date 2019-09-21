@@ -120,6 +120,10 @@ extension TeacherPickerViewController: PickerViewDelegate {
 }
 
 extension TeacherPickerViewController: PickerViewDataSource {
+    func pickerView(_ pickerView: PickerView, titleForRow row: Int) -> String {
+        return ""
+    }
+    
     func pickerViewNumberOfRows(_ pickerView: PickerView) -> Int {
         
         return teacherObjects.count

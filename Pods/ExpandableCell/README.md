@@ -4,13 +4,11 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/YNExpandableCell/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/YNExpandableCell.svg?style=flat)](http://cocoapods.org/pods/ExpandableCell)
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 ![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
 
-#### Find someone who want to make this project better than before :) Currently, I don't have enough time to resolve issues :(
-
 ## Intoduction
-Fully refactored [YNExapnadableCell](https://github.com/younatics/YNExpandableCell) with more concise, bug free. Easiest usage of expandable & collapsible cell for iOS, written in Swift 3. You can customize expandable `UITableViewCell` whatever you like. `ExpandableCell` is made because `insertRows` and `deleteRows` is hard to use. Just inheirt `ExpandableDelegate`
+Fully refactored [YNExapnadableCell](https://github.com/younatics/YNExpandableCell) with more concise, bug free. Easiest usage of expandable & collapsible cell for iOS, written in Swift 5. You can customize expandable `UITableViewCell` whatever you like. `ExpandableCell` is made because `insertRows` and `deleteRows` is hard to use. Just inheirt `ExpandableDelegate`
 
 ![demo](Images/ExpandableCell.gif)
 
@@ -53,6 +51,8 @@ Set required `ExpandableDelegate` method.
 | Property | Type | Explanation |
 | -------- | ---- | ----------- |
 | `animation` | `UITableViewRowAnimation` | Animation when open and close | 
+| `expansionStyle` | `ExpandableTableView.ExpansionStyle` | Select expansion type:<br>**single** - one row at a time;<br>**singlePerSection** - one row at a time, per section;<br>**multi** - any number of rows at a time|
+| `autoRemoveSelection` | `Bool` | autoRemoveSelection __true__ means the cell will flicker selected, and autoRemoveSelection __false__ means the default selection behaviour of the tableview will apply (single or multi selection) | 
 
 #### ExpandableTableView methods
 | Method | Explanation |
@@ -88,6 +88,22 @@ open class ExpandableCell: UITableViewCell {
 }
 ```
 
+#### For highlight animation
+Inherit `ExpandableCell` when you need disable or enable highlight animation
+```swift
+open class ExpandableCell: UITableViewCell {
+    open var highlightAnimation = HighlightAnimation.animated
+}
+```
+
+#### Adding right margin to arrow icon
+Inherit `ExpandableCell` when you need right margin ( Default margin is 16 )
+```swift
+open class ExpandableCell: UITableViewCell {
+    open var rightMargin: CGFloat = 16
+}
+```
+
 Set tableview insert animation
 ```Swift
 tableView.animation = .automatic
@@ -100,9 +116,11 @@ Make protocols in `ExpandableDelegate` if you need or make pull request to me :)
 | ExpandableCell methods | Explanation |
 | --------------------------- | ----------- |
 | `isExpanded()` | Check if cell is expanded or not |
+| `isInitiallyExpanded()` | Make cell be open when the tableView content first appears in the view |
+| `isSelectable()` | Make cell be selectable or not, regardless of tableView selectionStyle |
 
 ## Requirements
-`ExpandableCell` written in Swift 3. Compatible with iOS 8.0+
+`ExpandableCell` written in Swift 5.0. Compatible with iOS 8.0+
 
 ## Installation
 

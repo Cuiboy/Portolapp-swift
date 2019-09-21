@@ -30,7 +30,7 @@ open class DynamicCollectionViewFlowLayout: UICollectionViewFlowLayout {
     // MARK: - Properties definition 
     
     open var dynamicAnimator: UIDynamicAnimator?
-    open var itemsAligment = UIControlContentHorizontalAlignment.center
+    open var itemsAligment = UIControl.ContentHorizontalAlignment.center
 
     open lazy var collisionBehavior: UICollisionBehavior? = {
         let collision = UICollisionBehavior(items: [])
@@ -91,7 +91,7 @@ open class DynamicCollectionViewFlowLayout: UICollectionViewFlowLayout {
         }
 
         let items = animator.items(in: rect) as NSArray
-        return items.flatMap { $0 as? UICollectionViewLayoutAttributes }
+        return items.compactMap { $0 as? UICollectionViewLayoutAttributes }
     }
     
     override open func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
@@ -171,6 +171,8 @@ open class DynamicCollectionViewFlowLayout: UICollectionViewFlowLayout {
             translationX = isRTL(for: collectionView) ? rightMargin : leftMargin
         case .trailing:
             translationX = isRTL(for: collectionView) ? leftMargin : rightMargin
+        @unknown default:
+            translationX = isRTL(for: collectionView) ? rightMargin : leftMargin
         }
 
         frame.origin.x = translationX
