@@ -292,15 +292,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 //            present(ac, animated: true)
 //        }
     
-        let integralDownload = UserDefaults.standard.bool(forKey: "integral")
-        if !integralDownload {
-            UserDefaults.standard.set(true, forKey: "integral")
-            let ac = UIAlertController(title: "New App Available", message: "Portolapp has migrated to our brand new app, Integral. Please download Integral to stay up do date with everything at Portola", preferredStyle: .alert)
-            
-            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert: UIAlertAction!) in self.launchIntegral()} ))
-            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-            present(ac, animated: true)
-        }
+     
     }
     
     func launchIntegral() {
